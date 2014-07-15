@@ -1,4 +1,1 @@
-devangelism
-===========
-
-Digital Ocean Devangelism
+Telus about it
