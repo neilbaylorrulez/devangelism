@@ -21,17 +21,56 @@ html, body {
     min-height:100%;
     padding-top: 115px;
     position:relative;
+    border-bottom: 2px solid white;
+    text-align: center;
 
     @include box-sizing(border-box);
+
     h1 {
       position: relative;
-      display: block;
+      display: inline-block;
       font-family: 'Lato', arial, sans-serif;
       font-weight: 100;
       font-size: 40px;
-      margin: 0;
-      text-align: center;
+      margin-bottom: 8px;
+
+      &:before, &:after {
+        content: "";
+        display: inline-block;
+        width: 50px;
+        height: 1px;
+        background-color: #fff;
+        position: absolute;
+        top: 50%;
+        margin-top: 3px;
+      }
+      &:before {
+        left: -60px;
+      }
+      &:after {
+        right: -60px;
+      }
     }
+
+    h1 + p {
+      color: #4a4a4a;
+      margin-top: 0;
+      font-size: 18px;
+      width: 800px;
+      margin: 0 auto 45px;
+    }
+
+    button.next {
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      margin-left: -15px;
+    }
+  }
+
+  footer {
+    height: 200px;
+    background: #4A4A4A;
   }
 
   #contact {

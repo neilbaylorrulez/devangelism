@@ -1,0 +1,118 @@
+@import "compass/utilities/general/clearfix";
+
+.photo-grid {
+  width: 100%;
+  max-width: 1024px;
+  font-size: 0;
+  @include box-sizing(border-box);
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+
+  .row {
+    @include clearfix();
+  }
+
+  .left {
+    float: left;
+  }
+
+  .right {
+    float: right;
+  }
+
+  .tile {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #ee7053;
+      opacity: 0.65;
+      z-index: 1;
+    }
+  }
+
+  .name {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 12px;
+    left: 0;
+    padding: 13px 18px;
+    font-size: 16px;
+    color: #ee7053;
+    background: white;
+    opacity: 0.8;
+    cursor: pointer;
+
+    &:before {
+      content: '+';
+      color: white;
+      font-size: 28px;
+      line-height: 20px;
+      position: absolute;
+      right: -40px;
+      top: 6px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 2px solid white;
+      background: #D3604A;
+      @include box-sizing(border-box);
+    }
+
+    &.bottom {
+      top: auto;
+      bottom: 12px;
+    }
+
+    &.right {
+      left: auto;
+      right: 0;
+
+      &:before {
+        right: auto;
+        left: -40px;
+      }
+    }
+  }
+
+  .x-large {
+    width: 58%;
+    padding-top: 58%;
+    background: #ccc;
+  }
+  .large {
+    width: 61.5%;
+    padding-top: 38.5%;
+    background: #bbb;
+  }
+  .medium {
+    width: 38.5%;
+    padding-top: 38.5%;
+    background: #aaa;
+  }
+  .small {
+    width: 42%;
+    padding-top: 29%;
+    background: #ddd;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

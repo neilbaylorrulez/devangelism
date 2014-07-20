@@ -21,21 +21,61 @@ html, body {
   min-height: 100%;
   padding-top: 115px;
   position: relative;
+  border-bottom: 2px solid white;
+  text-align: center;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 26, ../sass/_shell.scss */
+/* line 29, ../sass/_shell.scss */
 #wrap section h1 {
   position: relative;
-  display: block;
+  display: inline-block;
   font-family: 'Lato', arial, sans-serif;
   font-weight: 100;
   font-size: 40px;
-  margin: 0;
-  text-align: center;
+  margin-bottom: 8px;
 }
 /* line 37, ../sass/_shell.scss */
+#wrap section h1:before, #wrap section h1:after {
+  content: "";
+  display: inline-block;
+  width: 50px;
+  height: 1px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  margin-top: 3px;
+}
+/* line 47, ../sass/_shell.scss */
+#wrap section h1:before {
+  left: -60px;
+}
+/* line 50, ../sass/_shell.scss */
+#wrap section h1:after {
+  right: -60px;
+}
+/* line 55, ../sass/_shell.scss */
+#wrap section h1 + p {
+  color: #4a4a4a;
+  margin-top: 0;
+  font-size: 18px;
+  width: 800px;
+  margin: 0 auto 45px;
+}
+/* line 63, ../sass/_shell.scss */
+#wrap section button.next {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  margin-left: -15px;
+}
+/* line 71, ../sass/_shell.scss */
+#wrap footer {
+  height: 200px;
+  background: #4A4A4A;
+}
+/* line 76, ../sass/_shell.scss */
 #wrap #contact {
   position: absolute;
   bottom: 0;
@@ -59,7 +99,7 @@ html, body {
   -o-transition: opacity 0.3s linear;
   transition: opacity 0.3s linear;
 }
-/* line 52, ../sass/_shell.scss */
+/* line 91, ../sass/_shell.scss */
 #wrap.loaded.contact #contact {
   opacity: 0.99;
   background: red;
@@ -146,11 +186,277 @@ html, body {
   }
 }
 
-/* line 1, ../sass/_who.scss */
+/* line 3, ../sass/components/photogrid.scss */
+.photo-grid {
+  width: 100%;
+  max-width: 1024px;
+  font-size: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+}
+/* line 12, ../sass/components/photogrid.scss */
+.photo-grid .row {
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 16, ../sass/components/photogrid.scss */
+.photo-grid .left {
+  float: left;
+}
+/* line 20, ../sass/components/photogrid.scss */
+.photo-grid .right {
+  float: right;
+}
+/* line 24, ../sass/components/photogrid.scss */
+.photo-grid .tile {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+/* line 29, ../sass/components/photogrid.scss */
+.photo-grid .tile:before {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ee7053;
+  opacity: 0.65;
+  z-index: 1;
+}
+/* line 43, ../sass/components/photogrid.scss */
+.photo-grid .name {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: 12px;
+  left: 0;
+  padding: 13px 18px;
+  font-size: 16px;
+  color: #ee7053;
+  background: white;
+  opacity: 0.8;
+  cursor: pointer;
+}
+/* line 56, ../sass/components/photogrid.scss */
+.photo-grid .name:before {
+  content: '+';
+  color: white;
+  font-size: 28px;
+  line-height: 20px;
+  position: absolute;
+  right: -40px;
+  top: 6px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background: #D3604A;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 72, ../sass/components/photogrid.scss */
+.photo-grid .name.bottom {
+  top: auto;
+  bottom: 12px;
+}
+/* line 77, ../sass/components/photogrid.scss */
+.photo-grid .name.right {
+  left: auto;
+  right: 0;
+}
+/* line 81, ../sass/components/photogrid.scss */
+.photo-grid .name.right:before {
+  right: auto;
+  left: -40px;
+}
+/* line 88, ../sass/components/photogrid.scss */
+.photo-grid .x-large {
+  width: 58%;
+  padding-top: 58%;
+  background: #ccc;
+}
+/* line 93, ../sass/components/photogrid.scss */
+.photo-grid .large {
+  width: 61.5%;
+  padding-top: 38.5%;
+  background: #bbb;
+}
+/* line 98, ../sass/components/photogrid.scss */
+.photo-grid .medium {
+  width: 38.5%;
+  padding-top: 38.5%;
+  background: #aaa;
+}
+/* line 103, ../sass/components/photogrid.scss */
+.photo-grid .small {
+  width: 42%;
+  padding-top: 29%;
+  background: #ddd;
+}
+/* line 109, ../sass/components/photogrid.scss */
+.photo-grid img {
+  width: 100%;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* line 1, ../sass/components/button.scss */
+button {
+  border: 0;
+  outline: none;
+  cursor: pointer;
+}
+/* line 6, ../sass/components/button.scss */
+button.next {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  background: white;
+  z-index: 1;
+  padding: 0;
+}
+/* line 15, ../sass/components/button.scss */
+button.next:before {
+  content: '';
+  position: absolute;
+  left: -15px;
+  top: -15px;
+  display: block;
+  width: 60px;
+  height: 60px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  background: white;
+  opacity: 0.25;
+  -webkit-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  -o-transform: scale(0.5);
+  transform: scale(0.5);
+}
+/* line 30, ../sass/components/button.scss */
+button.next:hover:before {
+  -webkit-animation: grow 0.5s alternate infinite;
+  animation: grow 0.5s alternate infinite;
+}
+/* line 34, ../sass/components/button.scss */
+button.next:hover:after {
+  -webkit-transform: translate3d(0, 2px, 0) rotate(-45deg);
+  -moz-transform: translate3d(0, 2px, 0) rotate(-45deg);
+  -ms-transform: translate3d(0, 2px, 0) rotate(-45deg);
+  -o-transform: translate3d(0, 2px, 0) rotate(-45deg);
+  transform: translate3d(0, 2px, 0) rotate(-45deg);
+}
+/* line 39, ../sass/components/button.scss */
+button.next:after {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 8px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #3A87BC;
+  border-width: 0 0 2px 2px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transform: translate3d(0, 0, 0) rotate(-45deg);
+  -moz-transform: translate3d(0, 0, 0) rotate(-45deg);
+  -ms-transform: translate3d(0, 0, 0) rotate(-45deg);
+  -o-transform: translate3d(0, 0, 0) rotate(-45deg);
+  transform: translate3d(0, 0, 0) rotate(-45deg);
+  -webkit-transition: -webkit-transform 0.3s;
+  -moz-transition: -moz-transform 0.3s;
+  -o-transition: -o-transform 0.3s;
+  transition: transform 0.3s;
+}
+/* line 55, ../sass/components/button.scss */
+button.dark {
+  background: #4a4a4a;
+}
+/* line 57, ../sass/components/button.scss */
+button.dark:before {
+  background: #4a4a4a;
+}
+/* line 60, ../sass/components/button.scss */
+button.dark:after {
+  border-color: white;
+}
+
+@-webkit-keyframes grow {
+  /* line 67, ../sass/components/button.scss */
+  from {
+    transform: scale(0.5);
+  }
+
+  /* line 68, ../sass/components/button.scss */
+  to {
+    transform: scale(1);
+  }
+}
+
+@-o-keyframes grow {
+  /* line 71, ../sass/components/button.scss */
+  from {
+    transform: scale(0.5);
+  }
+
+  /* line 72, ../sass/components/button.scss */
+  to {
+    transform: scale(1);
+  }
+}
+
+@-moz-keyframes grow {
+  /* line 75, ../sass/components/button.scss */
+  from {
+    transform: scale(0.5);
+  }
+
+  /* line 76, ../sass/components/button.scss */
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes grow {
+  /* line 79, ../sass/components/button.scss */
+  from {
+    transform: scale(0.5);
+  }
+
+  /* line 80, ../sass/components/button.scss */
+  to {
+    transform: scale(1);
+  }
+}
+
+/* line 4, ../sass/_who.scss */
 #who {
   background: #EC7058;
 }
-/* line 4, ../sass/_who.scss */
+/* line 7, ../sass/_who.scss */
 #who h1 {
   color: white;
 }
