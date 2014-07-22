@@ -47,7 +47,7 @@ html, body {
     @include transition(opacity 0.3s linear);
   }
 
-  &.loaded.contact {
+  &.contact {
     //overflow:hidden;
     #contact {
       opacity:0.99;

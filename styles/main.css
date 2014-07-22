@@ -60,7 +60,7 @@ html, body {
   transition: opacity 0.3s linear;
 }
 /* line 52, ../sass/_shell.scss */
-#wrap.loaded.contact #contact {
+#wrap.contact #contact {
   opacity: 0.99;
   background: red;
   pointer-events: auto;
@@ -68,37 +68,33 @@ html, body {
 
 /* line 1, ../sass/_home.scss */
 #wrap #home {
-  background: #3A87BC;
-  padding-top: 0;
+  background: #3682b9;
+  padding-top: 30px;
 }
 /* line 5, ../sass/_home.scss */
-#wrap #home .header {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-top: 50px;
-}
-/* line 10, ../sass/_home.scss */
-#wrap #home .header h1 {
+#wrap #home h1 {
   display: inline-block;
   vertical-align: middle;
-  width: 300px;
+  width: 278px;
   height: 58px;
   font-size: 0 !important;
   background-image: url("../img/logo.png");
-  background-size: 278px;
-  background-position: 12px -17px;
+  background-size: 100%;
+  background-position: 12px -10px;
   background-repeat: no-repeat;
-  margin: 0 30px 0 0;
+  margin: -10px 30px 0 0;
+  padding: 0;
 }
-/* line 21, ../sass/_home.scss */
-#wrap #home .header h1:before, #wrap #home .header h1:after {
+/* line 17, ../sass/_home.scss */
+#wrap #home h1:before, #wrap #home h1:after {
   display: none;
 }
-/* line 27, ../sass/_home.scss */
+/* line 22, ../sass/_home.scss */
 #wrap #home nav {
+  margin: 15px;
   display: inline-block;
 }
-/* line 29, ../sass/_home.scss */
+/* line 25, ../sass/_home.scss */
 #wrap #home nav a {
   text-transform: capitalize;
   color: white;
@@ -106,7 +102,11 @@ html, body {
   font-size: 14px;
   margin-right: 45px;
 }
-/* line 39, ../sass/_home.scss */
+/* line 31, ../sass/_home.scss */
+#wrap #home nav a:hover {
+  text-decoration: underline;
+}
+/* line 38, ../sass/_home.scss */
 #wrap #home h2, #wrap #home h3 {
   width: 100%;
   position: absolute;
@@ -116,7 +116,7 @@ html, body {
   text-overflow: ellipsis;
   text-align: center;
 }
-/* line 49, ../sass/_home.scss */
+/* line 48, ../sass/_home.scss */
 #wrap #home h2 {
   color: white;
   font-weight: 400;
@@ -125,7 +125,7 @@ html, body {
   margin-top: 12px;
   width: 100%;
 }
-/* line 58, ../sass/_home.scss */
+/* line 57, ../sass/_home.scss */
 #wrap #home h3 {
   font-family: "Lato", "Helvetica", arial, sans-serif;
   font-weight: 100;
@@ -134,38 +134,34 @@ html, body {
   color: #2BA4FC;
 }
 @media screen and (max-width: 630px) {
-  /* line 67, ../sass/_home.scss */
+  /* line 66, ../sass/_home.scss */
   #wrap #home h3 {
     font-size: 80px;
     margin-top: -40px;
   }
-  /* line 71, ../sass/_home.scss */
+  /* line 70, ../sass/_home.scss */
   #wrap #home h2 {
     font-size: 24px;
     margin-top: 6px;
   }
 }
-
 /* line 1, ../sass/_who.scss */
-#who {
+#wrap #who {
   background: #EC7058;
 }
 /* line 4, ../sass/_who.scss */
-#who h1 {
+#wrap #who h1 {
   color: white;
 }
-
 /* line 1, ../sass/_locations.scss */
-#locations {
+#wrap #locations {
   background: #fff;
 }
-
 /* line 1, ../sass/_events.scss */
-#events {
+#wrap #events {
   background: #B6D9A0;
 }
-
 /* line 1, ../sass/_downloads.scss */
-#downloads {
+#wrap #downloads {
   background: #C4E1F0;
 }
