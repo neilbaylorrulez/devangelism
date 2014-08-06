@@ -217,7 +217,7 @@ html, body {
   border: 1px solid #fff;
   font-size: 0;
   display: none;
-  background: #888888 url("../img/hamburger.svg") no-repeat 50% 50%;
+  background: #4a4a4a url("../img/hamburger.svg") no-repeat 50% 50%;
   background-size: 30px 30px;
   padding: 0;
   position: fixed;
@@ -305,8 +305,8 @@ html, body {
     right: 0;
     top: 0;
     min-height: 100%;
-    width: 75%;
-    background: #000;
+    width: 260px;
+    background: #4A4A4A;
     margin: 0;
     -webkit-transform: translate3d(100%, 0, 0) scale(1);
     -moz-transform: translate3d(100%, 0, 0) scale(1);
@@ -328,28 +328,32 @@ html, body {
     -o-transition: -o-transform 0.3s ease;
     transition: transform 0.3s ease;
   }
-  /* line 113, ../sass/_home.scss */
-  #wrap #home nav a.home, #wrap [data-id="home"] nav a.home {
-    display: inline;
+  /* line 112, ../sass/_home.scss */
+  #wrap #home nav a, #wrap [data-id="home"] nav a {
+    display: block;
   }
-  /* line 117, ../sass/_home.scss */
+  /* line 114, ../sass/_home.scss */
+  #wrap #home nav a.home, #wrap [data-id="home"] nav a.home {
+    display: block;
+  }
+  /* line 119, ../sass/_home.scss */
   #wrap #home .open-menu, #wrap [data-id="home"] .open-menu {
     display: block;
   }
 }
 @media screen and (max-width: 400px) {
-  /* line 123, ../sass/_home.scss */
+  /* line 125, ../sass/_home.scss */
   #wrap #home h3, #wrap [data-id="home"] h3 {
     font-size: 60px;
     margin-top: -26px;
   }
-  /* line 127, ../sass/_home.scss */
+  /* line 129, ../sass/_home.scss */
   #wrap #home h2, #wrap [data-id="home"] h2 {
     font-size: 19px;
   }
 }
 @media screen and (max-width: 630px) {
-  /* line 134, ../sass/_home.scss */
+  /* line 136, ../sass/_home.scss */
   #wrap.menu nav {
     -webkit-transform: translateZ(0) scale(1);
     -moz-transform: translateZ(0) scale(1);

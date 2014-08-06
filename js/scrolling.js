@@ -43,6 +43,7 @@
             window.scrollTo(0, scrollTop);
             return window.requestAnimationFrame(scrollFn = skrollTo.bind(null, Date.now(), scrollTop, newTop - scrollTop, afterFn));
         }
+
         if(noTransition) {
             window.scrollTo(0, newTop);
         }
@@ -68,16 +69,18 @@
     }
 
     function showPage($page, afterFn) {
-        var oldAfter = afterFn;
+        var after = afterFn;
         afterFn = function () {
             $window.trigger('after-scroll');
-            if(oldAfter) {
-                oldAfter();
+            if(after) {
+                after();
             }
         };
+
         if((curPageId = $page.attr('data-id')) === 'contact') {
             return showContactPage(afterFn);
         }
+
         hideContactPage();
         scrollToPage($page, afterFn);
     }

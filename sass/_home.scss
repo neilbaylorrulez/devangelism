@@ -26,7 +26,7 @@
     border:1px solid #fff;
     font-size:0;
     display:none;
-    background: #888 url("../img/hamburger.svg") no-repeat 50% 50%;
+    background: #4A4A4A url("../img/hamburger.svg") no-repeat 50% 50%;
     background-size:30px 30px;
     padding:0;
     position:fixed;
@@ -102,16 +102,18 @@
       right:0;
       top:0;
       min-height:100%;
-      width:75%;
-      background:#000;
+      width:260px;
+      background:#4A4A4A;
       margin:0;
       @include transform(translate3d(100%,0,0) scale(1));
       @include backface-visibility(hidden);
       @include perspective(1000);
       @include transition(transform 0.3s ease);
-
-      a.home {
-        display:inline;
+      a {
+        display:block;
+        &.home {
+          display:block;
+        }
       }
     }
     .open-menu {
