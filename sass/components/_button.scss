@@ -1,0 +1,63 @@
+a.next {
+  position: absolute;
+  bottom:-15px;
+  left:50%;
+  margin-left:-15px;
+  width: 30px;
+  height: 30px;
+  @include border-radius(50%);
+  background: white;
+  z-index: 1;
+  padding: 0;
+  font-size: 0;
+  display:inline-block;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: -15px;
+    display: block;
+    width: 60px;
+    height: 60px;
+    @include border-radius(50%);
+    background: white;
+    opacity: 0.25;
+    @include transform(scale(0.5));
+  }
+
+  &:hover {
+    &:before {
+      -webkit-animation: grow 0.5s alternate infinite;
+      animation: grow 0.5s alternate infinite;
+    }
+    &:after {
+      @include transform(translate3d(0,2px,0) rotate(-45deg));
+    }
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    display: block;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #3A87BC;
+    border-width: 0 0 2px 2px;
+    @include box-sizing(border-box);
+    @include transform(translate3d(0,0,0) rotate(-45deg));
+    @include transition(transform 0.3s);
+  }
+
+  &.dark {
+    background: #4a4a4a;
+    &:before {
+      background: #4a4a4a;
+    }
+    &:after {
+      border-color: white;
+    }
+  }
+}

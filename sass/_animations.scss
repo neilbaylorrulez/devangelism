@@ -1,12 +1,3 @@
-@import "shell";
-#wrap {
-	@import "home";
-	@import "who";
-	@import "locations";
-	@import "events";
-	@import "downloads";
-}
-
 @-webkit-keyframes grow {
   from { transform: scale(0.5) }
   to { transform: scale(1) }
