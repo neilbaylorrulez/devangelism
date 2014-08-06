@@ -114,4 +114,8 @@ html, body {
       pointer-events:auto;
     }
   }
+
+  &.no-transition * {
+    @include transition(none !important);
+  }
 }

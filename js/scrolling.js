@@ -36,12 +36,15 @@
         }
     }
 
-    function scrollToPage($page, afterFn) {
+    function scrollToPage($page, afterFn, noTransition) {
         var newTop = $page.offset().top;
 
-        if(scrollTop !== newTop) {
+        if(scrollTop !== newTop && !noTransition) {
             window.scrollTo(0, scrollTop);
             return window.requestAnimationFrame(scrollFn = skrollTo.bind(null, Date.now(), scrollTop, newTop - scrollTop, afterFn));
+        }
+        if(noTransition) {
+            window.scrollTo(0, newTop);
         }
 
         if(afterFn) {
@@ -56,7 +59,7 @@
             if(afterFn) {
                 afterFn();
             }
-        });
+        }, true);
     }
 
     function hideContactPage() {
@@ -130,8 +133,6 @@
             previousScrollTop = scrollTop;
             scrollTop = window.pageYOffset;
         });
-
-        $window.trigger('app-ready');
     }
 
     function init() {

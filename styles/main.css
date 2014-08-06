@@ -178,6 +178,13 @@ html, body {
   opacity: 0.99;
   pointer-events: auto;
 }
+/* line 118, ../sass/_shell.scss */
+#wrap.no-transition * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
 
 /* line 1, ../sass/_home.scss */
 #wrap #home, #wrap [data-id="home"] {
