@@ -11,6 +11,7 @@ a.next {
   padding: 0;
   font-size: 0;
   display:inline-block;
+  border:1px solid rgba(0,0,0,0.05);
 
   &:before {
     content: '';
@@ -20,10 +21,12 @@ a.next {
     display: block;
     width: 60px;
     height: 60px;
-    @include border-radius(50%);
     background: white;
     opacity: 0.25;
+    @include border-radius(50%);
     @include transform(scale(0.5));
+    @include backface-visibility(hidden);
+    @include perspective(1000);
   }
 
   &:hover {
@@ -32,7 +35,7 @@ a.next {
       animation: grow 0.5s alternate infinite;
     }
     &:after {
-      @include transform(translate3d(0,2px,0) rotate(-45deg));
+      @include transform(translate3d(0,1px,0) scale(1) rotate(-45deg));
     }
   }
 
@@ -47,8 +50,11 @@ a.next {
     border: 2px solid #3A87BC;
     border-width: 0 0 2px 2px;
     @include box-sizing(border-box);
-    @include transform(translate3d(0,0,0) rotate(-45deg));
-    @include transition(transform 0.3s);
+    @include backface-visibility(hidden);
+    @include perspective(1000);
+    @include transform(translate3d(0,0,0) scale(1) rotate(-45deg));
+    @include transition(transform 0.275s);
+    opacity:0.99;
   }
 
   &.dark {

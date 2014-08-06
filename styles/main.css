@@ -64,7 +64,7 @@ html, body {
   margin: 0 auto;
   position: relative;
 }
-/* line 22, ../sass/_shell.scss */
+/* line 21, ../sass/_shell.scss */
 #wrap section {
   min-height: 100%;
   padding-top: 115px;
@@ -75,7 +75,7 @@ html, body {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 31, ../sass/_shell.scss */
+/* line 30, ../sass/_shell.scss */
 #wrap section h1 {
   position: relative;
   display: inline-block;
@@ -87,7 +87,7 @@ html, body {
   max-width: 100%;
   padding: 0 50px;
 }
-/* line 42, ../sass/_shell.scss */
+/* line 41, ../sass/_shell.scss */
 #wrap section h1:before, #wrap section h1:after {
   content: "";
   display: inline-block;
@@ -98,40 +98,45 @@ html, body {
   top: 50%;
   margin-top: 3px;
 }
-/* line 52, ../sass/_shell.scss */
+/* line 51, ../sass/_shell.scss */
 #wrap section h1:before {
   left: -10px;
 }
-/* line 55, ../sass/_shell.scss */
+/* line 54, ../sass/_shell.scss */
 #wrap section h1:after {
   right: -10px;
 }
 @media screen and (max-width: 630px) {
+  /* line 21, ../sass/_shell.scss */
+  #wrap section {
+    padding-top: 80px;
+  }
   /* line 61, ../sass/_shell.scss */
   #wrap section h1 {
+    font-size: 35px;
     padding: 0 10px;
   }
-  /* line 63, ../sass/_shell.scss */
+  /* line 64, ../sass/_shell.scss */
   #wrap section h1:before, #wrap section h1:after {
     display: none;
   }
 }
-/* line 69, ../sass/_shell.scss */
+/* line 70, ../sass/_shell.scss */
 #wrap section h1 + p {
   color: #4a4a4a;
   margin-top: 5px;
-  font-size: 18px;
+  font-size: 14px;
   width: 100%;
   max-width: 800px;
   margin: 0 auto 45px;
   line-height: 25px;
 }
-/* line 80, ../sass/_shell.scss */
+/* line 81, ../sass/_shell.scss */
 #wrap footer {
   height: 200px;
   background: #4A4A4A;
 }
-/* line 85, ../sass/_shell.scss */
+/* line 86, ../sass/_shell.scss */
 #wrap #contact, #wrap [data-id="contact"] {
   position: absolute;
   bottom: 0;
@@ -141,6 +146,7 @@ html, body {
   opacity: 0.01;
   border-bottom: none;
   pointer-events: none;
+  background: red;
   -webkit-transform: translateZ(0) scale(1);
   -moz-transform: translateZ(0) scale(1);
   -ms-transform: translateZ(0) scale(1);
@@ -157,10 +163,19 @@ html, body {
   transition: opacity 0.3s linear;
   z-index: 1;
 }
-/* line 102, ../sass/_shell.scss */
+@media screen and (max-width: 630px) {
+  /* line 102, ../sass/_shell.scss */
+  #wrap #contact h1, #wrap [data-id="contact"] h1 {
+    padding: 0 50px;
+  }
+  /* line 104, ../sass/_shell.scss */
+  #wrap #contact h1:before, #wrap #contact h1:after, #wrap [data-id="contact"] h1:before, #wrap [data-id="contact"] h1:after {
+    display: block;
+  }
+}
+/* line 112, ../sass/_shell.scss */
 #wrap.contact #contact, #wrap.contact [data-id="contact"] {
   opacity: 0.99;
-  background: red;
   pointer-events: auto;
 }
 
@@ -168,8 +183,9 @@ html, body {
 #wrap #home, #wrap [data-id="home"] {
   background: #3682b9;
   padding-top: 30px;
+  position: static;
 }
-/* line 5, ../sass/_home.scss */
+/* line 6, ../sass/_home.scss */
 #wrap #home h1, #wrap [data-id="home"] h1 {
   display: inline-block;
   vertical-align: middle;
@@ -183,28 +199,57 @@ html, body {
   margin: -10px 30px 0 0;
   padding: 0;
 }
-/* line 17, ../sass/_home.scss */
+/* line 18, ../sass/_home.scss */
 #wrap #home h1:before, #wrap #home h1:after, #wrap [data-id="home"] h1:before, #wrap [data-id="home"] h1:after {
   display: none;
 }
-/* line 22, ../sass/_home.scss */
+/* line 23, ../sass/_home.scss */
+#wrap #home .open-menu, #wrap [data-id="home"] .open-menu {
+  height: 37px;
+  width: 42px;
+  border: 1px solid #fff;
+  font-size: 0;
+  display: none;
+  background: #888888 url("../img/hamburger.svg") no-repeat 50% 50%;
+  background-size: 30px 30px;
+  padding: 0;
+  position: fixed;
+  top: 26px;
+  right: 10px;
+  z-index: 3;
+  outline: none !important;
+  cursor: pointer;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+}
+/* line 43, ../sass/_home.scss */
 #wrap #home nav, #wrap [data-id="home"] nav {
   margin: 15px;
   display: inline-block;
 }
-/* line 25, ../sass/_home.scss */
+/* line 46, ../sass/_home.scss */
 #wrap #home nav a, #wrap [data-id="home"] nav a {
   text-transform: capitalize;
   color: white;
   text-decoration: none;
   font-size: 14px;
-  margin-right: 45px;
+  margin: 0 22px;
 }
-/* line 31, ../sass/_home.scss */
-#wrap #home nav a:hover, #wrap [data-id="home"] nav a:hover {
+/* line 52, ../sass/_home.scss */
+#wrap #home nav a:hover, #wrap #home nav a.selected, #wrap [data-id="home"] nav a:hover, #wrap [data-id="home"] nav a.selected {
   text-decoration: underline;
 }
-/* line 38, ../sass/_home.scss */
+/* line 55, ../sass/_home.scss */
+#wrap #home nav a.home, #wrap [data-id="home"] nav a.home {
+  display: none;
+}
+/* line 62, ../sass/_home.scss */
 #wrap #home h2, #wrap #home h3, #wrap [data-id="home"] h2, #wrap [data-id="home"] h3 {
   width: 100%;
   position: absolute;
@@ -214,7 +259,7 @@ html, body {
   text-overflow: ellipsis;
   text-align: center;
 }
-/* line 48, ../sass/_home.scss */
+/* line 72, ../sass/_home.scss */
 #wrap #home h2, #wrap [data-id="home"] h2 {
   color: white;
   font-weight: 400;
@@ -223,7 +268,7 @@ html, body {
   margin-top: 12px;
   width: 100%;
 }
-/* line 57, ../sass/_home.scss */
+/* line 81, ../sass/_home.scss */
 #wrap #home h3, #wrap [data-id="home"] h3 {
   font-family: "Lato", "Helvetica", arial, sans-serif;
   font-weight: 100;
@@ -232,19 +277,103 @@ html, body {
   color: #2BA4FC;
 }
 @media screen and (max-width: 630px) {
-  /* line 66, ../sass/_home.scss */
+  /* line 1, ../sass/_home.scss */
+  #wrap #home, #wrap [data-id="home"] {
+    text-align: left;
+  }
+  /* line 91, ../sass/_home.scss */
   #wrap #home h3, #wrap [data-id="home"] h3 {
     font-size: 80px;
     margin-top: -40px;
   }
-  /* line 70, ../sass/_home.scss */
+  /* line 95, ../sass/_home.scss */
   #wrap #home h2, #wrap [data-id="home"] h2 {
     font-size: 24px;
     margin-top: 6px;
   }
+  /* line 99, ../sass/_home.scss */
+  #wrap #home nav, #wrap [data-id="home"] nav {
+    position: fixed;
+    z-index: 2;
+    right: 0;
+    top: 0;
+    min-height: 100%;
+    width: 75%;
+    background: #000;
+    margin: 0;
+    -webkit-transform: translate3d(100%, 0, 0) scale(1);
+    -moz-transform: translate3d(100%, 0, 0) scale(1);
+    -ms-transform: translate3d(100%, 0, 0) scale(1);
+    -o-transform: translate3d(100%, 0, 0) scale(1);
+    transform: translate3d(100%, 0, 0) scale(1);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    -ms-perspective: 1000;
+    -o-perspective: 1000;
+    perspective: 1000;
+    -webkit-transition: -webkit-transform 0.3s ease;
+    -moz-transition: -moz-transform 0.3s ease;
+    -o-transition: -o-transform 0.3s ease;
+    transition: transform 0.3s ease;
+  }
+  /* line 113, ../sass/_home.scss */
+  #wrap #home nav a.home, #wrap [data-id="home"] nav a.home {
+    display: inline;
+  }
+  /* line 117, ../sass/_home.scss */
+  #wrap #home .open-menu, #wrap [data-id="home"] .open-menu {
+    display: block;
+  }
 }
+@media screen and (max-width: 400px) {
+  /* line 123, ../sass/_home.scss */
+  #wrap #home h3, #wrap [data-id="home"] h3 {
+    font-size: 60px;
+    margin-top: -26px;
+  }
+  /* line 127, ../sass/_home.scss */
+  #wrap #home h2, #wrap [data-id="home"] h2 {
+    font-size: 19px;
+  }
+}
+@media screen and (max-width: 630px) {
+  /* line 134, ../sass/_home.scss */
+  #wrap.menu nav {
+    -webkit-transform: translateZ(0) scale(1);
+    -moz-transform: translateZ(0) scale(1);
+    -ms-transform: translateZ(0) scale(1);
+    -o-transform: translateZ(0) scale(1);
+    transform: translateZ(0) scale(1);
+  }
+}
+/* line 1, ../sass/_who.scss */
+#wrap #who, #wrap [data-id="who"] {
+  background: #EC7058;
+}
+/* line 4, ../sass/_who.scss */
+#wrap #who h1, #wrap [data-id="who"] h1 {
+  color: white;
+}
+/* line 1, ../sass/_locations.scss */
+#wrap #locations, #wrap [data-id="locations"] {
+  background: #fff;
+}
+/* line 1, ../sass/_events.scss */
+#wrap #events, #wrap [data-id="events"] {
+  background: #B6D9A0;
+}
+/* line 1, ../sass/_downloads.scss */
+#wrap #downloads {
+  background: #C4E1F0;
+}
+
 /* line 3, ../sass/components/_photogrid.scss */
-#wrap .photo-grid {
+.photo-grid {
   width: 100%;
   max-width: 1024px;
   font-size: 0;
@@ -256,26 +385,26 @@ html, body {
   padding: 0;
 }
 /* line 12, ../sass/components/_photogrid.scss */
-#wrap .photo-grid .row {
+.photo-grid .row {
   overflow: hidden;
   *zoom: 1;
 }
 /* line 16, ../sass/components/_photogrid.scss */
-#wrap .photo-grid .left {
+.photo-grid .left {
   float: left;
 }
 /* line 20, ../sass/components/_photogrid.scss */
-#wrap .photo-grid .right {
+.photo-grid .right {
   float: right;
 }
 /* line 24, ../sass/components/_photogrid.scss */
-#wrap .photo-grid .tile {
+.photo-grid .tile {
   position: relative;
   display: inline-block;
   overflow: hidden;
 }
 /* line 29, ../sass/components/_photogrid.scss */
-#wrap .photo-grid .tile:before {
+.photo-grid .tile:before {
   content: '';
   position: absolute;
   display: block;
@@ -288,7 +417,7 @@ html, body {
   z-index: 1;
 }
 /* line 43, ../sass/components/_photogrid.scss */
-#wrap .photo-grid .name {
+.photo-grid .name {
   display: block;
   position: absolute;
   z-index: 1;
@@ -302,7 +431,7 @@ html, body {
   cursor: pointer;
 }
 /* line 56, ../sass/components/_photogrid.scss */
-#wrap .photo-grid .name:before {
+.photo-grid .name:before {
   content: '+';
   color: white;
   font-size: 28px;
@@ -320,46 +449,46 @@ html, body {
   box-sizing: border-box;
 }
 /* line 72, ../sass/components/_photogrid.scss */
-#wrap .photo-grid .name.bottom {
+.photo-grid .name.bottom {
   top: auto;
   bottom: 12px;
 }
 /* line 77, ../sass/components/_photogrid.scss */
-#wrap .photo-grid .name.right {
+.photo-grid .name.right {
   left: auto;
   right: 0;
 }
 /* line 81, ../sass/components/_photogrid.scss */
-#wrap .photo-grid .name.right:before {
+.photo-grid .name.right:before {
   right: auto;
   left: -40px;
 }
 /* line 88, ../sass/components/_photogrid.scss */
-#wrap .photo-grid .x-large {
+.photo-grid .x-large {
   width: 58%;
   padding-top: 58%;
   background: #ccc;
 }
 /* line 93, ../sass/components/_photogrid.scss */
-#wrap .photo-grid .large {
+.photo-grid .large {
   width: 61.5%;
   padding-top: 38.5%;
   background: #bbb;
 }
 /* line 98, ../sass/components/_photogrid.scss */
-#wrap .photo-grid .medium {
+.photo-grid .medium {
   width: 38.5%;
   padding-top: 38.5%;
   background: #aaa;
 }
 /* line 103, ../sass/components/_photogrid.scss */
-#wrap .photo-grid .small {
+.photo-grid .small {
   width: 42%;
   padding-top: 29%;
   background: #ddd;
 }
 /* line 109, ../sass/components/_photogrid.scss */
-#wrap .photo-grid img {
+.photo-grid img {
   width: 100%;
   height: auto;
   min-width: 100%;
@@ -368,8 +497,9 @@ html, body {
   top: 0;
   left: 0;
 }
+
 /* line 1, ../sass/components/_button.scss */
-#wrap a.next {
+a.next {
   position: absolute;
   bottom: -15px;
   left: 50%;
@@ -386,9 +516,10 @@ html, body {
   padding: 0;
   font-size: 0;
   display: inline-block;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
-/* line 15, ../sass/components/_button.scss */
-#wrap a.next:before {
+/* line 16, ../sass/components/_button.scss */
+a.next:before {
   content: '';
   position: absolute;
   left: -15px;
@@ -396,34 +527,44 @@ html, body {
   display: block;
   width: 60px;
   height: 60px;
+  background: white;
+  opacity: 0.25;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%;
-  background: white;
-  opacity: 0.25;
   -webkit-transform: scale(0.5);
   -moz-transform: scale(0.5);
   -ms-transform: scale(0.5);
   -o-transform: scale(0.5);
   transform: scale(0.5);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  -o-perspective: 1000;
+  perspective: 1000;
 }
-/* line 30, ../sass/components/_button.scss */
-#wrap a.next:hover:before {
+/* line 33, ../sass/components/_button.scss */
+a.next:hover:before {
   -webkit-animation: grow 0.5s alternate infinite;
   animation: grow 0.5s alternate infinite;
 }
-/* line 34, ../sass/components/_button.scss */
-#wrap a.next:hover:after {
-  -webkit-transform: translate3d(0, 2px, 0) rotate(-45deg);
-  -moz-transform: translate3d(0, 2px, 0) rotate(-45deg);
-  -ms-transform: translate3d(0, 2px, 0) rotate(-45deg);
-  -o-transform: translate3d(0, 2px, 0) rotate(-45deg);
-  transform: translate3d(0, 2px, 0) rotate(-45deg);
+/* line 37, ../sass/components/_button.scss */
+a.next:hover:after {
+  -webkit-transform: translate3d(0, 1px, 0) scale(1) rotate(-45deg);
+  -moz-transform: translate3d(0, 1px, 0) scale(1) rotate(-45deg);
+  -ms-transform: translate3d(0, 1px, 0) scale(1) rotate(-45deg);
+  -o-transform: translate3d(0, 1px, 0) scale(1) rotate(-45deg);
+  transform: translate3d(0, 1px, 0) scale(1) rotate(-45deg);
 }
-/* line 39, ../sass/components/_button.scss */
-#wrap a.next:after {
+/* line 42, ../sass/components/_button.scss */
+a.next:after {
   content: '';
   position: absolute;
   left: 10px;
@@ -436,62 +577,41 @@ html, body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-transform: translate3d(0, 0, 0) rotate(-45deg);
-  -moz-transform: translate3d(0, 0, 0) rotate(-45deg);
-  -ms-transform: translate3d(0, 0, 0) rotate(-45deg);
-  -o-transform: translate3d(0, 0, 0) rotate(-45deg);
-  transform: translate3d(0, 0, 0) rotate(-45deg);
-  -webkit-transition: -webkit-transform 0.3s;
-  -moz-transition: -moz-transform 0.3s;
-  -o-transition: -o-transform 0.3s;
-  transition: transform 0.3s;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  -o-perspective: 1000;
+  perspective: 1000;
+  -webkit-transform: translate3d(0, 0, 0) scale(1) rotate(-45deg);
+  -moz-transform: translate3d(0, 0, 0) scale(1) rotate(-45deg);
+  -ms-transform: translate3d(0, 0, 0) scale(1) rotate(-45deg);
+  -o-transform: translate3d(0, 0, 0) scale(1) rotate(-45deg);
+  transform: translate3d(0, 0, 0) scale(1) rotate(-45deg);
+  -webkit-transition: -webkit-transform 0.275s;
+  -moz-transition: -moz-transform 0.275s;
+  -o-transition: -o-transform 0.275s;
+  transition: transform 0.275s;
+  opacity: 0.99;
 }
-/* line 54, ../sass/components/_button.scss */
-#wrap a.next.dark {
+/* line 60, ../sass/components/_button.scss */
+a.next.dark {
   background: #4a4a4a;
 }
-/* line 56, ../sass/components/_button.scss */
-#wrap a.next.dark:before {
+/* line 62, ../sass/components/_button.scss */
+a.next.dark:before {
   background: #4a4a4a;
 }
-/* line 59, ../sass/components/_button.scss */
-#wrap a.next.dark:after {
+/* line 65, ../sass/components/_button.scss */
+a.next.dark:after {
   border-color: white;
-}
-/* line 4, ../sass/_who.scss */
-#wrap #who, #wrap [data-id="who"] {
-  background: #EC7058;
-}
-/* line 7, ../sass/_who.scss */
-#wrap #who h1, #wrap [data-id="who"] h1 {
-  color: white;
-}
-/* line 1, ../sass/_locations.scss */
-#wrap #locations, #wrap [data-id="locations"] {
-  background: #fff;
-}
-/* line 1, ../sass/_events.scss */
-#wrap #events, #wrap [data-id="events"] {
-  background: #B6D9A0;
-}
-/* line 1, ../sass/_downloads.scss */
-#wrap #downloads {
-  background: #C4E1F0;
 }
 
 @-webkit-keyframes grow {
-  /* line 11, ../sass/main.scss */
-  from {
-    transform: scale(0.5);
-  }
-
-  /* line 12, ../sass/main.scss */
-  to {
-    transform: scale(1);
-  }
-}
-
-@-o-keyframes grow {
   /* line 15, ../sass/main.scss */
   from {
     transform: scale(0.5);
@@ -503,7 +623,7 @@ html, body {
   }
 }
 
-@-moz-keyframes grow {
+@-o-keyframes grow {
   /* line 19, ../sass/main.scss */
   from {
     transform: scale(0.5);
@@ -515,13 +635,25 @@ html, body {
   }
 }
 
-@keyframes grow {
+@-moz-keyframes grow {
   /* line 23, ../sass/main.scss */
   from {
     transform: scale(0.5);
   }
 
   /* line 24, ../sass/main.scss */
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes grow {
+  /* line 27, ../sass/main.scss */
+  from {
+    transform: scale(0.5);
+  }
+
+  /* line 28, ../sass/main.scss */
   to {
     transform: scale(1);
   }

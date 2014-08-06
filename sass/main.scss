@@ -1,4 +1,5 @@
 @import "shell";
+
 #wrap {
 	@import "home";
 	@import "who";
@@ -6,6 +7,9 @@
 	@import "events";
 	@import "downloads";
 }
+
+@import "components/photogrid";
+@import "components/button";
 
 @-webkit-keyframes grow {
   from { transform: scale(0.5) }
