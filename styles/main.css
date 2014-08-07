@@ -46,6 +46,38 @@
   }
 }
 
+@-webkit-keyframes bounce {
+  /* line 19, ../sass/_animations.scss */
+  0% {
+    -webkit-transform: translate3d(0, -100%, 0) scale(1);
+    -webkit-animation-timing-function: ease-in;
+  }
+
+  /* line 20, ../sass/_animations.scss */
+  35% {
+    -webkit-transform: translate3d(0, 3.25%, 0) scale(1);
+    -webkit-animation-timing-function: ease-in;
+  }
+
+  /* line 21, ../sass/_animations.scss */
+  55% {
+    -webkit-transform: translate3d(0, -1.5%, 0) scale(1);
+    -webkit-animation-timing-function: ease-out;
+  }
+
+  /* line 22, ../sass/_animations.scss */
+  75% {
+    -webkit-transform: translate3d(0, 0.25%, 0) scale(1);
+    -webkit-animation-timing-function: ease-in;
+  }
+
+  /* line 23, ../sass/_animations.scss */
+  95% {
+    -webkit-transform: translate3d(0, 0, 0) scale(1);
+    -webkit-animation-timing-function: ease-outs;
+  }
+}
+
 /* line 1, ../sass/_shell.scss */
 html, body {
   width: 100%;
@@ -715,49 +747,83 @@ a.next.dark:after {
   border-color: white;
 }
 
+/* line 1, ../sass/components/_overlay.scss */
+.overlay {
+  background: #EC7058;
+  min-height: 100%;
+  width: 100%;
+  top: 0;
+  position: fixed;
+  opacity: 0.7;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  -o-perspective: 1000;
+  perspective: 1000;
+  -webkit-transform: translateZ(0) scale(1);
+  -moz-transform: translateZ(0) scale(1);
+  -ms-transform: translateZ(0) scale(1);
+  -o-transform: translateZ(0) scale(1);
+  transform: translateZ(0) scale(1);
+}
+/* line 11, ../sass/components/_overlay.scss */
+.overlay.show {
+  display: block;
+  -webkit-animation: bounce 0.9s;
+}
+/* line 16, ../sass/components/_overlay.scss */
+.overlay.hide {
+  display: none;
+}
+
 @-webkit-keyframes grow {
-  /* line 18, ../sass/main.scss */
+  /* line 19, ../sass/main.scss */
   from {
     transform: scale(0.5);
   }
 
-  /* line 19, ../sass/main.scss */
+  /* line 20, ../sass/main.scss */
   to {
     transform: scale(1);
   }
 }
 
 @-o-keyframes grow {
-  /* line 22, ../sass/main.scss */
+  /* line 23, ../sass/main.scss */
   from {
     transform: scale(0.5);
   }
 
-  /* line 23, ../sass/main.scss */
+  /* line 24, ../sass/main.scss */
   to {
     transform: scale(1);
   }
 }
 
 @-moz-keyframes grow {
-  /* line 26, ../sass/main.scss */
+  /* line 27, ../sass/main.scss */
   from {
     transform: scale(0.5);
   }
 
-  /* line 27, ../sass/main.scss */
+  /* line 28, ../sass/main.scss */
   to {
     transform: scale(1);
   }
 }
 
 @keyframes grow {
-  /* line 30, ../sass/main.scss */
+  /* line 31, ../sass/main.scss */
   from {
     transform: scale(0.5);
   }
 
-  /* line 31, ../sass/main.scss */
+  /* line 32, ../sass/main.scss */
   to {
     transform: scale(1);
   }

@@ -40,6 +40,10 @@
 				$window.trigger('after-resize');
 			}, 300);
 		});
+
+		/*window.setTimeout(function () {
+			$('.overlay').removeClass('hide').addClass('show');
+		}, 2000);*/
 	}
 
 	function init() {
