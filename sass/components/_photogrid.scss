@@ -84,7 +84,7 @@
       }
     }
 
-    @media screen and (max-width: 630px) {
+    @media screen and (max-width: 720px) {
       top: auto;
       bottom: 12px;
       &.right {
@@ -116,13 +116,6 @@
     padding-top: 29%;
   }
 
-  @media screen and (max-width: 630px) {
-    .x-large, .large, .medium, .small {
-      width: 100%;
-      padding-top: 200px;
-    }
-  }
-
   img {
     width: 100%;
     height: auto;
@@ -131,5 +124,15 @@
     position: absolute;
     top: 0;
     left: 0;
+  }
+
+  @media screen and (max-width: 720px) {
+    .x-large, .large, .medium, .small {
+      width: 100%;
+      padding-top: 200px;
+      /*img {
+        @include transform(translateY(-50%));
+      }*/
+    }
   }
 }

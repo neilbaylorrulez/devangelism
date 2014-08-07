@@ -1,4 +1,4 @@
-nav {
+#nav {
 	position:absolute;
 	text-align:center;
 	top:46px;
@@ -15,7 +15,7 @@ nav {
 	    background-size:30px 30px;
 	    padding:0;
 	    position:absolute;
-	    top:26px;
+	    top:17px;
 	    left:-60px;
 	    outline: none !important;
 	    cursor:pointer;
@@ -42,23 +42,23 @@ nav {
 	}
 
 	@media screen and (max-width: 900px) {
-		padding-left:220px;
-		top:34px;
+		padding-left:225px;
+		top:33px;
 		a {
-			padding:0 15px;
+			padding:0 13px;
 		}
 	}
 
-	@media screen and (max-width: 630px) {
+	@media screen and (max-width: 720px) {
 		height:100%;
 		text-align: left;
 		position:fixed;
 		z-index: 2;
-		right:-261px;
+		right:-251px;
 		padding-left:0;
 		top:0;
 		height:100%;
-		width:260px;
+		width:250px;
 		background:#4A4A4A;
 		margin:0;
 		@include box-shadow(0 1px 1px rgba(0,0,0,0.3));
@@ -69,9 +69,10 @@ nav {
 
 		a {
 			display:block;
-			height:39px;
-			line-height:39px;
+			height:49px;
+			line-height:49px;
 			border-bottom:1px solid #fff;
+			font-size:16px;
 			&.home {
 				display:block;
 			}

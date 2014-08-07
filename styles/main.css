@@ -121,33 +121,33 @@ html.no-transition *, body.no-transition * {
   width: 100%;
   max-width: 800px;
   margin: 0 auto 45px;
-  line-height: 25px;
+  line-height: 28px;
+  padding: 0 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 720px) {
   /* line 21, ../sass/_shell.scss */
   #wrap section {
     padding-top: 80px;
   }
-  /* line 71, ../sass/_shell.scss */
+  /* line 73, ../sass/_shell.scss */
   #wrap section h1 {
     font-size: 35px;
     padding: 0 10px;
   }
-  /* line 74, ../sass/_shell.scss */
+  /* line 76, ../sass/_shell.scss */
   #wrap section h1:before, #wrap section h1:after {
     display: none;
   }
-  /* line 78, ../sass/_shell.scss */
-  #wrap section h1 + p {
-    font-size: 14px;
-  }
 }
-/* line 85, ../sass/_shell.scss */
+/* line 84, ../sass/_shell.scss */
 #wrap footer {
   background: #4a4a4a url("../img/cloud-footer.png") no-repeat 50% 50%;
   height: 200px;
 }
-/* line 90, ../sass/_shell.scss */
+/* line 89, ../sass/_shell.scss */
 #wrap #contact, #wrap [data-id="contact"] {
   position: absolute;
   bottom: 0;
@@ -161,19 +161,19 @@ html.no-transition *, body.no-transition * {
   z-index: 3;
   display: none;
 }
-@media screen and (max-width: 630px) {
-  /* line 104, ../sass/_shell.scss */
+@media screen and (max-width: 720px) {
+  /* line 103, ../sass/_shell.scss */
   #wrap #contact h1, #wrap [data-id="contact"] h1 {
     padding: 0 50px;
     color: #fff;
   }
-  /* line 107, ../sass/_shell.scss */
+  /* line 106, ../sass/_shell.scss */
   #wrap #contact h1:before, #wrap #contact h1:after, #wrap [data-id="contact"] h1:before, #wrap [data-id="contact"] h1:after {
     display: block;
   }
 }
-@media screen and (min-width: 631px) {
-  /* line 90, ../sass/_shell.scss */
+@media screen and (min-width: 721px) {
+  /* line 89, ../sass/_shell.scss */
   #wrap #contact, #wrap [data-id="contact"] {
     -webkit-transform: translateZ(0) scale(1);
     -moz-transform: translateZ(0) scale(1);
@@ -196,19 +196,19 @@ html.no-transition *, body.no-transition * {
     transition: opacity 0.3s linear;
   }
 }
-/* line 122, ../sass/_shell.scss */
+/* line 121, ../sass/_shell.scss */
 #wrap.loaded #contact, #wrap.loaded [data-id="contact"] {
   display: block;
 }
-/* line 128, ../sass/_shell.scss */
+/* line 127, ../sass/_shell.scss */
 #wrap.contact #contact, #wrap.contact [data-id="contact"] {
-  opacity: 0.85;
+  opacity: 0.8;
   pointer-events: auto;
 }
 
-@media screen and (max-width: 630px) {
-  /* line 136, ../sass/_shell.scss */
-  #wrap, nav {
+@media screen and (max-width: 720px) {
+  /* line 135, ../sass/_shell.scss */
+  #wrap, #nav {
     -webkit-transform: translateZ(0) scale(1);
     -moz-transform: translateZ(0) scale(1);
     -ms-transform: translateZ(0) scale(1);
@@ -230,17 +230,17 @@ html.no-transition *, body.no-transition * {
     transition: transform 0.3s ease;
   }
 
-  /* line 143, ../sass/_shell.scss */
-  body.menu #wrap, body.menu nav {
-    -webkit-transform: translate3d(-260px, 0, 0) scale(1);
-    -moz-transform: translate3d(-260px, 0, 0) scale(1);
-    -ms-transform: translate3d(-260px, 0, 0) scale(1);
-    -o-transform: translate3d(-260px, 0, 0) scale(1);
-    transform: translate3d(-260px, 0, 0) scale(1);
+  /* line 142, ../sass/_shell.scss */
+  body.menu #wrap, body.menu #nav {
+    -webkit-transform: translate3d(-250px, 0, 0) scale(1);
+    -moz-transform: translate3d(-250px, 0, 0) scale(1);
+    -ms-transform: translate3d(-250px, 0, 0) scale(1);
+    -o-transform: translate3d(-250px, 0, 0) scale(1);
+    transform: translate3d(-250px, 0, 0) scale(1);
   }
 }
 /* line 1, ../sass/_nav.scss */
-nav {
+#nav {
   position: absolute;
   text-align: center;
   top: 46px;
@@ -248,7 +248,7 @@ nav {
   z-index: 1;
 }
 /* line 8, ../sass/_nav.scss */
-nav .open-menu {
+#nav .open-menu {
   height: 37px;
   width: 42px;
   border: 2px solid #fff;
@@ -258,7 +258,7 @@ nav .open-menu {
   background-size: 30px 30px;
   padding: 0;
   position: absolute;
-  top: 26px;
+  top: 17px;
   left: -60px;
   outline: none !important;
   cursor: pointer;
@@ -269,7 +269,7 @@ nav .open-menu {
   border-radius: 4px;
 }
 /* line 25, ../sass/_nav.scss */
-nav a {
+#nav a {
   text-transform: capitalize;
   color: white;
   text-decoration: none;
@@ -277,16 +277,16 @@ nav a {
   padding: 0 22px;
 }
 /* line 31, ../sass/_nav.scss */
-nav a:hover, nav a.selected {
+#nav a:hover, #nav a.selected {
   text-decoration: underline;
 }
 /* line 34, ../sass/_nav.scss */
-nav a.home {
+#nav a.home {
   display: none;
 }
 @media screen and (max-width: 1160px) {
   /* line 1, ../sass/_nav.scss */
-  nav {
+  #nav {
     padding-left: 300px;
     text-align: left;
     width: auto;
@@ -294,27 +294,27 @@ nav a.home {
 }
 @media screen and (max-width: 900px) {
   /* line 1, ../sass/_nav.scss */
-  nav {
-    padding-left: 220px;
-    top: 34px;
+  #nav {
+    padding-left: 225px;
+    top: 33px;
   }
   /* line 47, ../sass/_nav.scss */
-  nav a {
-    padding: 0 15px;
+  #nav a {
+    padding: 0 13px;
   }
 }
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 720px) {
   /* line 1, ../sass/_nav.scss */
-  nav {
+  #nav {
     height: 100%;
     text-align: left;
     position: fixed;
     z-index: 2;
-    right: -261px;
+    right: -251px;
     padding-left: 0;
     top: 0;
     height: 100%;
-    width: 260px;
+    width: 250px;
     background: #4A4A4A;
     margin: 0;
     -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
@@ -322,22 +322,23 @@ nav a.home {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
   }
   /* line 66, ../sass/_nav.scss */
-  nav .open-menu {
+  #nav .open-menu {
     display: block;
   }
   /* line 70, ../sass/_nav.scss */
-  nav a {
+  #nav a {
     display: block;
-    height: 39px;
-    line-height: 39px;
+    height: 49px;
+    line-height: 49px;
     border-bottom: 1px solid #fff;
+    font-size: 16px;
   }
-  /* line 75, ../sass/_nav.scss */
-  nav a.home {
+  /* line 76, ../sass/_nav.scss */
+  #nav a.home {
     display: block;
   }
-  /* line 78, ../sass/_nav.scss */
-  nav a:hover, nav a.selected {
+  /* line 79, ../sass/_nav.scss */
+  #nav a:hover, #nav a.selected {
     background: #fff;
     color: #4A4A4A;
     border-color: #4A4A4A;
@@ -403,7 +404,7 @@ nav a.home {
     background-size: 75%;
   }
 }
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 720px) {
   /* line 57, ../sass/_home.scss */
   #wrap #home h3, #wrap [data-id="home"] h3 {
     font-size: 80px;
@@ -538,7 +539,7 @@ nav a.home {
   right: auto;
   left: -40px;
 }
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 720px) {
   /* line 43, ../sass/components/_photogrid.scss */
   .photo-grid .name {
     top: auto;
@@ -575,14 +576,7 @@ nav a.home {
   width: 42%;
   padding-top: 29%;
 }
-@media screen and (max-width: 630px) {
-  /* line 120, ../sass/components/_photogrid.scss */
-  .photo-grid .x-large, .photo-grid .large, .photo-grid .medium, .photo-grid .small {
-    width: 100%;
-    padding-top: 200px;
-  }
-}
-/* line 126, ../sass/components/_photogrid.scss */
+/* line 119, ../sass/components/_photogrid.scss */
 .photo-grid img {
   width: 100%;
   height: auto;
@@ -591,6 +585,16 @@ nav a.home {
   position: absolute;
   top: 0;
   left: 0;
+}
+@media screen and (max-width: 720px) {
+  /* line 130, ../sass/components/_photogrid.scss */
+  .photo-grid .x-large, .photo-grid .large, .photo-grid .medium, .photo-grid .small {
+    width: 100%;
+    padding-top: 200px;
+    /*img {
+      @include transform(translateY(-50%));
+    }*/
+  }
 }
 
 /* line 1, ../sass/components/_button.scss */

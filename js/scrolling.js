@@ -97,7 +97,7 @@
     function updateSectionMeta(el, id) {
         sections[id] = {
             el: el,
-            linkEl: $('nav a[href="#' + id + '"]')[0],
+            linkEl: $('#nav a[href="#' + id + '"]')[0],
             top: $(el).offset().top
         };
     }
@@ -148,7 +148,7 @@
                 $page = $wrap.find('[data-id="' + pageId + '"]');
                 if($page.length) {
                     showPage(pageId);
-                    updateNav($('nav a[href="#' + pageId + '"]')[0]);
+                    updateNav($('#nav a[href="#' + pageId + '"]')[0]);
                 }
             }
         });

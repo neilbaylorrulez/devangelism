@@ -63,10 +63,12 @@ html, body {
       width: 100%;
       max-width: 800px;
       margin: 0 auto 45px;
-      line-height:25px;
+      line-height:28px;
+      padding: 0 10px;
+      @include box-sizing(border-box);
     }
 
-    @media screen and (max-width: 630px) {
+    @media screen and (max-width: 720px) {
       padding-top: 80px;
       h1 {
         font-size:35px;
@@ -74,9 +76,6 @@ html, body {
         &:before, &:after {
           display:none;
         }
-      }
-      h1 + p {
-        font-size: 14px;
       }
     }
 
@@ -100,7 +99,7 @@ html, body {
     z-index: 3;
     display:none;
 
-    @media screen and (max-width: 630px) {
+    @media screen and (max-width: 720px) {
       h1 {
         padding:0 50px;
         color:#fff;
@@ -110,7 +109,7 @@ html, body {
       }
     }
 
-    @media screen and (min-width: 631px) {
+    @media screen and (min-width: 721px) {
       @include transform(translateZ(0) scale(1));
       @include backface-visibility(hidden);
       @include perspective(1000);
@@ -126,22 +125,22 @@ html, body {
 
   &.contact {
     #contact, [data-id="contact"]  {
-      opacity:0.85;
+      opacity:0.8;
       pointer-events:auto;
     }
   }
 }
 
-@media screen and (max-width: 630px) {
-  #wrap, nav {
+@media screen and (max-width: 720px) {
+  #wrap, #nav {
     @include transform(translateZ(0) scale(1));
     @include backface-visibility(hidden);
     @include perspective(1000);
     @include transition(transform 0.3s ease);
   }
   body.menu {
-    #wrap, nav {
-      @include transform(translate3d(-260px,0,0) scale(1));
+    #wrap, #nav {
+      @include transform(translate3d(-250px,0,0) scale(1));
     }
   }
 }
