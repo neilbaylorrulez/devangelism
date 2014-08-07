@@ -474,31 +474,51 @@ html, body {
   right: auto;
   left: -40px;
 }
-/* line 88, ../sass/components/_photogrid.scss */
+@media screen and (max-width: 630px) {
+  /* line 43, ../sass/components/_photogrid.scss */
+  .photo-grid .name {
+    top: auto;
+    bottom: 12px;
+  }
+  /* line 90, ../sass/components/_photogrid.scss */
+  .photo-grid .name.right {
+    left: 0;
+    right: auto;
+  }
+  /* line 94, ../sass/components/_photogrid.scss */
+  .photo-grid .name.right:before {
+    right: -40px;
+    left: auto;
+  }
+}
+/* line 102, ../sass/components/_photogrid.scss */
 .photo-grid .x-large {
   width: 58%;
   padding-top: 58%;
-  background: #ccc;
 }
-/* line 93, ../sass/components/_photogrid.scss */
+/* line 106, ../sass/components/_photogrid.scss */
 .photo-grid .large {
   width: 61.5%;
   padding-top: 38.5%;
-  background: #bbb;
 }
-/* line 98, ../sass/components/_photogrid.scss */
+/* line 110, ../sass/components/_photogrid.scss */
 .photo-grid .medium {
   width: 38.5%;
   padding-top: 38.5%;
-  background: #aaa;
 }
-/* line 103, ../sass/components/_photogrid.scss */
+/* line 114, ../sass/components/_photogrid.scss */
 .photo-grid .small {
   width: 42%;
   padding-top: 29%;
-  background: #ddd;
 }
-/* line 109, ../sass/components/_photogrid.scss */
+@media screen and (max-width: 630px) {
+  /* line 120, ../sass/components/_photogrid.scss */
+  .photo-grid .x-large, .photo-grid .large, .photo-grid .medium, .photo-grid .small {
+    width: 100%;
+    padding-top: 200px;
+  }
+}
+/* line 126, ../sass/components/_photogrid.scss */
 .photo-grid img {
   width: 100%;
   height: auto;

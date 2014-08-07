@@ -83,27 +83,44 @@
         left: -40px;
       }
     }
+
+    @media screen and (max-width: 630px) {
+      top: auto;
+      bottom: 12px;
+      &.right {
+        left: 0;
+        right: auto;
+
+        &:before {
+          right: -40px;
+          left: auto;
+        }
+      }
+    }
   }
 
   .x-large {
     width: 58%;
     padding-top: 58%;
-    background: #ccc;
   }
   .large {
     width: 61.5%;
     padding-top: 38.5%;
-    background: #bbb;
   }
   .medium {
     width: 38.5%;
     padding-top: 38.5%;
-    background: #aaa;
   }
   .small {
     width: 42%;
     padding-top: 29%;
-    background: #ddd;
+  }
+
+  @media screen and (max-width: 630px) {
+    .x-large, .large, .medium, .small {
+      width: 100%;
+      padding-top: 200px;
+    }
   }
 
   img {
