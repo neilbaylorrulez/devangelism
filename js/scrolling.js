@@ -3,6 +3,7 @@
 
     var $window = $(window),
         $wrap = $('#wrap'),
+        $body = $(document.body),
         $docEl = $('html, body'),
         curPageId = 'home',
         sections = {},
@@ -96,7 +97,7 @@
     function updateSectionMeta(el, id) {
         sections[id] = {
             el: el,
-            linkEl: $wrap.find('nav a[href="#' + id + '"]')[0],
+            linkEl: $('nav a[href="#' + id + '"]')[0],
             top: $(el).offset().top
         };
     }
@@ -147,7 +148,7 @@
                 $page = $wrap.find('[data-id="' + pageId + '"]');
                 if($page.length) {
                     showPage(pageId);
-                    updateNav($wrap.find('nav a[href="#' + pageId + '"]')[0]);
+                    updateNav($('nav a[href="#' + pageId + '"]')[0]);
                 }
             }
         });

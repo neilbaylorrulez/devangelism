@@ -9,20 +9,21 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'>
   </head>
   <body>
+    <nav>
+      <button class="open-menu">Open Menu</button>
+      <a href="#home" class="home selected">Home</a>
+      <a href="#who">Who we are</a>
+      <a href="#locations">Locations</a>
+      <a href="#events">Events</a>
+      <a href="#downloads">Downloads</a>
+      <a href="#contact">Contact Us</a>
+    </nav>
     <div id="wrap">
       <section id="home">
-          <h1>
-            <a href="#home">Digital Ocean Evangelism</a>
-          </h1>
-          <button class="open-menu">Open Menu</button>
-          <nav>
-            <a href="#home" class="home selected">Home</a>
-            <a href="#who">Who we are</a>
-            <a href="#locations">Locations</a>
-            <a href="#events">Events</a>
-            <a href="#downloads">Downloads</a>
-            <a href="#contact">Contact Us</a>
-          </nav>
+        <h1>
+          <a href="#home">Digital Ocean Evangelism</a>
+        </h1>
+
         <h2>We Love Developers</h2>
         <h3>Evangelism</h3>
         <a href="#who" class="next">Who is Digital Ocean Devangelism</a>
@@ -30,7 +31,6 @@
       <section id="who">
         <h1>Not Just Another Cloud Company</h1>
         <p>DigitalOcean is more than hosting, it's an advocate for excellence. Something more inspirational can be said here. Let's be inspirational full of inspiration</p>
-        <!-- <img src="comp.png" height="1428" style="pointer-events: none; z-index: 999; opacity: 0.5; width: 1015px; height: auto; position: absolute; top: 79px; left: 172px; "> -->
         <div class="photo-grid">
           <div class="row">
             <div class="tile x-large left">
@@ -82,9 +82,12 @@
       </section>
       <section id="contact">
         <h1>Contact Us</h1>
+
       </section>
       <footer></footer>
     </div>
+
+    <script src="js/vendor/jquery-2.1.0.min.js"></script>
     <script src="js/vendor/jquery-2.1.0.min.js"></script>
     <script src="js/vendor/fastclick.js"></script>
     <script src="js/pollyfill.js"></script>

@@ -2,6 +2,7 @@
   background: #3682b9;
   padding-top: 30px;
   position:static;
+  text-align: left;
 
   h1 {
     display: inline-block;
@@ -19,45 +20,6 @@
       display: none;
     }
   }
-
-  .open-menu {
-    height:37px;
-    width:42px;
-    border:1px solid #fff;
-    font-size:0;
-    display:none;
-    background: #4A4A4A url("../img/hamburger.svg") no-repeat 50% 50%;
-    background-size:30px 30px;
-    padding:0;
-    position:fixed;
-    top:26px;
-    right:10px;
-    z-index: 3;
-    outline: none !important;
-    cursor:pointer;
-
-    @include border-radius(4px);
-    @include box-shadow(0 1px 1px rgba(0,0,0,0.25));
-  }
-
-  nav {
-    margin:15px;
-    display: inline-block;
-    a {
-      text-transform: capitalize;
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
-      margin: 0 22px;
-      &:hover, &.selected {
-        text-decoration: underline;
-      }
-      &.home {
-        display:none;
-      }
-    }
-  }
-
 
   h2, h3 {
     width:100%;
@@ -86,8 +48,12 @@
     color: #2BA4FC;
   }
 
+  @media screen and (max-width: 900px) {
+    h1 {
+      background-size:75%;
+    }
+  }
   @media screen and (max-width: 630px) {
-    text-align: left;
     h3 {
       font-size:80px;
       margin-top:-40px;
@@ -95,29 +61,6 @@
     h2 {
       font-size:24px;
       margin-top:6px;
-    }
-    nav {
-      position:fixed;
-      z-index: 2;
-      right:0;
-      top:0;
-      min-height:100%;
-      width:260px;
-      background:#4A4A4A;
-      margin:0;
-      @include transform(translate3d(100%,0,0) scale(1));
-      @include backface-visibility(hidden);
-      @include perspective(1000);
-      @include transition(transform 0.3s ease);
-      a {
-        display:block;
-        &.home {
-          display:block;
-        }
-      }
-    }
-    .open-menu {
-      display:block;
     }
   }
 
@@ -128,13 +71,6 @@
     }
     h2 {
       font-size:19px;
-    }
-  }
-}
-@media screen and (max-width: 630px) {
-  &.menu {
-    nav {
-       @include transform(translateZ(0) scale(1));
     }
   }
 }

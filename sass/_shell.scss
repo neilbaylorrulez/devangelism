@@ -1,7 +1,3 @@
-@import "compass/css3";
-
-@import "animations";
-
 html, body {
   width:100%;
   height:100%;
@@ -10,6 +6,10 @@ html, body {
   font-family: "proxima-nova", "Helvetica", Arial, sans-serif;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
+
+  &.no-transition * {
+    @include transition(none !important);
+  }
 }
 
 #wrap {
@@ -56,6 +56,16 @@ html, body {
       }
     }
 
+    h1 + p {
+      color: #4a4a4a;
+      margin-top: 5px;
+      font-size: 16px;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto 45px;
+      line-height:25px;
+    }
+
     @media screen and (max-width: 630px) {
       padding-top: 80px;
       h1 {
@@ -65,22 +75,16 @@ html, body {
           display:none;
         }
       }
+      h1 + p {
+        font-size: 14px;
+      }
     }
 
-    h1 + p {
-      color: #4a4a4a;
-      margin-top: 5px;
-      font-size: 14px;
-      width: 100%;
-      max-width: 800px;
-      margin: 0 auto 45px;
-      line-height:25px;
-    }
   }
 
   footer {
+    background: #4A4A4A url("../img/cloud-footer.png") no-repeat 50% 50%;
     height: 200px;
-    background: #4A4A4A;
   }
 
   #contact, [data-id="contact"] {
@@ -92,30 +96,52 @@ html, body {
     opacity:0.01;
     border-bottom: none;
     pointer-events:none;
-    background:red;
-    @include transform(translateZ(0) scale(1));
-    @include backface-visibility(hidden);
-    @include transition(opacity 0.3s linear);
-    z-index: 1;
+    background: #3682b9;
+    z-index: 3;
+    display:none;
 
     @media screen and (max-width: 630px) {
       h1 {
         padding:0 50px;
+        color:#fff;
         &:before, &:after {
           display:block;
         }
       }
     }
+
+    @media screen and (min-width: 631px) {
+      @include transform(translateZ(0) scale(1));
+      @include backface-visibility(hidden);
+      @include perspective(1000);
+      @include transition(opacity 0.3s linear);
+    }
+  }
+
+  &.loaded {
+    #contact, [data-id="contact"]  {
+      display:block;
+    }
   }
 
   &.contact {
     #contact, [data-id="contact"]  {
-      opacity:0.99;
+      opacity:0.85;
       pointer-events:auto;
     }
   }
+}
 
-  &.no-transition * {
-    @include transition(none !important);
+@media screen and (max-width: 630px) {
+  #wrap, nav {
+    @include transform(translateZ(0) scale(1));
+    @include backface-visibility(hidden);
+    @include perspective(1000);
+    @include transition(transform 0.3s ease);
+  }
+  body.menu {
+    #wrap, nav {
+      @include transform(translate3d(-260px,0,0) scale(1));
+    }
   }
 }

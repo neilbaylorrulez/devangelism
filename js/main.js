@@ -2,10 +2,13 @@
 	'use strict';
 
 	var $window = $(window),
+		$body = $(document.body),
 		$wrap = $('#wrap');
 
 	function initState() {
-		$wrap.addClass('loaded');
+		window.setTimeout(window.requestAnimationFrame.bind(null, function() {
+			$wrap.addClass('loaded');
+		}), 0);
 	}
 
 	function initListeners() {
@@ -14,17 +17,17 @@
 
 		window.FastClick.attach(document.body);
 
-		$wrap.find('.open-menu').on('click', function() {
-			$wrap.toggleClass('menu');
+		$('.open-menu').on('click', function() {
+			$body.toggleClass('menu');
 		});
 
 		$window.on('after-scroll', window.setTimeout.bind(null, window.requestAnimationFrame.bind(null, function() {
-			$wrap.removeClass('menu');
+			$body.removeClass('menu');
 		}), 100));
 
 		$window.on('resize', function () {
 			if(first) {
-				$wrap.addClass('no-transition');
+				$body.addClass('no-transition');
 				first = false;
 			}
 			if(resizeTimeout) {
@@ -33,7 +36,7 @@
 			resizeTimeout = window.setTimeout(function () {
 				resizeTimeout = null;
 				first = true;
-				$wrap.removeClass('no-transition');
+				$body.removeClass('no-transition');
 				$window.trigger('after-resize');
 			}, 300);
 		});

@@ -1,0 +1,86 @@
+nav {
+	position:absolute;
+	text-align:center;
+	top:46px;
+	width:100%;
+	z-index:1;
+
+	.open-menu {
+	    height:37px;
+	    width:42px;
+	    border:2px solid #fff;
+	    font-size:0;
+	    display:none;
+	    background: #4A4A4A url("../img/hamburger.svg") no-repeat 50% 50%;
+	    background-size:30px 30px;
+	    padding:0;
+	    position:absolute;
+	    top:26px;
+	    left:-60px;
+	    outline: none !important;
+	    cursor:pointer;
+	    @include border-radius(4px);
+	}
+
+	a {
+	  text-transform: capitalize;
+	  color: white;
+	  text-decoration: none;
+	  font-size: 14px;
+	  padding: 0 22px;
+	  &:hover, &.selected {
+	    text-decoration: underline;
+	  }
+	  &.home {
+	    display:none;
+	  }
+	}
+	@media screen and (max-width: 1160px) {
+		padding-left:300px;
+		text-align:left;
+		width:auto;
+	}
+
+	@media screen and (max-width: 900px) {
+		padding-left:220px;
+		top:34px;
+		a {
+			padding:0 15px;
+		}
+	}
+
+	@media screen and (max-width: 630px) {
+		height:100%;
+		text-align: left;
+		position:fixed;
+		z-index: 2;
+		right:-261px;
+		padding-left:0;
+		top:0;
+		height:100%;
+		width:260px;
+		background:#4A4A4A;
+		margin:0;
+		@include box-shadow(0 1px 1px rgba(0,0,0,0.3));
+
+	    .open-menu {
+	      display:block;
+	    }
+
+		a {
+			display:block;
+			height:39px;
+			line-height:39px;
+			border-bottom:1px solid #fff;
+			&.home {
+				display:block;
+			}
+			&:hover, &.selected {
+			    background:#fff;
+			    color:#4A4A4A;
+			    border-color:#4A4A4A;
+			    text-decoration: none;
+		  	}
+		}
+	}
+}

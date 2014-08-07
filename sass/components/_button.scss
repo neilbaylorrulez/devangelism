@@ -9,6 +9,7 @@ a.next {
   background: white;
   z-index: 1;
   padding: 0;
+  color:#fff;
   font-size: 0;
   display:inline-block;
   border:1px solid rgba(0,0,0,0.05);
@@ -37,6 +38,10 @@ a.next {
     &:after {
       @include transform(translate3d(0,1px,0) scale(1) rotate(-45deg));
     }
+  }
+
+  &:active {
+    color:#fff;
   }
 
   &:after {
