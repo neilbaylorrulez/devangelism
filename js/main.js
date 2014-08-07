@@ -34,6 +34,7 @@
 				resizeTimeout = null;
 				first = true;
 				$wrap.removeClass('no-transition');
+				$window.trigger('after-resize');
 			}, 300);
 		});
 	}

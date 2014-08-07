@@ -5,12 +5,17 @@
         $wrap = $('#wrap'),
         $docEl = $('html, body'),
         curPageId = 'home',
+        sections = {},
+        sectionKeys = [],
+        winHeight,
         scrollFn,
         hashChangeFn,
         scrollTop = window.pageYOffset,
         previousScrollTop = scrollTop,
+        userScroll = true,
         //uggh, firefox fires the scroll event before the hashchange event, this is needed for back -> forward -> back
         IS_FIREFOX = window.navigator.userAgent.toLowerCase().indexOf('firefox') > -1,
+        PAGE_HEIGHT_CHAGE_THRESHOLD = 0.75,
         SCROLL_TRANSITION_TIME = 800;
 
     function easeInOut(t, b, c, d) {
@@ -24,28 +29,26 @@
     function skrollTo(startTime, y, newY, afterFn) {
         var now = Date.now(),
             duration = now - startTime,
-            val = easeInOut(duration, y, newY, SCROLL_TRANSITION_TIME);
+            val = easeInOut(duration, y, newY - y, SCROLL_TRANSITION_TIME);
 
         window.scrollTo(0, val);
         if(y !== newY && duration < SCROLL_TRANSITION_TIME) {
             return window.requestAnimationFrame(scrollFn);
         }
-        window.scrollTo(0, y + newY);
+        window.scrollTo(0, newY);
         if(afterFn) {
             window.setTimeout(afterFn, 0);
         }
     }
 
-    function scrollToPage($page, afterFn, noTransition) {
-        var newTop = $page.offset().top;
-
-        if(scrollTop !== newTop && !noTransition) {
+    function scrollToPage(newPageTop, afterFn, noTransition) {
+        if(scrollTop !== newPageTop && !noTransition) {
             window.scrollTo(0, scrollTop);
-            return window.requestAnimationFrame(scrollFn = skrollTo.bind(null, Date.now(), scrollTop, newTop - scrollTop, afterFn));
+            return window.requestAnimationFrame(scrollFn = skrollTo.bind(null, Date.now(), scrollTop, newPageTop, afterFn));
         }
 
         if(noTransition) {
-            window.scrollTo(0, newTop);
+            window.scrollTo(0, newPageTop);
         }
 
         if(afterFn) {
@@ -68,29 +71,45 @@
         $docEl.css('overflow', '');
     }
 
-    function showPage($page, afterFn) {
+    function showPage(pageId, afterFn) {
         var after = afterFn;
         afterFn = function () {
             $window.trigger('after-scroll');
+
             if(after) {
                 after();
             }
+            window.setTimeout(function () {
+                userScroll = true;
+            }, 0);
         };
+        userScroll = false;
 
-        if((curPageId = $page.attr('data-id')) === 'contact') {
+        if((curPageId = pageId) === 'contact') {
             return showContactPage(afterFn);
         }
 
         hideContactPage();
-        scrollToPage($page, afterFn);
+        scrollToPage(sections[pageId].top, afterFn);
+    }
+
+    function updateSectionMeta(el, id) {
+        sections[id] = {
+            el: el,
+            linkEl: $wrap.find('nav a[href="#' + id + '"]')[0],
+            top: $(el).offset().top
+        };
     }
 
     function initState() {
         $wrap.find('> section').each(function(i, el) {
+            updateSectionMeta(el, el.id);
+            sectionKeys.push(el.id);
             el.setAttribute('data-id', el.id);
             el.removeAttribute('id');
         });
         previousScrollTop = scrollTop = window.pageYOffset;
+        winHeight =  $window.height();
         window.setTimeout(window.requestAnimationFrame.bind(null, hashChangeFn), 0);
     }
 
@@ -103,16 +122,17 @@
             var curHash = window.location.hash,
                 anchor = e.currentTarget,
                 url = anchor.getAttribute('href'),
-                $page = $wrap.find('[data-id="' + url.replace('#', '') + '"]');
+                pageId = url.replace('#', ''),
+                $page = $wrap.find('[data-id="' + pageId + '"]');
             if($page.length) {
                 if(IS_FIREFOX) {
-                    showPage($page, function () {
+                    showPage(pageId, function () {
                         window.location.hash = url;
                         updateNav(anchor);
                     });
                     return false;
                 }
-                showPage($page);
+                showPage(pageId);
                 updateNav(anchor);
             }
         });
@@ -126,15 +146,34 @@
                 }
                 $page = $wrap.find('[data-id="' + pageId + '"]');
                 if($page.length) {
-                    showPage($page);
+                    showPage(pageId);
                     updateNav($wrap.find('nav a[href="#' + pageId + '"]')[0]);
                 }
             }
         });
 
         $window.on('scroll', function () {
+            var i, s, len;
             previousScrollTop = scrollTop;
             scrollTop = window.pageYOffset;
+
+            if(userScroll) {
+                len = sectionKeys.length;
+                for(i = 0; i < len; i++) {
+                    s = sections[sectionKeys[i]];
+                    if(s.top >= scrollTop - (winHeight * PAGE_HEIGHT_CHAGE_THRESHOLD)) {
+                       return updateNav(s.linkEl);
+                    }
+                }
+            }
+        });
+
+        $window.on('after-resize', function () {
+            sectionKeys.forEach(function (key) {
+                updateSectionMeta(sections[key].el, key);
+            });
+            winHeight =  $window.height();
+            previousScrollTop = scrollTop = window.pageYOffset;
         });
     }
 
