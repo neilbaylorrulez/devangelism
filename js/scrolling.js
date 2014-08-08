@@ -14,8 +14,9 @@
         scrollTop = window.pageYOffset,
         previousScrollTop = scrollTop,
         userScroll = true,
-        //uggh, firefox fires the scroll event before the hashchange event, this is needed for back -> forward -> back
+        //Firefox fires a scroll event before the hashchange event, this flag is needed for back -> forward -> back
         IS_FIREFOX = window.navigator.userAgent.toLowerCase().indexOf('firefox') > -1,
+        //IOS has weird (useless?) scroll events and doesn't move the scrollbar when you go forward/back
         IS_IOS = window.navigator.userAgent.match(/(iPad|iPhone|iPod)/g),
         PAGE_HEIGHT_CHAGE_THRESHOLD = 0.75,
         SCROLL_TRANSITION_TIME = 800;
@@ -37,18 +38,20 @@
         if(y !== newY && duration < SCROLL_TRANSITION_TIME) {
             return window.requestAnimationFrame(scrollFn);
         }
+
         window.scrollTo(0, newY);
         if(afterFn) {
             window.setTimeout(afterFn, 0);
         }
     }
 
-    function scrollToPage(newPageTop, afterFn, noTransition) {
+    function scrollToY(newPageTop, afterFn, noTransition) {
         if(scrollTop !== newPageTop && !noTransition) {
             if(IS_IOS) {
                 scrollTop = window.pageYOffset;
+            } else {
+                window.scrollTo(0, scrollTop);
             }
-            window.scrollTo(0, scrollTop);
             return window.requestAnimationFrame(scrollFn = skrollTo.bind(null, Date.now(), scrollTop, newPageTop, afterFn));
         }
 
@@ -62,7 +65,7 @@
     }
 
     function showContactPage(afterFn) {
-        scrollToPage($wrap.find('[data-id="contact"]'), function () {
+        scrollToY(0, function () {
             $wrap.addClass('contact');
             $docEl.css('overflow', 'hidden');
             if(afterFn) {
@@ -95,7 +98,7 @@
         }
 
         hideContactPage();
-        scrollToPage(sections[pageId].top, afterFn);
+        scrollToY(sections[pageId].top, afterFn);
     }
 
     function updateSectionMeta(el, id) {

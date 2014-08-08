@@ -41,9 +41,9 @@
 			}, 300);
 		});
 
-		/*window.setTimeout(function () {
+		window.setTimeout(function () {
 			$('.overlay').removeClass('hide').addClass('show');
-		}, 2000);*/
+		}, 2000);
 	}
 
 	function init() {

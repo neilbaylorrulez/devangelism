@@ -49,30 +49,35 @@
 @-webkit-keyframes bounce {
   /* line 19, ../sass/_animations.scss */
   0% {
+    opacity: 0.2;
     -webkit-transform: translate3d(0, -100%, 0) scale(1);
     -webkit-animation-timing-function: ease-in;
   }
 
   /* line 20, ../sass/_animations.scss */
   35% {
+    opacity: 0.7;
     -webkit-transform: translate3d(0, 2.5%, 0) scale(1);
     -webkit-animation-timing-function: ease-in;
   }
 
   /* line 21, ../sass/_animations.scss */
   55% {
+    opacity: 0.7;
     -webkit-transform: translate3d(0, -1%, 0) scale(1);
     -webkit-animation-timing-function: ease-out;
   }
 
   /* line 22, ../sass/_animations.scss */
   75% {
+    opacity: 0.7;
     -webkit-transform: translate3d(0, 0.3%, 0) scale(1);
     -webkit-animation-timing-function: ease-in;
   }
 
   /* line 23, ../sass/_animations.scss */
   85% {
+    opacity: 0.7;
     -webkit-transform: translate3d(0, 0, 0) scale(1);
     -webkit-animation-timing-function: ease-outs;
   }
@@ -758,7 +763,6 @@ a.next.dark:after {
   width: 100%;
   top: 0;
   position: fixed;
-  opacity: 0.7;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
@@ -774,13 +778,18 @@ a.next.dark:after {
   -ms-transform: translateZ(0) scale(1);
   -o-transform: translateZ(0) scale(1);
   transform: translateZ(0) scale(1);
+  -webkit-transition: opacity 0.7s linear;
+  -moz-transition: opacity 0.7s linear;
+  -o-transition: opacity 0.7s linear;
+  transition: opacity 0.7s linear;
 }
 /* line 11, ../sass/components/_overlay.scss */
 .overlay.show {
   display: block;
+  opacity: 0.7;
   -webkit-animation: bounce 0.7s;
 }
-/* line 16, ../sass/components/_overlay.scss */
+/* line 17, ../sass/components/_overlay.scss */
 .overlay.hide {
   display: none;
 }
