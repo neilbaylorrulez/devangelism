@@ -1,7 +1,7 @@
 @import "compass/css3";
-@import "animations";
+
+@import "components/animations";
 @import "shell";
-@import "nav";
 
 #wrap {
 	@import "home";
@@ -11,23 +11,7 @@
 	@import "downloads";
 }
 
+@import "components/nav";
 @import "components/photogrid";
 @import "components/button";
 @import "components/overlay";
-
-@-webkit-keyframes grow {
-  from { transform: scale(0.5) }
-  to { transform: scale(1) }
-}
-@-o-keyframes grow {
-  from { transform: scale(0.5) }
-  to { transform: scale(1) }
-}
-@-moz-keyframes grow {
-  from { transform: scale(0.5) }
-  to { transform: scale(1) }
-}
-@keyframes grow {
-  from { transform: scale(0.5) }
-  to { transform: scale(1) }
-}

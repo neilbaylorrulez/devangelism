@@ -10,9 +10,10 @@
 	@include transition(opacity 0.7s linear);
 	&.show {
 		display:block;
-		opacity:0.7;
+		opacity:0.8;
 		-webkit-animation: bounce 0.7s;
-
+		-moz-animation: bounce 0.7s;
+		animation: bounce 0.7s;
 	}
 	&.hide {
 		display:none;
