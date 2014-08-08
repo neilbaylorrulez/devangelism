@@ -1,3 +1,65 @@
 #locations, [data-id="locations"] {
   background: #fff;
+  h1 {
+    color: #337eb3;
+
+    &:before, &:after {
+      background: #337eb3;
+    }
+  }
+
+  .location-wrapper {
+    position: relative;
+    max-width: 1024px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+  }
+
+  .map {
+    margin-left: -20%;
+    width: 160%;
+  }
+
+  .marker {
+    position: absolute;
+    width: 2.2%;
+
+    &.one {
+      top: 33%;
+      left: 8%;
+    }
+    &.two {
+      top: 34%;
+      left: 21%;
+    }
+    &.three {
+      top: 60%;
+      left: 40%;
+    }
+    &.four {
+      top: 39%;
+      left: 71%;
+    }
+  }
+
+  .location-dialog {
+    position: absolute;
+    top: 28%;
+    left: 61%;
+    display: inline-block;
+    padding: 13px 40px 8px;
+    background: #b5da9e;
+    border-radius: 5px;
+
+    h2 {
+      font-size: 18px;
+      margin: 0 0 8px;
+      color: #3586be;
+    }
+
+    p {
+      margin: 0 0 7px;
+      font-size: 13px;
+    }
+  }
 }
