@@ -110,10 +110,9 @@ html, body {
     }
 
     @media screen and (min-width: 721px) {
-      @include transform(translateZ(0) scale(1));
+      @include transform(translate3d(0) scale(1));
       @include backface-visibility(hidden);
       @include perspective(1000);
-      @include transition(opacity 0.3s linear);
     }
   }
 
@@ -125,8 +124,13 @@ html, body {
 
   &.contact {
     #contact, [data-id="contact"]  {
-      opacity:0.8;
+      @media screen and (min-width: 721px) {
+        -webkit-animation: bounce 0.8s;
+        -moz-animation: bounce 0.8s;
+        animation: bounce 0.8s;
+      }
       pointer-events:auto;
+      opacity:0.8;
     }
   }
 }
