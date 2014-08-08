@@ -139,8 +139,11 @@ html, body {
     @include transition(transform 0.3s ease);
   }
   body.menu {
-    #wrap, #nav {
+    #nav {
       @include transform(translate3d(-250px,0,0) scale(1));
+    }
+    #wrap {
+      @include transform(translate3d(-175px,0,0) scale(1));
     }
     #wrap {
       pointer-events:none !important;

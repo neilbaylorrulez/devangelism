@@ -330,7 +330,7 @@ html.no-transition *, body.no-transition * {
   }
 
   /* line 142, ../sass/_shell.scss */
-  body.menu #wrap, body.menu #nav {
+  body.menu #nav {
     -webkit-transform: translate3d(-250px, 0, 0) scale(1);
     -moz-transform: translate3d(-250px, 0, 0) scale(1);
     -ms-transform: translate3d(-250px, 0, 0) scale(1);
@@ -338,6 +338,14 @@ html.no-transition *, body.no-transition * {
     transform: translate3d(-250px, 0, 0) scale(1);
   }
   /* line 145, ../sass/_shell.scss */
+  body.menu #wrap {
+    -webkit-transform: translate3d(-175px, 0, 0) scale(1);
+    -moz-transform: translate3d(-175px, 0, 0) scale(1);
+    -ms-transform: translate3d(-175px, 0, 0) scale(1);
+    -o-transform: translate3d(-175px, 0, 0) scale(1);
+    transform: translate3d(-175px, 0, 0) scale(1);
+  }
+  /* line 148, ../sass/_shell.scss */
   body.menu #wrap {
     pointer-events: none !important;
   }

@@ -42,7 +42,7 @@
 		});
 
 		window.setTimeout(function () {
-			$('.overlay').removeClass('hide').addClass('show');
+		//	$('.overlay').removeClass('hide').addClass('show');
 		}, 2000);
 	}
 
