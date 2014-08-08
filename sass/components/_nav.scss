@@ -8,7 +8,7 @@
 	.open-menu {
 	    height:37px;
 	    width:42px;
-	    border:2px solid #fff;
+	    border:none;
 	    font-size:0;
 	    display:none;
 	    background: #4A4A4A url("../img/hamburger.svg") no-repeat 50% 50%;
@@ -71,7 +71,7 @@
 			display:block;
 			height:49px;
 			line-height:49px;
-			border-bottom:1px solid #fff;
+			border-bottom:1px solid #333;
 			font-size:16px;
 			&.home {
 				display:block;

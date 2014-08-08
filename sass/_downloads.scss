@@ -1,9 +1,13 @@
-#downloads {
+#downloads, [data-id="downloads"] {
   background: #C4E1F0;
 
   h1 {
     &:before, &:after {
       background: #000;
     }
+  }
+
+  h1 + p {
+    margin-bottom: 20px;
   }
 }
