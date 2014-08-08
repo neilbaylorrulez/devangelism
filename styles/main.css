@@ -55,24 +55,24 @@
 
   /* line 20, ../sass/_animations.scss */
   35% {
-    -webkit-transform: translate3d(0, 3.25%, 0) scale(1);
+    -webkit-transform: translate3d(0, 2.5%, 0) scale(1);
     -webkit-animation-timing-function: ease-in;
   }
 
   /* line 21, ../sass/_animations.scss */
   55% {
-    -webkit-transform: translate3d(0, -1.5%, 0) scale(1);
+    -webkit-transform: translate3d(0, -1%, 0) scale(1);
     -webkit-animation-timing-function: ease-out;
   }
 
   /* line 22, ../sass/_animations.scss */
   75% {
-    -webkit-transform: translate3d(0, 0.25%, 0) scale(1);
+    -webkit-transform: translate3d(0, 0.3%, 0) scale(1);
     -webkit-animation-timing-function: ease-in;
   }
 
   /* line 23, ../sass/_animations.scss */
-  95% {
+  85% {
     -webkit-transform: translate3d(0, 0, 0) scale(1);
     -webkit-animation-timing-function: ease-outs;
   }
@@ -269,6 +269,10 @@ html.no-transition *, body.no-transition * {
     -ms-transform: translate3d(-250px, 0, 0) scale(1);
     -o-transform: translate3d(-250px, 0, 0) scale(1);
     transform: translate3d(-250px, 0, 0) scale(1);
+  }
+  /* line 145, ../sass/_shell.scss */
+  body.menu #wrap {
+    pointer-events: none !important;
   }
 }
 /* line 1, ../sass/_nav.scss */
@@ -774,7 +778,7 @@ a.next.dark:after {
 /* line 11, ../sass/components/_overlay.scss */
 .overlay.show {
   display: block;
-  -webkit-animation: bounce 0.9s;
+  -webkit-animation: bounce 0.7s;
 }
 /* line 16, ../sass/components/_overlay.scss */
 .overlay.hide {

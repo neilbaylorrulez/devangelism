@@ -10,7 +10,7 @@
 	@include transform(translateZ(0) scale(1));
 	&.show {
 		display:block;
-		-webkit-animation: bounce 0.9s;
+		-webkit-animation: bounce 0.7s;
 
 	}
 	&.hide {

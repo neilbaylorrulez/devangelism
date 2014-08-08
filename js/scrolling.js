@@ -16,6 +16,7 @@
         userScroll = true,
         //uggh, firefox fires the scroll event before the hashchange event, this is needed for back -> forward -> back
         IS_FIREFOX = window.navigator.userAgent.toLowerCase().indexOf('firefox') > -1,
+        IS_IOS = window.navigator.userAgent.match(/(iPad|iPhone|iPod)/g),
         PAGE_HEIGHT_CHAGE_THRESHOLD = 0.75,
         SCROLL_TRANSITION_TIME = 800;
 
@@ -44,6 +45,9 @@
 
     function scrollToPage(newPageTop, afterFn, noTransition) {
         if(scrollTop !== newPageTop && !noTransition) {
+            if(IS_IOS) {
+                scrollTop = window.pageYOffset;
+            }
             window.scrollTo(0, scrollTop);
             return window.requestAnimationFrame(scrollFn = skrollTo.bind(null, Date.now(), scrollTop, newPageTop, afterFn));
         }
