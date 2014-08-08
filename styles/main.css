@@ -273,11 +273,11 @@ html.no-transition *, body.no-transition * {
 @media screen and (min-width: 721px) {
   /* line 88, ../sass/_shell.scss */
   #wrap #contact, #wrap [data-id="contact"] {
-    -webkit-transform: translateZ(0) scale(1);
-    -moz-transform: translateZ(0) scale(1);
-    -ms-transform: translateZ(0) scale(1);
-    -o-transform: translateZ(0) scale(1);
-    transform: translateZ(0) scale(1);
+    -webkit-transform: translate3d(0) scale(1);
+    -moz-transform: translate3d(0) scale(1);
+    -ms-transform: translate3d(0) scale(1);
+    -o-transform: translate3d(0) scale(1);
+    transform: translate3d(0) scale(1);
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     -ms-backface-visibility: hidden;
@@ -288,24 +288,28 @@ html.no-transition *, body.no-transition * {
     -ms-perspective: 1000;
     -o-perspective: 1000;
     perspective: 1000;
-    -webkit-transition: opacity 0.3s linear;
-    -moz-transition: opacity 0.3s linear;
-    -o-transition: opacity 0.3s linear;
-    transition: opacity 0.3s linear;
   }
 }
-/* line 120, ../sass/_shell.scss */
+/* line 119, ../sass/_shell.scss */
 #wrap.loaded #contact, #wrap.loaded [data-id="contact"] {
   display: block;
 }
-/* line 126, ../sass/_shell.scss */
+/* line 125, ../sass/_shell.scss */
 #wrap.contact #contact, #wrap.contact [data-id="contact"] {
-  opacity: 0.8;
   pointer-events: auto;
+  opacity: 0.8;
+}
+@media screen and (min-width: 721px) {
+  /* line 125, ../sass/_shell.scss */
+  #wrap.contact #contact, #wrap.contact [data-id="contact"] {
+    -webkit-animation: bounce 0.8s;
+    -moz-animation: bounce 0.8s;
+    animation: bounce 0.8s;
+  }
 }
 
 @media screen and (max-width: 720px) {
-  /* line 134, ../sass/_shell.scss */
+  /* line 138, ../sass/_shell.scss */
   #wrap, #nav {
     -webkit-transform: translateZ(0) scale(1);
     -moz-transform: translateZ(0) scale(1);
@@ -328,7 +332,7 @@ html.no-transition *, body.no-transition * {
     transition: transform 0.3s ease;
   }
 
-  /* line 141, ../sass/_shell.scss */
+  /* line 145, ../sass/_shell.scss */
   body.menu #nav {
     -webkit-transform: translate3d(-250px, 0, 0) scale(1);
     -moz-transform: translate3d(-250px, 0, 0) scale(1);
@@ -336,7 +340,7 @@ html.no-transition *, body.no-transition * {
     -o-transform: translate3d(-250px, 0, 0) scale(1);
     transform: translate3d(-250px, 0, 0) scale(1);
   }
-  /* line 144, ../sass/_shell.scss */
+  /* line 148, ../sass/_shell.scss */
   body.menu #wrap {
     -webkit-transform: translate3d(-175px, 0, 0) scale(1);
     -moz-transform: translate3d(-175px, 0, 0) scale(1);
@@ -344,7 +348,7 @@ html.no-transition *, body.no-transition * {
     -o-transform: translate3d(-175px, 0, 0) scale(1);
     transform: translate3d(-175px, 0, 0) scale(1);
   }
-  /* line 147, ../sass/_shell.scss */
+  /* line 151, ../sass/_shell.scss */
   body.menu #wrap {
     pointer-events: none !important;
   }
@@ -944,9 +948,9 @@ button {
 .overlay.show {
   display: block;
   opacity: 0.8;
-  -webkit-animation: bounce 0.7s;
-  -moz-animation: bounce 0.7s;
-  animation: bounce 0.7s;
+  -webkit-animation: bounce 0.8s;
+  -moz-animation: bounce 0.8s;
+  animation: bounce 0.8s;
 }
 /* line 18, ../sass/components/_overlay.scss */
 .overlay.hide {
