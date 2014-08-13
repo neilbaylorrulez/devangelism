@@ -16,17 +16,16 @@
   }
 
   .map {
-    margin-left: -20%;
-    width: 160%;
+    width: 100%;
   }
 
   .marker {
     position: absolute;
-    width: 2.2%;
+    width: 2%;
 
     &.one {
-      top: 33%;
-      left: 8%;
+      top: 31%;
+      left: 16%;
     }
     &.two {
       top: 34%;
@@ -34,18 +33,18 @@
     }
     &.three {
       top: 60%;
-      left: 40%;
+      left: 38%;
     }
     &.four {
-      top: 39%;
-      left: 71%;
+      top: 41%;
+      left: 55%;
     }
   }
 
   .location-dialog {
     position: absolute;
-    top: 28%;
-    left: 61%;
+    top: 24%;
+    left: 45%;
     display: inline-block;
     padding: 13px 40px 8px;
     background: #b5da9e;
