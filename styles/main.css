@@ -469,51 +469,50 @@ html.no-transition *, body.no-transition * {
 }
 /* line 18, ../sass/_locations.scss */
 #wrap #locations .map, #wrap [data-id="locations"] .map {
-  margin-left: -20%;
-  width: 160%;
+  width: 100%;
 }
-/* line 23, ../sass/_locations.scss */
+/* line 22, ../sass/_locations.scss */
 #wrap #locations .marker, #wrap [data-id="locations"] .marker {
   position: absolute;
-  width: 2.2%;
+  width: 2%;
 }
-/* line 27, ../sass/_locations.scss */
+/* line 26, ../sass/_locations.scss */
 #wrap #locations .marker.one, #wrap [data-id="locations"] .marker.one {
-  top: 33%;
-  left: 8%;
+  top: 31%;
+  left: 16%;
 }
-/* line 31, ../sass/_locations.scss */
+/* line 30, ../sass/_locations.scss */
 #wrap #locations .marker.two, #wrap [data-id="locations"] .marker.two {
   top: 34%;
   left: 21%;
 }
-/* line 35, ../sass/_locations.scss */
+/* line 34, ../sass/_locations.scss */
 #wrap #locations .marker.three, #wrap [data-id="locations"] .marker.three {
   top: 60%;
-  left: 40%;
+  left: 38%;
 }
-/* line 39, ../sass/_locations.scss */
+/* line 38, ../sass/_locations.scss */
 #wrap #locations .marker.four, #wrap [data-id="locations"] .marker.four {
-  top: 39%;
-  left: 71%;
+  top: 41%;
+  left: 55%;
 }
-/* line 45, ../sass/_locations.scss */
+/* line 44, ../sass/_locations.scss */
 #wrap #locations .location-dialog, #wrap [data-id="locations"] .location-dialog {
   position: absolute;
-  top: 28%;
-  left: 61%;
+  top: 24%;
+  left: 45%;
   display: inline-block;
   padding: 13px 40px 8px;
   background: #b5da9e;
   border-radius: 5px;
 }
-/* line 54, ../sass/_locations.scss */
+/* line 53, ../sass/_locations.scss */
 #wrap #locations .location-dialog h2, #wrap [data-id="locations"] .location-dialog h2 {
   font-size: 18px;
   margin: 0 0 8px;
   color: #3586be;
 }
-/* line 60, ../sass/_locations.scss */
+/* line 59, ../sass/_locations.scss */
 #wrap #locations .location-dialog p, #wrap [data-id="locations"] .location-dialog p {
   margin: 0 0 7px;
   font-size: 13px;
