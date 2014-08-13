@@ -122,11 +122,14 @@ html, body {
   }
 
   &.contact {
+    @media screen and (max-width: 720px) {
+      z-index: 2;
+    }
     #contact, [data-id="contact"]  {
       @media screen and (min-width: 721px) {
-        -webkit-animation: bounce 0.8s;
-        -moz-animation: bounce 0.8s;
-        animation: bounce 0.8s;
+        -webkit-animation: bounce 0.75s;
+        -moz-animation: bounce 0.75s;
+        animation: bounce 0.75s;
       }
       pointer-events:auto;
       opacity:0.8;
@@ -145,8 +148,8 @@ html, body {
     #nav {
       @include transform(translate3d(-250px,0,0) scale(1));
     }
-    #wrap {
-      @include transform(translate3d(-175px,0,0) scale(1));
+    #wrap, .overlay {
+      @include transform(translate3d(-100px,0,0) scale(1));
     }
     #wrap {
       pointer-events:none !important;

@@ -14,7 +14,7 @@
 @-webkit-keyframes bounce {
     0%   { opacity:0.2; -webkit-transform: translate3d(0, -100%, 0) scale(1); -webkit-animation-timing-function:ease-in;  }
     35%  { opacity:0.8; -webkit-transform: translate3d(0, 2.5%, 0) scale(1); -webkit-animation-timing-function:ease-in;  }
-    55%  { opacity:0.8; -webkit-transform: translate3d(0, -1%, 0) scale(1); -webkit-animation-timing-function:ease-out; }
+    55%  { opacity:0.8; -webkit-transform: translate3d(0, -0.75%, 0) scale(1); -webkit-animation-timing-function:ease-out; }
     75%  { opacity:0.8; -webkit-transform: translate3d(0, 0.3%, 0) scale(1); -webkit-animation-timing-function:ease-in;  }
    	85% { opacity:0.8; -webkit-transform: translate3d(0, 0, 0) scale(1); -webkit-animation-timing-function:ease-out; }
 }
@@ -22,7 +22,7 @@
 @-moz-keyframes bounce {
     0%   { opacity:0.2; -moz-transform: translate3d(0, -100%, 0) scale(1); -moz-animation-timing-function:ease-in;  }
     35%  { opacity:0.8; -moz-transform: translate3d(0, 2.5%, 0) scale(1); -moz-animation-timing-function:ease-in;  }
-    55%  { opacity:0.8; -moz-transform: translate3d(0, -1%, 0) scale(1); -moz-animation-timing-function:ease-out; }
+    55%  { opacity:0.8; -moz-transform: translate3d(0, -0.75%, 0) scale(1); -moz-animation-timing-function:ease-out; }
     75%  { opacity:0.8; -moz-transform: translate3d(0, 0.3%, 0) scale(1); -moz-animation-timing-function:ease-in;  }
     85% { opacity:0.8; -moz-transform: translate3d(0, 0, 0) scale(1); -moz-animation-timing-function:ease-out; }
 }
@@ -30,7 +30,7 @@
 @keyframes bounce {
     0%   { opacity:0.2; transform: translate3d(0, -100%, 0) scale(1); animation-timing-function:ease-in;  }
     35%  { opacity:0.8; transform: translate3d(0, 2.5%, 0) scale(1); animation-timing-function:ease-in;  }
-    55%  { opacity:0.8; transform: translate3d(0, -1%, 0) scale(1); animation-timing-function:ease-out; }
+    55%  { opacity:0.8; transform: translate3d(0, -0.75%, 0) scale(1); animation-timing-function:ease-out; }
     75%  { opacity:0.8; transform: translate3d(0, 0.3%, 0) scale(1); animation-timing-function:ease-in;  }
     85% { opacity:0.8; transform: translate3d(0, 0, 0) scale(1); animation-timing-function:ease-out; }
 }

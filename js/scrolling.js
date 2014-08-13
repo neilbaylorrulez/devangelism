@@ -49,10 +49,13 @@
         if(scrollTop !== newPageTop && !noTransition) {
             if(IS_IOS) {
                 scrollTop = window.pageYOffset;
-            } else {
+               // alert(scrollTop)
+             } //else {
                 window.scrollTo(0, scrollTop);
-            }
-            return window.requestAnimationFrame(scrollFn = skrollTo.bind(null, Date.now(), scrollTop, newPageTop, afterFn));
+            //}
+            return window.setTimeout(window.requestAnimationFrame.bind(null, function () {
+                (scrollFn = skrollTo.bind(null, Date.now(), scrollTop, newPageTop, afterFn))();
+            }), 0);
         }
 
         if(noTransition) {
