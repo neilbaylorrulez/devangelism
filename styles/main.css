@@ -474,7 +474,7 @@ html.no-transition *, body.no-transition * {
 /* line 22, ../sass/_locations.scss */
 #wrap #locations .marker, #wrap [data-id="locations"] .marker {
   position: absolute;
-  width: 2%;
+  width: 20px;
 }
 /* line 26, ../sass/_locations.scss */
 #wrap #locations .marker.one, #wrap [data-id="locations"] .marker.one {
