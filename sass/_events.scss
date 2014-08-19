@@ -5,4 +5,8 @@
       background: #000;
     }
   }
+
+  h1 + p {
+    margin-bottom: 33px;
+  }
 }
