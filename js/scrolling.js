@@ -18,8 +18,10 @@
         IS_FIREFOX = window.navigator.userAgent.toLowerCase().indexOf('firefox') > -1,
         //IOS has weird (useless?) scroll events and doesn't move the scrollbar when you go forward/back
         IS_IOS = window.navigator.userAgent.match(/(iPad|iPhone|iPod)/g),
+        MOBILE_NAV_HEIGHT = 70,
+        MOBILE_NAV_BORDER_WIDTH = 2,
         PAGE_HEIGHT_CHAGE_THRESHOLD = 0.75,
-        SCROLL_TRANSITION_TIME = 500;
+        SCROLL_TRANSITION_TIME = 600;
 
     function easeInOut(t, b, c, d) {
         if ((t /= d / 2) < 1) {
@@ -99,14 +101,14 @@
         }
 
         hideContactPage();
-        scrollToY(sections[pageId].top, afterFn);
+        scrollToY(sections[pageId].top - (window.isMobile && pageId !== 'home' ? MOBILE_NAV_HEIGHT + MOBILE_NAV_BORDER_WIDTH: MOBILE_NAV_BORDER_WIDTH), afterFn);
     }
 
     function updateSectionMeta(el, id) {
         sections[id] = {
             el: el,
             linkEl: $('#nav a[href="#' + id + '"]')[0],
-            top: $(el).offset().top
+            top: $(el).position().top
         };
     }
 
@@ -187,10 +189,10 @@
     }
 
     function init() {
+        window.scrollTo(0, 0);
         initListeners();
         initState();
     }
 
-    $(init);
-
+    window.imagesLoaded($wrap, init);
 }());

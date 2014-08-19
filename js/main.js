@@ -13,7 +13,7 @@
 
 	function initListeners() {
 		var resizeTimeout = null,
-			first = true;
+			debounce = true;
 
 		window.FastClick.attach(document.body);
 
@@ -26,34 +26,34 @@
 		}), 100));
 
 		$window.on('resize', function () {
-			if(first) {
-				$body.addClass('no-transition');
-				first = false;
+			if(debounce) {
+				$body.addClass('resizing');
+				debounce = false;
 			}
 			if(resizeTimeout) {
 				window.clearTimeout(resizeTimeout);
 			}
 			resizeTimeout = window.setTimeout(function () {
 				resizeTimeout = null;
-				first = true;
-				$body.removeClass('no-transition');
+				debounce = true;
+				window.viewportWidth = $window.width();
+				window.isMobile = window.viewportWidth < 720;
+
 				$window.trigger('after-resize');
-				document.body.classList.add('resizing');
 				window.setTimeout(function () {
-					document.body.classList.remove('resizing');
-				}, 300);
+					$body.removeClass('resizing');
+				}, 100);
 			}, 300);
 		});
-
-		window.setTimeout(function () {
-			//$('.overlay').removeClass('hide').addClass('show');
-		}, 2000);
 	}
 
 	function init() {
 		initState();
 		initListeners();
 	}
+
+	window.viewportWidth = $window.width();
+	window.isMobile = window.viewportWidth < 720;
 
 	$(init);
 }());

@@ -123,7 +123,7 @@ html, body {
 
   &.contact {
     @media screen and (max-width: 720px) {
-      z-index: 2;
+     // z-index: 2;
     }
     #contact, [data-id="contact"]  {
       @media screen and (min-width: 721px) {
@@ -137,18 +137,28 @@ html, body {
   }
 }
 
+#mobile-header {
+  display:none;
+}
+
 @media screen and (max-width: 720px) {
-  #wrap, #nav {
+  #wrap, #nav, #mobile-header {
     @include transform(translateZ(0) scale(1));
     @include backface-visibility(hidden);
     @include perspective(1000);
     @include transition(transform 0.325s ease);
   }
+  #mobile-header {
+    position:fixed;
+    height:70px;
+    width:100%;
+    background: #3682b9 url("../img/logo.png") 10px no-repeat;
+    background-size:190px;
+    top: 0;
+    display:block;
+  }
   body.menu {
-    #nav {
-      @include transform(translate3d(-250px,0,0) scale(1));
-    }
-    #wrap, .overlay {
+    #nav, #wrap, .overlay, #mobile-header {
       @include transform(translate3d(-250px,0,0) scale(1));
     }
     #wrap {

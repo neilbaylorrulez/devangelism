@@ -57,16 +57,26 @@
 	}
 
 	function updateInfoWindowPosition(justAdded, remove) {
-		if($infoWindow) {
+		if($infoWindow && $infoWindow.parent().length) {
 			$infoWindow.css({
 				transform: 'translate3d(' + $infoWindow.location.coords.x + 'px, ' + $infoWindow.location.coords.y + 'px, 0) translateX(-50%) translateY(calc(-100% - ' + (justAdded ? -40 : 9) + 'px)) ' + 'scale(' + (justAdded === true ? 0 : 1) +')',
-				opacity: (justAdded === true ? 0.15 : 0.99)
+				opacity: (justAdded === true ? 0.15 : 0.99),
+				transition: justAdded ? 'none' : ''
 			});
+
 			if(justAdded) {
 				window.setTimeout(window.requestAnimationFrame.bind(null, function () {
-					updateInfoWindowPosition();
 					removeInfoWindow($oldInfoWindow);
+					updateInfoWindowPosition();
 				}), 0);
+			} else {
+				if($infoWindow.location.coords.x < 110) {
+					$mapWrap.css('left', 110 - $infoWindow.location.coords.x);
+				} else if(window.viewportWidth - $infoWindow.location.coords.x < 90) {
+					$mapWrap.css('left', -110 + (window.viewportWidth - $infoWindow.location.coords.x));
+				} else {
+					$mapWrap.css('left', '');
+				}
 			}
 		}
 	}
@@ -92,10 +102,10 @@
 				transform: 'translate3d(' + $win.location.coords.x + 'px, ' + $win.location.coords.y + 'px, 0) translateX(-50%) translateY(calc(-100% + 28px)) scale(0.01)',
 				opacity: 0.15
 			});
-
 			window.setTimeout(function () {
-				this.remove();
-			}.bind($win), 300);
+				$win.remove();
+				$win = null;
+			}, 300);
 		}
 	}
 
@@ -105,6 +115,7 @@
 			location;
 		if(!$clicked.hasClass('marker')) {
 			return window.setTimeout(window.requestAnimationFrame.bind(null, function () {
+				$mapWrap.css('left', '');
 				removeInfoWindow($infoWindow);
 			}), 0);
 		}
@@ -127,5 +138,5 @@
 		$mapWrap.closest('section').on('click', mapClick);
 	}
 
-	$(init);
+	window.imagesLoaded($mapWrap, init);
 }());

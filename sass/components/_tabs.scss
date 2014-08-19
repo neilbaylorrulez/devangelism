@@ -20,6 +20,7 @@
     left: 50%;
     @include translateX(-50%);
     z-index: 3;
+    cursor: pointer;
   }
 
   &:first-child label {
