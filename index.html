@@ -79,6 +79,28 @@
       <section id="events">
         <h1>Our Best-Laid Plan</h1>
         <p>Where we'll be, what we'll be wearing, and who we'll be with</p>
+
+        <div class="tabs">
+           <div id="month-tab" class="tab">
+               <input type="radio" id="tab-1" name="tab-group" checked>
+               <label for="tab-1">By Month</label>
+
+               <div class="content"></div>
+           </div>
+           <div id="event-tab" class="tab">
+               <input type="radio" id="tab-2" name="tab-group">
+               <label for="tab-2">By Event Name</label>
+
+               <div class="content"></div>
+           </div>
+            <div id="attendee-tab" class="tab">
+               <input type="radio" id="tab-3" name="tab-group">
+               <label for="tab-3">By Attendee</label>
+
+               <div class="content"></div>
+           </div>
+
+        </div>
         <a href="#downloads" class="next dark">Download Digital Ocean Devangelism assets</a>
       </section>
       <section id="downloads">
@@ -96,7 +118,7 @@
     </div>
 
     <script src="js/vendor/jquery-2.1.0.min.js"></script>
-    <script src="js/vendor/jquery-2.1.0.min.js"></script>
+    <script src="js/vendor/d3.min.js"></script>
     <script src="js/vendor/fastclick.js"></script>
 
     <script src="js/pollyfill.js"></script>
@@ -104,5 +126,6 @@
     <script src="js/main.js"></script>
 
     <script src="js/pages/locations.js"></script>
+    <script src="js/pages/events.js"></script>
   </body>
 </html>
