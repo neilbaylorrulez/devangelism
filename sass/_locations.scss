@@ -12,7 +12,12 @@
     position: relative;
     max-width: 1024px;
     margin: 0 auto 20px;
+    font-size:0;
+  }
+  .location-wrapper-outer {
     overflow: hidden;
+    padding: 100px 0 0;
+    margin-top: -100px;
   }
 
   .map {
@@ -22,7 +27,10 @@
   .marker {
     position: absolute;
     width: 20px;
-
+    height:30px;
+    top: -30px;
+    left: -10px;
+    cursor:pointer;
     &.one {
       top: 31%;
       left: 16%;
@@ -43,13 +51,17 @@
 
   .location-dialog {
     position: absolute;
-    top: 24%;
-    left: 45%;
-    display: inline-block;
-    padding: 13px 40px 8px;
+    padding: 8px 30px 5px;
     background: #b5da9e;
     border-radius: 5px;
+    width:140px;
+    top:0;
+    left:0;
+    opacity:0.01;
 
+    @include transition(transform 0.225s ease, opacity 0.225s linear);
+    @include backface-visibility(hidden);
+    @include perspective(1000);
     h2 {
       font-size: 18px;
       margin: 0 0 8px;

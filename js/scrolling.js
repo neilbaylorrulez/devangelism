@@ -19,7 +19,7 @@
         //IOS has weird (useless?) scroll events and doesn't move the scrollbar when you go forward/back
         IS_IOS = window.navigator.userAgent.match(/(iPad|iPhone|iPod)/g),
         PAGE_HEIGHT_CHAGE_THRESHOLD = 0.75,
-        SCROLL_TRANSITION_TIME = 800;
+        SCROLL_TRANSITION_TIME = 500;
 
     function easeInOut(t, b, c, d) {
         if ((t /= d / 2) < 1) {
@@ -49,10 +49,8 @@
         if(scrollTop !== newPageTop && !noTransition) {
             if(IS_IOS) {
                 scrollTop = window.pageYOffset;
-               // alert(scrollTop)
-             } //else {
-                window.scrollTo(0, scrollTop);
-            //}
+            }
+            window.scrollTo(0, scrollTop);
             return window.setTimeout(window.requestAnimationFrame.bind(null, function () {
                 (scrollFn = skrollTo.bind(null, Date.now(), scrollTop, newPageTop, afterFn))();
             }), 0);

@@ -156,7 +156,7 @@ html, body {
   -webkit-font-smoothing: antialiased;
 }
 /* line 10, ../sass/_shell.scss */
-html.no-transition *, body.no-transition * {
+html.resizing *, body.resizing * {
   -webkit-transition: none !important;
   -moz-transition: none !important;
   -o-transition: none !important;
@@ -308,9 +308,9 @@ html.no-transition *, body.no-transition * {
 @media screen and (min-width: 721px) {
   /* line 128, ../sass/_shell.scss */
   #wrap.contact #contact, #wrap.contact [data-id="contact"] {
-    -webkit-animation: bounce 0.75s;
-    -moz-animation: bounce 0.75s;
-    animation: bounce 0.75s;
+    -webkit-animation: bounce 0.8s;
+    -moz-animation: bounce 0.8s;
+    animation: bounce 0.8s;
   }
 }
 
@@ -332,10 +332,10 @@ html.no-transition *, body.no-transition * {
     -ms-perspective: 1000;
     -o-perspective: 1000;
     perspective: 1000;
-    -webkit-transition: -webkit-transform 0.3s ease;
-    -moz-transition: -moz-transform 0.3s ease;
-    -o-transition: -o-transform 0.3s ease;
-    transition: transform 0.3s ease;
+    -webkit-transition: -webkit-transform 0.325s ease;
+    -moz-transition: -moz-transform 0.325s ease;
+    -o-transition: -o-transform 0.325s ease;
+    transition: transform 0.325s ease;
   }
 
   /* line 148, ../sass/_shell.scss */
@@ -348,11 +348,11 @@ html.no-transition *, body.no-transition * {
   }
   /* line 151, ../sass/_shell.scss */
   body.menu #wrap, body.menu .overlay {
-    -webkit-transform: translate3d(-100px, 0, 0) scale(1);
-    -moz-transform: translate3d(-100px, 0, 0) scale(1);
-    -ms-transform: translate3d(-100px, 0, 0) scale(1);
-    -o-transform: translate3d(-100px, 0, 0) scale(1);
-    transform: translate3d(-100px, 0, 0) scale(1);
+    -webkit-transform: translate3d(-250px, 0, 0) scale(1);
+    -moz-transform: translate3d(-250px, 0, 0) scale(1);
+    -ms-transform: translate3d(-250px, 0, 0) scale(1);
+    -o-transform: translate3d(-250px, 0, 0) scale(1);
+    transform: translate3d(-250px, 0, 0) scale(1);
   }
   /* line 154, ../sass/_shell.scss */
   body.menu #wrap {
@@ -465,54 +465,79 @@ html.no-transition *, body.no-transition * {
   position: relative;
   max-width: 1024px;
   margin: 0 auto 20px;
-  overflow: hidden;
+  font-size: 0;
 }
-/* line 18, ../sass/_locations.scss */
+/* line 17, ../sass/_locations.scss */
+#wrap #locations .location-wrapper-outer, #wrap [data-id="locations"] .location-wrapper-outer {
+  overflow: hidden;
+  padding: 100px 0 0;
+  margin-top: -100px;
+}
+/* line 23, ../sass/_locations.scss */
 #wrap #locations .map, #wrap [data-id="locations"] .map {
   width: 100%;
 }
-/* line 22, ../sass/_locations.scss */
+/* line 27, ../sass/_locations.scss */
 #wrap #locations .marker, #wrap [data-id="locations"] .marker {
   position: absolute;
   width: 20px;
+  height: 30px;
+  top: -30px;
+  left: -10px;
+  cursor: pointer;
 }
-/* line 26, ../sass/_locations.scss */
+/* line 34, ../sass/_locations.scss */
 #wrap #locations .marker.one, #wrap [data-id="locations"] .marker.one {
   top: 31%;
   left: 16%;
 }
-/* line 30, ../sass/_locations.scss */
+/* line 38, ../sass/_locations.scss */
 #wrap #locations .marker.two, #wrap [data-id="locations"] .marker.two {
   top: 34%;
   left: 21%;
 }
-/* line 34, ../sass/_locations.scss */
+/* line 42, ../sass/_locations.scss */
 #wrap #locations .marker.three, #wrap [data-id="locations"] .marker.three {
   top: 60%;
   left: 38%;
 }
-/* line 38, ../sass/_locations.scss */
+/* line 46, ../sass/_locations.scss */
 #wrap #locations .marker.four, #wrap [data-id="locations"] .marker.four {
   top: 41%;
   left: 55%;
 }
-/* line 44, ../sass/_locations.scss */
+/* line 52, ../sass/_locations.scss */
 #wrap #locations .location-dialog, #wrap [data-id="locations"] .location-dialog {
   position: absolute;
-  top: 24%;
-  left: 45%;
-  display: inline-block;
-  padding: 13px 40px 8px;
+  padding: 8px 30px 5px;
   background: #b5da9e;
   border-radius: 5px;
+  width: 140px;
+  top: 0;
+  left: 0;
+  opacity: 0.01;
+  -webkit-transition: -webkit-transform 0.225s ease, opacity 0.225s linear;
+  -moz-transition: -moz-transform 0.225s ease, opacity 0.225s linear;
+  -o-transition: -o-transform 0.225s ease, opacity 0.225s linear;
+  transition: transform 0.225s ease, opacity 0.225s linear;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  -o-perspective: 1000;
+  perspective: 1000;
 }
-/* line 53, ../sass/_locations.scss */
+/* line 65, ../sass/_locations.scss */
 #wrap #locations .location-dialog h2, #wrap [data-id="locations"] .location-dialog h2 {
   font-size: 18px;
   margin: 0 0 8px;
   color: #3586be;
 }
-/* line 59, ../sass/_locations.scss */
+/* line 71, ../sass/_locations.scss */
 #wrap #locations .location-dialog p, #wrap [data-id="locations"] .location-dialog p {
   margin: 0 0 7px;
   font-size: 13px;

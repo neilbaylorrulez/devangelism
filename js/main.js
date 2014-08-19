@@ -38,6 +38,10 @@
 				first = true;
 				$body.removeClass('no-transition');
 				$window.trigger('after-resize');
+				document.body.classList.add('resizing');
+				window.setTimeout(function () {
+					document.body.classList.remove('resizing');
+				}, 300);
 			}, 300);
 		});
 
