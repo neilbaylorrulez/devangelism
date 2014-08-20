@@ -151,6 +151,9 @@ html, body {
     @include perspective(1000);
     @include transition(transform 0.325s ease);
   }
+  #wrap section {
+    min-height: calc(100% - 70px);
+  }
   #mobile-header {
     position:fixed;
     height:70px;

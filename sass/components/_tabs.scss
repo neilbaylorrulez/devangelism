@@ -45,10 +45,7 @@
   right: 0;
   bottom: 0;
   padding: 0;
-  opacity: 0.01;
-  @include transform(translateZ(0) scale(1));
-  @include perspective(1000);
-  @include backface-visibility(hidden);
+  opacity: 0;
   @include transition(opacity 0.3s linear);
 }
 [type=radio]:checked ~ label {
@@ -57,6 +54,6 @@
   z-index: 2;
 }
 [type=radio]:checked ~ label ~ .content {
-  opacity: 0.99;
+  opacity: 1;
   @include transition(opacity 0.275s linear);
 }
