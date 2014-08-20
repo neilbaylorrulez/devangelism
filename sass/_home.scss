@@ -27,7 +27,6 @@
     top:50%;
     white-space:nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
     text-align: center;
   }
 
@@ -40,18 +39,19 @@
     width:100%;
 
     span {
-      @include transform (translate3d(1024px,0,0) scale(1));
+      opacity: 0.01;
+      display:inline-block;
       @include backface-visibility(hidden);
       @include perspective(1000);
-      display:inline-block;
     }
 
     &.animate {
       span {
-        @include transform (translate3d(-0.5px, 0, 0) scale(1));
+        opacity: 0.99;
+        @include transform (translate3d(-0.5px, 0, 0) scale(1) !important);
         @for $i from 1 through 16 {
           &:nth-child(#{$i}) {
-            transition: transform 0.25s (0.1s * $i);
+            @include transition(transform 0.5s ease-out (0.065s * $i), opacity 1s linear (0.065s * $i));
           }
         }
       }

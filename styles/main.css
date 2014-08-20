@@ -393,10 +393,9 @@ html.resizing *, body.resizing * {
   top: 50%;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
   text-align: center;
 }
-/* line 34, ../sass/_home.scss */
+/* line 33, ../sass/_home.scss */
 #wrap #home h2, #wrap [data-id="home"] h2 {
   color: white;
   font-weight: 400;
@@ -405,13 +404,10 @@ html.resizing *, body.resizing * {
   margin-top: 12px;
   width: 100%;
 }
-/* line 42, ../sass/_home.scss */
+/* line 41, ../sass/_home.scss */
 #wrap #home h2 span, #wrap [data-id="home"] h2 span {
-  -webkit-transform: translate3d(1024px, 0, 0) scale(1);
-  -moz-transform: translate3d(1024px, 0, 0) scale(1);
-  -ms-transform: translate3d(1024px, 0, 0) scale(1);
-  -o-transform: translate3d(1024px, 0, 0) scale(1);
-  transform: translate3d(1024px, 0, 0) scale(1);
+  opacity: 0.01;
+  display: inline-block;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
@@ -422,79 +418,143 @@ html.resizing *, body.resizing * {
   -ms-perspective: 1000;
   -o-perspective: 1000;
   perspective: 1000;
-  display: inline-block;
 }
-/* line 50, ../sass/_home.scss */
+/* line 49, ../sass/_home.scss */
 #wrap #home h2.animate span, #wrap [data-id="home"] h2.animate span {
-  -webkit-transform: translate3d(-0.5px, 0, 0) scale(1);
-  -moz-transform: translate3d(-0.5px, 0, 0) scale(1);
-  -ms-transform: translate3d(-0.5px, 0, 0) scale(1);
-  -o-transform: translate3d(-0.5px, 0, 0) scale(1);
-  transform: translate3d(-0.5px, 0, 0) scale(1);
+  opacity: 0.99;
+  -webkit-transform: translate3d(-0.5px, 0, 0) scale(1) !important;
+  -moz-transform: translate3d(-0.5px, 0, 0) scale(1) !important;
+  -ms-transform: translate3d(-0.5px, 0, 0) scale(1) !important;
+  -o-transform: translate3d(-0.5px, 0, 0) scale(1) !important;
+  transform: translate3d(-0.5px, 0, 0) scale(1) !important;
 }
 /* line 53, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(1), #wrap [data-id="home"] h2.animate span:nth-child(1) {
-  transition: transform 0.25s 0.1s;
+  -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
+  -webkit-transition-delay: 0.065s, 0.065s;
+  -moz-transition: -moz-transform 0.5s ease-out 0.065s, opacity 1s linear 0.065s;
+  -o-transition: -o-transform 0.5s ease-out 0.065s, opacity 1s linear 0.065s;
+  transition: transform 0.5s ease-out 0.065s, opacity 1s linear 0.065s;
 }
 /* line 53, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(2), #wrap [data-id="home"] h2.animate span:nth-child(2) {
-  transition: transform 0.25s 0.2s;
+  -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
+  -webkit-transition-delay: 0.13s, 0.13s;
+  -moz-transition: -moz-transform 0.5s ease-out 0.13s, opacity 1s linear 0.13s;
+  -o-transition: -o-transform 0.5s ease-out 0.13s, opacity 1s linear 0.13s;
+  transition: transform 0.5s ease-out 0.13s, opacity 1s linear 0.13s;
 }
 /* line 53, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(3), #wrap [data-id="home"] h2.animate span:nth-child(3) {
-  transition: transform 0.25s 0.3s;
+  -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
+  -webkit-transition-delay: 0.195s, 0.195s;
+  -moz-transition: -moz-transform 0.5s ease-out 0.195s, opacity 1s linear 0.195s;
+  -o-transition: -o-transform 0.5s ease-out 0.195s, opacity 1s linear 0.195s;
+  transition: transform 0.5s ease-out 0.195s, opacity 1s linear 0.195s;
 }
 /* line 53, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(4), #wrap [data-id="home"] h2.animate span:nth-child(4) {
-  transition: transform 0.25s 0.4s;
+  -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
+  -webkit-transition-delay: 0.26s, 0.26s;
+  -moz-transition: -moz-transform 0.5s ease-out 0.26s, opacity 1s linear 0.26s;
+  -o-transition: -o-transform 0.5s ease-out 0.26s, opacity 1s linear 0.26s;
+  transition: transform 0.5s ease-out 0.26s, opacity 1s linear 0.26s;
 }
 /* line 53, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(5), #wrap [data-id="home"] h2.animate span:nth-child(5) {
-  transition: transform 0.25s 0.5s;
+  -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
+  -webkit-transition-delay: 0.325s, 0.325s;
+  -moz-transition: -moz-transform 0.5s ease-out 0.325s, opacity 1s linear 0.325s;
+  -o-transition: -o-transform 0.5s ease-out 0.325s, opacity 1s linear 0.325s;
+  transition: transform 0.5s ease-out 0.325s, opacity 1s linear 0.325s;
 }
 /* line 53, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(6), #wrap [data-id="home"] h2.animate span:nth-child(6) {
-  transition: transform 0.25s 0.6s;
+  -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
+  -webkit-transition-delay: 0.39s, 0.39s;
+  -moz-transition: -moz-transform 0.5s ease-out 0.39s, opacity 1s linear 0.39s;
+  -o-transition: -o-transform 0.5s ease-out 0.39s, opacity 1s linear 0.39s;
+  transition: transform 0.5s ease-out 0.39s, opacity 1s linear 0.39s;
 }
 /* line 53, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(7), #wrap [data-id="home"] h2.animate span:nth-child(7) {
-  transition: transform 0.25s 0.7s;
+  -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
+  -webkit-transition-delay: 0.455s, 0.455s;
+  -moz-transition: -moz-transform 0.5s ease-out 0.455s, opacity 1s linear 0.455s;
+  -o-transition: -o-transform 0.5s ease-out 0.455s, opacity 1s linear 0.455s;
+  transition: transform 0.5s ease-out 0.455s, opacity 1s linear 0.455s;
 }
 /* line 53, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(8), #wrap [data-id="home"] h2.animate span:nth-child(8) {
-  transition: transform 0.25s 0.8s;
+  -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
+  -webkit-transition-delay: 0.52s, 0.52s;
+  -moz-transition: -moz-transform 0.5s ease-out 0.52s, opacity 1s linear 0.52s;
+  -o-transition: -o-transform 0.5s ease-out 0.52s, opacity 1s linear 0.52s;
+  transition: transform 0.5s ease-out 0.52s, opacity 1s linear 0.52s;
 }
 /* line 53, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(9), #wrap [data-id="home"] h2.animate span:nth-child(9) {
-  transition: transform 0.25s 0.9s;
+  -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
+  -webkit-transition-delay: 0.585s, 0.585s;
+  -moz-transition: -moz-transform 0.5s ease-out 0.585s, opacity 1s linear 0.585s;
+  -o-transition: -o-transform 0.5s ease-out 0.585s, opacity 1s linear 0.585s;
+  transition: transform 0.5s ease-out 0.585s, opacity 1s linear 0.585s;
 }
 /* line 53, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(10), #wrap [data-id="home"] h2.animate span:nth-child(10) {
-  transition: transform 0.25s 1s;
+  -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
+  -webkit-transition-delay: 0.65s, 0.65s;
+  -moz-transition: -moz-transform 0.5s ease-out 0.65s, opacity 1s linear 0.65s;
+  -o-transition: -o-transform 0.5s ease-out 0.65s, opacity 1s linear 0.65s;
+  transition: transform 0.5s ease-out 0.65s, opacity 1s linear 0.65s;
 }
 /* line 53, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(11), #wrap [data-id="home"] h2.animate span:nth-child(11) {
-  transition: transform 0.25s 1.1s;
+  -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
+  -webkit-transition-delay: 0.715s, 0.715s;
+  -moz-transition: -moz-transform 0.5s ease-out 0.715s, opacity 1s linear 0.715s;
+  -o-transition: -o-transform 0.5s ease-out 0.715s, opacity 1s linear 0.715s;
+  transition: transform 0.5s ease-out 0.715s, opacity 1s linear 0.715s;
 }
 /* line 53, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(12), #wrap [data-id="home"] h2.animate span:nth-child(12) {
-  transition: transform 0.25s 1.2s;
+  -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
+  -webkit-transition-delay: 0.78s, 0.78s;
+  -moz-transition: -moz-transform 0.5s ease-out 0.78s, opacity 1s linear 0.78s;
+  -o-transition: -o-transform 0.5s ease-out 0.78s, opacity 1s linear 0.78s;
+  transition: transform 0.5s ease-out 0.78s, opacity 1s linear 0.78s;
 }
 /* line 53, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(13), #wrap [data-id="home"] h2.animate span:nth-child(13) {
-  transition: transform 0.25s 1.3s;
+  -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
+  -webkit-transition-delay: 0.845s, 0.845s;
+  -moz-transition: -moz-transform 0.5s ease-out 0.845s, opacity 1s linear 0.845s;
+  -o-transition: -o-transform 0.5s ease-out 0.845s, opacity 1s linear 0.845s;
+  transition: transform 0.5s ease-out 0.845s, opacity 1s linear 0.845s;
 }
 /* line 53, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(14), #wrap [data-id="home"] h2.animate span:nth-child(14) {
-  transition: transform 0.25s 1.4s;
+  -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
+  -webkit-transition-delay: 0.91s, 0.91s;
+  -moz-transition: -moz-transform 0.5s ease-out 0.91s, opacity 1s linear 0.91s;
+  -o-transition: -o-transform 0.5s ease-out 0.91s, opacity 1s linear 0.91s;
+  transition: transform 0.5s ease-out 0.91s, opacity 1s linear 0.91s;
 }
 /* line 53, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(15), #wrap [data-id="home"] h2.animate span:nth-child(15) {
-  transition: transform 0.25s 1.5s;
+  -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
+  -webkit-transition-delay: 0.975s, 0.975s;
+  -moz-transition: -moz-transform 0.5s ease-out 0.975s, opacity 1s linear 0.975s;
+  -o-transition: -o-transform 0.5s ease-out 0.975s, opacity 1s linear 0.975s;
+  transition: transform 0.5s ease-out 0.975s, opacity 1s linear 0.975s;
 }
 /* line 53, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(16), #wrap [data-id="home"] h2.animate span:nth-child(16) {
-  transition: transform 0.25s 1.6s;
+  -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
+  -webkit-transition-delay: 1.04s, 1.04s;
+  -moz-transition: -moz-transform 0.5s ease-out 1.04s, opacity 1s linear 1.04s;
+  -o-transition: -o-transform 0.5s ease-out 1.04s, opacity 1s linear 1.04s;
+  transition: transform 0.5s ease-out 1.04s, opacity 1s linear 1.04s;
 }
 /* line 61, ../sass/_home.scss */
 #wrap #home h3, #wrap [data-id="home"] h3 {
