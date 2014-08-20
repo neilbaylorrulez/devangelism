@@ -14,9 +14,5 @@
 		}), 0);
 	}
 
-	function init() {
-		animate();
-	}
-
-	$(window).load(init);
+	$(window).load(animate);
 }());

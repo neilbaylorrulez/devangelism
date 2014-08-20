@@ -98,10 +98,13 @@ html, body {
     z-index: 3;
     display:none;
 
+    h1 {
+      color:#fff;
+    }
+
     @media screen and (max-width: 720px) {
       h1 {
         padding:0 50px;
-        color:#fff;
         &:before, &:after {
           display:block;
         }
