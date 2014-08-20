@@ -3,7 +3,8 @@
 
 	var $window = $(window),
 		$body = $(document.body),
-		$wrap = $('#wrap');
+		$wrap = $('#wrap'),
+		MOBILE_WIDTH = 720;
 
 	function initState() {
 		window.setTimeout(window.requestAnimationFrame.bind(null, function() {
@@ -37,7 +38,7 @@
 				resizeTimeout = null;
 				debounce = true;
 				window.viewportWidth = $window.width();
-				window.isMobile = window.viewportWidth < 720;
+				window.isMobile = window.viewportWidth < MOBILE_WIDTH;
 
 				$window.trigger('after-resize');
 				window.setTimeout(function () {
@@ -53,7 +54,7 @@
 	}
 
 	window.viewportWidth = $window.width();
-	window.isMobile = window.viewportWidth < 720;
+	window.isMobile = window.viewportWidth < MOBILE_WIDTH;
 
 	$(init);
 }());

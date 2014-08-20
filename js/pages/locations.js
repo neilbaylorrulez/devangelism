@@ -5,8 +5,8 @@
 		$map = $mapWrap.find('.map'),
 		$oldInfoWindow,
 		$infoWindow,
-		X_FACTOR_OFFSET = 0.015,
-		Y_FACTOR_OFFSET = 1.2,
+		X_FACTOR_OFFSET = 0.015, //magic number!
+		Y_FACTOR_OFFSET = 1.2, //magic number!
 		LOCATIONS = [{
 			lng: -79.3516630,
 			lat: 43.6607310,
@@ -56,15 +56,15 @@
 		});
 	}
 
-	function updateInfoWindowPosition(justAdded, remove) {
+	function updateInfoWindowPosition(preparing, remove) {
 		if($infoWindow && $infoWindow.parent().length) {
 			$infoWindow.css({
-				transform: 'translate3d(' + $infoWindow.location.coords.x + 'px, ' + $infoWindow.location.coords.y + 'px, 0) translateX(-50%) translateY(calc(-100% - ' + (justAdded ? -40 : 9) + 'px)) ' + 'scale(' + (justAdded === true ? 0 : 1) +')',
-				opacity: (justAdded === true ? 0.15 : 0.99),
-				transition: justAdded ? 'none' : ''
+				transform: 'translate3d(' + $infoWindow.location.coords.x + 'px, ' + $infoWindow.location.coords.y + 'px, 0) translateX(-50%) translateY(calc(-100% - ' + (preparing ? -40 : 9) + 'px)) ' + 'scale(' + (preparing ? 0.01 : 1) +')',
+				opacity: (preparing ? 0.15 : 0.99),
+				transition: preparing ? 'none' : ''
 			});
 
-			if(justAdded) {
+			if(preparing) {
 				window.setTimeout(window.requestAnimationFrame.bind(null, function () {
 					removeInfoWindow($oldInfoWindow);
 					updateInfoWindowPosition();
@@ -72,7 +72,7 @@
 			} else {
 				if($infoWindow.location.coords.x < 110) {
 					$mapWrap.css('left', 110 - $infoWindow.location.coords.x);
-				} else if(window.viewportWidth - $infoWindow.location.coords.x < 90) {
+				} else if(window.viewportWidth - $infoWindow.location.coords.x < 110) {
 					$mapWrap.css('left', -110 + (window.viewportWidth - $infoWindow.location.coords.x));
 				} else {
 					$mapWrap.css('left', '');
@@ -105,7 +105,7 @@
 			window.setTimeout(function () {
 				$win.remove();
 				$win = null;
-			}, 300);
+			}, 350);
 		}
 	}
 

@@ -158,7 +158,7 @@ html, body {
     display:block;
   }
   body.menu {
-    #nav, #wrap, .overlay, #mobile-header {
+    #nav, .overlay, #wrap, #mobile-header {
       @include transform(translate3d(-250px,0,0) scale(1));
     }
     #wrap {

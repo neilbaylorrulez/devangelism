@@ -194,5 +194,9 @@
         initState();
     }
 
+    $(function () {
+        window.scrollTo(0, 0);
+    });
+
     window.imagesLoaded($wrap, init);
 }());
