@@ -10,7 +10,7 @@
   </head>
   <body>
     <nav id="nav">
-      <h1>Digital Ocean Evangelism</h1>
+      <h1><a href="#home">Digital Ocean Evangelism</a></h1>
       <button class="open-menu">Open Menu</button>
       <a href="#home" class="home selected">Home</a>
       <a href="#who">Who we are</a>
@@ -113,22 +113,25 @@
       </section>
       <footer></footer>
     </div>
+
+    <!-- sweet non-semantic div for the mobile header as nav is position fixed (to the right) in mobile view -->
     <div id="mobile-header"></div>
+
     <div id="who-overlay" class="overlay hide">
       Overlay!
     </div>
 
-    <script defer src="js/vendor/jquery-2.1.0.min.js"></script>
-    <script defer src="js/vendor/d3.min.js"></script>
-    <script defer src="js/vendor/fastclick.js"></script>
-    <script defer src="js/vendor/images-loaded.min.js"></script>
+    <script src="js/vendor/jquery-2.1.0.min.js"></script>
+    <script src="js/vendor/d3.min.js"></script>
+    <script src="js/vendor/fastclick.js"></script>
+    <script src="js/vendor/images-loaded.min.js"></script>
 
-    <script defer src="js/pollyfill.js"></script>
-    <script defer src="js/scrolling.js"></script>
-    <script defer src="js/main.js"></script>
+    <script src="js/pollyfill.js"></script>
+    <script src="js/scrolling.js"></script>
+    <script src="js/main.js"></script>
 
-    <script defer src="js/pages/home.js"></script>
-    <script defer src="js/pages/locations.js"></script>
-    <script defer src="js/pages/events.js"></script>
+    <script src="js/pages/home.js"></script>
+    <script src="js/pages/locations.js"></script>
+    <script src="js/pages/events.js"></script>
   </body>
 </html>

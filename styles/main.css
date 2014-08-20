@@ -728,10 +728,10 @@ html.resizing *, body.resizing * {
   top: 0;
   width: 278px;
   height: 58px;
-  font-size: 0 !important;
   background: url("../img/logo.png") no-repeat;
   background-size: 100%;
   cursor: pointer;
+  font-size: 0;
 }
 @media screen and (max-width: 900px) {
   /* line 11, ../sass/components/_nav.scss */
@@ -739,7 +739,16 @@ html.resizing *, body.resizing * {
     background-size: 75%;
   }
 }
-/* line 27, ../sass/components/_nav.scss */
+/* line 24, ../sass/components/_nav.scss */
+#nav h1 a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: transparent;
+}
+/* line 34, ../sass/components/_nav.scss */
 #nav .open-menu {
   height: 37px;
   width: 42px;
@@ -760,7 +769,7 @@ html.resizing *, body.resizing * {
   -o-border-radius: 4px;
   border-radius: 4px;
 }
-/* line 44, ../sass/components/_nav.scss */
+/* line 51, ../sass/components/_nav.scss */
 #nav a {
   text-transform: capitalize;
   color: white;
@@ -769,11 +778,11 @@ html.resizing *, body.resizing * {
   display: inline-block;
   padding: 37px 22px 0;
 }
-/* line 51, ../sass/components/_nav.scss */
+/* line 58, ../sass/components/_nav.scss */
 #nav a:hover, #nav a.selected {
   text-decoration: underline;
 }
-/* line 54, ../sass/components/_nav.scss */
+/* line 61, ../sass/components/_nav.scss */
 #nav a.home {
   display: none;
 }
@@ -789,7 +798,7 @@ html.resizing *, body.resizing * {
   #nav {
     padding-left: 225px;
   }
-  /* line 65, ../sass/components/_nav.scss */
+  /* line 72, ../sass/components/_nav.scss */
   #nav a {
     padding: 25px 13px 0;
   }
@@ -809,15 +818,15 @@ html.resizing *, body.resizing * {
     background: #4A4A4A;
     margin: 0;
   }
-  /* line 82, ../sass/components/_nav.scss */
+  /* line 89, ../sass/components/_nav.scss */
   #nav a {
     padding: 0 13px 0;
   }
-  /* line 86, ../sass/components/_nav.scss */
+  /* line 93, ../sass/components/_nav.scss */
   #nav .open-menu {
     display: block;
   }
-  /* line 90, ../sass/components/_nav.scss */
+  /* line 97, ../sass/components/_nav.scss */
   #nav a {
     display: block;
     height: 49px;
@@ -827,11 +836,11 @@ html.resizing *, body.resizing * {
     background: #4A4A4A;
     position: relative;
   }
-  /* line 98, ../sass/components/_nav.scss */
+  /* line 105, ../sass/components/_nav.scss */
   #nav a.home {
     display: block;
   }
-  /* line 101, ../sass/components/_nav.scss */
+  /* line 108, ../sass/components/_nav.scss */
   #nav a:hover, #nav a.selected {
     background: #fff;
     color: #4A4A4A;
@@ -1204,12 +1213,12 @@ button {
 .tab:first-child label {
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
-  margin-left: -110px;
+  margin-left: -111px;
 }
 @media screen and (max-width: 420px) {
   /* line 33, ../sass/components/_tabs.scss */
   .tab:first-child label {
-    margin-left: -94px;
+    margin-left: -95px;
   }
 }
 /* line 41, ../sass/components/_tabs.scss */

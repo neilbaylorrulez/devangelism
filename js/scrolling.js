@@ -4,6 +4,7 @@
     var $window = $(window),
         $wrap = $('#wrap'),
         $body = $(document.body),
+        $nav = $('nav a'),
         $docEl = $('html, body'),
         curPageId = 'home',
         sections = {},
@@ -114,19 +115,15 @@
     }
 
     function initState() {
-        $wrap.find('> section').each(function(i, el) {
-            updateSectionMeta(el, el.id);
-            sectionKeys.push(el.id);
-            el.setAttribute('data-id', el.id);
-            el.removeAttribute('id');
-        });
+
         previousScrollTop = scrollTop = window.pageYOffset;
         winHeight =  $window.height();
         window.setTimeout(window.requestAnimationFrame.bind(null, hashChangeFn), 0);
     }
 
     function updateNav(clicked) {
-        $(clicked).addClass('selected').siblings().removeClass('selected');
+        $nav.removeClass('selected');
+        $(clicked).addClass('selected');
     }
 
     function initListeners() {
@@ -145,7 +142,6 @@
                     return false;
                 }
                 showPage(pageId);
-
             }
         });
 
@@ -189,15 +185,25 @@
         });
     }
 
-    //window.scrollTo(0, 0);
 
     function init() {
-        window.scrollTo(0, 0);
         initListeners();
         initState();
     }
+
+    function removeIds() {
+        $wrap.find('> section').each(function(i, el) {
+            updateSectionMeta(el, el.id);
+            sectionKeys.push(el.id);
+            el.setAttribute('data-id', el.id);
+            el.removeAttribute('id');
+        });
+    }
+
     $(function () {
-      // window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
     });
-    window.onload = init;
+
+    removeIds();
+    $window.on('load', init);
 }());

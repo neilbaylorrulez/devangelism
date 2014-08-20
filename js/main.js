@@ -22,10 +22,6 @@
 			$body.toggleClass('menu');
 		});
 
-		$('nav h1').on('click', function () {
-			document.location.hash = '#home';
-		});
-
 		$window.on('after-scroll', window.setTimeout.bind(null, window.requestAnimationFrame.bind(null, function() {
 			$body.removeClass('menu');
 		}), 100));
