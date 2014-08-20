@@ -1,3 +1,4 @@
+
 .tabs {
   @include user-select(none);
   position: relative;
@@ -6,6 +7,9 @@
   margin: 20px auto;
   width: 100%;
   max-width: 1024px;
+  @media screen and (max-width: 420px) {
+    margin-left:-9px;
+  }
 }
 .tab {
   label {
@@ -17,21 +21,31 @@
     position: absolute;
     top: 0;
     left: 50%;
+
+    z-index: 1;
     @include translateX(-50%);
-    z-index: 3;
     cursor: pointer;
+    @media screen and (max-width: 420px) {
+      padding:9px 7px;
+    }
   }
 
   &:first-child label {
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
-    margin-left: -111px;
+    margin-left: -110px;
+    @media screen and (max-width: 420px) {
+      margin-left: -94px;
+    }
   }
   &:last-child label {
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
     margin-left: 118px;
     width: 78px;
+    @media screen and (max-width: 420px) {
+      margin-left: 102px;
+    }
   }
 }
 .tab [type=radio] {
@@ -46,14 +60,13 @@
   bottom: 0;
   padding: 0;
   opacity: 0;
-  @include transition(opacity 0.3s linear);
+  @include transition(opacity 0.2s linear);
 }
 [type=radio]:checked ~ label {
   background: #4a4a4a;
   color: white;
-  z-index: 2;
 }
 [type=radio]:checked ~ label ~ .content {
   opacity: 1;
-  @include transition(opacity 0.275s linear);
+  @include transition(opacity 0.235s linear);
 }

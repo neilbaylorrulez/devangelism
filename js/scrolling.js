@@ -19,6 +19,7 @@
         //IOS has weird (useless?) scroll events and doesn't move the scrollbar when you go forward/back
         IS_IOS = window.navigator.userAgent.match(/(iPad|iPhone|iPod)/g),
         MOBILE_NAV_HEIGHT = 70,
+        DESKTOP_NAV_HEIGHT = 76,
         MOBILE_NAV_BORDER_WIDTH = 2,
         PAGE_HEIGHT_CHAGE_THRESHOLD = 0.75,
         SCROLL_TRANSITION_TIME = 600;
@@ -101,7 +102,7 @@
         }
 
         hideContactPage();
-        scrollToY(sections[pageId].top - (window.isMobile && pageId !== 'home' ? MOBILE_NAV_HEIGHT + MOBILE_NAV_BORDER_WIDTH: MOBILE_NAV_BORDER_WIDTH), afterFn);
+        scrollToY(sections[pageId].top - (window.isMobile && pageId !== 'home' ? MOBILE_NAV_HEIGHT + MOBILE_NAV_BORDER_WIDTH: DESKTOP_NAV_HEIGHT + MOBILE_NAV_BORDER_WIDTH), afterFn);
     }
 
     function updateSectionMeta(el, id) {
@@ -136,15 +137,15 @@
                 pageId = url.replace('#', ''),
                 $page = $wrap.find('[data-id="' + pageId + '"]');
             if($page.length) {
+                updateNav(anchor);
                 if(IS_FIREFOX) {
                     showPage(pageId, function () {
                         window.location.hash = url;
-                        updateNav(anchor);
                     });
                     return false;
                 }
                 showPage(pageId);
-                updateNav(anchor);
+
             }
         });
 
@@ -188,15 +189,15 @@
         });
     }
 
+    //window.scrollTo(0, 0);
+
     function init() {
         window.scrollTo(0, 0);
         initListeners();
         initState();
     }
-
     $(function () {
-        window.scrollTo(0, 0);
+      // window.scrollTo(0, 0);
     });
-
-    window.imagesLoaded($wrap, init);
+    window.onload = init;
 }());
