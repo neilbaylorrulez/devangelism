@@ -15,6 +15,7 @@
         scrollTop = window.pageYOffset,
         previousScrollTop = scrollTop,
         userScroll = true,
+        closedOverlay = false,
         //Firefox fires a scroll event before the hashchange event, this flag is needed for back -> forward -> back
         IS_FIREFOX = window.navigator.userAgent.toLowerCase().indexOf('firefox') > -1,
         //IOS has weird (useless?) scroll events and doesn't move the scrollbar when you go forward/back
@@ -69,6 +70,40 @@
         }
     }
 
+    function showOverlay($overlay) {
+        if($overlay.hasClass('show')) {
+            return;
+        }
+
+        $overlay.removeClass('hide');
+        window.setTimeout(window.requestAnimationFrame.bind(null, function () {
+            $overlay.addClass('show');
+        }), 0);
+    }
+
+    function handleOverlays(pageId, scroll) {
+        var parts = pageId.split('/'),
+            parentPageId,
+            overlayId,
+            $overlay,
+            afterFn;
+        if(parts.length !== 2) {
+            return;
+        }
+        parentPageId = parts[0];
+        overlayId = parts[1];
+        if($wrap.find('[data-id="' + parentPageId + '"]').length && ($overlay = $('.overlay.' + parentPageId + '[data-id="' + overlayId +'"]')).length) {
+            hideOverlays();
+            curPageId = 'overlay-' + parentPageId;
+            if(!scroll) {
+                return showOverlay($overlay);
+            }
+            scrollToY(sections[parentPageId].top - pageTopOffset(parentPageId), getAfterFn(function () {
+                showOverlay($overlay);
+            }), true);
+        }
+    }
+
     function showContactPage(afterFn) {
         scrollToY(0, function () {
             $wrap.addClass('contact');
@@ -79,14 +114,36 @@
         }, true);
     }
 
-    function hideContactPage() {
-        $wrap.removeClass('contact');
-        $docEl.css('overflow', '');
+    function hideOverlays(close) {
+        var $overlay;
+        if(curPageId === 'contact') {
+            window.setTimeout(window.requestAnimationFrame.bind(null, function () {
+                $wrap.addClass('contact-hide');
+                $docEl.css('overflow', '');
+                window.setTimeout(function () {
+                    $wrap.removeClass('contact-hide').removeClass('contact');
+                }, 500);
+            }), 0);
+        } else {
+            window.setTimeout(window.requestAnimationFrame.bind(null, function () {
+                $overlay = $('.overlay.show').addClass('close');
+                window.setTimeout(function () {
+                    $overlay.removeClass('show').removeClass('close').addClass('hide');
+                }, 500);
+            }), 0);
+        }
     }
 
-    function showPage(pageId, afterFn) {
+    function pageTopOffset(pageId) {
+        return window.isMobile && pageId !== 'home' ?
+            MOBILE_NAV_HEIGHT + MOBILE_NAV_BORDER_WIDTH :
+            DESKTOP_NAV_HEIGHT + MOBILE_NAV_BORDER_WIDTH ;
+    }
+
+    function getAfterFn(afterFn) {
         var after = afterFn;
-        afterFn = function () {
+
+        return function () {
             $window.trigger('after-scroll');
 
             if(after) {
@@ -96,14 +153,25 @@
                 userScroll = true;
             }, 0);
         };
-        userScroll = false;
+    }
 
+    function showPage(pageId, afterFn) {
+        userScroll = false;
+        afterFn = getAfterFn(afterFn);
+
+
+        if(closedOverlay) {
+            hideOverlays(true);
+            curPageId = pageId;
+            return afterFn();
+        }
+
+        hideOverlays();
         if((curPageId = pageId) === 'contact') {
             return showContactPage(afterFn);
         }
 
-        hideContactPage();
-        scrollToY(sections[pageId].top - (window.isMobile && pageId !== 'home' ? MOBILE_NAV_HEIGHT + MOBILE_NAV_BORDER_WIDTH: DESKTOP_NAV_HEIGHT + MOBILE_NAV_BORDER_WIDTH), afterFn);
+        scrollToY(sections[pageId].top - pageTopOffset(pageId), afterFn);
     }
 
     function updateSectionMeta(el, id) {
@@ -115,7 +183,6 @@
     }
 
     function initState() {
-
         previousScrollTop = scrollTop = window.pageYOffset;
         winHeight =  $window.height();
         window.setTimeout(window.requestAnimationFrame.bind(null, hashChangeFn), 0);
@@ -132,7 +199,8 @@
                 anchor = e.currentTarget,
                 url = anchor.getAttribute('href'),
                 pageId = url.replace('#', ''),
-                $page = $wrap.find('[data-id="' + pageId + '"]');
+                $page = $wrap.find('> section[data-id="' + pageId + '"]');
+
             if($page.length) {
                 updateNav(anchor);
                 if(IS_FIREFOX) {
@@ -156,8 +224,12 @@
                 if($page.length) {
                     showPage(pageId);
                     updateNav($('#nav a[href="#' + pageId + '"]')[0]);
+                } else {
+                    handleOverlays(pageId, !window.clickedOverlay);
                 }
             }
+            window.clickedOverlay = false;
+            closedOverlay = false;
         });
 
         $window.on('scroll', function () {
@@ -182,6 +254,18 @@
             });
             winHeight =  $window.height();
             previousScrollTop = scrollTop = window.pageYOffset;
+        });
+
+        $body.on('click', '.close-overlay', function (e) {
+            var parts;
+            closedOverlay = true;
+            if(curPageId !== 'contact') {
+                parts = curPageId.split('overlay-');
+                if(parts.length === 2) {
+                    return window.location.hash = parts[1];
+                }
+            }
+            window.location.hash = '#home';
         });
     }
 

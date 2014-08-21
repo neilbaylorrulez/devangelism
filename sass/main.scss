@@ -1,6 +1,12 @@
 @import "compass/css3";
 
 @import "components/animations";
+@import "components/nav";
+@import "components/photogrid";
+@import "components/button";
+@import "components/overlay";
+@import "components/tabs";
+
 @import "shell";
 
 #wrap {
@@ -9,10 +15,5 @@
 	@import "locations";
 	@import "events";
 	@import "downloads";
+	@import "contact";
 }
-
-@import "components/nav";
-@import "components/photogrid";
-@import "components/button";
-@import "components/overlay";
-@import "components/tabs";

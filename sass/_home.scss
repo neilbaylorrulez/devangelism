@@ -1,7 +1,6 @@
 #home, [data-id="home"] {
   min-height:100%;
   background: #3682b9;
-  padding-top: 30px;
   position:static;
   text-align: left;
 
@@ -35,7 +34,7 @@
         @include transform (translate3d(-0.5px, 0, 0) scale(1) !important);
         @for $i from 1 through 16 {
           &:nth-child(#{$i}) {
-            @include transition(transform 0.5s ease-out (0.065s * $i), opacity 1s linear (0.065s * $i));
+            @include transition(transform 0.55s ease-out (0.085s * $i), opacity 1s linear (0.085s * $i));
           }
         }
       }
