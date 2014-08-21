@@ -749,10 +749,10 @@ button {
   bottom: 0;
   padding: 0;
   opacity: 0;
-  -webkit-transition: opacity 0.215s linear;
-  -moz-transition: opacity 0.215s linear;
-  -o-transition: opacity 0.215s linear;
-  transition: opacity 0.215s linear;
+  -webkit-transition: opacity 0.2s linear;
+  -moz-transition: opacity 0.2s linear;
+  -o-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
 }
 
 /* line 65, ../sass/components/_tabs.scss */
@@ -764,10 +764,10 @@ button {
 /* line 69, ../sass/components/_tabs.scss */
 [type=radio]:checked ~ label ~ .content {
   opacity: 1;
-  -webkit-transition: opacity 0.25s linear;
-  -moz-transition: opacity 0.25s linear;
-  -o-transition: opacity 0.25s linear;
-  transition: opacity 0.25s linear;
+  -webkit-transition: opacity 0.225s linear;
+  -moz-transition: opacity 0.225s linear;
+  -o-transition: opacity 0.225s linear;
+  transition: opacity 0.225s linear;
 }
 
 /* line 1, ../sass/_shell.scss */

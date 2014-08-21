@@ -9,7 +9,7 @@
 			if($tile.length && $tile.attr('data-overlay-id')) {
 				$overlay = $('.overlay[data-id="' + $tile.attr('data-overlay-id') +'"]');
 				if($overlay.length) {
-					window.clickedOverlay = true;
+					window.clickedOverlayTriggeredPage = true;
 					window.location.hash = 'who/' + $tile.attr('data-overlay-id');
 				}
 			}

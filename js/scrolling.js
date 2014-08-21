@@ -15,7 +15,7 @@
         scrollTop = window.pageYOffset,
         previousScrollTop = scrollTop,
         userScroll = true,
-        closedOverlay = false,
+        closedOverlayTriggeredPage = false,
         //Firefox fires a scroll event before the hashchange event, this flag is needed for back -> forward -> back
         IS_FIREFOX = window.navigator.userAgent.toLowerCase().indexOf('firefox') > -1,
         //IOS has weird (useless?) scroll events and doesn't move the scrollbar when you go forward/back
@@ -59,9 +59,7 @@
             return window.setTimeout(window.requestAnimationFrame.bind(null, function () {
                 (scrollFn = skrollTo.bind(null, Date.now(), scrollTop, newPageTop, afterFn))();
             }), 0);
-        }
-
-        if(noTransition) {
+        } else {
             window.scrollTo(0, newPageTop);
         }
 
@@ -117,19 +115,19 @@
     function hideOverlays(close) {
         var $overlay;
         if(curPageId === 'contact') {
+            $docEl.css('overflow', '');
             window.setTimeout(window.requestAnimationFrame.bind(null, function () {
                 $wrap.addClass('contact-hide');
-                $docEl.css('overflow', '');
                 window.setTimeout(function () {
                     $wrap.removeClass('contact-hide').removeClass('contact');
-                }, 500);
+                }, 400);
             }), 0);
         } else {
             window.setTimeout(window.requestAnimationFrame.bind(null, function () {
                 $overlay = $('.overlay.show').addClass('close');
                 window.setTimeout(function () {
                     $overlay.removeClass('show').removeClass('close').addClass('hide');
-                }, 500);
+                }, 400);
             }), 0);
         }
     }
@@ -160,7 +158,7 @@
         afterFn = getAfterFn(afterFn);
 
 
-        if(closedOverlay) {
+        if(closedOverlayTriggeredPage) {
             hideOverlays(true);
             curPageId = pageId;
             return afterFn();
@@ -225,11 +223,11 @@
                     showPage(pageId);
                     updateNav($('#nav a[href="#' + pageId + '"]')[0]);
                 } else {
-                    handleOverlays(pageId, !window.clickedOverlay);
+                    handleOverlays(pageId, !window.clickedOverlayTriggeredPage);
                 }
             }
-            window.clickedOverlay = false;
-            closedOverlay = false;
+            window.clickedOverlayTriggeredPage = false;
+            closedOverlayTriggeredPage = false;
         });
 
         $window.on('scroll', function () {
@@ -258,7 +256,7 @@
 
         $body.on('click', '.close-overlay', function (e) {
             var parts;
-            closedOverlay = true;
+            closedOverlayTriggeredPage = true;
             if(curPageId !== 'contact') {
                 parts = curPageId.split('overlay-');
                 if(parts.length === 2) {
@@ -290,4 +288,5 @@
 
     removeIds();
     $window.on('load', init);
+
 }());
