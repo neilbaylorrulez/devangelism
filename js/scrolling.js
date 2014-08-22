@@ -97,6 +97,9 @@
         parentPageId = parts[0];
         overlayId = parts[1];
         if($wrap.find('[data-id="' + parentPageId + '"]').length && ($overlay = $('.overlay.' + parentPageId + '[data-id="' + overlayId +'"]')).length) {
+            if($overlay.hasClass('show')) {
+                return;
+            }
             hideOverlays();
             curPageId = 'overlay-' + parentPageId;
             if(!scroll) {
@@ -217,6 +220,9 @@
                 url = anchor.getAttribute('href'),
                 pageId = url.replace('#', ''),
                 $page = $wrap.find('> section[data-id="' + pageId + '"]');
+            if(curPageId === pageId && pageId === 'contact') {
+                return getAfterFn()();
+            }
 
             if($page.length) {
                 updateNav(anchor);
