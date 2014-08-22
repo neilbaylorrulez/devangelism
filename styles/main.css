@@ -155,25 +155,20 @@
   z-index: 2;
   background: #3682b9;
 }
-/* line 11, ../sass/components/_nav.scss */
+/* line 10, ../sass/components/_nav.scss */
 #nav h1 {
   position: absolute;
-  left: 0;
-  top: 0;
-  width: 278px;
-  height: 58px;
-  background: url("../img/logo.png") no-repeat;
+  left: 50%;
+  top: 26px;
+  width: 195px;
+  height: 31px;
+  margin-left: -500px;
+  background: url("../img/DO_Logo.svg") no-repeat;
   background-size: 100%;
   cursor: pointer;
   font-size: 0;
 }
-@media screen and (max-width: 900px) {
-  /* line 11, ../sass/components/_nav.scss */
-  #nav h1 {
-    background-size: 75%;
-  }
-}
-/* line 24, ../sass/components/_nav.scss */
+/* line 21, ../sass/components/_nav.scss */
 #nav h1 a {
   position: absolute;
   top: 0;
@@ -182,28 +177,30 @@
   bottom: 0;
   color: transparent;
 }
-/* line 34, ../sass/components/_nav.scss */
+@media screen and (max-width: 1036px) {
+  /* line 10, ../sass/components/_nav.scss */
+  #nav h1 {
+    left: 0;
+    margin-left: 20px;
+  }
+}
+/* line 36, ../sass/components/_nav.scss */
 #nav .open-menu {
   height: 37px;
   width: 42px;
   border: none;
   font-size: 0;
   display: none;
-  background: rgba(74, 74, 74, 0.25) url("../img/hamburger.svg") no-repeat 50% 50%;
-  background-size: 30px 30px;
+  background: url("../img/navicon.svg") no-repeat 50% 50%;
+  background-size: 30px 24px;
   padding: 0;
   position: absolute;
   top: 17px;
   left: -60px;
   outline: none !important;
   cursor: pointer;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
 }
-/* line 51, ../sass/components/_nav.scss */
+/* line 52, ../sass/components/_nav.scss */
 #nav a {
   text-transform: capitalize;
   color: white;
@@ -212,11 +209,11 @@
   display: inline-block;
   padding: 37px 22px 0;
 }
-/* line 58, ../sass/components/_nav.scss */
+/* line 59, ../sass/components/_nav.scss */
 #nav a:hover, #nav a.selected {
   text-decoration: underline;
 }
-/* line 61, ../sass/components/_nav.scss */
+/* line 62, ../sass/components/_nav.scss */
 #nav a.home {
   display: none;
 }
@@ -225,61 +222,54 @@
   #nav {
     padding-left: 225px;
     text-align: left;
-    width: auto;
   }
 }
-@media screen and (max-width: 900px) {
-  /* line 1, ../sass/components/_nav.scss */
-  #nav {
-    padding-left: 225px;
-  }
-  /* line 73, ../sass/components/_nav.scss */
-  #nav a {
-    padding: 25px 13px 0;
-  }
-}
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 800px) {
   /* line 1, ../sass/components/_nav.scss */
   #nav {
     height: 100%;
-    border-bottom: 80px solid #4A4A4A;
+    border-bottom: 80px solid #2E3335;
     text-align: left;
     position: fixed;
     z-index: 2;
-    right: -251px;
+    right: -250px;
     padding-left: 0;
     top: 0;
     width: 250px;
-    background: #4A4A4A;
+    background: #2E3335;
     margin: 0;
   }
-  /* line 90, ../sass/components/_nav.scss */
+  /* line 83, ../sass/components/_nav.scss */
   #nav a {
     padding: 0 13px 0;
   }
-  /* line 94, ../sass/components/_nav.scss */
+  /* line 87, ../sass/components/_nav.scss */
   #nav .open-menu {
     display: block;
   }
-  /* line 98, ../sass/components/_nav.scss */
+  /* line 91, ../sass/components/_nav.scss */
+  #nav h1 {
+    display: none;
+  }
+  /* line 95, ../sass/components/_nav.scss */
   #nav a {
     display: block;
     height: 49px;
     line-height: 49px;
-    border-bottom: 1px solid #333;
+    color: #e7e7e7;
+    border-bottom: 1px solid #414141;
+    padding-left: 20px;
     font-size: 16px;
-    background: #4A4A4A;
     position: relative;
   }
-  /* line 106, ../sass/components/_nav.scss */
+  /* line 104, ../sass/components/_nav.scss */
   #nav a.home {
     display: block;
   }
-  /* line 109, ../sass/components/_nav.scss */
+  /* line 107, ../sass/components/_nav.scss */
   #nav a:hover, #nav a.selected {
-    background: #fff;
-    color: #4A4A4A;
-    border-color: #4A4A4A;
+    color: #414141;
+    background: white;
     text-decoration: none;
   }
 }
@@ -883,7 +873,7 @@ html.resizing *, body.resizing * {
   display: none;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 800px) {
   /* line 98, ../sass/_shell.scss */
   #wrap, #nav, #mobile-header {
     -webkit-transform: translateZ(0) scale(1);

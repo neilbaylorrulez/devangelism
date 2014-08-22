@@ -5,22 +5,19 @@
 	height:76px;
 	width:100%;
 	z-index:2;
-	//background:rgba(54, 130, 185, 0.8);
 	background:#3682b9;
 
 	h1 {
 		position:absolute;
-		left:0;
-		top:0;
-		width: 278px;
-		height: 58px;
-		background: url("../img/logo.png") no-repeat;
+		left: 50%;
+		top: 26px;
+		width: 195px;
+		height: 31px;
+    margin-left: -500px;
+		background: url("../img/DO_Logo.svg") no-repeat;
 		background-size: 100%;
 		cursor:pointer;
 		font-size: 0;
-		@media screen and (max-width: 900px) {
-			background-size:75%;
-		}
 		a {
 			position:absolute;
 			top:0;
@@ -29,6 +26,11 @@
 			bottom:0;
 			color:transparent;
 		}
+
+    @media screen and (max-width: 1036px) {
+      left: 0;
+      margin-left: 20px;
+    }
 	}
 
 	.open-menu {
@@ -37,15 +39,14 @@
 	    border:none;
 	    font-size:0;
 	    display:none;
-	    background: rgba(74,74,74,0.25) url("../img/hamburger.svg") no-repeat 50% 50%;
-	    background-size:30px 30px;
+	    background: url("../img/navicon.svg") no-repeat 50% 50%;
+	    background-size:30px 24px;
 	    padding:0;
 	    position:absolute;
 	    top:17px;
 	    left:-60px;
 	    outline: none !important;
 	    cursor:pointer;
-	    @include border-radius(4px);
 	}
 
 	a {
@@ -65,27 +66,19 @@
 	@media screen and (max-width: 1024px) {
 		padding-left: 225px;
     text-align:left;
-		width:auto;
 	}
 
-	@media screen and (max-width: 900px) {
-		padding-left:225px;
-		a {
-			padding:25px 13px 0;
-		}
-	}
-
-	@media screen and (max-width: 720px) {
+	@media screen and (max-width: 800px) {
 		height:100%;
-		border-bottom:80px solid #4A4A4A;
+		border-bottom:80px solid #2E3335;
 		text-align: left;
 		position:fixed;
 		z-index: 2;
-		right:-251px;
+		right:-250px;
 		padding-left:0;
 		top:0;
 		width:250px;
-		background:#4A4A4A;
+		background: #2E3335;
 		margin:0;
 		a {
 			padding:0 13px 0;
@@ -95,21 +88,25 @@
       display:block;
     }
 
+    h1 {
+      display: none;
+    }
+
 		a {
 			display:block;
 			height:49px;
 			line-height:49px;
-			border-bottom:1px solid #333;
+      color: #e7e7e7;
+			border-bottom:1px solid #414141;
+      padding-left: 20px;
 			font-size:16px;
-			background:#4A4A4A;
 			position:relative;
 			&.home {
 				display:block;
 			}
 			&:hover, &.selected {
-			    background:#fff;
-			    color:#4A4A4A;
-			    border-color:#4A4A4A;
+			    color: #414141;
+          background: white;
 			    text-decoration: none;
 		  	}
 		}
