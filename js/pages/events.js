@@ -35,7 +35,7 @@
 
     function render(width) {
       var pack = d3.layout
-          .pack().size([width, 800])
+          .pack().size([width, width < 1024? width : 800])
           .padding(15)
           .value(function(d) { return d.count });
       var packCalculations1 = pack.nodes(monthViewJSON),
@@ -46,7 +46,7 @@
 
       var svg = d3.select("#month-tab .content").append("svg")
       .attr("width", width)
-         .attr("height", 800)
+         .attr("height", width < 1024? width : 800)
          .selectAll("g").data(packCalculations1).enter();
       var g = svg.append("g");
       g.append("circle")
@@ -111,7 +111,7 @@
 
       svg = d3.select("#event-tab .content").append("svg")
       .attr("width", width)
-         .attr("height", 800)
+         .attr("height", width < 1024? width : 800)
          .selectAll("g").data(packCalculations2).enter();
       g = svg.append("g");
       g.append("circle")
@@ -176,7 +176,7 @@
 
       svg = d3.select("#attendee-tab .content").append("svg")
       .attr("width", width)
-         .attr("height", 800)
+         .attr("height", width < 1024? width : 800)
          .selectAll("g").data(packCalculations3).enter();
       g = svg.append("g");
       g.append("circle")

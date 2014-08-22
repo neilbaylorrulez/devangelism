@@ -24,15 +24,17 @@
   }
 
   .wrapper {
+    position: relative;
     width: 100%;
     max-width: 880px;
     margin: 0 auto;
-    border-top: 1px solid #414141;
 
     h2 {
       display: inline-block;
-      position: relative;
+      position: absolute;
       top: -27px;
+      left: 50%;
+      @include transform(translate3d(-50%,0,0));
       font-size: 18px;
       font-weight: 300;
       padding: 0 10px;
@@ -53,6 +55,12 @@
       list-style: none;
       -webkit-justify-content: center;
       justify-content: center;
+      border-top: 1px solid #414141;
+      padding: 40px 0 0;
+
+      @media screen and (max-width: 920px) {
+        margin: 0 20px 50px;
+      }
     }
 
     li {
@@ -72,7 +80,6 @@
         @media screen and (max-width: 600px) {
           margin: 0 auto;
           width: 100%;
-          padding: 0 20px;
           &:last-of-type {
             padding-right: 20px;
           }
@@ -87,7 +94,6 @@
         @media screen and (max-width: 600px) {
           margin: 0 auto;
           width: 100%;
-          padding: 0 20px;
           &:last-of-type {
             padding-right: 20px;
           }
