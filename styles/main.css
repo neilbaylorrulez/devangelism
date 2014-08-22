@@ -544,7 +544,7 @@ a.next.dark:after {
 /* line 76, ../sass/components/_button.scss */
 button {
   color: #4a4a4a;
-  font-size: 14px;
+  font-size: 12px;
   padding: 10px 20px;
   border: 1px solid #4a4a4a;
   background: none;
@@ -1280,7 +1280,186 @@ html.resizing *, body.resizing * {
 }
 /* line 10, ../sass/_downloads.scss */
 #wrap #downloads h1 + p, #wrap [data-id="downloads"] h1 + p {
-  margin-bottom: 20px;
+  margin-bottom: 12px;
+}
+/* line 14, ../sass/_downloads.scss */
+#wrap #downloads a.download-btn, #wrap [data-id="downloads"] a.download-btn {
+  display: inline-block;
+  color: #4a4a4a;
+  font-size: 12px;
+  padding: 10px 20px;
+  border: 1px solid #4a4a4a;
+  background: none;
+  border-radius: 5px;
+  margin-bottom: 50px;
+  text-decoration: none;
+}
+/* line 26, ../sass/_downloads.scss */
+#wrap #downloads .wrapper, #wrap [data-id="downloads"] .wrapper {
+  width: 100%;
+  max-width: 880px;
+  margin: 0 auto;
+  border-top: 1px solid #414141;
+}
+/* line 32, ../sass/_downloads.scss */
+#wrap #downloads .wrapper h2, #wrap [data-id="downloads"] .wrapper h2 {
+  display: inline-block;
+  position: relative;
+  top: -27px;
+  font-size: 18px;
+  font-weight: 300;
+  padding: 0 10px;
+  background: #C4E1F0;
+  margin-bottom: 5px;
+}
+/* line 43, ../sass/_downloads.scss */
+#wrap #downloads .wrapper ul, #wrap [data-id="downloads"] .wrapper ul {
+  letter-spacing: -1px;
+  text-rendering: optimizespeed;
+  font-family: FreeSans,Arimo,"Droid Sans",Helvetica,Arial,sans-serif;
+  display: -webkit-flex;
+  -webkit-flex-flow: row wrap;
+  display: -ms-flexbox;
+  -ms-flex-flow: row wrap;
+  margin: 0 0 50px 0;
+  padding: 0;
+  list-style: none;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+/* line 59, ../sass/_downloads.scss */
+#wrap #downloads .wrapper li .logo-bg, #wrap [data-id="downloads"] .wrapper li .logo-bg {
+  background: #E1F0F8;
+}
+/* line 62, ../sass/_downloads.scss */
+#wrap #downloads .wrapper li .logo-bg.dark, #wrap [data-id="downloads"] .wrapper li .logo-bg.dark {
+  background: #617078;
+}
+/* line 66, ../sass/_downloads.scss */
+#wrap #downloads .wrapper li.col-3, #wrap [data-id="downloads"] .wrapper li.col-3 {
+  width: 285px;
+  padding-right: 10px;
+}
+/* line 69, ../sass/_downloads.scss */
+#wrap #downloads .wrapper li.col-3:last-of-type, #wrap [data-id="downloads"] .wrapper li.col-3:last-of-type {
+  padding-right: 0;
+}
+@media screen and (max-width: 600px) {
+  /* line 66, ../sass/_downloads.scss */
+  #wrap #downloads .wrapper li.col-3, #wrap [data-id="downloads"] .wrapper li.col-3 {
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 20px;
+  }
+  /* line 76, ../sass/_downloads.scss */
+  #wrap #downloads .wrapper li.col-3:last-of-type, #wrap [data-id="downloads"] .wrapper li.col-3:last-of-type {
+    padding-right: 20px;
+  }
+}
+/* line 81, ../sass/_downloads.scss */
+#wrap #downloads .wrapper li.col-4, #wrap [data-id="downloads"] .wrapper li.col-4 {
+  width: 209px;
+  padding-right: 14px;
+}
+/* line 84, ../sass/_downloads.scss */
+#wrap #downloads .wrapper li.col-4:last-of-type, #wrap [data-id="downloads"] .wrapper li.col-4:last-of-type {
+  padding-right: 0;
+}
+@media screen and (max-width: 600px) {
+  /* line 81, ../sass/_downloads.scss */
+  #wrap #downloads .wrapper li.col-4, #wrap [data-id="downloads"] .wrapper li.col-4 {
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 20px;
+  }
+  /* line 91, ../sass/_downloads.scss */
+  #wrap #downloads .wrapper li.col-4:last-of-type, #wrap [data-id="downloads"] .wrapper li.col-4:last-of-type {
+    padding-right: 20px;
+  }
+}
+/* line 97, ../sass/_downloads.scss */
+#wrap #downloads .wrapper li .download, #wrap [data-id="downloads"] .wrapper li .download {
+  margin-top: 10px;
+  color: #4f4f4f;
+  font-size: 14px;
+  font-weight: 300;
+}
+/* line 103, ../sass/_downloads.scss */
+#wrap #downloads .wrapper li .download a, #wrap [data-id="downloads"] .wrapper li .download a {
+  color: #4f4f4f;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 600;
+}
+/* line 110, ../sass/_downloads.scss */
+#wrap #downloads .wrapper li .download a:first-of-type, #wrap [data-id="downloads"] .wrapper li .download a:first-of-type {
+  border-right: 1px solid #414141;
+  padding-right: 4px;
+  margin-right: 1px;
+  margin-left: 2px;
+}
+/* line 120, ../sass/_downloads.scss */
+#wrap #downloads .wrapper #horizontal li, #wrap [data-id="downloads"] .wrapper #horizontal li {
+  height: 150px;
+}
+/* line 122, ../sass/_downloads.scss */
+#wrap #downloads .wrapper #horizontal li .logo-bg, #wrap [data-id="downloads"] .wrapper #horizontal li .logo-bg {
+  height: 105px;
+}
+/* line 125, ../sass/_downloads.scss */
+#wrap #downloads .wrapper #horizontal li img, #wrap [data-id="downloads"] .wrapper #horizontal li img {
+  margin-top: 38px;
+  width: 190px;
+}
+/* line 131, ../sass/_downloads.scss */
+#wrap #downloads .wrapper #vertical li, #wrap [data-id="downloads"] .wrapper #vertical li {
+  height: 200px;
+}
+/* line 133, ../sass/_downloads.scss */
+#wrap #downloads .wrapper #vertical li .logo-bg, #wrap [data-id="downloads"] .wrapper #vertical li .logo-bg {
+  height: 130px;
+}
+/* line 136, ../sass/_downloads.scss */
+#wrap #downloads .wrapper #vertical li img, #wrap [data-id="downloads"] .wrapper #vertical li img {
+  margin-top: 33px;
+  width: 110px;
+}
+/* line 142, ../sass/_downloads.scss */
+#wrap #downloads .wrapper #badgeA, #wrap [data-id="downloads"] .wrapper #badgeA {
+  margin-top: 10px;
+  margin-bottom: 75px;
+}
+/* line 145, ../sass/_downloads.scss */
+#wrap #downloads .wrapper #badgeA li, #wrap [data-id="downloads"] .wrapper #badgeA li {
+  height: 150px;
+}
+/* line 148, ../sass/_downloads.scss */
+#wrap #downloads .wrapper #badgeA .logo-bg, #wrap [data-id="downloads"] .wrapper #badgeA .logo-bg {
+  height: 93px;
+}
+/* line 151, ../sass/_downloads.scss */
+#wrap #downloads .wrapper #badgeA img, #wrap [data-id="downloads"] .wrapper #badgeA img {
+  margin-top: 30px;
+  width: 120px;
+}
+/* line 157, ../sass/_downloads.scss */
+#wrap #downloads .wrapper #badgeB, #wrap [data-id="downloads"] .wrapper #badgeB {
+  margin-top: 10px;
+  margin-bottom: 75px;
+}
+/* line 160, ../sass/_downloads.scss */
+#wrap #downloads .wrapper #badgeB li, #wrap [data-id="downloads"] .wrapper #badgeB li {
+  height: 260px;
+}
+/* line 163, ../sass/_downloads.scss */
+#wrap #downloads .wrapper #badgeB .logo-bg, #wrap [data-id="downloads"] .wrapper #badgeB .logo-bg {
+  height: 195px;
+}
+/* line 166, ../sass/_downloads.scss */
+#wrap #downloads .wrapper #badgeB img, #wrap [data-id="downloads"] .wrapper #badgeB img {
+  margin-top: 33px;
+  width: 128px;
 }
 /* line 1, ../sass/_contact.scss */
 #wrap #contact, #wrap [data-id="contact"] {
