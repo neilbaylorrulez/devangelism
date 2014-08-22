@@ -66,11 +66,11 @@
 
 			if(addingNew) {
 				if($infoWindow.location.coords.x < 110) {
-					$mapWrap.css('left', 110 - $infoWindow.location.coords.x);
+					$mapWrap.css('transform', 'translate3d(' + (110 - $infoWindow.location.coords.x) + 'px, 0, 0)');
 				} else if(window.viewportWidth - $infoWindow.location.coords.x < 110) {
-					$mapWrap.css('left', -110 + (window.viewportWidth - $infoWindow.location.coords.x));
+					$mapWrap.css('transform', 'translate3d(' + (-110 + (window.viewportWidth - $infoWindow.location.coords.x)) + 'px, 0, 0)');
 				} else {
-					$mapWrap.css('left', '');
+					$mapWrap.css('transform', '');
 				}
 				window.setTimeout(window.requestAnimationFrame.bind(null, function () {
 					removeInfoWindow($oldInfoWindow);
@@ -114,7 +114,7 @@
 			location;
 		if(!$clicked.hasClass('marker')) {
 			return window.setTimeout(window.requestAnimationFrame.bind(null, function () {
-				$mapWrap.css('left', '');
+				$mapWrap.css('transform', '');
 				removeInfoWindow($infoWindow);
 			}), 0);
 		}

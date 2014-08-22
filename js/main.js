@@ -42,11 +42,13 @@
 				window.clearTimeout(resizeTimeout);
 			}
 			resizeTimeout = window.setTimeout(function () {
+				var oldWidth = window.viewportWidth;
 				resizeTimeout = null;
 				debounce = true;
 				updateViewportInfo();
-
-				$window.trigger('after-resize');
+				if(oldWidth !== window.viewportWidth) {
+					$window.trigger('after-resize');
+				}
 				window.setTimeout(function () {
 					$body.removeClass('resizing');
 				}, 100);

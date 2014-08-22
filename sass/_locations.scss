@@ -14,6 +14,10 @@
     margin: 0 auto 20px;
     font-size:0;
     left:0;
+    @include perspective(1000);
+    @include backface-visibility(hidden);
+    @include transform(translateZ(0) scale(1));
+    @include transition(transform 0.225s);
   }
   .location-wrapper-outer {
     overflow: hidden;
