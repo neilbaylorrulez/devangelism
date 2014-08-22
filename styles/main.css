@@ -242,10 +242,11 @@ html.resizing *, body.resizing * {
 }
 /* line 83, ../sass/_shell.scss */
 #wrap footer {
-  background: #4a4a4a url("../img/cloud-footer.png") no-repeat 50% 50%;
+  background: #4a4a4a url("../img/cloud-footer.svg") no-repeat 50% 50%;
+  background-size: 61px 33px;
   height: 200px;
 }
-/* line 88, ../sass/_shell.scss */
+/* line 89, ../sass/_shell.scss */
 #wrap #contact, #wrap [data-id="contact"] {
   position: absolute;
   bottom: 0;
@@ -259,22 +260,22 @@ html.resizing *, body.resizing * {
   z-index: 3;
   display: none;
 }
-/* line 101, ../sass/_shell.scss */
+/* line 102, ../sass/_shell.scss */
 #wrap #contact h1, #wrap [data-id="contact"] h1 {
   color: #fff;
 }
 @media screen and (max-width: 720px) {
-  /* line 106, ../sass/_shell.scss */
+  /* line 107, ../sass/_shell.scss */
   #wrap #contact h1, #wrap [data-id="contact"] h1 {
     padding: 0 50px;
   }
-  /* line 108, ../sass/_shell.scss */
+  /* line 109, ../sass/_shell.scss */
   #wrap #contact h1:before, #wrap #contact h1:after, #wrap [data-id="contact"] h1:before, #wrap [data-id="contact"] h1:after {
     display: block;
   }
 }
 @media screen and (min-width: 721px) {
-  /* line 88, ../sass/_shell.scss */
+  /* line 89, ../sass/_shell.scss */
   #wrap #contact, #wrap [data-id="contact"] {
     -webkit-transform: translate3d(0) scale(1);
     -moz-transform: translate3d(0) scale(1);
@@ -293,17 +294,17 @@ html.resizing *, body.resizing * {
     perspective: 1000;
   }
 }
-/* line 122, ../sass/_shell.scss */
+/* line 123, ../sass/_shell.scss */
 #wrap.loaded #contact, #wrap.loaded [data-id="contact"] {
   display: block;
 }
-/* line 131, ../sass/_shell.scss */
+/* line 132, ../sass/_shell.scss */
 #wrap.contact #contact, #wrap.contact [data-id="contact"] {
   pointer-events: auto;
   opacity: 0.8;
 }
 @media screen and (min-width: 721px) {
-  /* line 131, ../sass/_shell.scss */
+  /* line 132, ../sass/_shell.scss */
   #wrap.contact #contact, #wrap.contact [data-id="contact"] {
     -webkit-animation: bounce 0.8s;
     -moz-animation: bounce 0.8s;
@@ -311,13 +312,13 @@ html.resizing *, body.resizing * {
   }
 }
 
-/* line 143, ../sass/_shell.scss */
+/* line 144, ../sass/_shell.scss */
 #mobile-header {
   display: none;
 }
 
 @media screen and (max-width: 720px) {
-  /* line 148, ../sass/_shell.scss */
+  /* line 149, ../sass/_shell.scss */
   #wrap, #nav, #mobile-header {
     -webkit-transform: translateZ(0) scale(1);
     -moz-transform: translateZ(0) scale(1);
@@ -340,23 +341,23 @@ html.resizing *, body.resizing * {
     transition: transform 0.325s ease;
   }
 
-  /* line 154, ../sass/_shell.scss */
+  /* line 155, ../sass/_shell.scss */
   #wrap section {
     min-height: calc(100% - 70px);
   }
 
-  /* line 157, ../sass/_shell.scss */
+  /* line 158, ../sass/_shell.scss */
   #mobile-header {
     position: fixed;
     height: 70px;
     width: 100%;
-    background: #3682b9 url("../img/logo.png") 10px no-repeat;
-    background-size: 190px;
+    background: #3682b9 url("../img/DO_Logo.svg") 20px no-repeat;
+    background-size: 195px 31px;
     top: 0;
     display: block;
   }
 
-  /* line 167, ../sass/_shell.scss */
+  /* line 168, ../sass/_shell.scss */
   body.menu #nav, body.menu .overlay, body.menu #wrap, body.menu #mobile-header {
     -webkit-transform: translate3d(-250px, 0, 0) scale(1);
     -moz-transform: translate3d(-250px, 0, 0) scale(1);
@@ -364,7 +365,7 @@ html.resizing *, body.resizing * {
     -o-transform: translate3d(-250px, 0, 0) scale(1);
     transform: translate3d(-250px, 0, 0) scale(1);
   }
-  /* line 170, ../sass/_shell.scss */
+  /* line 171, ../sass/_shell.scss */
   body.menu #wrap {
     pointer-events: none !important;
   }
@@ -379,22 +380,31 @@ html.resizing *, body.resizing * {
 /* line 7, ../sass/_home.scss */
 #wrap #home h1, #wrap [data-id="home"] h1 {
   display: inline-block;
+  position: relative;
   vertical-align: middle;
-  width: 278px;
-  height: 58px;
+  width: 195px;
+  height: 31px;
   font-size: 0 !important;
-  background-image: url("../img/logo.png");
-  background-size: 100%;
-  background-position: 12px -10px;
+  background-image: url("../img/DO_Logo.svg");
+  background-size: 195px 31px;
   background-repeat: no-repeat;
-  margin: -10px 30px 0 0;
   padding: 0;
+  margin-top: 6px;
+  left: 50%;
+  margin-left: -500px;
 }
-/* line 19, ../sass/_home.scss */
+/* line 21, ../sass/_home.scss */
 #wrap #home h1:before, #wrap #home h1:after, #wrap [data-id="home"] h1:before, #wrap [data-id="home"] h1:after {
   display: none;
 }
-/* line 24, ../sass/_home.scss */
+@media screen and (max-width: 1024px) {
+  /* line 7, ../sass/_home.scss */
+  #wrap #home h1, #wrap [data-id="home"] h1 {
+    margin-left: 20px;
+    position: static;
+  }
+}
+/* line 31, ../sass/_home.scss */
 #wrap #home h2, #wrap #home h3, #wrap [data-id="home"] h2, #wrap [data-id="home"] h3 {
   width: 100%;
   position: absolute;
@@ -403,7 +413,7 @@ html.resizing *, body.resizing * {
   overflow: hidden;
   text-align: center;
 }
-/* line 33, ../sass/_home.scss */
+/* line 40, ../sass/_home.scss */
 #wrap #home h2, #wrap [data-id="home"] h2 {
   color: white;
   font-weight: 400;
@@ -412,7 +422,7 @@ html.resizing *, body.resizing * {
   margin-top: 12px;
   width: 100%;
 }
-/* line 41, ../sass/_home.scss */
+/* line 48, ../sass/_home.scss */
 #wrap #home h2 span, #wrap [data-id="home"] h2 span {
   opacity: 0.01;
   display: inline-block;
@@ -427,7 +437,7 @@ html.resizing *, body.resizing * {
   -o-perspective: 1000;
   perspective: 1000;
 }
-/* line 49, ../sass/_home.scss */
+/* line 56, ../sass/_home.scss */
 #wrap #home h2.animate span, #wrap [data-id="home"] h2.animate span {
   opacity: 0.99;
   -webkit-transform: translate3d(-0.5px, 0, 0) scale(1) !important;
@@ -436,7 +446,7 @@ html.resizing *, body.resizing * {
   -o-transform: translate3d(-0.5px, 0, 0) scale(1) !important;
   transform: translate3d(-0.5px, 0, 0) scale(1) !important;
 }
-/* line 53, ../sass/_home.scss */
+/* line 60, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(1), #wrap [data-id="home"] h2.animate span:nth-child(1) {
   -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
   -webkit-transition-delay: 0.065s, 0.065s;
@@ -444,7 +454,7 @@ html.resizing *, body.resizing * {
   -o-transition: -o-transform 0.5s ease-out 0.065s, opacity 1s linear 0.065s;
   transition: transform 0.5s ease-out 0.065s, opacity 1s linear 0.065s;
 }
-/* line 53, ../sass/_home.scss */
+/* line 60, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(2), #wrap [data-id="home"] h2.animate span:nth-child(2) {
   -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
   -webkit-transition-delay: 0.13s, 0.13s;
@@ -452,7 +462,7 @@ html.resizing *, body.resizing * {
   -o-transition: -o-transform 0.5s ease-out 0.13s, opacity 1s linear 0.13s;
   transition: transform 0.5s ease-out 0.13s, opacity 1s linear 0.13s;
 }
-/* line 53, ../sass/_home.scss */
+/* line 60, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(3), #wrap [data-id="home"] h2.animate span:nth-child(3) {
   -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
   -webkit-transition-delay: 0.195s, 0.195s;
@@ -460,7 +470,7 @@ html.resizing *, body.resizing * {
   -o-transition: -o-transform 0.5s ease-out 0.195s, opacity 1s linear 0.195s;
   transition: transform 0.5s ease-out 0.195s, opacity 1s linear 0.195s;
 }
-/* line 53, ../sass/_home.scss */
+/* line 60, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(4), #wrap [data-id="home"] h2.animate span:nth-child(4) {
   -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
   -webkit-transition-delay: 0.26s, 0.26s;
@@ -468,7 +478,7 @@ html.resizing *, body.resizing * {
   -o-transition: -o-transform 0.5s ease-out 0.26s, opacity 1s linear 0.26s;
   transition: transform 0.5s ease-out 0.26s, opacity 1s linear 0.26s;
 }
-/* line 53, ../sass/_home.scss */
+/* line 60, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(5), #wrap [data-id="home"] h2.animate span:nth-child(5) {
   -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
   -webkit-transition-delay: 0.325s, 0.325s;
@@ -476,7 +486,7 @@ html.resizing *, body.resizing * {
   -o-transition: -o-transform 0.5s ease-out 0.325s, opacity 1s linear 0.325s;
   transition: transform 0.5s ease-out 0.325s, opacity 1s linear 0.325s;
 }
-/* line 53, ../sass/_home.scss */
+/* line 60, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(6), #wrap [data-id="home"] h2.animate span:nth-child(6) {
   -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
   -webkit-transition-delay: 0.39s, 0.39s;
@@ -484,7 +494,7 @@ html.resizing *, body.resizing * {
   -o-transition: -o-transform 0.5s ease-out 0.39s, opacity 1s linear 0.39s;
   transition: transform 0.5s ease-out 0.39s, opacity 1s linear 0.39s;
 }
-/* line 53, ../sass/_home.scss */
+/* line 60, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(7), #wrap [data-id="home"] h2.animate span:nth-child(7) {
   -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
   -webkit-transition-delay: 0.455s, 0.455s;
@@ -492,7 +502,7 @@ html.resizing *, body.resizing * {
   -o-transition: -o-transform 0.5s ease-out 0.455s, opacity 1s linear 0.455s;
   transition: transform 0.5s ease-out 0.455s, opacity 1s linear 0.455s;
 }
-/* line 53, ../sass/_home.scss */
+/* line 60, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(8), #wrap [data-id="home"] h2.animate span:nth-child(8) {
   -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
   -webkit-transition-delay: 0.52s, 0.52s;
@@ -500,7 +510,7 @@ html.resizing *, body.resizing * {
   -o-transition: -o-transform 0.5s ease-out 0.52s, opacity 1s linear 0.52s;
   transition: transform 0.5s ease-out 0.52s, opacity 1s linear 0.52s;
 }
-/* line 53, ../sass/_home.scss */
+/* line 60, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(9), #wrap [data-id="home"] h2.animate span:nth-child(9) {
   -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
   -webkit-transition-delay: 0.585s, 0.585s;
@@ -508,7 +518,7 @@ html.resizing *, body.resizing * {
   -o-transition: -o-transform 0.5s ease-out 0.585s, opacity 1s linear 0.585s;
   transition: transform 0.5s ease-out 0.585s, opacity 1s linear 0.585s;
 }
-/* line 53, ../sass/_home.scss */
+/* line 60, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(10), #wrap [data-id="home"] h2.animate span:nth-child(10) {
   -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
   -webkit-transition-delay: 0.65s, 0.65s;
@@ -516,7 +526,7 @@ html.resizing *, body.resizing * {
   -o-transition: -o-transform 0.5s ease-out 0.65s, opacity 1s linear 0.65s;
   transition: transform 0.5s ease-out 0.65s, opacity 1s linear 0.65s;
 }
-/* line 53, ../sass/_home.scss */
+/* line 60, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(11), #wrap [data-id="home"] h2.animate span:nth-child(11) {
   -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
   -webkit-transition-delay: 0.715s, 0.715s;
@@ -524,7 +534,7 @@ html.resizing *, body.resizing * {
   -o-transition: -o-transform 0.5s ease-out 0.715s, opacity 1s linear 0.715s;
   transition: transform 0.5s ease-out 0.715s, opacity 1s linear 0.715s;
 }
-/* line 53, ../sass/_home.scss */
+/* line 60, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(12), #wrap [data-id="home"] h2.animate span:nth-child(12) {
   -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
   -webkit-transition-delay: 0.78s, 0.78s;
@@ -532,7 +542,7 @@ html.resizing *, body.resizing * {
   -o-transition: -o-transform 0.5s ease-out 0.78s, opacity 1s linear 0.78s;
   transition: transform 0.5s ease-out 0.78s, opacity 1s linear 0.78s;
 }
-/* line 53, ../sass/_home.scss */
+/* line 60, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(13), #wrap [data-id="home"] h2.animate span:nth-child(13) {
   -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
   -webkit-transition-delay: 0.845s, 0.845s;
@@ -540,7 +550,7 @@ html.resizing *, body.resizing * {
   -o-transition: -o-transform 0.5s ease-out 0.845s, opacity 1s linear 0.845s;
   transition: transform 0.5s ease-out 0.845s, opacity 1s linear 0.845s;
 }
-/* line 53, ../sass/_home.scss */
+/* line 60, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(14), #wrap [data-id="home"] h2.animate span:nth-child(14) {
   -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
   -webkit-transition-delay: 0.91s, 0.91s;
@@ -548,7 +558,7 @@ html.resizing *, body.resizing * {
   -o-transition: -o-transform 0.5s ease-out 0.91s, opacity 1s linear 0.91s;
   transition: transform 0.5s ease-out 0.91s, opacity 1s linear 0.91s;
 }
-/* line 53, ../sass/_home.scss */
+/* line 60, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(15), #wrap [data-id="home"] h2.animate span:nth-child(15) {
   -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
   -webkit-transition-delay: 0.975s, 0.975s;
@@ -556,7 +566,7 @@ html.resizing *, body.resizing * {
   -o-transition: -o-transform 0.5s ease-out 0.975s, opacity 1s linear 0.975s;
   transition: transform 0.5s ease-out 0.975s, opacity 1s linear 0.975s;
 }
-/* line 53, ../sass/_home.scss */
+/* line 60, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(16), #wrap [data-id="home"] h2.animate span:nth-child(16) {
   -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
   -webkit-transition-delay: 1.04s, 1.04s;
@@ -564,7 +574,7 @@ html.resizing *, body.resizing * {
   -o-transition: -o-transform 0.5s ease-out 1.04s, opacity 1s linear 1.04s;
   transition: transform 0.5s ease-out 1.04s, opacity 1s linear 1.04s;
 }
-/* line 61, ../sass/_home.scss */
+/* line 68, ../sass/_home.scss */
 #wrap #home h3, #wrap [data-id="home"] h3 {
   font-family: "Lato", "Helvetica", arial, sans-serif;
   font-weight: 100;
@@ -572,35 +582,29 @@ html.resizing *, body.resizing * {
   margin-top: -65px;
   color: #2BA4FC;
 }
-@media screen and (max-width: 900px) {
-  /* line 70, ../sass/_home.scss */
-  #wrap #home h1, #wrap [data-id="home"] h1 {
-    background-size: 75%;
-  }
-}
 @media screen and (max-width: 720px) {
   /* line 1, ../sass/_home.scss */
   #wrap #home, #wrap [data-id="home"] {
     min-height: 100%;
   }
-  /* line 76, ../sass/_home.scss */
+  /* line 77, ../sass/_home.scss */
   #wrap #home h3, #wrap [data-id="home"] h3 {
     font-size: 80px;
     margin-top: -40px;
   }
-  /* line 80, ../sass/_home.scss */
+  /* line 81, ../sass/_home.scss */
   #wrap #home h2, #wrap [data-id="home"] h2 {
     font-size: 24px;
     margin-top: 6px;
   }
 }
 @media screen and (max-width: 400px) {
-  /* line 87, ../sass/_home.scss */
+  /* line 88, ../sass/_home.scss */
   #wrap #home h3, #wrap [data-id="home"] h3 {
     font-size: 60px;
     margin-top: -26px;
   }
-  /* line 91, ../sass/_home.scss */
+  /* line 92, ../sass/_home.scss */
   #wrap #home h2, #wrap [data-id="home"] h2 {
     font-size: 19px;
   }
@@ -783,10 +787,10 @@ html.resizing *, body.resizing * {
 #nav a.home {
   display: none;
 }
-@media screen and (max-width: 1160px) {
+@media screen and (max-width: 1024px) {
   /* line 1, ../sass/components/_nav.scss */
   #nav {
-    padding-left: 300px;
+    padding-left: 225px;
     text-align: left;
     width: auto;
   }
@@ -795,9 +799,8 @@ html.resizing *, body.resizing * {
   /* line 1, ../sass/components/_nav.scss */
   #nav {
     padding-left: 225px;
-    top: 33px;
   }
-  /* line 47, ../sass/components/_nav.scss */
+  /* line 46, ../sass/components/_nav.scss */
   #nav a {
     padding: 0 13px;
   }
@@ -817,11 +820,11 @@ html.resizing *, body.resizing * {
     background: #4A4A4A;
     margin: 0;
   }
-  /* line 65, ../sass/components/_nav.scss */
+  /* line 64, ../sass/components/_nav.scss */
   #nav .open-menu {
     display: block;
   }
-  /* line 69, ../sass/components/_nav.scss */
+  /* line 68, ../sass/components/_nav.scss */
   #nav a {
     display: block;
     height: 49px;
@@ -831,11 +834,11 @@ html.resizing *, body.resizing * {
     background: #4A4A4A;
     position: relative;
   }
-  /* line 77, ../sass/components/_nav.scss */
+  /* line 76, ../sass/components/_nav.scss */
   #nav a.home {
     display: block;
   }
-  /* line 80, ../sass/components/_nav.scss */
+  /* line 79, ../sass/components/_nav.scss */
   #nav a:hover, #nav a.selected {
     background: #fff;
     color: #4A4A4A;
@@ -1221,10 +1224,10 @@ button {
   bottom: 0;
   padding: 0;
   opacity: 0;
-  -webkit-transition: opacity 0.3s linear;
-  -moz-transition: opacity 0.3s linear;
-  -o-transition: opacity 0.3s linear;
-  transition: opacity 0.3s linear;
+  -webkit-transition: opacity 0.4s;
+  -moz-transition: opacity 0.4s;
+  -o-transition: opacity 0.4s;
+  transition: opacity 0.4s;
 }
 
 /* line 51, ../sass/components/_tabs.scss */
@@ -1237,8 +1240,8 @@ button {
 /* line 56, ../sass/components/_tabs.scss */
 [type=radio]:checked ~ label ~ .content {
   opacity: 1;
-  -webkit-transition: opacity 0.275s linear;
-  -moz-transition: opacity 0.275s linear;
-  -o-transition: opacity 0.275s linear;
-  transition: opacity 0.275s linear;
+  -webkit-transition: opacity 0.4s;
+  -moz-transition: opacity 0.4s;
+  -o-transition: opacity 0.4s;
+  transition: opacity 0.4s;
 }

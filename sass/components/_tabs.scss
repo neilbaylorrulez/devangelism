@@ -46,7 +46,7 @@
   bottom: 0;
   padding: 0;
   opacity: 0;
-  @include transition(opacity 0.3s linear);
+  @include transition(opacity 0.4s);
 }
 [type=radio]:checked ~ label {
   background: #4a4a4a;
@@ -55,5 +55,5 @@
 }
 [type=radio]:checked ~ label ~ .content {
   opacity: 1;
-  @include transition(opacity 0.275s linear);
+  @include transition(opacity 0.4s);
 }

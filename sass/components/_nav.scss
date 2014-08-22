@@ -35,15 +35,14 @@
 	    display:none;
 	  }
 	}
-	@media screen and (max-width: 1160px) {
-		padding-left:300px;
-		text-align:left;
+	@media screen and (max-width: 1024px) {
+		padding-left: 225px;
+    text-align:left;
 		width:auto;
 	}
 
 	@media screen and (max-width: 900px) {
 		padding-left:225px;
-		top:33px;
 		a {
 			padding:0 13px;
 		}
