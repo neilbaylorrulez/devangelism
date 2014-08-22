@@ -563,12 +563,16 @@ button {
 /* line 1, ../sass/components/_overlay.scss */
 .overlay {
   background: #EC7058;
-  min-height: 100%;
+  height: 100%;
   width: 100%;
+  overflow: auto;
   top: 0;
   position: fixed;
   z-index: 2;
-  padding-top: 120px;
+  padding: 120px 0 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
@@ -590,7 +594,7 @@ button {
   transition: opacity 0.7s linear, transform 0.3s ease;
   opacity: 0.01;
 }
-/* line 15, ../sass/components/_overlay.scss */
+/* line 17, ../sass/components/_overlay.scss */
 .overlay.show {
   display: block;
   opacity: 0.87;
@@ -598,20 +602,87 @@ button {
   -moz-animation: bounce 0.75s;
   animation: bounce 0.75s;
 }
-/* line 22, ../sass/components/_overlay.scss */
+/* line 24, ../sass/components/_overlay.scss */
 .overlay.close {
   opacity: 0.01;
-  -webkit-transition: opacity 0.3s linear;
-  -moz-transition: opacity 0.3s linear;
-  -o-transition: opacity 0.3s linear;
-  transition: opacity 0.3s linear;
+  -webkit-transition: opacity 0.275s linear;
+  -moz-transition: opacity 0.275s linear;
+  -o-transition: opacity 0.275s linear;
+  transition: opacity 0.275s linear;
 }
-/* line 26, ../sass/components/_overlay.scss */
+/* line 28, ../sass/components/_overlay.scss */
 .overlay.hide {
   display: none;
 }
-
 /* line 31, ../sass/components/_overlay.scss */
+.overlay.who {
+  color: #fff;
+  font-size: 12px;
+}
+/* line 34, ../sass/components/_overlay.scss */
+.overlay.who img {
+  position: absolute;
+  left: 50%;
+  width: 115px;
+  height: 115px;
+  margin-left: -57px;
+  top: 10px;
+  -webkit-border-radius: 115px;
+  -moz-border-radius: 115px;
+  -ms-border-radius: 115px;
+  -o-border-radius: 115px;
+  border-radius: 115px;
+}
+/* line 43, ../sass/components/_overlay.scss */
+.overlay.who h3, .overlay.who h4 {
+  margin: 0;
+  text-align: center;
+  font-weight: normal;
+}
+/* line 48, ../sass/components/_overlay.scss */
+.overlay.who h3 {
+  font-size: 36px;
+  padding-top: 145px;
+}
+/* line 52, ../sass/components/_overlay.scss */
+.overlay.who h4 {
+  font-size: 15px;
+}
+/* line 55, ../sass/components/_overlay.scss */
+.overlay.who p {
+  padding-top: 25px;
+  line-height: 18px;
+  max-width: 450px;
+  margin: 0 auto;
+}
+/* line 61, ../sass/components/_overlay.scss */
+.overlay.who p:last-of-type {
+  padding-bottom: 25px;
+  border-bottom: 1px solid #fff;
+}
+/* line 66, ../sass/components/_overlay.scss */
+.overlay.who .header {
+  font-weight: bold;
+  padding: 25px 0 3px;
+  margin: 0 auto;
+  display: block;
+  max-width: 450px;
+}
+/* line 73, ../sass/components/_overlay.scss */
+.overlay.who ul {
+  margin: 0 auto;
+  list-style: none;
+  padding: 0 0 25px;
+  margin: 0 auto;
+  max-width: 450px;
+}
+/* line 80, ../sass/components/_overlay.scss */
+.overlay.who a {
+  color: #fff;
+  line-height: 18px;
+}
+
+/* line 87, ../sass/components/_overlay.scss */
 .overlay-wrap {
   width: 100%;
   height: 100%;
@@ -624,7 +695,7 @@ button {
   padding: 0 10px;
 }
 
-/* line 41, ../sass/components/_overlay.scss */
+/* line 97, ../sass/components/_overlay.scss */
 .close-overlay {
   height: 30px;
   width: 30px;
@@ -641,7 +712,7 @@ button {
   border-radius: 30px;
   cursor: pointer;
 }
-/* line 53, ../sass/components/_overlay.scss */
+/* line 109, ../sass/components/_overlay.scss */
 .close-overlay:before, .close-overlay:after {
   content: '';
   position: absolute;
@@ -657,7 +728,7 @@ button {
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-/* line 64, ../sass/components/_overlay.scss */
+/* line 120, ../sass/components/_overlay.scss */
 .close-overlay:after {
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);

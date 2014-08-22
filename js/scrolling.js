@@ -16,6 +16,7 @@
         previousScrollTop = scrollTop,
         userScroll = true,
         closedOverlayTriggeredPage = false,
+        overlayScrollTop = null,
         //Firefox fires a scroll event before the hashchange event, this flag is needed for back -> forward -> back
         IS_FIREFOX = window.navigator.userAgent.toLowerCase().indexOf('firefox') > -1,
         //IOS has weird (useless?) scroll events and doesn't move the scrollbar when you go forward/back
@@ -68,19 +69,24 @@
         }
     }
 
-    function showOverlay($overlay) {
+    function overlayTransition($overlay) {
         if($overlay.hasClass('show')) {
             return;
         }
-
         $overlay.removeClass('hide');
+        $wrap.css({
+            transform: 'translateY(-' + (overlayScrollTop = window.pageYOffset) + 'px)',
+            transition: 'none'
+        });
+        $docEl.css('overflow', 'hidden');
+
         window.setTimeout(window.requestAnimationFrame.bind(null, function () {
             $overlay.addClass('show');
         }), 0);
     }
 
-    function handleOverlays(pageId, scroll) {
-        var parts = pageId.split('/'),
+    function showOverlay(url, scroll) {
+        var parts = url.split('/'),
             parentPageId,
             overlayId,
             $overlay,
@@ -91,13 +97,13 @@
         parentPageId = parts[0];
         overlayId = parts[1];
         if($wrap.find('[data-id="' + parentPageId + '"]').length && ($overlay = $('.overlay.' + parentPageId + '[data-id="' + overlayId +'"]')).length) {
-            hideOverlays();
+            //hideOverlays();
             curPageId = 'overlay-' + parentPageId;
             if(!scroll) {
-                return showOverlay($overlay);
+                return overlayTransition($overlay);
             }
             scrollToY(sections[parentPageId].top - pageTopOffset(parentPageId), getAfterFn(function () {
-                showOverlay($overlay);
+                overlayTransition($overlay);
             }), true);
         }
     }
@@ -112,7 +118,7 @@
         }, true);
     }
 
-    function hideOverlays(close) {
+    function hideOverlays() {
         var $overlay;
         if(curPageId === 'contact') {
             $docEl.css('overflow', '');
@@ -123,9 +129,18 @@
                 }, 400);
             }), 0);
         } else {
+            $overlay = $('.overlay.show');
+            if(!$overlay.length) {
+                return;
+            }
+            $docEl.css('overflow', '');
+            $wrap.css('transform', '');
+            window.scrollTo(0, scrollTop = overlayScrollTop);
             window.setTimeout(window.requestAnimationFrame.bind(null, function () {
-                $overlay = $('.overlay.show').addClass('close');
+                $overlay.addClass('close');
+                $wrap.css('transition', '');
                 window.setTimeout(function () {
+                    overlayScrollTop = null;
                     $overlay.removeClass('show').removeClass('close').addClass('hide');
                 }, 400);
             }), 0);
@@ -133,7 +148,10 @@
     }
 
     function pageTopOffset(pageId) {
-        return window.isMobile && pageId !== 'home' ?
+        if(pageId === 'home') {
+            return 0;
+        }
+        return window.isMobile ?
             MOBILE_NAV_HEIGHT + MOBILE_NAV_BORDER_WIDTH :
             DESKTOP_NAV_HEIGHT + MOBILE_NAV_BORDER_WIDTH ;
     }
@@ -156,15 +174,13 @@
     function showPage(pageId, afterFn) {
         userScroll = false;
         afterFn = getAfterFn(afterFn);
-
+        hideOverlays();
 
         if(closedOverlayTriggeredPage) {
-            hideOverlays(true);
             curPageId = pageId;
             return afterFn();
         }
 
-        hideOverlays();
         if((curPageId = pageId) === 'contact') {
             return showContactPage(afterFn);
         }
@@ -207,6 +223,7 @@
                     });
                     return false;
                 }
+
                 showPage(pageId);
             }
         });
@@ -223,7 +240,7 @@
                     showPage(pageId);
                     updateNav($('#nav a[href="#' + pageId + '"]')[0]);
                 } else {
-                    handleOverlays(pageId, !window.clickedOverlayTriggeredPage);
+                    showOverlay(pageId, !window.clickedOverlayTriggeredPage);
                 }
             }
             window.clickedOverlayTriggeredPage = false;
@@ -231,7 +248,12 @@
         });
 
         $window.on('scroll', function () {
+            if(overlayScrollTop !== null) {
+                return;
+            }
+
             var i, s, len;
+
             previousScrollTop = scrollTop;
             scrollTop = window.pageYOffset;
 

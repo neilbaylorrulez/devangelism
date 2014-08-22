@@ -1,11 +1,13 @@
 .overlay {
 	background:#EC7058;
-	min-height:100%;
+	height:100%;
 	width:100%;
+	overflow:auto;
 	top:0;
 	position:fixed;
 	z-index:2;
-	padding-top:120px;
+	padding:120px 0 30px;
+	@include box-sizing(border-box);
 	@include backface-visibility(hidden);
 	@include perspective(1000);
 	@include transform(translateZ(0) scale(1));
@@ -21,10 +23,64 @@
 	}
 	&.close {
 		opacity:0.01;
-	  	@include transition(opacity 0.3s linear);
+	  @include transition(opacity 0.275s linear);
 	}
 	&.hide {
 		display:none;
+	}
+	&.who {
+		color:#fff;
+		font-size:12px;
+		img {
+			position:absolute;
+			left:50%;
+			width:115px;
+			height:115px;
+			margin-left:-57px;
+			top:10px;
+			@include border-radius(115px);
+		}
+		h3, h4 {
+			margin:0;
+			text-align: center;
+			font-weight: normal;
+		}
+		h3 {
+			font-size:36px;
+			padding-top:145px;
+		}
+		h4 {
+			font-size:15px;
+		}
+		p {
+			padding-top:25px;
+			line-height:18px;
+			max-width:450px;
+			margin:0 auto;
+
+			&:last-of-type {
+				padding-bottom:25px;
+				border-bottom:1px solid #fff;
+			}
+		}
+		.header {
+			font-weight: bold;
+			padding:25px 0 3px;
+			margin:0 auto;
+			display:block;
+			max-width:450px;
+		}
+		ul {
+			margin:0 auto;
+			list-style:none;
+			padding:0 0 25px;
+			margin:0 auto;
+			max-width:450px;
+		}
+		a {
+			color:#fff;
+			line-height:18px;
+		}
 	}
 }
 

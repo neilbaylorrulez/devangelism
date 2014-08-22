@@ -12,6 +12,12 @@
 		}), 0);
 	}
 
+	function updateViewportInfo() {
+		window.viewportWidth = $window.width();
+		window.viewportHeight = $window.height();
+		window.isMobile = window.viewportWidth < MOBILE_WIDTH;
+	}
+
 	function initListeners() {
 		var resizeTimeout = null,
 			debounce = true;
@@ -36,8 +42,7 @@
 			resizeTimeout = window.setTimeout(function () {
 				resizeTimeout = null;
 				debounce = true;
-				window.viewportWidth = $window.width();
-				window.isMobile = window.viewportWidth < MOBILE_WIDTH;
+				updateViewportInfo();
 
 				$window.trigger('after-resize');
 				window.setTimeout(function () {
@@ -52,8 +57,7 @@
 		initListeners();
 	}
 
-	window.viewportWidth = $window.width();
-	window.isMobile = window.viewportWidth < MOBILE_WIDTH;
+	updateViewportInfo();
 
 	$(init);
 }());
