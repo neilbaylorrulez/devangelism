@@ -151,12 +151,10 @@
     }
 
     function pageTopOffset(pageId) {
-        if(pageId === 'home') {
-            return 0;
-        }
-        return window.isMobile ?
-            MOBILE_NAV_HEIGHT + MOBILE_NAV_BORDER_WIDTH :
-            DESKTOP_NAV_HEIGHT + MOBILE_NAV_BORDER_WIDTH ;
+        return pageId === 'home' ? 0 :
+            (window.isMobile ?
+                MOBILE_NAV_HEIGHT + MOBILE_NAV_BORDER_WIDTH :
+                DESKTOP_NAV_HEIGHT + MOBILE_NAV_BORDER_WIDTH);
     }
 
     function getAfterFn(afterFn) {
@@ -221,7 +219,11 @@
                 pageId = url.replace('#', ''),
                 $page = $wrap.find('> section[data-id="' + pageId + '"]');
             if(curPageId === pageId && pageId === 'contact') {
-                return getAfterFn()();
+                getAfterFn()();
+                 if(IS_FIREFOX) {
+                    return false;
+                }
+                return;
             }
 
             if($page.length) {

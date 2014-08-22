@@ -4,7 +4,7 @@
 	var $window = $(window),
 		$body = $(document.body),
 		$wrap = $('#wrap'),
-		MOBILE_WIDTH = 720,
+		MOBILE_WIDTH = 800,
 		IS_SAFARI = /^((?!chrome).)*safari/i.test(navigator.userAgent);
 
 	function initState() {

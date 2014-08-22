@@ -1318,37 +1318,42 @@ html.resizing *, body.resizing * {
   margin: 0 auto 20px;
   font-size: 0;
   left: 0;
-  -webkit-perspective: 1000;
-  -moz-perspective: 1000;
-  -ms-perspective: 1000;
-  -o-perspective: 1000;
-  perspective: 1000;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transform: translateZ(0) scale(1);
-  -moz-transform: translateZ(0) scale(1);
-  -ms-transform: translateZ(0) scale(1);
-  -o-transform: translateZ(0) scale(1);
-  transform: translateZ(0) scale(1);
-  -webkit-transition: -webkit-transform 0.225s;
-  -moz-transition: -moz-transform 0.225s;
-  -o-transition: -o-transform 0.225s;
-  transition: transform 0.225s;
 }
-/* line 22, ../sass/_locations.scss */
+@media screen and (max-width: 1100px) {
+  /* line 11, ../sass/_locations.scss */
+  #wrap #locations .location-wrapper, #wrap [data-id="locations"] .location-wrapper {
+    -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    -ms-perspective: 1000;
+    -o-perspective: 1000;
+    perspective: 1000;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1);
+    -moz-transform: translateZ(0) scale(1);
+    -ms-transform: translateZ(0) scale(1);
+    -o-transform: translateZ(0) scale(1);
+    transform: translateZ(0) scale(1);
+    -webkit-transition: -webkit-transform 0.225s;
+    -moz-transition: -moz-transform 0.225s;
+    -o-transition: -o-transform 0.225s;
+    transition: transform 0.225s;
+  }
+}
+/* line 24, ../sass/_locations.scss */
 #wrap #locations .location-wrapper-outer, #wrap [data-id="locations"] .location-wrapper-outer {
   overflow: hidden;
   padding: 100px 0 0;
   margin-top: -100px;
 }
-/* line 28, ../sass/_locations.scss */
+/* line 30, ../sass/_locations.scss */
 #wrap #locations .map, #wrap [data-id="locations"] .map {
   width: 100%;
 }
-/* line 32, ../sass/_locations.scss */
+/* line 34, ../sass/_locations.scss */
 #wrap #locations .marker, #wrap [data-id="locations"] .marker {
   position: absolute;
   width: 20px;
@@ -1357,27 +1362,27 @@ html.resizing *, body.resizing * {
   left: -10px;
   cursor: pointer;
 }
-/* line 39, ../sass/_locations.scss */
+/* line 41, ../sass/_locations.scss */
 #wrap #locations .marker.one, #wrap [data-id="locations"] .marker.one {
   top: 31%;
   left: 16%;
 }
-/* line 43, ../sass/_locations.scss */
+/* line 45, ../sass/_locations.scss */
 #wrap #locations .marker.two, #wrap [data-id="locations"] .marker.two {
   top: 34%;
   left: 21%;
 }
-/* line 47, ../sass/_locations.scss */
+/* line 49, ../sass/_locations.scss */
 #wrap #locations .marker.three, #wrap [data-id="locations"] .marker.three {
   top: 60%;
   left: 38%;
 }
-/* line 51, ../sass/_locations.scss */
+/* line 53, ../sass/_locations.scss */
 #wrap #locations .marker.four, #wrap [data-id="locations"] .marker.four {
   top: 41%;
   left: 55%;
 }
-/* line 57, ../sass/_locations.scss */
+/* line 59, ../sass/_locations.scss */
 #wrap #locations .location-dialog, #wrap [data-id="locations"] .location-dialog {
   position: absolute;
   padding: 8px 30px 5px;
@@ -1402,13 +1407,13 @@ html.resizing *, body.resizing * {
   -o-perspective: 1000;
   perspective: 1000;
 }
-/* line 70, ../sass/_locations.scss */
+/* line 72, ../sass/_locations.scss */
 #wrap #locations .location-dialog h2, #wrap [data-id="locations"] .location-dialog h2 {
   font-size: 18px;
   margin: 0 0 8px;
   color: #3586be;
 }
-/* line 76, ../sass/_locations.scss */
+/* line 78, ../sass/_locations.scss */
 #wrap #locations .location-dialog p, #wrap [data-id="locations"] .location-dialog p {
   margin: 0 0 7px;
   font-size: 13px;

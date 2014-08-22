@@ -66,9 +66,9 @@
 
 			if(addingNew) {
 				if($infoWindow.location.coords.x < 110) {
-					$mapWrap.css('transform', 'translate3d(' + (110 - $infoWindow.location.coords.x) + 'px, 0, 0)');
+					$mapWrap.css('transform', 'translate3d(' + (110 - $infoWindow.location.coords.x) + 'px, 0, 0) scale(1)');
 				} else if(window.viewportWidth - $infoWindow.location.coords.x < 110) {
-					$mapWrap.css('transform', 'translate3d(' + (-110 + (window.viewportWidth - $infoWindow.location.coords.x)) + 'px, 0, 0)');
+					$mapWrap.css('transform', 'translate3d(' + (-110 + (window.viewportWidth - $infoWindow.location.coords.x)) + 'px, 0, 0) scale(1)');
 				} else {
 					$mapWrap.css('transform', '');
 				}
