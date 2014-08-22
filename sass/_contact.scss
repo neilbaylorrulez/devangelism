@@ -5,7 +5,7 @@
     right:0;
     left:0;
     opacity:0.01;
-    padding-top:150px;
+    padding-top:140px;
     border-bottom: none;
     pointer-events:none;
     background: #3682b9;
@@ -14,14 +14,117 @@
 
     h1 {
       color:#fff;
+      margin-bottom: 35px;
+      &:before, &:after {
+        display: none;
+      }
+    }
+
+    .overlay-wrap {
+      max-width: 460px;
+      padding: 0 20px;
+    }
+
+    form {
+      text-align: left;
+
+      input {
+        &::-webkit-input-placeholder {
+           color: rgba(230,230,230,0.2);
+        }
+        &:-moz-placeholder { /* Firefox 18- */
+           color: rgba(230,230,230,0.2);
+        }
+        &::-moz-placeholder {  /* Firefox 19+ */
+           color: rgba(230,230,230,0.2);
+        }
+        &:-ms-input-placeholder {
+           color: rgba(230,230,230,0.2);
+        }
+      }
+
+      input[type="text"], input[type="email"] {
+        position: relative;
+        display: inline-block;
+        float: left;
+        margin: 0;
+        padding: 6px 10px 2px;
+        border: 0;
+        border-bottom: 1px solid white;
+        width: 55%;
+        font-size: 30px;
+        background: none;
+        color: white;
+        @include box-sizing(border-box);
+        margin-bottom: 4px;
+
+        &:first-of-type {
+          border-right: 1px solid white;
+          padding-left: 0;
+          width: 45%;
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+      label {
+        float: left;
+        display: inline-block;
+        width: 55%;
+        padding-left: 10px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        &:first-of-type {
+          width: 45%;
+          padding-left: 0;
+        }
+        color: white;
+        @include box-sizing(border-box);
+      }
+      input[type="email"] {
+        width: 100%;
+        padding-left: 0;
+      }
+      label[for="email"], label[for="message"], {
+        padding-left: 0;
+        margin-bottom: 16px;
+      }
+      label[for="message"] {
+        width: 100%;
+      }
+      textarea {
+        display: block;
+        width: 100%;
+        height: 160px;
+        resize: none;
+        background: #4A91C4;
+        color: white;
+        font-size: 24px;
+        padding: 10px;
+        line-height: 1.1;
+        border: 0;
+        border-bottom: 1px solid white;
+        @include box-sizing(border-box);
+        margin-bottom: 5px;
+
+        &:focus {
+          outline: none;
+        }
+      }
+      button.submit {
+        float: right;
+        border: 0;
+        background: white;
+        margin-top: 13px;
+        padding: 10px 20px;
+        color: #EF7053;
+        @include border-radius(4px);
+      }
     }
 
     @media screen and (max-width: 720px) {
       h1 {
         padding:0 50px;
-        &:before, &:after {
-          display:block;
-        }
       }
     }
 
@@ -32,7 +135,12 @@
     //}
 
     .close-overlay {
-    	top:-50px;
+    	top:-15px;
+      right: -24px;
+
+      @media screen and (max-width: 555px) {
+        right: 20px;
+      }
     }
   }
 

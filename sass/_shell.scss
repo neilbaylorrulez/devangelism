@@ -84,7 +84,8 @@ html, body {
   }
 
   footer {
-    background: #4A4A4A url("../img/cloud-footer.png") no-repeat 50% 50%;
+    background: #4A4A4A url("../img/cloud-footer.svg") no-repeat 50% 50%;
+    background-size: 61px 33px;
     height: 200px;
   }
 }
@@ -93,7 +94,7 @@ html, body {
   display:none;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 800px) {
   #wrap, #nav, #mobile-header {
     @include transform(translateZ(0) scale(1));
     @include backface-visibility(hidden);
@@ -105,8 +106,8 @@ html, body {
     position:fixed;
     height:70px;
     width:100%;
-    background: #3682b9 url("../img/logo.png") 10px no-repeat;
-    background-size:190px;
+    background: #3682b9 url("../img/DO_Logo.svg") 20px no-repeat;
+    background-size: 195px 31px;
     top: 0;
     display:block;
   }

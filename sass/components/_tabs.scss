@@ -7,9 +7,6 @@
   margin: 20px auto;
   width: 100%;
   max-width: 1024px;
-  @media screen and (max-width: 420px) {
-    margin-left:-9px;
-  }
 }
 .tab {
   label {
@@ -60,7 +57,7 @@
   bottom: 0;
   padding: 0;
   opacity: 0;
-  @include transition(opacity 0.2s linear);
+  @include transition(opacity 0.4s);
 }
 [type=radio]:checked ~ label {
   background: #4a4a4a;
@@ -68,5 +65,5 @@
 }
 [type=radio]:checked ~ label ~ .content {
   opacity: 1;
-  @include transition(opacity 0.225s linear);
+  @include transition(opacity 0.4s);
 }
