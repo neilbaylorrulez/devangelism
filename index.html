@@ -9,6 +9,7 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'>
   </head>
   <body>
+    <!-- <img src="contact.png" alt="" style="position: absolute; top: -30px; left: 123px; pointer-events: none; opacity: 0.5; width: 1100px; z-index: 9;"> -->
     <nav id="nav">
       <button class="open-menu">Open Menu</button>
       <a href="#home" class="home selected">Home</a>
@@ -112,6 +113,17 @@
         <div class="overlay-wrap">
           <h1>Contact Us</h1>
           <span class="close-overlay">Close Overlay</span>
+          <form name="contact us">
+            <input type="text" name="firstname" id="fname" placeholder="Ricardo" required>
+            <input type="text" name="lastname" id="lname" placeholder="Clemente" required>
+            <label for="fname">First Name</label>
+            <label for="lname">Last Name</label>
+            <input type="email" name="email" placeholder="ricardo.c@juicyfruit.com">
+            <label for="email">Email</label>
+            <textarea name="message" id="message"></textarea>
+            <label for="message">Message</label>
+            <button class="submit">Send</button>
+          </form>
         </div>
       </section>
       <footer></footer>

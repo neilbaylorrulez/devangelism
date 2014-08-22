@@ -617,8 +617,8 @@ button {
 
 /* line 41, ../sass/components/_overlay.scss */
 .close-overlay {
-  height: 30px;
-  width: 30px;
+  height: 28px;
+  width: 28px;
   border: 2px solid #fff;
   display: block;
   position: absolute;
@@ -637,8 +637,8 @@ button {
   content: '';
   position: absolute;
   left: 50%;
-  top: 5px;
-  height: 20px;
+  top: 6px;
+  height: 16px;
   width: 2px;
   margin-left: -1px;
   background: #fff;
@@ -1296,7 +1296,7 @@ html.resizing *, body.resizing * {
   right: 0;
   left: 0;
   opacity: 0.01;
-  padding-top: 150px;
+  padding-top: 140px;
   border-bottom: none;
   pointer-events: none;
   background: #3682b9;
@@ -1321,39 +1321,170 @@ html.resizing *, body.resizing * {
 /* line 15, ../sass/_contact.scss */
 #wrap #contact h1, #wrap [data-id="contact"] h1 {
   color: #fff;
+  margin-bottom: 35px;
+}
+/* line 18, ../sass/_contact.scss */
+#wrap #contact h1:before, #wrap #contact h1:after, #wrap [data-id="contact"] h1:before, #wrap [data-id="contact"] h1:after {
+  display: none;
+}
+/* line 23, ../sass/_contact.scss */
+#wrap #contact .overlay-wrap, #wrap [data-id="contact"] .overlay-wrap {
+  max-width: 460px;
+  padding: 0 20px;
+}
+/* line 28, ../sass/_contact.scss */
+#wrap #contact form, #wrap [data-id="contact"] form {
+  text-align: left;
+}
+/* line 32, ../sass/_contact.scss */
+#wrap #contact form input::-webkit-input-placeholder, #wrap [data-id="contact"] form input::-webkit-input-placeholder {
+  color: rgba(230, 230, 230, 0.2);
+}
+/* line 35, ../sass/_contact.scss */
+#wrap #contact form input:-moz-placeholder, #wrap [data-id="contact"] form input:-moz-placeholder {
+  /* Firefox 18- */
+  color: rgba(230, 230, 230, 0.2);
+}
+/* line 38, ../sass/_contact.scss */
+#wrap #contact form input::-moz-placeholder, #wrap [data-id="contact"] form input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: rgba(230, 230, 230, 0.2);
+}
+/* line 41, ../sass/_contact.scss */
+#wrap #contact form input:-ms-input-placeholder, #wrap [data-id="contact"] form input:-ms-input-placeholder {
+  color: rgba(230, 230, 230, 0.2);
+}
+/* line 46, ../sass/_contact.scss */
+#wrap #contact form input[type="text"], #wrap #contact form input[type="email"], #wrap [data-id="contact"] form input[type="text"], #wrap [data-id="contact"] form input[type="email"] {
+  position: relative;
+  display: inline-block;
+  float: left;
+  margin: 0;
+  padding: 6px 10px 2px;
+  border: 0;
+  border-bottom: 1px solid white;
+  width: 55%;
+  font-size: 30px;
+  background: none;
+  color: white;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-bottom: 4px;
+}
+/* line 61, ../sass/_contact.scss */
+#wrap #contact form input[type="text"]:first-of-type, #wrap #contact form input[type="email"]:first-of-type, #wrap [data-id="contact"] form input[type="text"]:first-of-type, #wrap [data-id="contact"] form input[type="email"]:first-of-type {
+  border-right: 1px solid white;
+  padding-left: 0;
+  width: 45%;
+}
+/* line 66, ../sass/_contact.scss */
+#wrap #contact form input[type="text"]:focus, #wrap #contact form input[type="email"]:focus, #wrap [data-id="contact"] form input[type="text"]:focus, #wrap [data-id="contact"] form input[type="email"]:focus {
+  outline: none;
+}
+/* line 70, ../sass/_contact.scss */
+#wrap #contact form label, #wrap [data-id="contact"] form label {
+  float: left;
+  display: inline-block;
+  width: 55%;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: white;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 77, ../sass/_contact.scss */
+#wrap #contact form label:first-of-type, #wrap [data-id="contact"] form label:first-of-type {
+  width: 45%;
+  padding-left: 0;
+}
+/* line 84, ../sass/_contact.scss */
+#wrap #contact form input[type="email"], #wrap [data-id="contact"] form input[type="email"] {
+  width: 100%;
+  padding-left: 0;
+}
+/* line 88, ../sass/_contact.scss */
+#wrap #contact form label[for="email"], #wrap #contact form label[for="message"], #wrap [data-id="contact"] form label[for="email"], #wrap [data-id="contact"] form label[for="message"] {
+  padding-left: 0;
+  margin-bottom: 16px;
+}
+/* line 92, ../sass/_contact.scss */
+#wrap #contact form label[for="message"], #wrap [data-id="contact"] form label[for="message"] {
+  width: 100%;
+}
+/* line 95, ../sass/_contact.scss */
+#wrap #contact form textarea, #wrap [data-id="contact"] form textarea {
+  display: block;
+  width: 100%;
+  height: 160px;
+  resize: none;
+  background: #4A91C4;
+  color: white;
+  font-size: 24px;
+  padding: 10px;
+  line-height: 1.1;
+  border: 0;
+  border-bottom: 1px solid white;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+}
+/* line 110, ../sass/_contact.scss */
+#wrap #contact form textarea:focus, #wrap [data-id="contact"] form textarea:focus {
+  outline: none;
+}
+/* line 114, ../sass/_contact.scss */
+#wrap #contact form button.submit, #wrap [data-id="contact"] form button.submit {
+  float: right;
+  border: 0;
+  background: white;
+  margin-top: 13px;
+  padding: 10px 20px;
+  color: #EF7053;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
 }
 @media screen and (max-width: 720px) {
-  /* line 20, ../sass/_contact.scss */
+  /* line 126, ../sass/_contact.scss */
   #wrap #contact h1, #wrap [data-id="contact"] h1 {
     padding: 0 50px;
   }
-  /* line 22, ../sass/_contact.scss */
-  #wrap #contact h1:before, #wrap #contact h1:after, #wrap [data-id="contact"] h1:before, #wrap [data-id="contact"] h1:after {
-    display: block;
+}
+/* line 137, ../sass/_contact.scss */
+#wrap #contact .close-overlay, #wrap [data-id="contact"] .close-overlay {
+  top: -15px;
+  right: -24px;
+}
+@media screen and (max-width: 555px) {
+  /* line 137, ../sass/_contact.scss */
+  #wrap #contact .close-overlay, #wrap [data-id="contact"] .close-overlay {
+    right: 20px;
   }
 }
-/* line 34, ../sass/_contact.scss */
-#wrap #contact .close-overlay, #wrap [data-id="contact"] .close-overlay {
-  top: -50px;
-}
-/* line 40, ../sass/_contact.scss */
+/* line 148, ../sass/_contact.scss */
 #wrap.loaded #contact, #wrap.loaded [data-id="contact"] {
   display: block;
 }
-/* line 49, ../sass/_contact.scss */
+/* line 157, ../sass/_contact.scss */
 #wrap.contact #contact, #wrap.contact [data-id="contact"] {
   pointer-events: auto;
   opacity: 0.87;
 }
 @media screen and (min-width: 721px) {
-  /* line 49, ../sass/_contact.scss */
+  /* line 157, ../sass/_contact.scss */
   #wrap.contact #contact, #wrap.contact [data-id="contact"] {
     -webkit-animation: bounce 0.8s;
     -moz-animation: bounce 0.8s;
     animation: bounce 0.8s;
   }
 }
-/* line 61, ../sass/_contact.scss */
+/* line 169, ../sass/_contact.scss */
 #wrap.contact-hide #contact, #wrap.contact-hide [data-id="contact"] {
   opacity: 0.01;
   -webkit-transition: opacity 0.3s linear;
