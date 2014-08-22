@@ -1546,6 +1546,7 @@ html.resizing *, body.resizing * {
   background: #3682b9;
   z-index: 3;
   display: none;
+  overflow: auto;
   -webkit-transform: translateZ(0) scale(1);
   -moz-transform: translateZ(0) scale(1);
   -ms-transform: translateZ(0) scale(1);
@@ -1562,43 +1563,43 @@ html.resizing *, body.resizing * {
   -o-perspective: 1000;
   perspective: 1000;
 }
-/* line 15, ../sass/_contact.scss */
+/* line 16, ../sass/_contact.scss */
 #wrap #contact h1, #wrap [data-id="contact"] h1 {
   color: #fff;
   margin-bottom: 35px;
 }
-/* line 18, ../sass/_contact.scss */
+/* line 19, ../sass/_contact.scss */
 #wrap #contact h1:before, #wrap #contact h1:after, #wrap [data-id="contact"] h1:before, #wrap [data-id="contact"] h1:after {
   display: none;
 }
-/* line 23, ../sass/_contact.scss */
+/* line 24, ../sass/_contact.scss */
 #wrap #contact .overlay-wrap, #wrap [data-id="contact"] .overlay-wrap {
   max-width: 460px;
   padding: 0 20px;
 }
-/* line 28, ../sass/_contact.scss */
+/* line 29, ../sass/_contact.scss */
 #wrap #contact form, #wrap [data-id="contact"] form {
   text-align: left;
 }
-/* line 32, ../sass/_contact.scss */
+/* line 33, ../sass/_contact.scss */
 #wrap #contact form input::-webkit-input-placeholder, #wrap [data-id="contact"] form input::-webkit-input-placeholder {
   color: rgba(230, 230, 230, 0.7);
 }
-/* line 35, ../sass/_contact.scss */
+/* line 36, ../sass/_contact.scss */
 #wrap #contact form input:-moz-placeholder, #wrap [data-id="contact"] form input:-moz-placeholder {
   /* Firefox 18- */
   color: rgba(230, 230, 230, 0.7);
 }
-/* line 38, ../sass/_contact.scss */
+/* line 39, ../sass/_contact.scss */
 #wrap #contact form input::-moz-placeholder, #wrap [data-id="contact"] form input::-moz-placeholder {
   /* Firefox 19+ */
   color: rgba(230, 230, 230, 0.7);
 }
-/* line 41, ../sass/_contact.scss */
+/* line 42, ../sass/_contact.scss */
 #wrap #contact form input:-ms-input-placeholder, #wrap [data-id="contact"] form input:-ms-input-placeholder {
   color: rgba(230, 230, 230, 0.7);
 }
-/* line 46, ../sass/_contact.scss */
+/* line 47, ../sass/_contact.scss */
 #wrap #contact form input[type="text"], #wrap #contact form input[type="email"], #wrap [data-id="contact"] form input[type="text"], #wrap [data-id="contact"] form input[type="email"] {
   position: relative;
   display: inline-block;
@@ -1616,17 +1617,17 @@ html.resizing *, body.resizing * {
   box-sizing: border-box;
   margin-bottom: 4px;
 }
-/* line 61, ../sass/_contact.scss */
+/* line 62, ../sass/_contact.scss */
 #wrap #contact form input[type="text"]:first-of-type, #wrap #contact form input[type="email"]:first-of-type, #wrap [data-id="contact"] form input[type="text"]:first-of-type, #wrap [data-id="contact"] form input[type="email"]:first-of-type {
   border-right: 1px solid white;
   padding-left: 0;
   width: 45%;
 }
-/* line 66, ../sass/_contact.scss */
+/* line 67, ../sass/_contact.scss */
 #wrap #contact form input[type="text"]:focus, #wrap #contact form input[type="email"]:focus, #wrap [data-id="contact"] form input[type="text"]:focus, #wrap [data-id="contact"] form input[type="email"]:focus {
   outline: none;
 }
-/* line 70, ../sass/_contact.scss */
+/* line 71, ../sass/_contact.scss */
 #wrap #contact form label, #wrap [data-id="contact"] form label {
   float: left;
   display: inline-block;
@@ -1639,26 +1640,26 @@ html.resizing *, body.resizing * {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 77, ../sass/_contact.scss */
+/* line 78, ../sass/_contact.scss */
 #wrap #contact form label:first-of-type, #wrap [data-id="contact"] form label:first-of-type {
   width: 45%;
   padding-left: 0;
 }
-/* line 84, ../sass/_contact.scss */
+/* line 85, ../sass/_contact.scss */
 #wrap #contact form input[type="email"], #wrap [data-id="contact"] form input[type="email"] {
   width: 100%;
   padding-left: 0;
 }
-/* line 88, ../sass/_contact.scss */
+/* line 89, ../sass/_contact.scss */
 #wrap #contact form label[for="email"], #wrap #contact form label[for="message"], #wrap [data-id="contact"] form label[for="email"], #wrap [data-id="contact"] form label[for="message"] {
   padding-left: 0;
   margin-bottom: 16px;
 }
-/* line 92, ../sass/_contact.scss */
+/* line 93, ../sass/_contact.scss */
 #wrap #contact form label[for="message"], #wrap [data-id="contact"] form label[for="message"] {
   width: 100%;
 }
-/* line 95, ../sass/_contact.scss */
+/* line 96, ../sass/_contact.scss */
 #wrap #contact form textarea, #wrap [data-id="contact"] form textarea {
   display: block;
   width: 100%;
@@ -1676,11 +1677,11 @@ html.resizing *, body.resizing * {
   box-sizing: border-box;
   margin-bottom: 5px;
 }
-/* line 110, ../sass/_contact.scss */
+/* line 111, ../sass/_contact.scss */
 #wrap #contact form textarea:focus, #wrap [data-id="contact"] form textarea:focus {
   outline: none;
 }
-/* line 114, ../sass/_contact.scss */
+/* line 115, ../sass/_contact.scss */
 #wrap #contact form button.submit, #wrap [data-id="contact"] form button.submit {
   float: right;
   border: 0;
@@ -1688,6 +1689,7 @@ html.resizing *, body.resizing * {
   margin-top: 13px;
   padding: 10px 20px;
   color: #EF7053;
+  cursor: pointer;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -1695,40 +1697,40 @@ html.resizing *, body.resizing * {
   border-radius: 4px;
 }
 @media screen and (max-width: 800px) {
-  /* line 126, ../sass/_contact.scss */
+  /* line 128, ../sass/_contact.scss */
   #wrap #contact h1, #wrap [data-id="contact"] h1 {
     padding: 0 50px;
   }
 }
-/* line 137, ../sass/_contact.scss */
+/* line 139, ../sass/_contact.scss */
 #wrap #contact .close-overlay, #wrap [data-id="contact"] .close-overlay {
   top: -35px;
   right: -24px;
 }
 @media screen and (max-width: 555px) {
-  /* line 137, ../sass/_contact.scss */
+  /* line 139, ../sass/_contact.scss */
   #wrap #contact .close-overlay, #wrap [data-id="contact"] .close-overlay {
     right: 24px;
   }
 }
-/* line 148, ../sass/_contact.scss */
+/* line 150, ../sass/_contact.scss */
 #wrap.loaded #contact, #wrap.loaded [data-id="contact"] {
   display: block;
 }
-/* line 157, ../sass/_contact.scss */
+/* line 159, ../sass/_contact.scss */
 #wrap.contact #contact, #wrap.contact [data-id="contact"] {
   pointer-events: auto;
   opacity: 0.87;
 }
 @media screen and (min-width: 801px) {
-  /* line 157, ../sass/_contact.scss */
+  /* line 159, ../sass/_contact.scss */
   #wrap.contact #contact, #wrap.contact [data-id="contact"] {
     -webkit-animation: bounce 0.8s;
     -moz-animation: bounce 0.8s;
     animation: bounce 0.8s;
   }
 }
-/* line 169, ../sass/_contact.scss */
+/* line 171, ../sass/_contact.scss */
 #wrap.contact-hide #contact, #wrap.contact-hide [data-id="contact"] {
   opacity: 0.01;
   -webkit-transition: opacity 0.3s linear;

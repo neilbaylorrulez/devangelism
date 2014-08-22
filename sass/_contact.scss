@@ -11,6 +11,7 @@
     background: #3682b9;
     z-index: 3;
     display:none;
+    overflow:auto;
 
     h1 {
       color:#fff;
@@ -118,6 +119,7 @@
         margin-top: 13px;
         padding: 10px 20px;
         color: #EF7053;
+        cursor:pointer;
         @include border-radius(4px);
       }
     }
