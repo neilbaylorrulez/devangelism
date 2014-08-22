@@ -44,102 +44,123 @@
 
   /* line 16, ../sass/components/_animations.scss */
   35% {
-    opacity: 0.87;
+    opacity: 0.92;
     -webkit-transform: translate3d(0, 2.5%, 0) scale(1);
     -webkit-animation-timing-function: ease-in;
   }
 
   /* line 17, ../sass/components/_animations.scss */
   55% {
-    opacity: 0.87;
+    opacity: 0.92;
     -webkit-transform: translate3d(0, -0.75%, 0) scale(1);
     -webkit-animation-timing-function: ease-out;
   }
 
   /* line 18, ../sass/components/_animations.scss */
   75% {
-    opacity: 0.87;
+    opacity: 0.92;
     -webkit-transform: translate3d(0, 0.3%, 0) scale(1);
     -webkit-animation-timing-function: ease-in;
   }
 
   /* line 19, ../sass/components/_animations.scss */
   85% {
-    opacity: 0.87;
+    opacity: 0.92;
+    -webkit-transform: translate3d(0, 0, 0) scale(1);
+    -webkit-animation-timing-function: ease-out;
+  }
+
+  /* line 20, ../sass/components/_animations.scss */
+  100% {
+    opacity: 0.92;
     -webkit-transform: translate3d(0, 0, 0) scale(1);
     -webkit-animation-timing-function: ease-out;
   }
 }
 
 @-moz-keyframes bounce {
-  /* line 23, ../sass/components/_animations.scss */
+  /* line 24, ../sass/components/_animations.scss */
   0% {
     opacity: 0.1;
     -moz-transform: translate3d(0, -100%, 0) scale(1);
     -moz-animation-timing-function: ease-in;
   }
 
-  /* line 24, ../sass/components/_animations.scss */
+  /* line 25, ../sass/components/_animations.scss */
   35% {
-    opacity: 0.87;
+    opacity: 0.92;
     -moz-transform: translate3d(0, 2.5%, 0) scale(1);
     -moz-animation-timing-function: ease-in;
   }
 
-  /* line 25, ../sass/components/_animations.scss */
+  /* line 26, ../sass/components/_animations.scss */
   55% {
-    opacity: 0.87;
+    opacity: 0.92;
     -moz-transform: translate3d(0, -0.75%, 0) scale(1);
     -moz-animation-timing-function: ease-out;
   }
 
-  /* line 26, ../sass/components/_animations.scss */
+  /* line 27, ../sass/components/_animations.scss */
   75% {
-    opacity: 0.87;
+    opacity: 0.92;
     -moz-transform: translate3d(0, 0.3%, 0) scale(1);
     -moz-animation-timing-function: ease-in;
   }
 
-  /* line 27, ../sass/components/_animations.scss */
+  /* line 28, ../sass/components/_animations.scss */
   85% {
-    opacity: 0.87;
+    opacity: 0.92;
+    -moz-transform: translate3d(0, 0, 0) scale(1);
+    -moz-animation-timing-function: ease-out;
+  }
+
+  /* line 29, ../sass/components/_animations.scss */
+  100% {
+    opacity: 0.92;
     -moz-transform: translate3d(0, 0, 0) scale(1);
     -moz-animation-timing-function: ease-out;
   }
 }
 
 @keyframes bounce {
-  /* line 31, ../sass/components/_animations.scss */
+  /* line 33, ../sass/components/_animations.scss */
   0% {
     opacity: 0.1;
     transform: translate3d(0, -100%, 0) scale(1);
     animation-timing-function: ease-in;
   }
 
-  /* line 32, ../sass/components/_animations.scss */
+  /* line 34, ../sass/components/_animations.scss */
   35% {
-    opacity: 0.87;
+    opacity: 0.92;
     transform: translate3d(0, 2.5%, 0) scale(1);
     animation-timing-function: ease-in;
   }
 
-  /* line 33, ../sass/components/_animations.scss */
+  /* line 35, ../sass/components/_animations.scss */
   55% {
-    opacity: 0.87;
+    opacity: 0.92;
     transform: translate3d(0, -0.75%, 0) scale(1);
     animation-timing-function: ease-out;
   }
 
-  /* line 34, ../sass/components/_animations.scss */
+  /* line 36, ../sass/components/_animations.scss */
   75% {
-    opacity: 0.87;
+    opacity: 0.92;
     transform: translate3d(0, 0.3%, 0) scale(1);
     animation-timing-function: ease-in;
   }
 
-  /* line 35, ../sass/components/_animations.scss */
+  /* line 37, ../sass/components/_animations.scss */
   85% {
-    opacity: 0.87;
+    opacity: 0.92;
+    transform: translate3d(0, 0, 0) scale(1);
+    animation-timing-function: ease-out;
+  }
+
+  /* line 38, ../sass/components/_animations.scss */
+  100% {
+    opacity: 0.92;
     transform: translate3d(0, 0, 0) scale(1);
     animation-timing-function: ease-out;
   }
@@ -154,8 +175,23 @@
   width: 100%;
   z-index: 2;
   background: #3682b9;
+  -webkit-transform: translateZ(0) scale(1);
+  -moz-transform: translateZ(0) scale(1);
+  -ms-transform: translateZ(0) scale(1);
+  -o-transform: translateZ(0) scale(1);
+  transform: translateZ(0) scale(1);
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  -o-perspective: 1000;
+  perspective: 1000;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
-/* line 10, ../sass/components/_nav.scss */
+/* line 13, ../sass/components/_nav.scss */
 #nav h1 {
   position: absolute;
   left: 50%;
@@ -168,7 +204,7 @@
   cursor: pointer;
   font-size: 0;
 }
-/* line 21, ../sass/components/_nav.scss */
+/* line 24, ../sass/components/_nav.scss */
 #nav h1 a {
   position: absolute;
   top: 0;
@@ -178,13 +214,13 @@
   color: transparent;
 }
 @media screen and (max-width: 1036px) {
-  /* line 10, ../sass/components/_nav.scss */
+  /* line 13, ../sass/components/_nav.scss */
   #nav h1 {
     left: 0;
     margin-left: 20px;
   }
 }
-/* line 36, ../sass/components/_nav.scss */
+/* line 39, ../sass/components/_nav.scss */
 #nav .open-menu {
   height: 37px;
   width: 42px;
@@ -200,7 +236,7 @@
   outline: none !important;
   cursor: pointer;
 }
-/* line 52, ../sass/components/_nav.scss */
+/* line 55, ../sass/components/_nav.scss */
 #nav a {
   text-transform: capitalize;
   color: white;
@@ -209,11 +245,11 @@
   display: inline-block;
   padding: 37px 22px 0;
 }
-/* line 59, ../sass/components/_nav.scss */
+/* line 62, ../sass/components/_nav.scss */
 #nav a:hover, #nav a.selected {
   text-decoration: underline;
 }
-/* line 62, ../sass/components/_nav.scss */
+/* line 65, ../sass/components/_nav.scss */
 #nav a.home {
   display: none;
 }
@@ -239,19 +275,19 @@
     background: #2E3335;
     margin: 0;
   }
-  /* line 83, ../sass/components/_nav.scss */
+  /* line 86, ../sass/components/_nav.scss */
   #nav a {
     padding: 0 13px 0;
   }
-  /* line 87, ../sass/components/_nav.scss */
+  /* line 90, ../sass/components/_nav.scss */
   #nav .open-menu {
     display: block;
   }
-  /* line 91, ../sass/components/_nav.scss */
+  /* line 94, ../sass/components/_nav.scss */
   #nav h1 {
     display: none;
   }
-  /* line 95, ../sass/components/_nav.scss */
+  /* line 98, ../sass/components/_nav.scss */
   #nav a {
     display: block;
     height: 49px;
@@ -262,11 +298,11 @@
     font-size: 16px;
     position: relative;
   }
-  /* line 104, ../sass/components/_nav.scss */
+  /* line 107, ../sass/components/_nav.scss */
   #nav a.home {
     display: block;
   }
-  /* line 107, ../sass/components/_nav.scss */
+  /* line 110, ../sass/components/_nav.scss */
   #nav a:hover, #nav a.selected {
     color: #414141;
     background: white;
@@ -557,6 +593,7 @@ button {
   height: 100%;
   width: 100%;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
   top: 0;
   position: fixed;
   z-index: 2;
@@ -585,15 +622,15 @@ button {
   transition: opacity 0.7s linear, transform 0.3s ease;
   opacity: 0.01;
 }
-/* line 17, ../sass/components/_overlay.scss */
+/* line 18, ../sass/components/_overlay.scss */
 .overlay.show {
   display: block;
-  opacity: 0.87;
+  opacity: 0.9;
   -webkit-animation: bounce 0.75s;
   -moz-animation: bounce 0.75s;
   animation: bounce 0.75s;
 }
-/* line 24, ../sass/components/_overlay.scss */
+/* line 25, ../sass/components/_overlay.scss */
 .overlay.close {
   opacity: 0.01;
   -webkit-transition: opacity 0.275s linear;
@@ -601,16 +638,16 @@ button {
   -o-transition: opacity 0.275s linear;
   transition: opacity 0.275s linear;
 }
-/* line 28, ../sass/components/_overlay.scss */
+/* line 29, ../sass/components/_overlay.scss */
 .overlay.hide {
   display: none;
 }
-/* line 31, ../sass/components/_overlay.scss */
+/* line 32, ../sass/components/_overlay.scss */
 .overlay.who {
   color: #fff;
   font-size: 12px;
 }
-/* line 34, ../sass/components/_overlay.scss */
+/* line 35, ../sass/components/_overlay.scss */
 .overlay.who img {
   position: absolute;
   left: 50%;
@@ -624,42 +661,43 @@ button {
   -o-border-radius: 115px;
   border-radius: 115px;
 }
-/* line 43, ../sass/components/_overlay.scss */
-.overlay.who h3, .overlay.who h4 {
+/* line 44, ../sass/components/_overlay.scss */
+.overlay.who h1, .overlay.who h3 {
   margin: 0;
   text-align: center;
   font-weight: normal;
 }
-/* line 48, ../sass/components/_overlay.scss */
-.overlay.who h3 {
+/* line 49, ../sass/components/_overlay.scss */
+.overlay.who h1 {
   font-size: 36px;
   padding-top: 145px;
 }
-/* line 52, ../sass/components/_overlay.scss */
-.overlay.who h4 {
+/* line 53, ../sass/components/_overlay.scss */
+.overlay.who h3 {
   font-size: 15px;
 }
-/* line 55, ../sass/components/_overlay.scss */
+/* line 56, ../sass/components/_overlay.scss */
 .overlay.who p {
   padding-top: 25px;
   line-height: 18px;
   max-width: 450px;
   margin: 0 auto;
 }
-/* line 61, ../sass/components/_overlay.scss */
+/* line 62, ../sass/components/_overlay.scss */
 .overlay.who p:last-of-type {
   padding-bottom: 25px;
   border-bottom: 1px solid #fff;
 }
-/* line 66, ../sass/components/_overlay.scss */
-.overlay.who .header {
+/* line 67, ../sass/components/_overlay.scss */
+.overlay.who h4 {
   font-weight: bold;
   padding: 25px 0 3px;
   margin: 0 auto;
   display: block;
   max-width: 450px;
+  font-size: 12px;
 }
-/* line 73, ../sass/components/_overlay.scss */
+/* line 75, ../sass/components/_overlay.scss */
 .overlay.who ul {
   margin: 0 auto;
   list-style: none;
@@ -667,13 +705,13 @@ button {
   margin: 0 auto;
   max-width: 450px;
 }
-/* line 80, ../sass/components/_overlay.scss */
+/* line 82, ../sass/components/_overlay.scss */
 .overlay.who a {
   color: #fff;
   line-height: 18px;
 }
 
-/* line 87, ../sass/components/_overlay.scss */
+/* line 89, ../sass/components/_overlay.scss */
 .overlay-wrap {
   width: 100%;
   height: 100%;
@@ -686,7 +724,7 @@ button {
   padding: 0 10px;
 }
 
-/* line 97, ../sass/components/_overlay.scss */
+/* line 99, ../sass/components/_overlay.scss */
 .close-overlay {
   height: 28px;
   width: 28px;
@@ -703,7 +741,7 @@ button {
   border-radius: 30px;
   cursor: pointer;
 }
-/* line 109, ../sass/components/_overlay.scss */
+/* line 111, ../sass/components/_overlay.scss */
 .close-overlay:before, .close-overlay:after {
   content: '';
   position: absolute;
@@ -719,7 +757,7 @@ button {
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-/* line 120, ../sass/components/_overlay.scss */
+/* line 122, ../sass/components/_overlay.scss */
 .close-overlay:after {
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
@@ -972,8 +1010,18 @@ html.resizing *, body.resizing * {
     top: 0;
     display: block;
   }
+  /* line 113, ../sass/_shell.scss */
+  #mobile-header a {
+    display: block;
+    width: 195px;
+    height: 31px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 0;
+  }
 
-  /* line 115, ../sass/_shell.scss */
+  /* line 124, ../sass/_shell.scss */
   body.menu #nav, body.menu .overlay, body.menu #wrap, body.menu #mobile-header {
     -webkit-transform: translate3d(-250px, 0, 0) scale(1);
     -moz-transform: translate3d(-250px, 0, 0) scale(1);
@@ -981,10 +1029,31 @@ html.resizing *, body.resizing * {
     -o-transform: translate3d(-250px, 0, 0) scale(1);
     transform: translate3d(-250px, 0, 0) scale(1);
   }
-  /* line 118, ../sass/_shell.scss */
+  /* line 127, ../sass/_shell.scss */
   body.menu #wrap {
     pointer-events: none !important;
   }
+  /* line 130, ../sass/_shell.scss */
+  body.menu #wrap.contact #contact, body.menu #wrap.contact [data-id="contact"] {
+    -webkit-animation-duration: 0;
+    -moz-animation-duration: 0;
+    animation-duration: 0;
+  }
+
+  /* line 140, ../sass/_shell.scss */
+  body.safari #wrap.contact #contact, body.safari #wrap.contact [data-id="contact"] {
+    -webkit-animation: none;
+    -moz-animation: none;
+    animation: none;
+  }
+
+  /*body {
+    #wrap.contact {
+      ~ nav, ~ #mobile-header {
+        opacity:0.1;
+      }
+    }
+  }*/
 }
 /* line 1, ../sass/_home.scss */
 #wrap #home, #wrap [data-id="home"] {
@@ -1037,8 +1106,9 @@ html.resizing *, body.resizing * {
   z-index: 1;
   margin-top: 12px;
   width: 100%;
+  display: none;
 }
-/* line 48, ../sass/_home.scss */
+/* line 49, ../sass/_home.scss */
 #wrap #home h2 span, #wrap [data-id="home"] h2 span {
   opacity: 0.01;
   display: inline-block;
@@ -1053,7 +1123,7 @@ html.resizing *, body.resizing * {
   -o-perspective: 1000;
   perspective: 1000;
 }
-/* line 56, ../sass/_home.scss */
+/* line 57, ../sass/_home.scss */
 #wrap #home h2.animate span, #wrap [data-id="home"] h2.animate span {
   opacity: 0.99;
   -webkit-transform: translate3d(-0.5px, 0, 0) scale(1) !important;
@@ -1062,7 +1132,7 @@ html.resizing *, body.resizing * {
   -o-transform: translate3d(-0.5px, 0, 0) scale(1) !important;
   transform: translate3d(-0.5px, 0, 0) scale(1) !important;
 }
-/* line 60, ../sass/_home.scss */
+/* line 61, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(1), #wrap [data-id="home"] h2.animate span:nth-child(1) {
   -webkit-transition: -webkit-transform 0.55s ease-out, opacity 1s linear;
   -webkit-transition-delay: 0.085s, 0.085s;
@@ -1070,7 +1140,7 @@ html.resizing *, body.resizing * {
   -o-transition: -o-transform 0.55s ease-out 0.085s, opacity 1s linear 0.085s;
   transition: transform 0.55s ease-out 0.085s, opacity 1s linear 0.085s;
 }
-/* line 60, ../sass/_home.scss */
+/* line 61, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(2), #wrap [data-id="home"] h2.animate span:nth-child(2) {
   -webkit-transition: -webkit-transform 0.55s ease-out, opacity 1s linear;
   -webkit-transition-delay: 0.17s, 0.17s;
@@ -1078,7 +1148,7 @@ html.resizing *, body.resizing * {
   -o-transition: -o-transform 0.55s ease-out 0.17s, opacity 1s linear 0.17s;
   transition: transform 0.55s ease-out 0.17s, opacity 1s linear 0.17s;
 }
-/* line 60, ../sass/_home.scss */
+/* line 61, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(3), #wrap [data-id="home"] h2.animate span:nth-child(3) {
   -webkit-transition: -webkit-transform 0.55s ease-out, opacity 1s linear;
   -webkit-transition-delay: 0.255s, 0.255s;
@@ -1086,7 +1156,7 @@ html.resizing *, body.resizing * {
   -o-transition: -o-transform 0.55s ease-out 0.255s, opacity 1s linear 0.255s;
   transition: transform 0.55s ease-out 0.255s, opacity 1s linear 0.255s;
 }
-/* line 60, ../sass/_home.scss */
+/* line 61, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(4), #wrap [data-id="home"] h2.animate span:nth-child(4) {
   -webkit-transition: -webkit-transform 0.55s ease-out, opacity 1s linear;
   -webkit-transition-delay: 0.34s, 0.34s;
@@ -1094,7 +1164,7 @@ html.resizing *, body.resizing * {
   -o-transition: -o-transform 0.55s ease-out 0.34s, opacity 1s linear 0.34s;
   transition: transform 0.55s ease-out 0.34s, opacity 1s linear 0.34s;
 }
-/* line 60, ../sass/_home.scss */
+/* line 61, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(5), #wrap [data-id="home"] h2.animate span:nth-child(5) {
   -webkit-transition: -webkit-transform 0.55s ease-out, opacity 1s linear;
   -webkit-transition-delay: 0.425s, 0.425s;
@@ -1102,7 +1172,7 @@ html.resizing *, body.resizing * {
   -o-transition: -o-transform 0.55s ease-out 0.425s, opacity 1s linear 0.425s;
   transition: transform 0.55s ease-out 0.425s, opacity 1s linear 0.425s;
 }
-/* line 60, ../sass/_home.scss */
+/* line 61, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(6), #wrap [data-id="home"] h2.animate span:nth-child(6) {
   -webkit-transition: -webkit-transform 0.55s ease-out, opacity 1s linear;
   -webkit-transition-delay: 0.51s, 0.51s;
@@ -1110,7 +1180,7 @@ html.resizing *, body.resizing * {
   -o-transition: -o-transform 0.55s ease-out 0.51s, opacity 1s linear 0.51s;
   transition: transform 0.55s ease-out 0.51s, opacity 1s linear 0.51s;
 }
-/* line 60, ../sass/_home.scss */
+/* line 61, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(7), #wrap [data-id="home"] h2.animate span:nth-child(7) {
   -webkit-transition: -webkit-transform 0.55s ease-out, opacity 1s linear;
   -webkit-transition-delay: 0.595s, 0.595s;
@@ -1118,7 +1188,7 @@ html.resizing *, body.resizing * {
   -o-transition: -o-transform 0.55s ease-out 0.595s, opacity 1s linear 0.595s;
   transition: transform 0.55s ease-out 0.595s, opacity 1s linear 0.595s;
 }
-/* line 60, ../sass/_home.scss */
+/* line 61, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(8), #wrap [data-id="home"] h2.animate span:nth-child(8) {
   -webkit-transition: -webkit-transform 0.55s ease-out, opacity 1s linear;
   -webkit-transition-delay: 0.68s, 0.68s;
@@ -1126,7 +1196,7 @@ html.resizing *, body.resizing * {
   -o-transition: -o-transform 0.55s ease-out 0.68s, opacity 1s linear 0.68s;
   transition: transform 0.55s ease-out 0.68s, opacity 1s linear 0.68s;
 }
-/* line 60, ../sass/_home.scss */
+/* line 61, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(9), #wrap [data-id="home"] h2.animate span:nth-child(9) {
   -webkit-transition: -webkit-transform 0.55s ease-out, opacity 1s linear;
   -webkit-transition-delay: 0.765s, 0.765s;
@@ -1134,7 +1204,7 @@ html.resizing *, body.resizing * {
   -o-transition: -o-transform 0.55s ease-out 0.765s, opacity 1s linear 0.765s;
   transition: transform 0.55s ease-out 0.765s, opacity 1s linear 0.765s;
 }
-/* line 60, ../sass/_home.scss */
+/* line 61, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(10), #wrap [data-id="home"] h2.animate span:nth-child(10) {
   -webkit-transition: -webkit-transform 0.55s ease-out, opacity 1s linear;
   -webkit-transition-delay: 0.85s, 0.85s;
@@ -1142,7 +1212,7 @@ html.resizing *, body.resizing * {
   -o-transition: -o-transform 0.55s ease-out 0.85s, opacity 1s linear 0.85s;
   transition: transform 0.55s ease-out 0.85s, opacity 1s linear 0.85s;
 }
-/* line 60, ../sass/_home.scss */
+/* line 61, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(11), #wrap [data-id="home"] h2.animate span:nth-child(11) {
   -webkit-transition: -webkit-transform 0.55s ease-out, opacity 1s linear;
   -webkit-transition-delay: 0.935s, 0.935s;
@@ -1150,7 +1220,7 @@ html.resizing *, body.resizing * {
   -o-transition: -o-transform 0.55s ease-out 0.935s, opacity 1s linear 0.935s;
   transition: transform 0.55s ease-out 0.935s, opacity 1s linear 0.935s;
 }
-/* line 60, ../sass/_home.scss */
+/* line 61, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(12), #wrap [data-id="home"] h2.animate span:nth-child(12) {
   -webkit-transition: -webkit-transform 0.55s ease-out, opacity 1s linear;
   -webkit-transition-delay: 1.02s, 1.02s;
@@ -1158,7 +1228,7 @@ html.resizing *, body.resizing * {
   -o-transition: -o-transform 0.55s ease-out 1.02s, opacity 1s linear 1.02s;
   transition: transform 0.55s ease-out 1.02s, opacity 1s linear 1.02s;
 }
-/* line 60, ../sass/_home.scss */
+/* line 61, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(13), #wrap [data-id="home"] h2.animate span:nth-child(13) {
   -webkit-transition: -webkit-transform 0.55s ease-out, opacity 1s linear;
   -webkit-transition-delay: 1.105s, 1.105s;
@@ -1166,7 +1236,7 @@ html.resizing *, body.resizing * {
   -o-transition: -o-transform 0.55s ease-out 1.105s, opacity 1s linear 1.105s;
   transition: transform 0.55s ease-out 1.105s, opacity 1s linear 1.105s;
 }
-/* line 60, ../sass/_home.scss */
+/* line 61, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(14), #wrap [data-id="home"] h2.animate span:nth-child(14) {
   -webkit-transition: -webkit-transform 0.55s ease-out, opacity 1s linear;
   -webkit-transition-delay: 1.19s, 1.19s;
@@ -1174,7 +1244,7 @@ html.resizing *, body.resizing * {
   -o-transition: -o-transform 0.55s ease-out 1.19s, opacity 1s linear 1.19s;
   transition: transform 0.55s ease-out 1.19s, opacity 1s linear 1.19s;
 }
-/* line 60, ../sass/_home.scss */
+/* line 61, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(15), #wrap [data-id="home"] h2.animate span:nth-child(15) {
   -webkit-transition: -webkit-transform 0.55s ease-out, opacity 1s linear;
   -webkit-transition-delay: 1.275s, 1.275s;
@@ -1182,7 +1252,7 @@ html.resizing *, body.resizing * {
   -o-transition: -o-transform 0.55s ease-out 1.275s, opacity 1s linear 1.275s;
   transition: transform 0.55s ease-out 1.275s, opacity 1s linear 1.275s;
 }
-/* line 60, ../sass/_home.scss */
+/* line 61, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(16), #wrap [data-id="home"] h2.animate span:nth-child(16) {
   -webkit-transition: -webkit-transform 0.55s ease-out, opacity 1s linear;
   -webkit-transition-delay: 1.36s, 1.36s;
@@ -1190,7 +1260,7 @@ html.resizing *, body.resizing * {
   -o-transition: -o-transform 0.55s ease-out 1.36s, opacity 1s linear 1.36s;
   transition: transform 0.55s ease-out 1.36s, opacity 1s linear 1.36s;
 }
-/* line 68, ../sass/_home.scss */
+/* line 69, ../sass/_home.scss */
 #wrap #home h3, #wrap [data-id="home"] h3 {
   font-family: "Lato", "Helvetica", arial, sans-serif;
   font-weight: 100;
@@ -1199,24 +1269,24 @@ html.resizing *, body.resizing * {
   color: #2BA4FC;
 }
 @media screen and (max-width: 800px) {
-  /* line 77, ../sass/_home.scss */
+  /* line 78, ../sass/_home.scss */
   #wrap #home h3, #wrap [data-id="home"] h3 {
     font-size: 80px;
     margin-top: -40px;
   }
-  /* line 81, ../sass/_home.scss */
+  /* line 82, ../sass/_home.scss */
   #wrap #home h2, #wrap [data-id="home"] h2 {
     font-size: 24px;
     margin-top: 6px;
   }
 }
 @media screen and (max-width: 400px) {
-  /* line 88, ../sass/_home.scss */
+  /* line 89, ../sass/_home.scss */
   #wrap #home h3, #wrap [data-id="home"] h3 {
     font-size: 60px;
     margin-top: -26px;
   }
-  /* line 92, ../sass/_home.scss */
+  /* line 93, ../sass/_home.scss */
   #wrap #home h2, #wrap [data-id="home"] h2 {
     font-size: 19px;
   }
@@ -1540,13 +1610,14 @@ html.resizing *, body.resizing * {
   right: 0;
   left: 0;
   opacity: 0.01;
-  padding-top: 140px;
+  padding-top: 110px;
   border-bottom: none;
   pointer-events: none;
   background: #3682b9;
   z-index: 3;
   display: none;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
   -webkit-transform: translateZ(0) scale(1);
   -moz-transform: translateZ(0) scale(1);
   -ms-transform: translateZ(0) scale(1);
@@ -1563,43 +1634,51 @@ html.resizing *, body.resizing * {
   -o-perspective: 1000;
   perspective: 1000;
 }
-/* line 16, ../sass/_contact.scss */
+/* line 17, ../sass/_contact.scss */
 #wrap #contact h1, #wrap [data-id="contact"] h1 {
   color: #fff;
   margin-bottom: 35px;
 }
-/* line 19, ../sass/_contact.scss */
+/* line 20, ../sass/_contact.scss */
 #wrap #contact h1:before, #wrap #contact h1:after, #wrap [data-id="contact"] h1:before, #wrap [data-id="contact"] h1:after {
   display: none;
 }
-/* line 24, ../sass/_contact.scss */
+/* line 25, ../sass/_contact.scss */
 #wrap #contact .overlay-wrap, #wrap [data-id="contact"] .overlay-wrap {
   max-width: 460px;
   padding: 0 20px;
 }
-/* line 29, ../sass/_contact.scss */
+/* line 30, ../sass/_contact.scss */
 #wrap #contact form, #wrap [data-id="contact"] form {
   text-align: left;
 }
 /* line 33, ../sass/_contact.scss */
+#wrap #contact form input, #wrap [data-id="contact"] form input {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+}
+/* line 35, ../sass/_contact.scss */
 #wrap #contact form input::-webkit-input-placeholder, #wrap [data-id="contact"] form input::-webkit-input-placeholder {
   color: rgba(230, 230, 230, 0.7);
 }
-/* line 36, ../sass/_contact.scss */
+/* line 38, ../sass/_contact.scss */
 #wrap #contact form input:-moz-placeholder, #wrap [data-id="contact"] form input:-moz-placeholder {
   /* Firefox 18- */
   color: rgba(230, 230, 230, 0.7);
 }
-/* line 39, ../sass/_contact.scss */
+/* line 41, ../sass/_contact.scss */
 #wrap #contact form input::-moz-placeholder, #wrap [data-id="contact"] form input::-moz-placeholder {
   /* Firefox 19+ */
   color: rgba(230, 230, 230, 0.7);
 }
-/* line 42, ../sass/_contact.scss */
+/* line 44, ../sass/_contact.scss */
 #wrap #contact form input:-ms-input-placeholder, #wrap [data-id="contact"] form input:-ms-input-placeholder {
   color: rgba(230, 230, 230, 0.7);
 }
-/* line 47, ../sass/_contact.scss */
+/* line 49, ../sass/_contact.scss */
 #wrap #contact form input[type="text"], #wrap #contact form input[type="email"], #wrap [data-id="contact"] form input[type="text"], #wrap [data-id="contact"] form input[type="email"] {
   position: relative;
   display: inline-block;
@@ -1617,17 +1696,17 @@ html.resizing *, body.resizing * {
   box-sizing: border-box;
   margin-bottom: 4px;
 }
-/* line 62, ../sass/_contact.scss */
+/* line 64, ../sass/_contact.scss */
 #wrap #contact form input[type="text"]:first-of-type, #wrap #contact form input[type="email"]:first-of-type, #wrap [data-id="contact"] form input[type="text"]:first-of-type, #wrap [data-id="contact"] form input[type="email"]:first-of-type {
   border-right: 1px solid white;
   padding-left: 0;
   width: 45%;
 }
-/* line 67, ../sass/_contact.scss */
+/* line 69, ../sass/_contact.scss */
 #wrap #contact form input[type="text"]:focus, #wrap #contact form input[type="email"]:focus, #wrap [data-id="contact"] form input[type="text"]:focus, #wrap [data-id="contact"] form input[type="email"]:focus {
   outline: none;
 }
-/* line 71, ../sass/_contact.scss */
+/* line 73, ../sass/_contact.scss */
 #wrap #contact form label, #wrap [data-id="contact"] form label {
   float: left;
   display: inline-block;
@@ -1640,27 +1719,32 @@ html.resizing *, body.resizing * {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 78, ../sass/_contact.scss */
+/* line 80, ../sass/_contact.scss */
 #wrap #contact form label:first-of-type, #wrap [data-id="contact"] form label:first-of-type {
   width: 45%;
   padding-left: 0;
 }
-/* line 85, ../sass/_contact.scss */
+/* line 87, ../sass/_contact.scss */
 #wrap #contact form input[type="email"], #wrap [data-id="contact"] form input[type="email"] {
   width: 100%;
   padding-left: 0;
 }
-/* line 89, ../sass/_contact.scss */
+/* line 91, ../sass/_contact.scss */
 #wrap #contact form label[for="email"], #wrap #contact form label[for="message"], #wrap [data-id="contact"] form label[for="email"], #wrap [data-id="contact"] form label[for="message"] {
   padding-left: 0;
   margin-bottom: 16px;
 }
-/* line 93, ../sass/_contact.scss */
+/* line 95, ../sass/_contact.scss */
 #wrap #contact form label[for="message"], #wrap [data-id="contact"] form label[for="message"] {
   width: 100%;
 }
-/* line 96, ../sass/_contact.scss */
+/* line 98, ../sass/_contact.scss */
 #wrap #contact form textarea, #wrap [data-id="contact"] form textarea {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
   display: block;
   width: 100%;
   height: 160px;
@@ -1677,17 +1761,17 @@ html.resizing *, body.resizing * {
   box-sizing: border-box;
   margin-bottom: 5px;
 }
-/* line 111, ../sass/_contact.scss */
+/* line 114, ../sass/_contact.scss */
 #wrap #contact form textarea:focus, #wrap [data-id="contact"] form textarea:focus {
   outline: none;
 }
-/* line 115, ../sass/_contact.scss */
+/* line 118, ../sass/_contact.scss */
 #wrap #contact form button.submit, #wrap [data-id="contact"] form button.submit {
   float: right;
   border: 0;
   background: white;
   margin-top: 13px;
-  padding: 10px 20px;
+  padding: 10px 30px;
   color: #EF7053;
   cursor: pointer;
   -webkit-border-radius: 4px;
@@ -1697,40 +1781,45 @@ html.resizing *, body.resizing * {
   border-radius: 4px;
 }
 @media screen and (max-width: 800px) {
-  /* line 128, ../sass/_contact.scss */
+  /* line 131, ../sass/_contact.scss */
   #wrap #contact h1, #wrap [data-id="contact"] h1 {
     padding: 0 50px;
   }
 }
-/* line 139, ../sass/_contact.scss */
+@media screen and (max-width: 800px) and (max-width: 400px) {
+  /* line 136, ../sass/_contact.scss */
+  #wrap #contact form input[type="text"], #wrap #contact form input[type="email"], #wrap [data-id="contact"] form input[type="text"], #wrap [data-id="contact"] form input[type="email"] {
+    font-size: 24px;
+  }
+  /* line 139, ../sass/_contact.scss */
+  #wrap #contact form textarea, #wrap [data-id="contact"] form textarea {
+    font-size: 18px;
+  }
+}
+/* line 152, ../sass/_contact.scss */
 #wrap #contact .close-overlay, #wrap [data-id="contact"] .close-overlay {
   top: -35px;
   right: -24px;
 }
 @media screen and (max-width: 555px) {
-  /* line 139, ../sass/_contact.scss */
+  /* line 152, ../sass/_contact.scss */
   #wrap #contact .close-overlay, #wrap [data-id="contact"] .close-overlay {
     right: 24px;
   }
 }
-/* line 150, ../sass/_contact.scss */
+/* line 163, ../sass/_contact.scss */
 #wrap.loaded #contact, #wrap.loaded [data-id="contact"] {
   display: block;
 }
-/* line 159, ../sass/_contact.scss */
+/* line 172, ../sass/_contact.scss */
 #wrap.contact #contact, #wrap.contact [data-id="contact"] {
+  -webkit-animation: bounce 0.8s;
+  -moz-animation: bounce 0.8s;
+  animation: bounce 0.8s;
   pointer-events: auto;
-  opacity: 0.87;
+  opacity: 0.9;
 }
-@media screen and (min-width: 801px) {
-  /* line 159, ../sass/_contact.scss */
-  #wrap.contact #contact, #wrap.contact [data-id="contact"] {
-    -webkit-animation: bounce 0.8s;
-    -moz-animation: bounce 0.8s;
-    animation: bounce 0.8s;
-  }
-}
-/* line 171, ../sass/_contact.scss */
+/* line 185, ../sass/_contact.scss */
 #wrap.contact-hide #contact, #wrap.contact-hide [data-id="contact"] {
   opacity: 0.01;
   -webkit-transition: opacity 0.3s linear;

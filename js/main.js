@@ -4,7 +4,8 @@
 	var $window = $(window),
 		$body = $(document.body),
 		$wrap = $('#wrap'),
-		MOBILE_WIDTH = 720;
+		MOBILE_WIDTH = 720,
+		IS_SAFARI = /^((?!chrome).)*safari/i.test(navigator.userAgent);
 
 	function initState() {
 		window.setTimeout(window.requestAnimationFrame.bind(null, function() {
@@ -27,6 +28,7 @@
 		$('.open-menu').on('click', function() {
 			$body.toggleClass('menu');
 		});
+
 		$window.on('after-scroll', window.setTimeout.bind(null, window.requestAnimationFrame.bind(null, function() {
 			$body.removeClass('menu');
 		}), 100));
@@ -55,6 +57,9 @@
 	function init() {
 		initState();
 		initListeners();
+		if(IS_SAFARI) {
+			$body.addClass('safari');
+		}
 	}
 
 	updateViewportInfo();

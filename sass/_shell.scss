@@ -110,13 +110,45 @@ html, body {
     background-size: 195px 31px;
     top: 0;
     display:block;
+    a {
+      display:block;
+      width:195px;
+      height:31px;
+      position:absolute;
+      top:20px;
+      left:20px;
+      font-size:0;
+    }
   }
-  body.menu {
+  body.menu{
     #nav, .overlay, #wrap, #mobile-header {
       @include transform(translate3d(-250px,0,0) scale(1));
     }
     #wrap {
       pointer-events:none !important;
+       &.contact {
+        #contact, [data-id="contact"]  {
+          -webkit-animation-duration: 0;
+          -moz-animation-duration: 0;
+          animation-duration: 0;
+        }
+      }
     }
   }
+  body.safari {
+    #wrap.contact {
+      #contact, [data-id="contact"]  {
+        -webkit-animation: none;
+        -moz-animation:none;
+        animation:none;
+      }
+    }
+  }
+  /*body {
+    #wrap.contact {
+      ~ nav, ~ #mobile-header {
+        opacity:0.1;
+      }
+    }
+  }*/
 }

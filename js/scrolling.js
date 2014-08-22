@@ -73,7 +73,7 @@
         if($overlay.hasClass('show')) {
             return;
         }
-        $overlay.removeClass('hide');
+        $overlay.removeClass('hide').scrollTop(0);
         $wrap.css({
             transform: 'translateY(-' + (overlayScrollTop = window.pageYOffset) + 'px)',
             transition: 'none'
@@ -97,7 +97,7 @@
         parentPageId = parts[0];
         overlayId = parts[1];
         if($wrap.find('[data-id="' + parentPageId + '"]').length && ($overlay = $('.overlay.' + parentPageId + '[data-id="' + overlayId +'"]')).length) {
-            //hideOverlays();
+            hideOverlays();
             curPageId = 'overlay-' + parentPageId;
             if(!scroll) {
                 return overlayTransition($overlay);
@@ -128,7 +128,7 @@
                     $wrap.removeClass('contact-hide').removeClass('contact');
                 }, 400);
             }), 0);
-        } else {
+        } else if (overlayScrollTop !== null) {
             $overlay = $('.overlay.show');
             if(!$overlay.length) {
                 return;
@@ -199,6 +199,9 @@
     function initState() {
         previousScrollTop = scrollTop = window.pageYOffset;
         winHeight =  $window.height();
+        $wrap.find('> section').each(function(i, el) {
+            updateSectionMeta(el, el.id);
+        });
         window.setTimeout(window.requestAnimationFrame.bind(null, hashChangeFn), 0);
     }
 
