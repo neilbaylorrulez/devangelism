@@ -52,7 +52,7 @@
 			$mapWrap.append($marker = $('<img data-id="' + location.id + '" class="marker" src="img/marker.svg" alt="">'));
 		}
 		$marker.css({
-			transform: 'translate3d(' + location.coords.x + 'px, ' + location.coords.y + 'px, 0)'
+			transform: 'translate(' + location.coords.x + 'px, ' + location.coords.y + 'px)'
 		});
 	}
 

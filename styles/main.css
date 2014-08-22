@@ -365,7 +365,7 @@
   right: auto;
   left: -40px;
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 800px) {
   /* line 44, ../sass/components/_photogrid.scss */
   .photo-grid .name {
     top: auto;
@@ -412,7 +412,7 @@
   top: 0;
   left: 0;
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 800px) {
   /* line 130, ../sass/components/_photogrid.scss */
   .photo-grid .x-large, .photo-grid .large, .photo-grid .medium, .photo-grid .small {
     width: 100%;
@@ -861,7 +861,7 @@ html.resizing *, body.resizing * {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 800px) {
   /* line 20, ../sass/_shell.scss */
   #wrap section {
     min-height: calc(100% - 70px);
@@ -911,7 +911,7 @@ html.resizing *, body.resizing * {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 800px) {
   /* line 20, ../sass/_shell.scss */
   #wrap section {
     padding-top: 80px;
@@ -1198,7 +1198,7 @@ html.resizing *, body.resizing * {
   margin-top: -65px;
   color: #2BA4FC;
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 800px) {
   /* line 77, ../sass/_home.scss */
   #wrap #home h3, #wrap [data-id="home"] h3 {
     font-size: 80px;
@@ -1582,21 +1582,21 @@ html.resizing *, body.resizing * {
 }
 /* line 32, ../sass/_contact.scss */
 #wrap #contact form input::-webkit-input-placeholder, #wrap [data-id="contact"] form input::-webkit-input-placeholder {
-  color: rgba(230, 230, 230, 0.2);
+  color: rgba(230, 230, 230, 0.7);
 }
 /* line 35, ../sass/_contact.scss */
 #wrap #contact form input:-moz-placeholder, #wrap [data-id="contact"] form input:-moz-placeholder {
   /* Firefox 18- */
-  color: rgba(230, 230, 230, 0.2);
+  color: rgba(230, 230, 230, 0.7);
 }
 /* line 38, ../sass/_contact.scss */
 #wrap #contact form input::-moz-placeholder, #wrap [data-id="contact"] form input::-moz-placeholder {
   /* Firefox 19+ */
-  color: rgba(230, 230, 230, 0.2);
+  color: rgba(230, 230, 230, 0.7);
 }
 /* line 41, ../sass/_contact.scss */
 #wrap #contact form input:-ms-input-placeholder, #wrap [data-id="contact"] form input:-ms-input-placeholder {
-  color: rgba(230, 230, 230, 0.2);
+  color: rgba(230, 230, 230, 0.7);
 }
 /* line 46, ../sass/_contact.scss */
 #wrap #contact form input[type="text"], #wrap #contact form input[type="email"], #wrap [data-id="contact"] form input[type="text"], #wrap [data-id="contact"] form input[type="email"] {
@@ -1694,7 +1694,7 @@ html.resizing *, body.resizing * {
   -o-border-radius: 4px;
   border-radius: 4px;
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 800px) {
   /* line 126, ../sass/_contact.scss */
   #wrap #contact h1, #wrap [data-id="contact"] h1 {
     padding: 0 50px;
@@ -1702,13 +1702,13 @@ html.resizing *, body.resizing * {
 }
 /* line 137, ../sass/_contact.scss */
 #wrap #contact .close-overlay, #wrap [data-id="contact"] .close-overlay {
-  top: -15px;
+  top: -35px;
   right: -24px;
 }
 @media screen and (max-width: 555px) {
   /* line 137, ../sass/_contact.scss */
   #wrap #contact .close-overlay, #wrap [data-id="contact"] .close-overlay {
-    right: 20px;
+    right: 24px;
   }
 }
 /* line 148, ../sass/_contact.scss */
@@ -1720,7 +1720,7 @@ html.resizing *, body.resizing * {
   pointer-events: auto;
   opacity: 0.87;
 }
-@media screen and (min-width: 721px) {
+@media screen and (min-width: 801px) {
   /* line 157, ../sass/_contact.scss */
   #wrap.contact #contact, #wrap.contact [data-id="contact"] {
     -webkit-animation: bounce 0.8s;

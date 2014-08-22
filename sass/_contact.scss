@@ -30,16 +30,16 @@
 
       input {
         &::-webkit-input-placeholder {
-           color: rgba(230,230,230,0.2);
+           color: rgba(230,230,230,0.7);
         }
         &:-moz-placeholder { /* Firefox 18- */
-           color: rgba(230,230,230,0.2);
+           color: rgba(230,230,230,0.7);
         }
         &::-moz-placeholder {  /* Firefox 19+ */
-           color: rgba(230,230,230,0.2);
+           color: rgba(230,230,230,0.7);
         }
         &:-ms-input-placeholder {
-           color: rgba(230,230,230,0.2);
+           color: rgba(230,230,230,0.7);
         }
       }
 
@@ -122,24 +122,24 @@
       }
     }
 
-    @media screen and (max-width: 720px) {
+    @media screen and (max-width: 800px) {
       h1 {
         padding:0 50px;
       }
     }
 
-    //@media screen and (min-width: 721px) {
+    //@media screen and (min-width: 801px) {
       @include transform(translateZ(0) scale(1));
       @include backface-visibility(hidden);
       @include perspective(1000);
     //}
 
     .close-overlay {
-    	top:-15px;
+    	top:-35px;
       right: -24px;
 
       @media screen and (max-width: 555px) {
-        right: 20px;
+        right: 24px;
       }
     }
   }
@@ -151,11 +151,11 @@
   }
 
   &.contact {
-    @media screen and (max-width: 720px) {
+    @media screen and (max-width: 800px) {
      // z-index: 2;
     }
     #contact, [data-id="contact"]  {
-      @media screen and (min-width: 721px) {
+      @media screen and (min-width: 801px) {
         -webkit-animation: bounce 0.8s;
         -moz-animation: bounce 0.8s;
         animation: bounce 0.8s;

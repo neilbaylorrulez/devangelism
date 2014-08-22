@@ -19,7 +19,7 @@ html, body {
 
   section {
     min-height: calc(100% - 76px);
-    @media screen and (max-width: 720px) {
+    @media screen and (max-width: 800px) {
       min-height: calc(100% - 70px);
     }
 
@@ -70,7 +70,7 @@ html, body {
       @include box-sizing(border-box);
     }
 
-    @media screen and (max-width: 720px) {
+    @media screen and (max-width: 800px) {
       padding-top: 80px;
       h1 {
         font-size:35px;
