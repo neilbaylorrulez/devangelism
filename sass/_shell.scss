@@ -15,11 +15,14 @@ html, body {
 #wrap {
   width:100%;
   height:100%;
-  margin:0 auto;
   position:relative;
 
   section {
-    min-height:100%;
+    min-height: calc(100% - 76px);
+    @media screen and (max-width: 720px) {
+      min-height: calc(100% - 70px);
+    }
+
     padding-top: 115px;
     position:relative;
     border-bottom: 2px solid white;
@@ -85,60 +88,6 @@ html, body {
     background-size: 61px 33px;
     height: 200px;
   }
-
-  #contact, [data-id="contact"] {
-    position:absolute;
-    bottom:0;
-    top:0;
-    right:0;
-    left:0;
-    opacity:0.01;
-    border-bottom: none;
-    pointer-events:none;
-    background: #3682b9;
-    z-index: 3;
-    display:none;
-
-    h1 {
-      color:#fff;
-    }
-
-    @media screen and (max-width: 720px) {
-      h1 {
-        padding:0 50px;
-        &:before, &:after {
-          display:block;
-        }
-      }
-    }
-
-    @media screen and (min-width: 721px) {
-      @include transform(translate3d(0) scale(1));
-      @include backface-visibility(hidden);
-      @include perspective(1000);
-    }
-  }
-
-  &.loaded {
-    #contact, [data-id="contact"]  {
-      display:block;
-    }
-  }
-
-  &.contact {
-    @media screen and (max-width: 720px) {
-     // z-index: 2;
-    }
-    #contact, [data-id="contact"]  {
-      @media screen and (min-width: 721px) {
-        -webkit-animation: bounce 0.8s;
-        -moz-animation: bounce 0.8s;
-        animation: bounce 0.8s;
-      }
-      pointer-events:auto;
-      opacity:0.8;
-    }
-  }
 }
 
 #mobile-header {
@@ -152,9 +101,7 @@ html, body {
     @include perspective(1000);
     @include transition(transform 0.325s ease);
   }
-  #wrap section {
-    min-height: calc(100% - 70px);
-  }
+
   #mobile-header {
     position:fixed;
     height:70px;

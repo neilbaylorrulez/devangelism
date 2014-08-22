@@ -37,35 +37,35 @@
 @-webkit-keyframes bounce {
   /* line 15, ../sass/components/_animations.scss */
   0% {
-    opacity: 0.2;
+    opacity: 0.1;
     -webkit-transform: translate3d(0, -100%, 0) scale(1);
     -webkit-animation-timing-function: ease-in;
   }
 
   /* line 16, ../sass/components/_animations.scss */
   35% {
-    opacity: 0.8;
+    opacity: 0.87;
     -webkit-transform: translate3d(0, 2.5%, 0) scale(1);
     -webkit-animation-timing-function: ease-in;
   }
 
   /* line 17, ../sass/components/_animations.scss */
   55% {
-    opacity: 0.8;
+    opacity: 0.87;
     -webkit-transform: translate3d(0, -0.75%, 0) scale(1);
     -webkit-animation-timing-function: ease-out;
   }
 
   /* line 18, ../sass/components/_animations.scss */
   75% {
-    opacity: 0.8;
+    opacity: 0.87;
     -webkit-transform: translate3d(0, 0.3%, 0) scale(1);
     -webkit-animation-timing-function: ease-in;
   }
 
   /* line 19, ../sass/components/_animations.scss */
   85% {
-    opacity: 0.8;
+    opacity: 0.87;
     -webkit-transform: translate3d(0, 0, 0) scale(1);
     -webkit-animation-timing-function: ease-out;
   }
@@ -74,35 +74,35 @@
 @-moz-keyframes bounce {
   /* line 23, ../sass/components/_animations.scss */
   0% {
-    opacity: 0.2;
+    opacity: 0.1;
     -moz-transform: translate3d(0, -100%, 0) scale(1);
     -moz-animation-timing-function: ease-in;
   }
 
   /* line 24, ../sass/components/_animations.scss */
   35% {
-    opacity: 0.8;
+    opacity: 0.87;
     -moz-transform: translate3d(0, 2.5%, 0) scale(1);
     -moz-animation-timing-function: ease-in;
   }
 
   /* line 25, ../sass/components/_animations.scss */
   55% {
-    opacity: 0.8;
+    opacity: 0.87;
     -moz-transform: translate3d(0, -0.75%, 0) scale(1);
     -moz-animation-timing-function: ease-out;
   }
 
   /* line 26, ../sass/components/_animations.scss */
   75% {
-    opacity: 0.8;
+    opacity: 0.87;
     -moz-transform: translate3d(0, 0.3%, 0) scale(1);
     -moz-animation-timing-function: ease-in;
   }
 
   /* line 27, ../sass/components/_animations.scss */
   85% {
-    opacity: 0.8;
+    opacity: 0.87;
     -moz-transform: translate3d(0, 0, 0) scale(1);
     -moz-animation-timing-function: ease-out;
   }
@@ -111,38 +111,664 @@
 @keyframes bounce {
   /* line 31, ../sass/components/_animations.scss */
   0% {
-    opacity: 0.2;
+    opacity: 0.1;
     transform: translate3d(0, -100%, 0) scale(1);
     animation-timing-function: ease-in;
   }
 
   /* line 32, ../sass/components/_animations.scss */
   35% {
-    opacity: 0.8;
+    opacity: 0.87;
     transform: translate3d(0, 2.5%, 0) scale(1);
     animation-timing-function: ease-in;
   }
 
   /* line 33, ../sass/components/_animations.scss */
   55% {
-    opacity: 0.8;
+    opacity: 0.87;
     transform: translate3d(0, -0.75%, 0) scale(1);
     animation-timing-function: ease-out;
   }
 
   /* line 34, ../sass/components/_animations.scss */
   75% {
-    opacity: 0.8;
+    opacity: 0.87;
     transform: translate3d(0, 0.3%, 0) scale(1);
     animation-timing-function: ease-in;
   }
 
   /* line 35, ../sass/components/_animations.scss */
   85% {
-    opacity: 0.8;
+    opacity: 0.87;
     transform: translate3d(0, 0, 0) scale(1);
     animation-timing-function: ease-out;
   }
+}
+
+/* line 1, ../sass/components/_nav.scss */
+#nav {
+  position: fixed;
+  text-align: center;
+  top: 0;
+  height: 76px;
+  width: 100%;
+  z-index: 2;
+  background: #3682b9;
+}
+/* line 11, ../sass/components/_nav.scss */
+#nav h1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 278px;
+  height: 58px;
+  background: url("../img/logo.png") no-repeat;
+  background-size: 100%;
+  cursor: pointer;
+  font-size: 0;
+}
+@media screen and (max-width: 900px) {
+  /* line 11, ../sass/components/_nav.scss */
+  #nav h1 {
+    background-size: 75%;
+  }
+}
+/* line 24, ../sass/components/_nav.scss */
+#nav h1 a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: transparent;
+}
+/* line 34, ../sass/components/_nav.scss */
+#nav .open-menu {
+  height: 37px;
+  width: 42px;
+  border: none;
+  font-size: 0;
+  display: none;
+  background: rgba(74, 74, 74, 0.25) url("../img/hamburger.svg") no-repeat 50% 50%;
+  background-size: 30px 30px;
+  padding: 0;
+  position: absolute;
+  top: 17px;
+  left: -60px;
+  outline: none !important;
+  cursor: pointer;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+/* line 51, ../sass/components/_nav.scss */
+#nav a {
+  text-transform: capitalize;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  display: inline-block;
+  padding: 37px 22px 0;
+}
+/* line 58, ../sass/components/_nav.scss */
+#nav a:hover, #nav a.selected {
+  text-decoration: underline;
+}
+/* line 61, ../sass/components/_nav.scss */
+#nav a.home {
+  display: none;
+}
+@media screen and (max-width: 1024px) {
+  /* line 1, ../sass/components/_nav.scss */
+  #nav {
+    padding-left: 225px;
+    text-align: left;
+    width: auto;
+  }
+}
+@media screen and (max-width: 900px) {
+  /* line 1, ../sass/components/_nav.scss */
+  #nav {
+    padding-left: 225px;
+  }
+  /* line 73, ../sass/components/_nav.scss */
+  #nav a {
+    padding: 25px 13px 0;
+  }
+}
+@media screen and (max-width: 720px) {
+  /* line 1, ../sass/components/_nav.scss */
+  #nav {
+    height: 100%;
+    border-bottom: 80px solid #4A4A4A;
+    text-align: left;
+    position: fixed;
+    z-index: 2;
+    right: -251px;
+    padding-left: 0;
+    top: 0;
+    width: 250px;
+    background: #4A4A4A;
+    margin: 0;
+  }
+  /* line 90, ../sass/components/_nav.scss */
+  #nav a {
+    padding: 0 13px 0;
+  }
+  /* line 94, ../sass/components/_nav.scss */
+  #nav .open-menu {
+    display: block;
+  }
+  /* line 98, ../sass/components/_nav.scss */
+  #nav a {
+    display: block;
+    height: 49px;
+    line-height: 49px;
+    border-bottom: 1px solid #333;
+    font-size: 16px;
+    background: #4A4A4A;
+    position: relative;
+  }
+  /* line 106, ../sass/components/_nav.scss */
+  #nav a.home {
+    display: block;
+  }
+  /* line 109, ../sass/components/_nav.scss */
+  #nav a:hover, #nav a.selected {
+    background: #fff;
+    color: #4A4A4A;
+    border-color: #4A4A4A;
+    text-decoration: none;
+  }
+}
+
+/* line 3, ../sass/components/_photogrid.scss */
+.photo-grid {
+  width: 100%;
+  max-width: 1024px;
+  font-size: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+}
+/* line 12, ../sass/components/_photogrid.scss */
+.photo-grid .row {
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 16, ../sass/components/_photogrid.scss */
+.photo-grid .left {
+  float: left;
+}
+/* line 20, ../sass/components/_photogrid.scss */
+.photo-grid .right {
+  float: right;
+}
+/* line 24, ../sass/components/_photogrid.scss */
+.photo-grid .tile {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+/* line 30, ../sass/components/_photogrid.scss */
+.photo-grid .tile:before {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ee7053;
+  opacity: 0.65;
+  z-index: 1;
+}
+/* line 44, ../sass/components/_photogrid.scss */
+.photo-grid .name {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: 12px;
+  left: 0;
+  padding: 13px 18px;
+  font-size: 16px;
+  color: #ee7053;
+  background: white;
+  opacity: 0.8;
+}
+/* line 56, ../sass/components/_photogrid.scss */
+.photo-grid .name:before {
+  content: '+';
+  color: white;
+  font-size: 28px;
+  line-height: 20px;
+  position: absolute;
+  right: -40px;
+  top: 6px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background: #D3604A;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 72, ../sass/components/_photogrid.scss */
+.photo-grid .name.bottom {
+  top: auto;
+  bottom: 12px;
+}
+/* line 77, ../sass/components/_photogrid.scss */
+.photo-grid .name.right {
+  left: auto;
+  right: 0;
+}
+/* line 81, ../sass/components/_photogrid.scss */
+.photo-grid .name.right:before {
+  right: auto;
+  left: -40px;
+}
+@media screen and (max-width: 720px) {
+  /* line 44, ../sass/components/_photogrid.scss */
+  .photo-grid .name {
+    top: auto;
+    bottom: 12px;
+  }
+  /* line 90, ../sass/components/_photogrid.scss */
+  .photo-grid .name.right {
+    left: 0;
+    right: auto;
+  }
+  /* line 94, ../sass/components/_photogrid.scss */
+  .photo-grid .name.right:before {
+    right: -40px;
+    left: auto;
+  }
+}
+/* line 102, ../sass/components/_photogrid.scss */
+.photo-grid .x-large {
+  width: 58%;
+  padding-top: 58%;
+}
+/* line 106, ../sass/components/_photogrid.scss */
+.photo-grid .large {
+  width: 61.5%;
+  padding-top: 38.5%;
+}
+/* line 110, ../sass/components/_photogrid.scss */
+.photo-grid .medium {
+  width: 38.5%;
+  padding-top: 38.5%;
+}
+/* line 114, ../sass/components/_photogrid.scss */
+.photo-grid .small {
+  width: 42%;
+  padding-top: 29%;
+}
+/* line 119, ../sass/components/_photogrid.scss */
+.photo-grid img {
+  width: 100%;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+@media screen and (max-width: 720px) {
+  /* line 130, ../sass/components/_photogrid.scss */
+  .photo-grid .x-large, .photo-grid .large, .photo-grid .medium, .photo-grid .small {
+    width: 100%;
+    padding-top: 200px;
+    /*img {
+      @include transform(translateY(-50%));
+    }*/
+  }
+}
+
+/* line 1, ../sass/components/_button.scss */
+a.next {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  margin-left: -15px;
+  width: 30px;
+  height: 30px;
+  background: white;
+  z-index: 1;
+  padding: 0;
+  color: #fff;
+  font-size: 0;
+  display: inline-block;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+}
+/* line 17, ../sass/components/_button.scss */
+a.next:before {
+  content: '';
+  position: absolute;
+  left: -15px;
+  top: -15px;
+  display: block;
+  width: 60px;
+  height: 60px;
+  background: white;
+  opacity: 0.25;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  -o-transform: scale(0.5);
+  transform: scale(0.5);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  -o-perspective: 1000;
+  perspective: 1000;
+}
+/* line 34, ../sass/components/_button.scss */
+a.next:hover:before {
+  -webkit-animation: grow 0.5s alternate infinite;
+  animation: grow 0.5s alternate infinite;
+}
+/* line 38, ../sass/components/_button.scss */
+a.next:hover:after {
+  -webkit-transform: translate3d(0, 1px, 0) scale(1) rotate(-45deg);
+  -moz-transform: translate3d(0, 1px, 0) scale(1) rotate(-45deg);
+  -ms-transform: translate3d(0, 1px, 0) scale(1) rotate(-45deg);
+  -o-transform: translate3d(0, 1px, 0) scale(1) rotate(-45deg);
+  transform: translate3d(0, 1px, 0) scale(1) rotate(-45deg);
+}
+/* line 43, ../sass/components/_button.scss */
+a.next:active {
+  color: #fff;
+}
+/* line 47, ../sass/components/_button.scss */
+a.next:after {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 8px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #3A87BC;
+  border-width: 0 0 2px 2px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  -o-perspective: 1000;
+  perspective: 1000;
+  -webkit-transform: translate3d(0, 0, 0) scale(1) rotate(-45deg);
+  -moz-transform: translate3d(0, 0, 0) scale(1) rotate(-45deg);
+  -ms-transform: translate3d(0, 0, 0) scale(1) rotate(-45deg);
+  -o-transform: translate3d(0, 0, 0) scale(1) rotate(-45deg);
+  transform: translate3d(0, 0, 0) scale(1) rotate(-45deg);
+  -webkit-transition: -webkit-transform 0.275s;
+  -moz-transition: -moz-transform 0.275s;
+  -o-transition: -o-transform 0.275s;
+  transition: transform 0.275s;
+  opacity: 0.99;
+}
+/* line 65, ../sass/components/_button.scss */
+a.next.dark {
+  background: #4a4a4a;
+}
+/* line 67, ../sass/components/_button.scss */
+a.next.dark:before {
+  background: #4a4a4a;
+}
+/* line 70, ../sass/components/_button.scss */
+a.next.dark:after {
+  border-color: white;
+}
+
+/* line 76, ../sass/components/_button.scss */
+button {
+  color: #4a4a4a;
+  font-size: 14px;
+  padding: 10px 20px;
+  border: 1px solid #4a4a4a;
+  background: none;
+  border-radius: 5px;
+}
+
+/* line 1, ../sass/components/_overlay.scss */
+.overlay {
+  background: #EC7058;
+  min-height: 100%;
+  width: 100%;
+  top: 0;
+  position: fixed;
+  z-index: 2;
+  padding-top: 120px;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  -o-perspective: 1000;
+  perspective: 1000;
+  -webkit-transform: translateZ(0) scale(1);
+  -moz-transform: translateZ(0) scale(1);
+  -ms-transform: translateZ(0) scale(1);
+  -o-transform: translateZ(0) scale(1);
+  transform: translateZ(0) scale(1);
+  -webkit-transition: opacity 0.7s linear, -webkit-transform 0.3s ease;
+  -moz-transition: opacity 0.7s linear, -moz-transform 0.3s ease;
+  -o-transition: opacity 0.7s linear, -o-transform 0.3s ease;
+  transition: opacity 0.7s linear, transform 0.3s ease;
+  opacity: 0.01;
+}
+/* line 15, ../sass/components/_overlay.scss */
+.overlay.show {
+  display: block;
+  opacity: 0.87;
+  -webkit-animation: bounce 0.75s;
+  -moz-animation: bounce 0.75s;
+  animation: bounce 0.75s;
+}
+/* line 22, ../sass/components/_overlay.scss */
+.overlay.close {
+  opacity: 0.01;
+  -webkit-transition: opacity 0.3s linear;
+  -moz-transition: opacity 0.3s linear;
+  -o-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
+}
+/* line 26, ../sass/components/_overlay.scss */
+.overlay.hide {
+  display: none;
+}
+
+/* line 31, ../sass/components/_overlay.scss */
+.overlay-wrap {
+  width: 100%;
+  height: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+
+/* line 41, ../sass/components/_overlay.scss */
+.close-overlay {
+  height: 30px;
+  width: 30px;
+  border: 2px solid #fff;
+  display: block;
+  position: absolute;
+  top: -30px;
+  right: 22px;
+  font-size: 0;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+/* line 53, ../sass/components/_overlay.scss */
+.close-overlay:before, .close-overlay:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 5px;
+  height: 20px;
+  width: 2px;
+  margin-left: -1px;
+  background: #fff;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* line 64, ../sass/components/_overlay.scss */
+.close-overlay:after {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+/* line 2, ../sass/components/_tabs.scss */
+.tabs {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  position: relative;
+  min-height: 800px;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 1024px;
+}
+@media screen and (max-width: 420px) {
+  /* line 2, ../sass/components/_tabs.scss */
+  .tabs {
+    margin-left: -9px;
+  }
+}
+
+/* line 15, ../sass/components/_tabs.scss */
+.tab label {
+  font-size: 14px;
+  background: none;
+  padding: 9px 15px;
+  border: 1px solid #4a4a4a;
+  margin-left: -1px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 1;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+@media screen and (max-width: 420px) {
+  /* line 15, ../sass/components/_tabs.scss */
+  .tab label {
+    padding: 9px 7px;
+  }
+}
+/* line 33, ../sass/components/_tabs.scss */
+.tab:first-child label {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  margin-left: -111px;
+}
+@media screen and (max-width: 420px) {
+  /* line 33, ../sass/components/_tabs.scss */
+  .tab:first-child label {
+    margin-left: -95px;
+  }
+}
+/* line 41, ../sass/components/_tabs.scss */
+.tab:last-child label {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  margin-left: 118px;
+  width: 78px;
+}
+@media screen and (max-width: 420px) {
+  /* line 41, ../sass/components/_tabs.scss */
+  .tab:last-child label {
+    margin-left: 102px;
+  }
+}
+
+/* line 51, ../sass/components/_tabs.scss */
+.tab [type=radio] {
+  display: none;
+}
+
+/* line 54, ../sass/components/_tabs.scss */
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: none;
+  right: 0;
+  bottom: 0;
+  padding: 0;
+  opacity: 0;
+  -webkit-transition: opacity 0.4s;
+  -moz-transition: opacity 0.4s;
+  -o-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+
+/* line 65, ../sass/components/_tabs.scss */
+[type=radio]:checked ~ label {
+  background: #4a4a4a;
+  color: white;
+}
+
+/* line 69, ../sass/components/_tabs.scss */
+[type=radio]:checked ~ label ~ .content {
+  opacity: 1;
+  -webkit-transition: opacity 0.4s;
+  -moz-transition: opacity 0.4s;
+  -o-transition: opacity 0.4s;
+  transition: opacity 0.4s;
 }
 
 /* line 1, ../sass/_shell.scss */
@@ -167,12 +793,11 @@ html.resizing *, body.resizing * {
 #wrap {
   width: 100%;
   height: 100%;
-  margin: 0 auto;
   position: relative;
 }
-/* line 21, ../sass/_shell.scss */
+/* line 20, ../sass/_shell.scss */
 #wrap section {
-  min-height: 100%;
+  min-height: calc(100% - 76px);
   padding-top: 115px;
   position: relative;
   border-bottom: 2px solid white;
@@ -181,7 +806,13 @@ html.resizing *, body.resizing * {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 30, ../sass/_shell.scss */
+@media screen and (max-width: 720px) {
+  /* line 20, ../sass/_shell.scss */
+  #wrap section {
+    min-height: calc(100% - 70px);
+  }
+}
+/* line 33, ../sass/_shell.scss */
 #wrap section h1 {
   position: relative;
   display: inline-block;
@@ -193,7 +824,7 @@ html.resizing *, body.resizing * {
   max-width: 100%;
   padding: 0 50px;
 }
-/* line 41, ../sass/_shell.scss */
+/* line 44, ../sass/_shell.scss */
 #wrap section h1:before, #wrap section h1:after {
   content: "";
   display: inline-block;
@@ -204,15 +835,15 @@ html.resizing *, body.resizing * {
   top: 50%;
   margin-top: 3px;
 }
-/* line 51, ../sass/_shell.scss */
+/* line 54, ../sass/_shell.scss */
 #wrap section h1:before {
   left: -10px;
 }
-/* line 54, ../sass/_shell.scss */
+/* line 57, ../sass/_shell.scss */
 #wrap section h1:after {
   right: -10px;
 }
-/* line 59, ../sass/_shell.scss */
+/* line 62, ../sass/_shell.scss */
 #wrap section h1 + p {
   color: #4a4a4a;
   font-size: 16px;
@@ -226,99 +857,34 @@ html.resizing *, body.resizing * {
   box-sizing: border-box;
 }
 @media screen and (max-width: 720px) {
-  /* line 21, ../sass/_shell.scss */
+  /* line 20, ../sass/_shell.scss */
   #wrap section {
     padding-top: 80px;
   }
-  /* line 72, ../sass/_shell.scss */
+  /* line 75, ../sass/_shell.scss */
   #wrap section h1 {
     font-size: 35px;
     padding: 0 10px;
   }
-  /* line 75, ../sass/_shell.scss */
+  /* line 78, ../sass/_shell.scss */
   #wrap section h1:before, #wrap section h1:after {
     display: none;
   }
 }
-/* line 83, ../sass/_shell.scss */
+/* line 86, ../sass/_shell.scss */
 #wrap footer {
   background: #4a4a4a url("../img/cloud-footer.svg") no-repeat 50% 50%;
   background-size: 61px 33px;
   height: 200px;
 }
-/* line 89, ../sass/_shell.scss */
-#wrap #contact, #wrap [data-id="contact"] {
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  right: 0;
-  left: 0;
-  opacity: 0.01;
-  border-bottom: none;
-  pointer-events: none;
-  background: #3682b9;
-  z-index: 3;
-  display: none;
-}
-/* line 102, ../sass/_shell.scss */
-#wrap #contact h1, #wrap [data-id="contact"] h1 {
-  color: #fff;
-}
-@media screen and (max-width: 720px) {
-  /* line 107, ../sass/_shell.scss */
-  #wrap #contact h1, #wrap [data-id="contact"] h1 {
-    padding: 0 50px;
-  }
-  /* line 109, ../sass/_shell.scss */
-  #wrap #contact h1:before, #wrap #contact h1:after, #wrap [data-id="contact"] h1:before, #wrap [data-id="contact"] h1:after {
-    display: block;
-  }
-}
-@media screen and (min-width: 721px) {
-  /* line 89, ../sass/_shell.scss */
-  #wrap #contact, #wrap [data-id="contact"] {
-    -webkit-transform: translate3d(0) scale(1);
-    -moz-transform: translate3d(0) scale(1);
-    -ms-transform: translate3d(0) scale(1);
-    -o-transform: translate3d(0) scale(1);
-    transform: translate3d(0) scale(1);
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    -o-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-perspective: 1000;
-    -moz-perspective: 1000;
-    -ms-perspective: 1000;
-    -o-perspective: 1000;
-    perspective: 1000;
-  }
-}
-/* line 123, ../sass/_shell.scss */
-#wrap.loaded #contact, #wrap.loaded [data-id="contact"] {
-  display: block;
-}
-/* line 132, ../sass/_shell.scss */
-#wrap.contact #contact, #wrap.contact [data-id="contact"] {
-  pointer-events: auto;
-  opacity: 0.8;
-}
-@media screen and (min-width: 721px) {
-  /* line 132, ../sass/_shell.scss */
-  #wrap.contact #contact, #wrap.contact [data-id="contact"] {
-    -webkit-animation: bounce 0.8s;
-    -moz-animation: bounce 0.8s;
-    animation: bounce 0.8s;
-  }
-}
 
-/* line 144, ../sass/_shell.scss */
+/* line 93, ../sass/_shell.scss */
 #mobile-header {
   display: none;
 }
 
 @media screen and (max-width: 720px) {
-  /* line 149, ../sass/_shell.scss */
+  /* line 98, ../sass/_shell.scss */
   #wrap, #nav, #mobile-header {
     -webkit-transform: translateZ(0) scale(1);
     -moz-transform: translateZ(0) scale(1);
@@ -341,12 +907,7 @@ html.resizing *, body.resizing * {
     transition: transform 0.325s ease;
   }
 
-  /* line 155, ../sass/_shell.scss */
-  #wrap section {
-    min-height: calc(100% - 70px);
-  }
-
-  /* line 158, ../sass/_shell.scss */
+  /* line 105, ../sass/_shell.scss */
   #mobile-header {
     position: fixed;
     height: 70px;
@@ -357,7 +918,7 @@ html.resizing *, body.resizing * {
     display: block;
   }
 
-  /* line 168, ../sass/_shell.scss */
+  /* line 115, ../sass/_shell.scss */
   body.menu #nav, body.menu .overlay, body.menu #wrap, body.menu #mobile-header {
     -webkit-transform: translate3d(-250px, 0, 0) scale(1);
     -moz-transform: translate3d(-250px, 0, 0) scale(1);
@@ -365,15 +926,15 @@ html.resizing *, body.resizing * {
     -o-transform: translate3d(-250px, 0, 0) scale(1);
     transform: translate3d(-250px, 0, 0) scale(1);
   }
-  /* line 171, ../sass/_shell.scss */
+  /* line 118, ../sass/_shell.scss */
   body.menu #wrap {
     pointer-events: none !important;
   }
 }
 /* line 1, ../sass/_home.scss */
 #wrap #home, #wrap [data-id="home"] {
+  min-height: 100%;
   background: #3682b9;
-  padding-top: 30px;
   position: static;
   text-align: left;
 }
@@ -448,131 +1009,131 @@ html.resizing *, body.resizing * {
 }
 /* line 60, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(1), #wrap [data-id="home"] h2.animate span:nth-child(1) {
-  -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
-  -webkit-transition-delay: 0.065s, 0.065s;
-  -moz-transition: -moz-transform 0.5s ease-out 0.065s, opacity 1s linear 0.065s;
-  -o-transition: -o-transform 0.5s ease-out 0.065s, opacity 1s linear 0.065s;
-  transition: transform 0.5s ease-out 0.065s, opacity 1s linear 0.065s;
+  -webkit-transition: -webkit-transform 0.55s ease-out, opacity 1s linear;
+  -webkit-transition-delay: 0.085s, 0.085s;
+  -moz-transition: -moz-transform 0.55s ease-out 0.085s, opacity 1s linear 0.085s;
+  -o-transition: -o-transform 0.55s ease-out 0.085s, opacity 1s linear 0.085s;
+  transition: transform 0.55s ease-out 0.085s, opacity 1s linear 0.085s;
 }
 /* line 60, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(2), #wrap [data-id="home"] h2.animate span:nth-child(2) {
-  -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
-  -webkit-transition-delay: 0.13s, 0.13s;
-  -moz-transition: -moz-transform 0.5s ease-out 0.13s, opacity 1s linear 0.13s;
-  -o-transition: -o-transform 0.5s ease-out 0.13s, opacity 1s linear 0.13s;
-  transition: transform 0.5s ease-out 0.13s, opacity 1s linear 0.13s;
+  -webkit-transition: -webkit-transform 0.55s ease-out, opacity 1s linear;
+  -webkit-transition-delay: 0.17s, 0.17s;
+  -moz-transition: -moz-transform 0.55s ease-out 0.17s, opacity 1s linear 0.17s;
+  -o-transition: -o-transform 0.55s ease-out 0.17s, opacity 1s linear 0.17s;
+  transition: transform 0.55s ease-out 0.17s, opacity 1s linear 0.17s;
 }
 /* line 60, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(3), #wrap [data-id="home"] h2.animate span:nth-child(3) {
-  -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
-  -webkit-transition-delay: 0.195s, 0.195s;
-  -moz-transition: -moz-transform 0.5s ease-out 0.195s, opacity 1s linear 0.195s;
-  -o-transition: -o-transform 0.5s ease-out 0.195s, opacity 1s linear 0.195s;
-  transition: transform 0.5s ease-out 0.195s, opacity 1s linear 0.195s;
+  -webkit-transition: -webkit-transform 0.55s ease-out, opacity 1s linear;
+  -webkit-transition-delay: 0.255s, 0.255s;
+  -moz-transition: -moz-transform 0.55s ease-out 0.255s, opacity 1s linear 0.255s;
+  -o-transition: -o-transform 0.55s ease-out 0.255s, opacity 1s linear 0.255s;
+  transition: transform 0.55s ease-out 0.255s, opacity 1s linear 0.255s;
 }
 /* line 60, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(4), #wrap [data-id="home"] h2.animate span:nth-child(4) {
-  -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
-  -webkit-transition-delay: 0.26s, 0.26s;
-  -moz-transition: -moz-transform 0.5s ease-out 0.26s, opacity 1s linear 0.26s;
-  -o-transition: -o-transform 0.5s ease-out 0.26s, opacity 1s linear 0.26s;
-  transition: transform 0.5s ease-out 0.26s, opacity 1s linear 0.26s;
+  -webkit-transition: -webkit-transform 0.55s ease-out, opacity 1s linear;
+  -webkit-transition-delay: 0.34s, 0.34s;
+  -moz-transition: -moz-transform 0.55s ease-out 0.34s, opacity 1s linear 0.34s;
+  -o-transition: -o-transform 0.55s ease-out 0.34s, opacity 1s linear 0.34s;
+  transition: transform 0.55s ease-out 0.34s, opacity 1s linear 0.34s;
 }
 /* line 60, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(5), #wrap [data-id="home"] h2.animate span:nth-child(5) {
-  -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
-  -webkit-transition-delay: 0.325s, 0.325s;
-  -moz-transition: -moz-transform 0.5s ease-out 0.325s, opacity 1s linear 0.325s;
-  -o-transition: -o-transform 0.5s ease-out 0.325s, opacity 1s linear 0.325s;
-  transition: transform 0.5s ease-out 0.325s, opacity 1s linear 0.325s;
+  -webkit-transition: -webkit-transform 0.55s ease-out, opacity 1s linear;
+  -webkit-transition-delay: 0.425s, 0.425s;
+  -moz-transition: -moz-transform 0.55s ease-out 0.425s, opacity 1s linear 0.425s;
+  -o-transition: -o-transform 0.55s ease-out 0.425s, opacity 1s linear 0.425s;
+  transition: transform 0.55s ease-out 0.425s, opacity 1s linear 0.425s;
 }
 /* line 60, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(6), #wrap [data-id="home"] h2.animate span:nth-child(6) {
-  -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
-  -webkit-transition-delay: 0.39s, 0.39s;
-  -moz-transition: -moz-transform 0.5s ease-out 0.39s, opacity 1s linear 0.39s;
-  -o-transition: -o-transform 0.5s ease-out 0.39s, opacity 1s linear 0.39s;
-  transition: transform 0.5s ease-out 0.39s, opacity 1s linear 0.39s;
+  -webkit-transition: -webkit-transform 0.55s ease-out, opacity 1s linear;
+  -webkit-transition-delay: 0.51s, 0.51s;
+  -moz-transition: -moz-transform 0.55s ease-out 0.51s, opacity 1s linear 0.51s;
+  -o-transition: -o-transform 0.55s ease-out 0.51s, opacity 1s linear 0.51s;
+  transition: transform 0.55s ease-out 0.51s, opacity 1s linear 0.51s;
 }
 /* line 60, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(7), #wrap [data-id="home"] h2.animate span:nth-child(7) {
-  -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
-  -webkit-transition-delay: 0.455s, 0.455s;
-  -moz-transition: -moz-transform 0.5s ease-out 0.455s, opacity 1s linear 0.455s;
-  -o-transition: -o-transform 0.5s ease-out 0.455s, opacity 1s linear 0.455s;
-  transition: transform 0.5s ease-out 0.455s, opacity 1s linear 0.455s;
+  -webkit-transition: -webkit-transform 0.55s ease-out, opacity 1s linear;
+  -webkit-transition-delay: 0.595s, 0.595s;
+  -moz-transition: -moz-transform 0.55s ease-out 0.595s, opacity 1s linear 0.595s;
+  -o-transition: -o-transform 0.55s ease-out 0.595s, opacity 1s linear 0.595s;
+  transition: transform 0.55s ease-out 0.595s, opacity 1s linear 0.595s;
 }
 /* line 60, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(8), #wrap [data-id="home"] h2.animate span:nth-child(8) {
-  -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
-  -webkit-transition-delay: 0.52s, 0.52s;
-  -moz-transition: -moz-transform 0.5s ease-out 0.52s, opacity 1s linear 0.52s;
-  -o-transition: -o-transform 0.5s ease-out 0.52s, opacity 1s linear 0.52s;
-  transition: transform 0.5s ease-out 0.52s, opacity 1s linear 0.52s;
+  -webkit-transition: -webkit-transform 0.55s ease-out, opacity 1s linear;
+  -webkit-transition-delay: 0.68s, 0.68s;
+  -moz-transition: -moz-transform 0.55s ease-out 0.68s, opacity 1s linear 0.68s;
+  -o-transition: -o-transform 0.55s ease-out 0.68s, opacity 1s linear 0.68s;
+  transition: transform 0.55s ease-out 0.68s, opacity 1s linear 0.68s;
 }
 /* line 60, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(9), #wrap [data-id="home"] h2.animate span:nth-child(9) {
-  -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
-  -webkit-transition-delay: 0.585s, 0.585s;
-  -moz-transition: -moz-transform 0.5s ease-out 0.585s, opacity 1s linear 0.585s;
-  -o-transition: -o-transform 0.5s ease-out 0.585s, opacity 1s linear 0.585s;
-  transition: transform 0.5s ease-out 0.585s, opacity 1s linear 0.585s;
+  -webkit-transition: -webkit-transform 0.55s ease-out, opacity 1s linear;
+  -webkit-transition-delay: 0.765s, 0.765s;
+  -moz-transition: -moz-transform 0.55s ease-out 0.765s, opacity 1s linear 0.765s;
+  -o-transition: -o-transform 0.55s ease-out 0.765s, opacity 1s linear 0.765s;
+  transition: transform 0.55s ease-out 0.765s, opacity 1s linear 0.765s;
 }
 /* line 60, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(10), #wrap [data-id="home"] h2.animate span:nth-child(10) {
-  -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
-  -webkit-transition-delay: 0.65s, 0.65s;
-  -moz-transition: -moz-transform 0.5s ease-out 0.65s, opacity 1s linear 0.65s;
-  -o-transition: -o-transform 0.5s ease-out 0.65s, opacity 1s linear 0.65s;
-  transition: transform 0.5s ease-out 0.65s, opacity 1s linear 0.65s;
+  -webkit-transition: -webkit-transform 0.55s ease-out, opacity 1s linear;
+  -webkit-transition-delay: 0.85s, 0.85s;
+  -moz-transition: -moz-transform 0.55s ease-out 0.85s, opacity 1s linear 0.85s;
+  -o-transition: -o-transform 0.55s ease-out 0.85s, opacity 1s linear 0.85s;
+  transition: transform 0.55s ease-out 0.85s, opacity 1s linear 0.85s;
 }
 /* line 60, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(11), #wrap [data-id="home"] h2.animate span:nth-child(11) {
-  -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
-  -webkit-transition-delay: 0.715s, 0.715s;
-  -moz-transition: -moz-transform 0.5s ease-out 0.715s, opacity 1s linear 0.715s;
-  -o-transition: -o-transform 0.5s ease-out 0.715s, opacity 1s linear 0.715s;
-  transition: transform 0.5s ease-out 0.715s, opacity 1s linear 0.715s;
+  -webkit-transition: -webkit-transform 0.55s ease-out, opacity 1s linear;
+  -webkit-transition-delay: 0.935s, 0.935s;
+  -moz-transition: -moz-transform 0.55s ease-out 0.935s, opacity 1s linear 0.935s;
+  -o-transition: -o-transform 0.55s ease-out 0.935s, opacity 1s linear 0.935s;
+  transition: transform 0.55s ease-out 0.935s, opacity 1s linear 0.935s;
 }
 /* line 60, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(12), #wrap [data-id="home"] h2.animate span:nth-child(12) {
-  -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
-  -webkit-transition-delay: 0.78s, 0.78s;
-  -moz-transition: -moz-transform 0.5s ease-out 0.78s, opacity 1s linear 0.78s;
-  -o-transition: -o-transform 0.5s ease-out 0.78s, opacity 1s linear 0.78s;
-  transition: transform 0.5s ease-out 0.78s, opacity 1s linear 0.78s;
+  -webkit-transition: -webkit-transform 0.55s ease-out, opacity 1s linear;
+  -webkit-transition-delay: 1.02s, 1.02s;
+  -moz-transition: -moz-transform 0.55s ease-out 1.02s, opacity 1s linear 1.02s;
+  -o-transition: -o-transform 0.55s ease-out 1.02s, opacity 1s linear 1.02s;
+  transition: transform 0.55s ease-out 1.02s, opacity 1s linear 1.02s;
 }
 /* line 60, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(13), #wrap [data-id="home"] h2.animate span:nth-child(13) {
-  -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
-  -webkit-transition-delay: 0.845s, 0.845s;
-  -moz-transition: -moz-transform 0.5s ease-out 0.845s, opacity 1s linear 0.845s;
-  -o-transition: -o-transform 0.5s ease-out 0.845s, opacity 1s linear 0.845s;
-  transition: transform 0.5s ease-out 0.845s, opacity 1s linear 0.845s;
+  -webkit-transition: -webkit-transform 0.55s ease-out, opacity 1s linear;
+  -webkit-transition-delay: 1.105s, 1.105s;
+  -moz-transition: -moz-transform 0.55s ease-out 1.105s, opacity 1s linear 1.105s;
+  -o-transition: -o-transform 0.55s ease-out 1.105s, opacity 1s linear 1.105s;
+  transition: transform 0.55s ease-out 1.105s, opacity 1s linear 1.105s;
 }
 /* line 60, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(14), #wrap [data-id="home"] h2.animate span:nth-child(14) {
-  -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
-  -webkit-transition-delay: 0.91s, 0.91s;
-  -moz-transition: -moz-transform 0.5s ease-out 0.91s, opacity 1s linear 0.91s;
-  -o-transition: -o-transform 0.5s ease-out 0.91s, opacity 1s linear 0.91s;
-  transition: transform 0.5s ease-out 0.91s, opacity 1s linear 0.91s;
+  -webkit-transition: -webkit-transform 0.55s ease-out, opacity 1s linear;
+  -webkit-transition-delay: 1.19s, 1.19s;
+  -moz-transition: -moz-transform 0.55s ease-out 1.19s, opacity 1s linear 1.19s;
+  -o-transition: -o-transform 0.55s ease-out 1.19s, opacity 1s linear 1.19s;
+  transition: transform 0.55s ease-out 1.19s, opacity 1s linear 1.19s;
 }
 /* line 60, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(15), #wrap [data-id="home"] h2.animate span:nth-child(15) {
-  -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
-  -webkit-transition-delay: 0.975s, 0.975s;
-  -moz-transition: -moz-transform 0.5s ease-out 0.975s, opacity 1s linear 0.975s;
-  -o-transition: -o-transform 0.5s ease-out 0.975s, opacity 1s linear 0.975s;
-  transition: transform 0.5s ease-out 0.975s, opacity 1s linear 0.975s;
+  -webkit-transition: -webkit-transform 0.55s ease-out, opacity 1s linear;
+  -webkit-transition-delay: 1.275s, 1.275s;
+  -moz-transition: -moz-transform 0.55s ease-out 1.275s, opacity 1s linear 1.275s;
+  -o-transition: -o-transform 0.55s ease-out 1.275s, opacity 1s linear 1.275s;
+  transition: transform 0.55s ease-out 1.275s, opacity 1s linear 1.275s;
 }
 /* line 60, ../sass/_home.scss */
 #wrap #home h2.animate span:nth-child(16), #wrap [data-id="home"] h2.animate span:nth-child(16) {
-  -webkit-transition: -webkit-transform 0.5s ease-out, opacity 1s linear;
-  -webkit-transition-delay: 1.04s, 1.04s;
-  -moz-transition: -moz-transform 0.5s ease-out 1.04s, opacity 1s linear 1.04s;
-  -o-transition: -o-transform 0.5s ease-out 1.04s, opacity 1s linear 1.04s;
-  transition: transform 0.5s ease-out 1.04s, opacity 1s linear 1.04s;
+  -webkit-transition: -webkit-transform 0.55s ease-out, opacity 1s linear;
+  -webkit-transition-delay: 1.36s, 1.36s;
+  -moz-transition: -moz-transform 0.55s ease-out 1.36s, opacity 1s linear 1.36s;
+  -o-transition: -o-transform 0.55s ease-out 1.36s, opacity 1s linear 1.36s;
+  transition: transform 0.55s ease-out 1.36s, opacity 1s linear 1.36s;
 }
 /* line 68, ../sass/_home.scss */
 #wrap #home h3, #wrap [data-id="home"] h3 {
@@ -583,10 +1144,6 @@ html.resizing *, body.resizing * {
   color: #2BA4FC;
 }
 @media screen and (max-width: 720px) {
-  /* line 1, ../sass/_home.scss */
-  #wrap #home, #wrap [data-id="home"] {
-    min-height: 100%;
-  }
   /* line 77, ../sass/_home.scss */
   #wrap #home h3, #wrap [data-id="home"] h3 {
     font-size: 80px;
@@ -741,507 +1298,76 @@ html.resizing *, body.resizing * {
 #wrap #downloads h1 + p, #wrap [data-id="downloads"] h1 + p {
   margin-bottom: 20px;
 }
-
-/* line 1, ../sass/components/_nav.scss */
-#nav {
+/* line 1, ../sass/_contact.scss */
+#wrap #contact, #wrap [data-id="contact"] {
   position: absolute;
-  text-align: center;
-  top: 46px;
-  width: 100%;
-  z-index: 1;
-}
-/* line 8, ../sass/components/_nav.scss */
-#nav .open-menu {
-  height: 37px;
-  width: 42px;
-  border: none;
-  font-size: 0;
-  display: none;
-  background: rgba(74, 74, 74, 0.225) url("../img/hamburger.svg") no-repeat 50% 50%;
-  background-size: 30px 30px;
-  padding: 0;
-  position: absolute;
-  top: 17px;
-  left: -60px;
-  outline: none !important;
-  cursor: pointer;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
-}
-/* line 25, ../sass/components/_nav.scss */
-#nav a {
-  text-transform: capitalize;
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-  padding: 0 22px;
-}
-/* line 31, ../sass/components/_nav.scss */
-#nav a:hover, #nav a.selected {
-  text-decoration: underline;
-}
-/* line 34, ../sass/components/_nav.scss */
-#nav a.home {
-  display: none;
-}
-@media screen and (max-width: 1024px) {
-  /* line 1, ../sass/components/_nav.scss */
-  #nav {
-    padding-left: 225px;
-    text-align: left;
-    width: auto;
-  }
-}
-@media screen and (max-width: 900px) {
-  /* line 1, ../sass/components/_nav.scss */
-  #nav {
-    padding-left: 225px;
-  }
-  /* line 46, ../sass/components/_nav.scss */
-  #nav a {
-    padding: 0 13px;
-  }
-}
-@media screen and (max-width: 720px) {
-  /* line 1, ../sass/components/_nav.scss */
-  #nav {
-    height: 100%;
-    border-bottom: 80px solid #4A4A4A;
-    text-align: left;
-    position: fixed;
-    z-index: 2;
-    right: -251px;
-    padding-left: 0;
-    top: 0;
-    width: 250px;
-    background: #4A4A4A;
-    margin: 0;
-  }
-  /* line 64, ../sass/components/_nav.scss */
-  #nav .open-menu {
-    display: block;
-  }
-  /* line 68, ../sass/components/_nav.scss */
-  #nav a {
-    display: block;
-    height: 49px;
-    line-height: 49px;
-    border-bottom: 1px solid #333;
-    font-size: 16px;
-    background: #4A4A4A;
-    position: relative;
-  }
-  /* line 76, ../sass/components/_nav.scss */
-  #nav a.home {
-    display: block;
-  }
-  /* line 79, ../sass/components/_nav.scss */
-  #nav a:hover, #nav a.selected {
-    background: #fff;
-    color: #4A4A4A;
-    border-color: #4A4A4A;
-    text-decoration: none;
-  }
-}
-
-/* line 3, ../sass/components/_photogrid.scss */
-.photo-grid {
-  width: 100%;
-  max-width: 1024px;
-  font-size: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  list-style: none;
-  margin: 0 auto;
-  padding: 0;
-}
-/* line 12, ../sass/components/_photogrid.scss */
-.photo-grid .row {
-  overflow: hidden;
-  *zoom: 1;
-}
-/* line 16, ../sass/components/_photogrid.scss */
-.photo-grid .left {
-  float: left;
-}
-/* line 20, ../sass/components/_photogrid.scss */
-.photo-grid .right {
-  float: right;
-}
-/* line 24, ../sass/components/_photogrid.scss */
-.photo-grid .tile {
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-}
-/* line 29, ../sass/components/_photogrid.scss */
-.photo-grid .tile:before {
-  content: '';
-  position: absolute;
-  display: block;
+  bottom: 0;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #ee7053;
-  opacity: 0.65;
-  z-index: 1;
-}
-/* line 43, ../sass/components/_photogrid.scss */
-.photo-grid .name {
-  display: block;
-  position: absolute;
-  z-index: 1;
-  top: 12px;
-  left: 0;
-  padding: 13px 18px;
-  font-size: 16px;
-  color: #ee7053;
-  background: white;
-  opacity: 0.8;
-  cursor: pointer;
-}
-/* line 56, ../sass/components/_photogrid.scss */
-.photo-grid .name:before {
-  content: '+';
-  color: white;
-  font-size: 28px;
-  line-height: 20px;
-  position: absolute;
-  right: -40px;
-  top: 6px;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  border: 2px solid white;
-  background: #D3604A;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-/* line 72, ../sass/components/_photogrid.scss */
-.photo-grid .name.bottom {
-  top: auto;
-  bottom: 12px;
-}
-/* line 77, ../sass/components/_photogrid.scss */
-.photo-grid .name.right {
-  left: auto;
   right: 0;
-}
-/* line 81, ../sass/components/_photogrid.scss */
-.photo-grid .name.right:before {
-  right: auto;
-  left: -40px;
-}
-@media screen and (max-width: 720px) {
-  /* line 43, ../sass/components/_photogrid.scss */
-  .photo-grid .name {
-    top: auto;
-    bottom: 12px;
-  }
-  /* line 90, ../sass/components/_photogrid.scss */
-  .photo-grid .name.right {
-    left: 0;
-    right: auto;
-  }
-  /* line 94, ../sass/components/_photogrid.scss */
-  .photo-grid .name.right:before {
-    right: -40px;
-    left: auto;
-  }
-}
-/* line 102, ../sass/components/_photogrid.scss */
-.photo-grid .x-large {
-  width: 58%;
-  padding-top: 58%;
-}
-/* line 106, ../sass/components/_photogrid.scss */
-.photo-grid .large {
-  width: 61.5%;
-  padding-top: 38.5%;
-}
-/* line 110, ../sass/components/_photogrid.scss */
-.photo-grid .medium {
-  width: 38.5%;
-  padding-top: 38.5%;
-}
-/* line 114, ../sass/components/_photogrid.scss */
-.photo-grid .small {
-  width: 42%;
-  padding-top: 29%;
-}
-/* line 119, ../sass/components/_photogrid.scss */
-.photo-grid img {
-  width: 100%;
-  height: auto;
-  min-width: 100%;
-  min-height: 100%;
-  position: absolute;
-  top: 0;
   left: 0;
-}
-@media screen and (max-width: 720px) {
-  /* line 130, ../sass/components/_photogrid.scss */
-  .photo-grid .x-large, .photo-grid .large, .photo-grid .medium, .photo-grid .small {
-    width: 100%;
-    padding-top: 200px;
-    /*img {
-      @include transform(translateY(-50%));
-    }*/
-  }
-}
-
-/* line 1, ../sass/components/_button.scss */
-a.next {
-  position: absolute;
-  bottom: -15px;
-  left: 50%;
-  margin-left: -15px;
-  width: 30px;
-  height: 30px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  border-radius: 50%;
-  background: white;
-  z-index: 1;
-  padding: 0;
-  color: #fff;
-  font-size: 0;
-  display: inline-block;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-}
-/* line 17, ../sass/components/_button.scss */
-a.next:before {
-  content: '';
-  position: absolute;
-  left: -15px;
-  top: -15px;
-  display: block;
-  width: 60px;
-  height: 60px;
-  background: white;
-  opacity: 0.25;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  border-radius: 50%;
-  -webkit-transform: scale(0.5);
-  -moz-transform: scale(0.5);
-  -ms-transform: scale(0.5);
-  -o-transform: scale(0.5);
-  transform: scale(0.5);
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000;
-  -moz-perspective: 1000;
-  -ms-perspective: 1000;
-  -o-perspective: 1000;
-  perspective: 1000;
-}
-/* line 34, ../sass/components/_button.scss */
-a.next:hover:before {
-  -webkit-animation: grow 0.5s alternate infinite;
-  animation: grow 0.5s alternate infinite;
-}
-/* line 38, ../sass/components/_button.scss */
-a.next:hover:after {
-  -webkit-transform: translate3d(0, 1px, 0) scale(1) rotate(-45deg);
-  -moz-transform: translate3d(0, 1px, 0) scale(1) rotate(-45deg);
-  -ms-transform: translate3d(0, 1px, 0) scale(1) rotate(-45deg);
-  -o-transform: translate3d(0, 1px, 0) scale(1) rotate(-45deg);
-  transform: translate3d(0, 1px, 0) scale(1) rotate(-45deg);
-}
-/* line 43, ../sass/components/_button.scss */
-a.next:active {
-  color: #fff;
-}
-/* line 47, ../sass/components/_button.scss */
-a.next:after {
-  content: '';
-  position: absolute;
-  left: 10px;
-  top: 8px;
-  display: block;
-  width: 10px;
-  height: 10px;
-  border: 2px solid #3A87BC;
-  border-width: 0 0 2px 2px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000;
-  -moz-perspective: 1000;
-  -ms-perspective: 1000;
-  -o-perspective: 1000;
-  perspective: 1000;
-  -webkit-transform: translate3d(0, 0, 0) scale(1) rotate(-45deg);
-  -moz-transform: translate3d(0, 0, 0) scale(1) rotate(-45deg);
-  -ms-transform: translate3d(0, 0, 0) scale(1) rotate(-45deg);
-  -o-transform: translate3d(0, 0, 0) scale(1) rotate(-45deg);
-  transform: translate3d(0, 0, 0) scale(1) rotate(-45deg);
-  -webkit-transition: -webkit-transform 0.275s;
-  -moz-transition: -moz-transform 0.275s;
-  -o-transition: -o-transform 0.275s;
-  transition: transform 0.275s;
-  opacity: 0.99;
-}
-/* line 65, ../sass/components/_button.scss */
-a.next.dark {
-  background: #4a4a4a;
-}
-/* line 67, ../sass/components/_button.scss */
-a.next.dark:before {
-  background: #4a4a4a;
-}
-/* line 70, ../sass/components/_button.scss */
-a.next.dark:after {
-  border-color: white;
-}
-
-/* line 76, ../sass/components/_button.scss */
-button {
-  color: #4a4a4a;
-  font-size: 14px;
-  padding: 10px 20px;
-  border: 1px solid #4a4a4a;
-  background: none;
-  border-radius: 5px;
-}
-
-/* line 1, ../sass/components/_overlay.scss */
-.overlay {
-  background: #EC7058;
-  min-height: 100%;
-  width: 100%;
-  top: 0;
-  position: fixed;
-  z-index: 1;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000;
-  -moz-perspective: 1000;
-  -ms-perspective: 1000;
-  -o-perspective: 1000;
-  perspective: 1000;
+  opacity: 0.01;
+  padding-top: 150px;
+  border-bottom: none;
+  pointer-events: none;
+  background: #3682b9;
+  z-index: 3;
+  display: none;
   -webkit-transform: translateZ(0) scale(1);
   -moz-transform: translateZ(0) scale(1);
   -ms-transform: translateZ(0) scale(1);
   -o-transform: translateZ(0) scale(1);
   transform: translateZ(0) scale(1);
-  -webkit-transition: opacity 0.7s linear, -webkit-transform 0.3s ease;
-  -moz-transition: opacity 0.7s linear, -moz-transform 0.3s ease;
-  -o-transition: opacity 0.7s linear, -o-transform 0.3s ease;
-  transition: opacity 0.7s linear, transform 0.3s ease;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  -o-perspective: 1000;
+  perspective: 1000;
 }
-/* line 12, ../sass/components/_overlay.scss */
-.overlay.show {
+/* line 15, ../sass/_contact.scss */
+#wrap #contact h1, #wrap [data-id="contact"] h1 {
+  color: #fff;
+}
+@media screen and (max-width: 720px) {
+  /* line 20, ../sass/_contact.scss */
+  #wrap #contact h1, #wrap [data-id="contact"] h1 {
+    padding: 0 50px;
+  }
+  /* line 22, ../sass/_contact.scss */
+  #wrap #contact h1:before, #wrap #contact h1:after, #wrap [data-id="contact"] h1:before, #wrap [data-id="contact"] h1:after {
+    display: block;
+  }
+}
+/* line 34, ../sass/_contact.scss */
+#wrap #contact .close-overlay, #wrap [data-id="contact"] .close-overlay {
+  top: -50px;
+}
+/* line 40, ../sass/_contact.scss */
+#wrap.loaded #contact, #wrap.loaded [data-id="contact"] {
   display: block;
-  opacity: 0.8;
-  -webkit-animation: bounce 0.75s;
-  -moz-animation: bounce 0.75s;
-  animation: bounce 0.75s;
 }
-/* line 19, ../sass/components/_overlay.scss */
-.overlay.hide {
-  display: none;
+/* line 49, ../sass/_contact.scss */
+#wrap.contact #contact, #wrap.contact [data-id="contact"] {
+  pointer-events: auto;
+  opacity: 0.87;
 }
-
-/* line 1, ../sass/components/_tabs.scss */
-.tabs {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-  position: relative;
-  min-height: 800px;
-  margin: 20px auto;
-  width: 100%;
-  max-width: 1024px;
+@media screen and (min-width: 721px) {
+  /* line 49, ../sass/_contact.scss */
+  #wrap.contact #contact, #wrap.contact [data-id="contact"] {
+    -webkit-animation: bounce 0.8s;
+    -moz-animation: bounce 0.8s;
+    animation: bounce 0.8s;
+  }
 }
-
-/* line 11, ../sass/components/_tabs.scss */
-.tab label {
-  font-size: 14px;
-  background: none;
-  padding: 9px 15px;
-  border: 1px solid #4a4a4a;
-  margin-left: -1px;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  transform: translateX(-50%);
-  z-index: 3;
-  cursor: pointer;
-}
-/* line 25, ../sass/components/_tabs.scss */
-.tab:first-child label {
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-  margin-left: -111px;
-}
-/* line 30, ../sass/components/_tabs.scss */
-.tab:last-child label {
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  margin-left: 118px;
-  width: 78px;
-}
-
-/* line 37, ../sass/components/_tabs.scss */
-.tab [type=radio] {
-  display: none;
-}
-
-/* line 40, ../sass/components/_tabs.scss */
-.content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: none;
-  right: 0;
-  bottom: 0;
-  padding: 0;
-  opacity: 0;
-  -webkit-transition: opacity 0.4s;
-  -moz-transition: opacity 0.4s;
-  -o-transition: opacity 0.4s;
-  transition: opacity 0.4s;
-}
-
-/* line 51, ../sass/components/_tabs.scss */
-[type=radio]:checked ~ label {
-  background: #4a4a4a;
-  color: white;
-  z-index: 2;
-}
-
-/* line 56, ../sass/components/_tabs.scss */
-[type=radio]:checked ~ label ~ .content {
-  opacity: 1;
-  -webkit-transition: opacity 0.4s;
-  -moz-transition: opacity 0.4s;
-  -o-transition: opacity 0.4s;
-  transition: opacity 0.4s;
+/* line 61, ../sass/_contact.scss */
+#wrap.contact-hide #contact, #wrap.contact-hide [data-id="contact"] {
+  opacity: 0.01;
+  -webkit-transition: opacity 0.3s linear;
+  -moz-transition: opacity 0.3s linear;
+  -o-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
 }

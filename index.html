@@ -10,6 +10,7 @@
   </head>
   <body>
     <nav id="nav">
+      <h1><a href="#home">Digital Ocean Evangelism</a></h1>
       <button class="open-menu">Open Menu</button>
       <a href="#home" class="home selected">Home</a>
       <a href="#who">Who we are</a>
@@ -20,7 +21,6 @@
     </nav>
     <div id="wrap">
       <section id="home">
-        <h1>Digital Ocean Evangelism</h1>
         <h2>We Love Developers</h2>
         <h3>Evangelism</h3>
         <a href="#who" class="next">Who is Digital Ocean Devangelism</a>
@@ -30,7 +30,7 @@
         <p>DigitalOcean is more than hosting, it's an advocate for excellence. Something more inspirational can be said here. Let's be inspirational full of inspiration</p>
         <div class="photo-grid">
           <div class="row">
-            <div class="tile x-large left">
+            <div data-overlay-id="mikeal" class="tile x-large left">
               <div class="name bottom">
                 Mikeal Rogers
               </div>
@@ -109,27 +109,41 @@
         <button>Download the Entire Logo Pack</button>
       </section>
       <section id="contact">
-        <h1>Contact Us</h1>
+        <div class="overlay-wrap">
+          <h1>Contact Us</h1>
+          <span class="close-overlay">Close Overlay</span>
+        </div>
       </section>
       <footer></footer>
     </div>
+
+    <!-- sweet non-semantic div for the mobile header as nav is position fixed (to the right) in mobile view -->
     <div id="mobile-header"></div>
-    <div id="who-overlay" class="overlay hide">
-      Overlay!
-    </div>
 
+    <aside data-id="mikeal" class="overlay who hide">
+      <div class="overlay-wrap">
+        <h3>Mikeal Rogers</h3>
+        <h4>Chief Officer</h4>
+        <img src="img/person.png" alt="Mikeal Rogers">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis ut orci et dapibus. Vestibulum non elit eget odio rhoncus bibendum ac at massa. Cras ultrices sodales ipsum ut vehicula. Cras ac risus nisl. Cras sit amet felis vulputate, sagittis turpis id, viverra risus. Cras nec volutpat felis. Integer ut tincidunt lectus. Vivamus placerat convallis sapien id aliquet. Quisque ut tincidunt sem. Fusce dolor massa, convallis sed sapien sit amet, dapibus facilisis magna.
 
-    <script defer src="js/vendor/jquery-2.1.0.min.js"></script>
-    <script defer src="js/vendor/d3.min.js"></script>
-    <script defer src="js/vendor/fastclick.js"></script>
-    <script defer src="js/vendor/images-loaded.min.js"></script>
+Cras accumsan odio nec turpis sagittis, non vestibulum tortor semper. Aliquam sit amet consequat erat. Mauris ultrices mi eget scelerisque volutpat. Vivamus malesuada quis erat in bibendum. Sed vestibulum urna dui, a hendrerit metus iaculis et. Donec id eros nec quam pellentesque suscipit quis in odio. In odio dui, condimentum vitae posuere a, dignissim viverra tortor. Nulla mollis interdum velit. Fusce rhoncus luctus quam, quis suscipit mauris semper et.</p>
+        <span class="close-overlay">Close Overlay</span>
+      </div>
+    </aside>
 
-    <script defer src="js/pollyfill.js"></script>
-    <script defer src="js/scrolling.js"></script>
-    <script defer src="js/main.js"></script>
+    <script src="js/vendor/jquery-2.1.0.min.js"></script>
+    <script src="js/vendor/d3.min.js"></script>
+    <script src="js/vendor/fastclick.js"></script>
+    <script src="js/vendor/images-loaded.min.js"></script>
 
-    <script defer src="js/pages/home.js"></script>
-    <script defer src="js/pages/locations.js"></script>
-    <script defer src="js/pages/events.js"></script>
+    <script src="js/pollyfill.js"></script>
+    <script src="js/scrolling.js"></script>
+    <script src="js/main.js"></script>
+
+    <script src="js/pages/home.js"></script>
+    <script src="js/pages/who.js"></script>
+    <script src="js/pages/locations.js"></script>
+    <script src="js/pages/events.js"></script>
   </body>
 </html>

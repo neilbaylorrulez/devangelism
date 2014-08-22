@@ -56,20 +56,15 @@
 		});
 	}
 
-	function updateInfoWindowPosition(preparing, remove) {
+	function updateInfoWindowPosition(addingNew) {
 		if($infoWindow && $infoWindow.parent().length) {
 			$infoWindow.css({
-				transform: 'translate3d(' + $infoWindow.location.coords.x + 'px, ' + $infoWindow.location.coords.y + 'px, 0) translateX(-50%) translateY(calc(-100% - ' + (preparing ? -40 : 9) + 'px)) ' + 'scale(' + (preparing ? 0.01 : 1) +')',
-				opacity: (preparing ? 0.15 : 0.99),
-				transition: preparing ? 'none' : ''
+				transform: 'translate3d(' + $infoWindow.location.coords.x + 'px, ' + $infoWindow.location.coords.y + 'px, 0) translateX(-50%) translateY(calc(-100% - ' + (addingNew ? -40 : 9) + 'px)) ' + 'scale(' + (addingNew ? 0.01 : 1) +')',
+				opacity: addingNew ? 0.15 : 0.99,
+				transition: addingNew ? 'none' : ''
 			});
 
-			if(preparing) {
-				window.setTimeout(window.requestAnimationFrame.bind(null, function () {
-					removeInfoWindow($oldInfoWindow);
-					updateInfoWindowPosition();
-				}), 0);
-			} else {
+			if(addingNew) {
 				if($infoWindow.location.coords.x < 110) {
 					$mapWrap.css('left', 110 - $infoWindow.location.coords.x);
 				} else if(window.viewportWidth - $infoWindow.location.coords.x < 110) {
@@ -77,6 +72,10 @@
 				} else {
 					$mapWrap.css('left', '');
 				}
+				window.setTimeout(window.requestAnimationFrame.bind(null, function () {
+					removeInfoWindow($oldInfoWindow);
+					updateInfoWindowPosition();
+				}), 0);
 			}
 		}
 	}

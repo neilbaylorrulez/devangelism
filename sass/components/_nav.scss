@@ -1,9 +1,35 @@
 #nav {
-	position:absolute;
+	position:fixed;
 	text-align:center;
-	top:46px;
+	top:0;
+	height:76px;
 	width:100%;
-	z-index:1;
+	z-index:2;
+	//background:rgba(54, 130, 185, 0.8);
+	background:#3682b9;
+
+	h1 {
+		position:absolute;
+		left:0;
+		top:0;
+		width: 278px;
+		height: 58px;
+		background: url("../img/logo.png") no-repeat;
+		background-size: 100%;
+		cursor:pointer;
+		font-size: 0;
+		@media screen and (max-width: 900px) {
+			background-size:75%;
+		}
+		a {
+			position:absolute;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+			color:transparent;
+		}
+	}
 
 	.open-menu {
 	    height:37px;
@@ -11,7 +37,7 @@
 	    border:none;
 	    font-size:0;
 	    display:none;
-	    background: rgba(74,74,74,0.225) url("../img/hamburger.svg") no-repeat 50% 50%;
+	    background: rgba(74,74,74,0.25) url("../img/hamburger.svg") no-repeat 50% 50%;
 	    background-size:30px 30px;
 	    padding:0;
 	    position:absolute;
@@ -27,7 +53,8 @@
 	  color: white;
 	  text-decoration: none;
 	  font-size: 14px;
-	  padding: 0 22px;
+	  display:inline-block;
+	  padding: 37px 22px 0;
 	  &:hover, &.selected {
 	    text-decoration: underline;
 	  }
@@ -44,7 +71,7 @@
 	@media screen and (max-width: 900px) {
 		padding-left:225px;
 		a {
-			padding:0 13px;
+			padding:25px 13px 0;
 		}
 	}
 
@@ -60,10 +87,13 @@
 		width:250px;
 		background:#4A4A4A;
 		margin:0;
+		a {
+			padding:0 13px 0;
+		}
 
-	    .open-menu {
-	      display:block;
-	    }
+    .open-menu {
+      display:block;
+    }
 
 		a {
 			display:block;

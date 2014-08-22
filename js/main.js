@@ -21,7 +21,6 @@
 		$('.open-menu').on('click', function() {
 			$body.toggleClass('menu');
 		});
-
 		$window.on('after-scroll', window.setTimeout.bind(null, window.requestAnimationFrame.bind(null, function() {
 			$body.removeClass('menu');
 		}), 100));
