@@ -2,7 +2,6 @@
 .tabs {
   @include user-select(none);
   position: relative;
-  min-height: 800px;
   //clear: both;
   margin: 20px auto;
   width: 100%;
@@ -58,6 +57,9 @@
   padding: 0;
   opacity: 0;
   @include transition(opacity 0.4s);
+}
+#month-tab .content {
+  position: static;
 }
 [type=radio]:checked ~ label {
   background: #4a4a4a;
