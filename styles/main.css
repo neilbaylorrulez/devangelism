@@ -1697,21 +1697,21 @@ html.resizing *, body.resizing * {
 }
 /* line 35, ../sass/_contact.scss */
 #wrap #contact form input::-webkit-input-placeholder, #wrap [data-id="contact"] form input::-webkit-input-placeholder {
-  color: rgba(230, 230, 230, 0.7);
+  color: rgba(255, 255, 255, 0.1);
 }
 /* line 38, ../sass/_contact.scss */
 #wrap #contact form input:-moz-placeholder, #wrap [data-id="contact"] form input:-moz-placeholder {
   /* Firefox 18- */
-  color: rgba(230, 230, 230, 0.7);
+  color: rgba(255, 255, 255, 0.1);
 }
 /* line 41, ../sass/_contact.scss */
 #wrap #contact form input::-moz-placeholder, #wrap [data-id="contact"] form input::-moz-placeholder {
   /* Firefox 19+ */
-  color: rgba(230, 230, 230, 0.7);
+  color: rgba(255, 255, 255, 0.1);
 }
 /* line 44, ../sass/_contact.scss */
 #wrap #contact form input:-ms-input-placeholder, #wrap [data-id="contact"] form input:-ms-input-placeholder {
-  color: rgba(230, 230, 230, 0.7);
+  color: rgba(255, 255, 255, 0.1);
 }
 /* line 49, ../sass/_contact.scss */
 #wrap #contact form input[type="text"], #wrap #contact form input[type="email"], #wrap [data-id="contact"] form input[type="text"], #wrap [data-id="contact"] form input[type="email"] {
@@ -1786,7 +1786,7 @@ html.resizing *, body.resizing * {
   resize: none;
   background: #4A91C4;
   color: white;
-  font-size: 24px;
+  font-size: 20px;
   padding: 10px;
   line-height: 1.1;
   border: 0;
