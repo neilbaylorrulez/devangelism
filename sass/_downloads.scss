@@ -34,7 +34,7 @@
       position: absolute;
       top: -27px;
       left: 50%;
-      @include transform(translate3d(-50%,0,0));
+      @include transform(translateX(-50%));
       font-size: 18px;
       font-weight: 300;
       padding: 0 10px;

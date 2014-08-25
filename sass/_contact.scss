@@ -34,16 +34,16 @@
       input {
         @include border-radius(0);
         &::-webkit-input-placeholder {
-           color: rgba(230,230,230,0.7);
+           color: rgba(255,255,255,0.1);
         }
         &:-moz-placeholder { /* Firefox 18- */
-           color: rgba(230,230,230,0.7);
+           color: rgba(255,255,255,0.1);
         }
         &::-moz-placeholder {  /* Firefox 19+ */
-           color: rgba(230,230,230,0.7);
+           color: rgba(255,255,255,0.1);
         }
         &:-ms-input-placeholder {
-           color: rgba(230,230,230,0.7);
+           color: rgba(255,255,255,0.1);
         }
       }
 
@@ -104,7 +104,7 @@
         resize: none;
         background: #4A91C4;
         color: white;
-        font-size: 24px;
+        font-size: 20px;
         padding: 10px;
         line-height: 1.1;
         border: 0;
