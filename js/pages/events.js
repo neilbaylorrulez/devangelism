@@ -237,12 +237,14 @@
           .attr("transform", function(d,i)
               {return "translate(" + d.x + "," + d.y + ")"});
     }
-    render(winWidth > 1024? 1024: winWidth);
+
+    $(function () {
+      render(window.viewportWidth > 1024 ? 1024 : window.viewportWidth);
+    });
 
     $window.on('after-resize', function() {
-      winWidth = $window.width();
-      $('svg').remove()
-      render(winWidth > 1024? 1024: winWidth);
-    })
+      $('svg').remove();
+      render(window.viewportWidth > 1024 ? 1024 : window.viewportWidth);
+    });
 
 }());

@@ -44,35 +44,35 @@
 
   /* line 16, ../sass/components/_animations.scss */
   35% {
-    opacity: 0.92;
+    opacity: 0.9;
     -webkit-transform: translate3d(0, 2.5%, 0) scale(1);
     -webkit-animation-timing-function: ease-in;
   }
 
   /* line 17, ../sass/components/_animations.scss */
   55% {
-    opacity: 0.92;
+    opacity: 0.9;
     -webkit-transform: translate3d(0, -0.75%, 0) scale(1);
     -webkit-animation-timing-function: ease-out;
   }
 
   /* line 18, ../sass/components/_animations.scss */
   75% {
-    opacity: 0.92;
+    opacity: 0.9;
     -webkit-transform: translate3d(0, 0.3%, 0) scale(1);
     -webkit-animation-timing-function: ease-in;
   }
 
   /* line 19, ../sass/components/_animations.scss */
   85% {
-    opacity: 0.92;
+    opacity: 0.9;
     -webkit-transform: translate3d(0, 0, 0) scale(1);
     -webkit-animation-timing-function: ease-out;
   }
 
   /* line 20, ../sass/components/_animations.scss */
   100% {
-    opacity: 0.92;
+    opacity: 0.9;
     -webkit-transform: translate3d(0, 0, 0) scale(1);
     -webkit-animation-timing-function: ease-out;
   }
@@ -88,35 +88,35 @@
 
   /* line 25, ../sass/components/_animations.scss */
   35% {
-    opacity: 0.92;
+    opacity: 0.9;
     -moz-transform: translate3d(0, 2.5%, 0) scale(1);
     -moz-animation-timing-function: ease-in;
   }
 
   /* line 26, ../sass/components/_animations.scss */
   55% {
-    opacity: 0.92;
+    opacity: 0.9;
     -moz-transform: translate3d(0, -0.75%, 0) scale(1);
     -moz-animation-timing-function: ease-out;
   }
 
   /* line 27, ../sass/components/_animations.scss */
   75% {
-    opacity: 0.92;
+    opacity: 0.9;
     -moz-transform: translate3d(0, 0.3%, 0) scale(1);
     -moz-animation-timing-function: ease-in;
   }
 
   /* line 28, ../sass/components/_animations.scss */
   85% {
-    opacity: 0.92;
+    opacity: 0.9;
     -moz-transform: translate3d(0, 0, 0) scale(1);
     -moz-animation-timing-function: ease-out;
   }
 
   /* line 29, ../sass/components/_animations.scss */
   100% {
-    opacity: 0.92;
+    opacity: 0.9;
     -moz-transform: translate3d(0, 0, 0) scale(1);
     -moz-animation-timing-function: ease-out;
   }
@@ -132,35 +132,35 @@
 
   /* line 34, ../sass/components/_animations.scss */
   35% {
-    opacity: 0.92;
+    opacity: 0.9;
     transform: translate3d(0, 2.5%, 0) scale(1);
     animation-timing-function: ease-in;
   }
 
   /* line 35, ../sass/components/_animations.scss */
   55% {
-    opacity: 0.92;
+    opacity: 0.9;
     transform: translate3d(0, -0.75%, 0) scale(1);
     animation-timing-function: ease-out;
   }
 
   /* line 36, ../sass/components/_animations.scss */
   75% {
-    opacity: 0.92;
+    opacity: 0.9;
     transform: translate3d(0, 0.3%, 0) scale(1);
     animation-timing-function: ease-in;
   }
 
   /* line 37, ../sass/components/_animations.scss */
   85% {
-    opacity: 0.92;
+    opacity: 0.9;
     transform: translate3d(0, 0, 0) scale(1);
     animation-timing-function: ease-out;
   }
 
   /* line 38, ../sass/components/_animations.scss */
   100% {
-    opacity: 0.92;
+    opacity: 0.9;
     transform: translate3d(0, 0, 0) scale(1);
     animation-timing-function: ease-out;
   }
@@ -1651,6 +1651,7 @@ html.resizing *, body.resizing * {
   left: 0;
   opacity: 0.01;
   padding-top: 110px;
+  padding-bottom: 20px;
   border-bottom: none;
   pointer-events: none;
   background: #3682b9;
@@ -1674,25 +1675,25 @@ html.resizing *, body.resizing * {
   -o-perspective: 1000;
   perspective: 1000;
 }
-/* line 17, ../sass/_contact.scss */
+/* line 18, ../sass/_contact.scss */
 #wrap #contact h1, #wrap [data-id="contact"] h1 {
   color: #fff;
   margin-bottom: 35px;
 }
-/* line 20, ../sass/_contact.scss */
+/* line 21, ../sass/_contact.scss */
 #wrap #contact h1:before, #wrap #contact h1:after, #wrap [data-id="contact"] h1:before, #wrap [data-id="contact"] h1:after {
   display: none;
 }
-/* line 25, ../sass/_contact.scss */
+/* line 26, ../sass/_contact.scss */
 #wrap #contact .overlay-wrap, #wrap [data-id="contact"] .overlay-wrap {
   max-width: 460px;
   padding: 0 20px;
 }
-/* line 30, ../sass/_contact.scss */
+/* line 31, ../sass/_contact.scss */
 #wrap #contact form, #wrap [data-id="contact"] form {
   text-align: left;
 }
-/* line 33, ../sass/_contact.scss */
+/* line 34, ../sass/_contact.scss */
 #wrap #contact form input, #wrap [data-id="contact"] form input {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -1700,25 +1701,25 @@ html.resizing *, body.resizing * {
   -o-border-radius: 0;
   border-radius: 0;
 }
-/* line 35, ../sass/_contact.scss */
+/* line 36, ../sass/_contact.scss */
 #wrap #contact form input::-webkit-input-placeholder, #wrap [data-id="contact"] form input::-webkit-input-placeholder {
   color: rgba(230, 230, 230, 0.7);
 }
-/* line 38, ../sass/_contact.scss */
+/* line 39, ../sass/_contact.scss */
 #wrap #contact form input:-moz-placeholder, #wrap [data-id="contact"] form input:-moz-placeholder {
   /* Firefox 18- */
   color: rgba(230, 230, 230, 0.7);
 }
-/* line 41, ../sass/_contact.scss */
+/* line 42, ../sass/_contact.scss */
 #wrap #contact form input::-moz-placeholder, #wrap [data-id="contact"] form input::-moz-placeholder {
   /* Firefox 19+ */
   color: rgba(230, 230, 230, 0.7);
 }
-/* line 44, ../sass/_contact.scss */
+/* line 45, ../sass/_contact.scss */
 #wrap #contact form input:-ms-input-placeholder, #wrap [data-id="contact"] form input:-ms-input-placeholder {
   color: rgba(230, 230, 230, 0.7);
 }
-/* line 49, ../sass/_contact.scss */
+/* line 50, ../sass/_contact.scss */
 #wrap #contact form input[type="text"], #wrap #contact form input[type="email"], #wrap [data-id="contact"] form input[type="text"], #wrap [data-id="contact"] form input[type="email"] {
   position: relative;
   display: inline-block;
@@ -1736,17 +1737,17 @@ html.resizing *, body.resizing * {
   box-sizing: border-box;
   margin-bottom: 4px;
 }
-/* line 64, ../sass/_contact.scss */
+/* line 65, ../sass/_contact.scss */
 #wrap #contact form input[type="text"]:first-of-type, #wrap #contact form input[type="email"]:first-of-type, #wrap [data-id="contact"] form input[type="text"]:first-of-type, #wrap [data-id="contact"] form input[type="email"]:first-of-type {
   border-right: 1px solid white;
   padding-left: 0;
   width: 45%;
 }
-/* line 69, ../sass/_contact.scss */
+/* line 70, ../sass/_contact.scss */
 #wrap #contact form input[type="text"]:focus, #wrap #contact form input[type="email"]:focus, #wrap [data-id="contact"] form input[type="text"]:focus, #wrap [data-id="contact"] form input[type="email"]:focus {
   outline: none;
 }
-/* line 73, ../sass/_contact.scss */
+/* line 74, ../sass/_contact.scss */
 #wrap #contact form label, #wrap [data-id="contact"] form label {
   float: left;
   display: inline-block;
@@ -1759,26 +1760,26 @@ html.resizing *, body.resizing * {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 80, ../sass/_contact.scss */
+/* line 81, ../sass/_contact.scss */
 #wrap #contact form label:first-of-type, #wrap [data-id="contact"] form label:first-of-type {
   width: 45%;
   padding-left: 0;
 }
-/* line 87, ../sass/_contact.scss */
+/* line 88, ../sass/_contact.scss */
 #wrap #contact form input[type="email"], #wrap [data-id="contact"] form input[type="email"] {
   width: 100%;
   padding-left: 0;
 }
-/* line 91, ../sass/_contact.scss */
+/* line 92, ../sass/_contact.scss */
 #wrap #contact form label[for="email"], #wrap #contact form label[for="message"], #wrap [data-id="contact"] form label[for="email"], #wrap [data-id="contact"] form label[for="message"] {
   padding-left: 0;
   margin-bottom: 16px;
 }
-/* line 95, ../sass/_contact.scss */
+/* line 96, ../sass/_contact.scss */
 #wrap #contact form label[for="message"], #wrap [data-id="contact"] form label[for="message"] {
   width: 100%;
 }
-/* line 98, ../sass/_contact.scss */
+/* line 99, ../sass/_contact.scss */
 #wrap #contact form textarea, #wrap [data-id="contact"] form textarea {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -1801,11 +1802,11 @@ html.resizing *, body.resizing * {
   box-sizing: border-box;
   margin-bottom: 5px;
 }
-/* line 114, ../sass/_contact.scss */
+/* line 115, ../sass/_contact.scss */
 #wrap #contact form textarea:focus, #wrap [data-id="contact"] form textarea:focus {
   outline: none;
 }
-/* line 118, ../sass/_contact.scss */
+/* line 119, ../sass/_contact.scss */
 #wrap #contact form button.submit, #wrap [data-id="contact"] form button.submit {
   float: right;
   border: 0;
@@ -1821,37 +1822,37 @@ html.resizing *, body.resizing * {
   border-radius: 4px;
 }
 @media screen and (max-width: 800px) {
-  /* line 131, ../sass/_contact.scss */
+  /* line 132, ../sass/_contact.scss */
   #wrap #contact h1, #wrap [data-id="contact"] h1 {
     padding: 0 50px;
   }
 }
 @media screen and (max-width: 800px) and (max-width: 400px) {
-  /* line 136, ../sass/_contact.scss */
+  /* line 137, ../sass/_contact.scss */
   #wrap #contact form input[type="text"], #wrap #contact form input[type="email"], #wrap [data-id="contact"] form input[type="text"], #wrap [data-id="contact"] form input[type="email"] {
     font-size: 24px;
   }
-  /* line 139, ../sass/_contact.scss */
+  /* line 140, ../sass/_contact.scss */
   #wrap #contact form textarea, #wrap [data-id="contact"] form textarea {
     font-size: 18px;
   }
 }
-/* line 152, ../sass/_contact.scss */
+/* line 153, ../sass/_contact.scss */
 #wrap #contact .close-overlay, #wrap [data-id="contact"] .close-overlay {
   top: -35px;
   right: -24px;
 }
 @media screen and (max-width: 555px) {
-  /* line 152, ../sass/_contact.scss */
+  /* line 153, ../sass/_contact.scss */
   #wrap #contact .close-overlay, #wrap [data-id="contact"] .close-overlay {
     right: 24px;
   }
 }
-/* line 163, ../sass/_contact.scss */
+/* line 164, ../sass/_contact.scss */
 #wrap.loaded #contact, #wrap.loaded [data-id="contact"] {
   display: block;
 }
-/* line 172, ../sass/_contact.scss */
+/* line 173, ../sass/_contact.scss */
 #wrap.contact #contact, #wrap.contact [data-id="contact"] {
   -webkit-animation: bounce 0.8s;
   -moz-animation: bounce 0.8s;
@@ -1859,7 +1860,7 @@ html.resizing *, body.resizing * {
   pointer-events: auto;
   opacity: 0.9;
 }
-/* line 185, ../sass/_contact.scss */
+/* line 186, ../sass/_contact.scss */
 #wrap.contact-hide #contact, #wrap.contact-hide [data-id="contact"] {
   opacity: 0.01;
   -webkit-transition: opacity 0.3s linear;

@@ -13,7 +13,7 @@
 		}), 0);
 	}
 
-	$(animate);
+	//$(animate);
 	//we'll probably need to wait for web fonts
-	//$(window).load(animate);
+	$(window).on('load', animate);
 }());

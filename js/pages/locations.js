@@ -112,6 +112,7 @@
 		var $clicked = $(e.target),
 			id,
 			location;
+		//remove old marker
 		if(!$clicked.hasClass('marker')) {
 			return window.setTimeout(window.requestAnimationFrame.bind(null, function () {
 				$mapWrap.css('transform', '');

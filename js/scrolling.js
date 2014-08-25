@@ -158,13 +158,11 @@
     }
 
     function getAfterFn(afterFn) {
-        var after = afterFn;
-
         return function () {
             $window.trigger('after-scroll');
 
-            if(after) {
-                after();
+            if(afterFn) {
+                afterFn();
             }
             window.setTimeout(function () {
                 userScroll = true;
@@ -201,7 +199,7 @@
         previousScrollTop = scrollTop = window.pageYOffset;
         winHeight =  $window.height();
         $wrap.find('> section').each(function(i, el) {
-            updateSectionMeta(el, el.id);
+            updateSectionMeta(el, el.getAttribute('data-id'));
         });
         window.setTimeout(window.requestAnimationFrame.bind(null, hashChangeFn), 0);
     }
@@ -209,6 +207,17 @@
     function updateNav(clicked) {
         $nav.removeClass('selected');
         $(clicked).addClass('selected');
+    }
+
+    function updateNavByScroll() {
+        var i, s,
+            len = sectionKeys.length;
+        for(i = 0; i < len; i++) {
+            s = sections[sectionKeys[i]];
+            if(s.top >= scrollTop - (window.viewportHeight * PAGE_HEIGHT_CHAGE_THRESHOLD) + (window.isMobile ? MOBILE_NAV_HEIGHT : DESKTOP_NAV_HEIGHT)) {
+               return updateNav(s.linkEl);
+            }
+        }
     }
 
     function initListeners() {
@@ -263,28 +272,21 @@
                 return;
             }
 
-            var i, s, len;
-
             previousScrollTop = scrollTop;
             scrollTop = window.pageYOffset;
 
             if(userScroll) {
-                len = sectionKeys.length;
-                for(i = 0; i < len; i++) {
-                    s = sections[sectionKeys[i]];
-                    if(s.top >= scrollTop - (winHeight * PAGE_HEIGHT_CHAGE_THRESHOLD)) {
-                       return updateNav(s.linkEl);
-                    }
-                }
+                updateNavByScroll();
             }
         });
 
         $window.on('after-resize', function () {
-            sectionKeys.forEach(function (key) {
-                updateSectionMeta(sections[key].el, key);
-            });
-            winHeight =  $window.height();
-            previousScrollTop = scrollTop = window.pageYOffset;
+            window.setTimeout(function () {
+                sectionKeys.forEach(function (key) {
+                    updateSectionMeta(sections[key].el, key);
+                });
+                previousScrollTop = scrollTop = window.pageYOffset;
+            }, 0);
         });
 
         $body.on('click', '.close-overlay', function (e) {
@@ -304,6 +306,7 @@
     function init() {
         initListeners();
         initState();
+        updateNavByScroll();
     }
 
     function removeIds() {
