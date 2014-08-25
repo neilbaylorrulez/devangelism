@@ -236,7 +236,7 @@
             }
 
             if($page.length) {
-                updateNav(anchor);
+                updateNav($('#nav a[href="#' + pageId + '"]')[0]);
                 if(IS_FIREFOX) {
                     showPage(pageId, function () {
                         window.location.hash = url;
