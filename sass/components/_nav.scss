@@ -36,22 +36,6 @@
     }
 	}
 
-	.open-menu {
-	    height:37px;
-	    width:42px;
-	    border:none;
-	    font-size:0;
-	    display:none;
-	    background: url("../img/navicon.svg") no-repeat 50% 50%;
-	    background-size:30px 24px;
-	    padding:0;
-	    position:absolute;
-	    top:17px;
-	    left:-60px;
-	    outline: none !important;
-	    cursor:pointer;
-	}
-
 	a {
 	  text-transform: capitalize;
 	  color: white;
@@ -68,10 +52,10 @@
 	}
 	@media screen and (max-width: 1024px) {
 		padding-left: 225px;
-    text-align:left;
+    	text-align:left;
 	}
 
-	@media screen and (max-width: 800px) {
+	@media screen and (max-width: 820px) {
 		height:100%;
 		border-bottom:80px solid #2E3335;
 		text-align: left;
@@ -86,10 +70,6 @@
 		a {
 			padding:0 13px 0;
 		}
-
-    .open-menu {
-      display:block;
-    }
 
     h1 {
       display: none;

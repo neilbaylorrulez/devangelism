@@ -4,7 +4,7 @@
 	var $window = $(window),
 		$body = $(document.body),
 		$wrap = $('#wrap'),
-		MOBILE_WIDTH = 800,
+		MOBILE_WIDTH = 820,
 		IS_SAFARI = /^((?!chrome).)*safari/i.test(navigator.userAgent);
 
 	function initState() {
@@ -49,6 +49,7 @@
 				if(oldWidth !== window.viewportWidth) {
 					$window.trigger('after-resize');
 				}
+				$window.trigger('after-any-resize');
 				window.setTimeout(function () {
 					$body.removeClass('resizing');
 				}, 100);

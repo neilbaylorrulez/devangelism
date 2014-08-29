@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400|Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles/main.css">
     <title>Digital Ocean Evangelism</title>
+    <link rel="shortcut icon" href="https://www.digitalocean.com/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="stylesheet" href="styles/main.css">
-    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'>
   </head>
   <body>
 
     <div id="wrap">
+
       <section id="home">
         <h2>We Love Developers</h2>
         <h3>Evangelism</h3>
         <a href="#who" class="next">Who is Digital Ocean Devangelism</a>
       </section>
+
       <section id="who">
         <h1>Not Just Another Cloud Company</h1>
         <p>DigitalOcean is more than hosting, it's an advocate for excellence. Something more inspirational can be said here. Let's be inspirational full of inspiration</p>
@@ -57,6 +60,7 @@
         </div>
         <a href="#locations" class="next">Where is DigitalOcean Devangelism?</a>
       </section>
+
       <section id="locations">
         <h1>DigitalOcean, Across the Ocean</h1>
         <p>DigitalOcean is a global company, doing global stuff with globes and global globes</p>
@@ -67,10 +71,10 @@
           </div>
         </div>
       </section>
-      <section id="events">
-        <h1>Our Best-Laid Plan</h1>
-        <p>Where we'll be, what we'll be wearing, and who we'll be with</p>
 
+      <section id="events">
+        <h1>Our Best-Laid Plans</h1>
+        <p>Where we'll be, what we'll be wearing, and who we'll be with</p>
         <div class="tabs">
            <div id="month-tab" class="tab">
                <input type="radio" id="tab-1" name="tab-group" checked>
@@ -90,10 +94,10 @@
 
                <div class="content"></div>
            </div>
-
         </div>
         <a href="#downloads" class="next dark">Download Digital Ocean Devangelism assets</a>
       </section>
+
       <section id="downloads">
         <h1>Downloads</h1>
         <p>Download any of these Digital Ocean badges or logos to display on your own websites</p>
@@ -270,27 +274,13 @@
             </ul>
           </div>
       </section>
-      <section id="contact">
-        <div class="overlay-wrap">
-          <h1>Contact Us</h1>
-          <span class="close-overlay">Close Overlay</span>
-          <form name="contact us">
-            <input type="text" name="firstname" id="fname" placeholder="Ricardo" required>
-            <input type="text" name="lastname" id="lname" placeholder="Clemente" required>
-            <label for="fname">First Name</label>
-            <label for="lname">Last Name</label>
-            <input type="email" name="email" placeholder="ricardo.c@juicyfruit.com" required>
-            <label for="email">Email</label>
-            <textarea name="message" id="message" required></textarea>
-            <label for="message">Message</label>
-            <button class="submit">Send</button>
-          </form>
-        </div>
-      </section>
+
       <footer></footer>
+
     </div>
-<nav id="nav">
-      <button class="open-menu">Open Menu</button>
+
+    <!-- site nav -->
+    <nav id="nav">
       <a href="#home" class="home selected">Home</a>
       <a href="#who">Who we are</a>
       <a href="#locations">Locations</a>
@@ -299,18 +289,36 @@
       <a href="#contact">Contact Us</a>
       <h1><a href="#home">Digital Ocean Evangelism</a></h1>
     </nav>
-    <!-- sweet non-semantic div for the mobile header as nav is position fixed (to the right) in mobile view -->
-    <div id="mobile-header"><a href="#home">Go Home</a></div>
 
+    <!-- contact overlay -->
+    <section id="contact" class="overlay contact hide">
+      <div class="overlay-wrap">
+        <h1>Contact Us</h1>
+        <span class="close-overlay">Close Overlay</span>
+        <form name="contact us">
+          <input type="text" name="firstname" id="fname" placeholder="Ricardo" required>
+          <input type="text" name="lastname" id="lname" placeholder="Clemente" required>
+          <label for="fname">First Name</label>
+          <label for="lname">Last Name</label>
+          <input type="email" name="email" placeholder="ricardo.c@juicyfruit.com" required>
+          <label for="email">Email</label>
+          <textarea name="message" id="message" required></textarea>
+          <label for="message">Message</label>
+          <button class="submit">Send</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- sweet non-semantic div for the mobile header, needed b/c nav is position fixed (to the right) in mobile view -->
+    <div id="mobile-header"><a href="#home">Go Home</a><button class="open-menu">Open Menu</button></div>
+
+    <!-- user profile overlays go here -->
     <aside data-id="mikeal" class="overlay who hide">
       <div class="overlay-wrap">
         <h1>Mikeal Rogers</h1>
         <h3>Chief Officer</h3>
         <img src="img/mikeal-head.jpg" alt="Mikeal Rogers">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis ut orci et dapibus. Vestibulum non elit eget odio rhoncus bibendum ac at massa. Cras ultrices sodales ipsum ut vehicula. Cras ac risus nisl. Cras sit amet felis vulputate, sagittis turpis id, viverra risus. Cras nec volutpat felis. Integer ut tincidunt lectus. Vivamus placerat convallis sapien id aliquet. Quisque ut tincidunt sem. Fusce dolor massa, convallis sed sapien sit amet, dapibus facilisis magna.</p>
-<p>
-Cras accumsan odio nec turpis sagittis, non vestibulum tortor semper. Aliquam sit amet consequat erat. Mauris ultrices mi eget scelerisque volutpat. Vivamus malesuada quis erat in bibendum. Sed vestibulum urna dui, a hendrerit metus iaculis et. Donec id eros nec quam pellentesque suscipit quis in odio. In odio dui, condimentum vitae posuere a, dignissim viverra tortor. Nulla mollis interdum velit. Fusce rhoncus luctus quam, quis suscipit mauris semper et.</p>
-
 
         <h4>Recent Talks by Mikeal Rogers:</h4>
         <ul>
@@ -322,15 +330,15 @@ Cras accumsan odio nec turpis sagittis, non vestibulum tortor semper. Aliquam si
       </div>
     </aside>
 
-
     <aside data-id="john" class="overlay who hide">
       <div class="overlay-wrap">
         <h1>John Edgar</h1>
         <h3>Cool Guy</h3>
         <img src="img/mikeal-head.jpg" alt="Mikeal Rogers">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis ut orci et dapibus. Vestibulum non elit eget odio rhoncus bibendum ac at massa. Cras ultrices sodales ipsum ut vehicula. Cras ac risus nisl. Cras sit amet felis vulputate, sagittis turpis id, viverra risus. Cras nec volutpat felis. Integer ut tincidunt lectus. Vivamus placerat convallis sapien id aliquet. Quisque ut tincidunt sem. Fusce dolor massa, convallis sed sapien sit amet, dapibus facilisis magna.</p>
-<p>
-Cras accumsan odio nec turpis sagittis, non vestibulum tortor semper. Aliquam sit amet consequat erat. Mauris ultrices mi eget scelerisque volutpat. Vivamus malesuada quis erat in bibendum. Sed vestibulum urna dui, a hendrerit metus iaculis et. Donec id eros nec quam pellentesque suscipit quis in odio. In odio dui, condimentum vitae posuere a, dignissim viverra tortor. Nulla mollis interdum velit. Fusce rhoncus luctus quam, quis suscipit mauris semper et.</p>
+
+        <p>
+        Cras accumsan odio nec turpis sagittis, non vestibulum tortor semper. Aliquam sit amet consequat erat. Mauris ultrices mi eget scelerisque volutpat. Vivamus malesuada quis erat in bibendum. Sed vestibulum urna dui, a hendrerit metus iaculis et. Donec id eros nec quam pellentesque suscipit quis in odio. In odio dui, condimentum vitae posuere a, dignissim viverra tortor. Nulla mollis interdum velit. Fusce rhoncus luctus quam, quis suscipit mauris semper et.</p>
 
 
         <h4>Recent Talks by John Edgar:</h4>
@@ -341,6 +349,10 @@ Cras accumsan odio nec turpis sagittis, non vestibulum tortor semper. Aliquam si
         </ul>
         <span class="close-overlay">Close Overlay</span>
       </div>
+    </aside>
+
+    <!-- blank overlay used by events page -->
+    <aside class="overlay events hide">
     </aside>
 
     <script src="js/vendor/jquery-2.1.0.min.js"></script>
@@ -356,5 +368,6 @@ Cras accumsan odio nec turpis sagittis, non vestibulum tortor semper. Aliquam si
     <script src="js/pages/who.js"></script>
     <script src="js/pages/locations.js"></script>
     <script src="js/pages/events.js"></script>
+    <script src="js/pages/contact.js"></script>
   </body>
 </html>

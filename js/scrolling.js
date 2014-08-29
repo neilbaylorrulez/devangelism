@@ -74,10 +74,11 @@
             return;
         }
         $overlay.removeClass('hide').scrollTop(0);
-        $wrap.css({
-            transform: 'translateY(-' + (overlayScrollTop = window.pageYOffset) + 'px)',
-            transition: 'none'
-        });
+        if(window.pageYOffset) {
+            $wrap.css({
+                top: - (overlayScrollTop = window.pageYOffset)
+            });
+        }
         $docEl.css('overflow', 'hidden');
 
         window.setTimeout(window.requestAnimationFrame.bind(null, function () {
@@ -96,6 +97,10 @@
         }
         parentPageId = parts[0];
         overlayId = parts[1];
+        if(parentPageId === 'events') {
+            $window.trigger('create-event-overlay', overlayId);
+        }
+
         if($wrap.find('[data-id="' + parentPageId + '"]').length && ($overlay = $('.overlay.' + parentPageId + '[data-id="' + overlayId +'"]')).length) {
             if($overlay.hasClass('show')) {
                 return;
@@ -112,9 +117,9 @@
     }
 
     function showContactPage(afterFn) {
+        $('section[data-id="contact"] form')[0].reset();
         scrollToY(0, function () {
-            $wrap.addClass('contact');
-            $docEl.css('overflow', 'hidden');
+            overlayTransition($(sections.contact.el));
             if(afterFn) {
                 afterFn();
             }
@@ -122,32 +127,20 @@
     }
 
     function hideOverlays() {
-        var $overlay;
-        if(curPageId === 'contact') {
-            $docEl.css('overflow', '');
-            window.setTimeout(window.requestAnimationFrame.bind(null, function () {
-                $wrap.addClass('contact-hide');
-                window.setTimeout(function () {
-                    $wrap.removeClass('contact-hide').removeClass('contact');
-                }, 400);
-            }), 0);
-        } else if (overlayScrollTop !== null) {
-            $overlay = $('.overlay.show');
-            if(!$overlay.length) {
-                return;
-            }
-            $docEl.css('overflow', '');
-            $wrap.css('transform', '');
-            window.scrollTo(0, scrollTop = overlayScrollTop);
-            window.setTimeout(window.requestAnimationFrame.bind(null, function () {
-                $overlay.addClass('close');
-                $wrap.css('transition', '');
-                window.setTimeout(function () {
-                    overlayScrollTop = null;
-                    $overlay.removeClass('show').removeClass('close').addClass('hide');
-                }, 400);
-            }), 0);
+        var $overlay = $('.overlay.show');
+        if(!$overlay.length) {
+            return;
         }
+        $docEl.css('overflow', '');
+        $wrap.css('top', '');
+        window.scrollTo(0, scrollTop = overlayScrollTop);
+        window.setTimeout(window.requestAnimationFrame.bind(null, function () {
+            $overlay.addClass('close');
+            window.setTimeout(function () {
+                overlayScrollTop = null;
+                $overlay.removeClass('show').removeClass('close').addClass('hide');
+            }, 350);
+        }), 0);
     }
 
     function pageTopOffset(pageId) {
@@ -174,7 +167,6 @@
         userScroll = false;
         afterFn = getAfterFn(afterFn);
         hideOverlays();
-
         if(closedOverlayTriggeredPage) {
             curPageId = pageId;
             return afterFn();
@@ -198,7 +190,7 @@
     function initState() {
         previousScrollTop = scrollTop = window.pageYOffset;
         winHeight =  $window.height();
-        $wrap.find('> section').each(function(i, el) {
+        $('section').each(function(i, el) {
             updateSectionMeta(el, el.getAttribute('data-id'));
         });
         window.setTimeout(window.requestAnimationFrame.bind(null, hashChangeFn), 0);
@@ -226,7 +218,7 @@
                 anchor = e.currentTarget,
                 url = anchor.getAttribute('href'),
                 pageId = url.replace('#', ''),
-                $page = $wrap.find('> section[data-id="' + pageId + '"]');
+                $page = $('section[data-id="' + pageId + '"]');
             if(curPageId === pageId && pageId === 'contact') {
                 getAfterFn()();
                  if(IS_FIREFOX) {
@@ -255,7 +247,7 @@
                 if(IS_FIREFOX) {
                     scrollTop = previousScrollTop;
                 }
-                $page = $wrap.find('[data-id="' + pageId + '"]');
+                $page = $('section[data-id="' + pageId + '"]');
                 if($page.length) {
                     showPage(pageId);
                     updateNav($('#nav a[href="#' + pageId + '"]')[0]);
@@ -280,7 +272,7 @@
             }
         });
 
-        $window.on('after-resize', function () {
+        $window.on('after-any-resize', function () {
             window.setTimeout(function () {
                 sectionKeys.forEach(function (key) {
                     updateSectionMeta(sections[key].el, key);
@@ -310,7 +302,7 @@
     }
 
     function removeIds() {
-        $wrap.find('> section').each(function(i, el) {
+        $('section').each(function(i, el) {
             updateSectionMeta(el, el.id);
             sectionKeys.push(el.id);
             el.setAttribute('data-id', el.id);

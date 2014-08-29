@@ -1,5 +1,5 @@
 .overlay {
-	background:#EC7058;
+	background:rgba(236,112,88,0.9);
 	height:100%;
 	width:100%;
 	overflow:auto;
@@ -7,31 +7,30 @@
 	top:0;
 	position:fixed;
 	z-index:2;
-	padding:120px 0 30px;
+	padding:100px 0 30px;
 	@include box-sizing(border-box);
 	@include backface-visibility(hidden);
 	@include perspective(1000);
 	@include transform(translateZ(0) scale(1));
-	@include transition(opacity 0.7s linear, transform 0.3s ease);
 	opacity:0.01;
 
 	&.show {
 		display:block;
-		opacity:0.9;
+		opacity:0.99;
 		-webkit-animation: bounce 0.75s;
 		-moz-animation: bounce 0.75s;
 		animation: bounce 0.75s;
 	}
 	&.close {
-		opacity:0.01;
-	  @include transition(opacity 0.275s linear);
+	  opacity:0.01;
+	  @include transition(opacity 0.3s linear);
 	}
 	&.hide {
 		display:none;
 	}
 	&.who {
 		color:#fff;
-		font-size:12px;
+		font-size:13px;
 		img {
 			position:absolute;
 			left:50%;
@@ -45,9 +44,15 @@
 			margin:0;
 			text-align: center;
 			font-weight: normal;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			width:100%;
+			padding:0 15px;
+			@include box-sizing(border-box);
 		}
 		h1 {
-			font-size:36px;
+			font-size:32px;
 			padding-top:145px;
 		}
 		h3 {
@@ -70,7 +75,7 @@
 			margin:0 auto;
 			display:block;
 			max-width:450px;
-			font-size:12px;
+			font-size:13px;
 		}
 		ul {
 			margin:0 auto;
@@ -80,16 +85,248 @@
 			max-width:450px;
 		}
 		a {
+			display:inline-block;
 			color:#fff;
 			line-height:18px;
+			margin:5px 0;
 		}
+	}
+	&.events {
+		background: rgba(182, 217, 160, 0.93);
+		h1, h3 {
+			font-family: 'Lato', arial, sans-serif;
+			font-weight: 300;
+			font-size: 40px;
+			text-align: center;
+			color:#545a51;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			width:100%;
+			padding:0 5px;
+			margin:-15px 0 0 ;
+			@include box-sizing(border-box);
+		}
+		h3 {
+			margin:-3px 0 0;
+			font-size:14px;
+			position:absolute;
+			left:50%;
+			@include transform(translateX(-50%));
+		}
+		ul, li {
+			max-width:650px;
+			margin:20px auto 0;
+			padding:0;
+			list-style:none;
+		}
+		li {
+			margin:0 0 2px;
+			padding:5px 12px;
+			background:#545a51;
+			color:#B6D9A0;
+			position:relative;
+			display: table;
+			width:100%;
+			font-size:0;
+			@include box-sizing(border-box);
+
+			> span {
+				font-size:16px;
+				display:table-cell;
+				&.date {
+					width:60px;
+					text-align: center;
+					font-family: 'Lato', arial, sans-serif;
+					font-weight: 300;
+					position:relative;
+					span {
+						display:inline-block;
+					}
+
+					.month {
+						text-transform: uppercase;
+						position:absolute;
+						top:6px;
+						left:50%;
+						font-size:12px;
+						@include transform(translateX(-50%));
+					}
+					.year {
+						top:auto;
+						bottom:-3px;
+					}
+					.day {
+						font-size:56px;
+					}
+					.month + .day {
+						font-size:40px;
+						padding:15px 0 0;
+					}
+				}
+				&.details {
+					padding:10px;
+					position:relative;
+					font-size:14px;
+					.title {
+						color:#fff;
+					}
+					.top {
+						top:12px;
+						position:absolute;
+						white-space: nowrap;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						width: 100%;
+						.location:after {
+							content: ' | ';
+						}
+					}
+				}
+			}
+		}
+		.close-overlay {
+			top:-45px;
+		}
+	}
+	&.contact {
+		border-bottom:0;
+		position: absolute;
+    	background: rgba(54, 130, 185, 0.9);
+    	color:#363a34;
+		h1 {
+	      color:#fff;
+	      margin-bottom: 35px;
+	      &:before, &:after {
+	        display: none;
+	      }
+	    }
+
+	    .overlay-wrap {
+	      max-width: 460px;
+	      padding: 0 20px;
+	    }
+
+	    form {
+	      text-align: left;
+
+	      input {
+	        @include border-radius(0);
+	        &::-webkit-input-placeholder {
+	           color: rgba(255,255,255,0.5);
+	        }
+	        &:-moz-placeholder { /* Firefox 18- */
+	           color: rgba(255,255,255,0.5);
+	        }
+	        &::-moz-placeholder {  /* Firefox 19+ */
+	           color: rgba(255,255,255,0.5);
+	        }
+	        &:-ms-input-placeholder {
+	           color: rgba(255,255,255,0.5);
+	        }
+	      }
+
+	      input[type="text"], input[type="email"] {
+	        position: relative;
+	        display: inline-block;
+	        float: left;
+	        margin: 0;
+	        padding: 6px 10px 2px;
+	        border: 0;
+	        border-bottom: 1px solid white;
+	        width: 55%;
+	        font-size: 30px;
+	        background: none;
+	        color: white;
+	        @include box-sizing(border-box);
+	        margin-bottom: 4px;
+
+	        &:first-of-type {
+	          border-right: 1px solid white;
+	          padding-left: 0;
+	          width: 45%;
+	        }
+	        &:focus {
+	          outline: none;
+	        }
+	      }
+	      label {
+	        float: left;
+	        display: inline-block;
+	        width: 55%;
+	        padding-left: 10px;
+	        margin-bottom: 10px;
+	        font-size: 14px;
+	        &:first-of-type {
+	          width: 45%;
+	          padding-left: 0;
+	        }
+	        color: white;
+	        @include box-sizing(border-box);
+	      }
+	      input[type="email"] {
+	        width: 100%;
+	        padding-left: 0;
+	      }
+	      label[for="email"], label[for="message"], {
+	        padding-left: 0;
+	        margin-bottom: 16px;
+	      }
+	      label[for="message"] {
+	        width: 100%;
+	      }
+	      textarea {
+	        @include border-radius(0);
+	        width: 100%;
+	        height: 160px;
+	        resize: none;
+	        background: #4A91C4;
+	        color: white;
+	        font-size: 20px;
+	        padding: 10px;
+	        line-height: 1.1;
+	        border: 0;
+	        border-bottom: 1px solid white;
+	        @include box-sizing(border-box);
+	        margin-bottom: 5px;
+
+	        &:focus {
+	          outline: none;
+	        }
+	      }
+	      button.submit {
+	        float: right;
+	        border: 0;
+	        background: white;
+	        margin-top: 13px;
+	        padding: 12px 40px;
+	        color: #EF7053;
+	        cursor:pointer;
+	        @include border-radius(4px);
+	      }
+	    }
+
+	    @media screen and (max-width: 820px) {
+	      h1 {
+	        padding:0 50px;
+	      }
+	      @media screen and (max-width: 400px) {
+	        form {
+	          input[type="text"], input[type="email"] {
+	            font-size:24px;
+	          }
+	          textarea {
+	            font-size:18px;
+	          }
+	        }
+	      }
+	    }
 	}
 }
 
 .overlay-wrap {
 	width:100%;
-	height:100%;
-	max-width:800px;
+	max-width:820px;
 	margin:0 auto;
 	position:relative;
 	@include box-sizing(border-box);
@@ -102,10 +339,11 @@
  	border:2px solid #fff;
  	display:block;
  	position:absolute;
- 	top:-30px;
- 	right:22px;
+ 	top:-45px;
+ 	right:14px;
 	font-size:0;
  	@include border-radius(30px);
+ 	@include box-shadow(0 1px 1px rgba(0,0,0,0.15));
  	cursor:pointer;
 
  	&:before, &:after {
