@@ -33,7 +33,7 @@
               who: 'Mikeal Rogers'
             }, {
               date: new Date('September 14, 2014'),
-              title: 'Jay Rodriguez discusses even more awesome stuff',
+              title: 'Jay Rodriguez discusses even more awesome stuff and other good things that will be a long day, i hope you like jay, cause he can be a bit verbose - and by a bit, i mean riduiclously',
               who: 'Jay Rodriguez'
             }, {
               date: new Date('September 14, 2014'),
@@ -471,7 +471,7 @@
          subTitle = node.title;
       }
 
-      html = '<div class="overlay-wrap"><h1>' + child + '</h1><h3>' + subTitle + '</h3><ul>';
+      html = '<div class="overlay-wrap ' + tab + '"><h1>' + child + '</h1><h3>' + subTitle + '</h3><ul>';
       node.events.sort(function (a,b) {
         return a.date - b.date;
       }).forEach(function(e) {

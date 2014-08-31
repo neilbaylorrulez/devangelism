@@ -92,7 +92,7 @@
 		}
 	}
 	&.events {
-		background: rgba(182, 217, 160, 0.93);
+		background: rgba(182, 217, 160, 0.95);
 		h1, h3 {
 			font-family: 'Lato', arial, sans-serif;
 			font-weight: 300;
@@ -188,6 +188,15 @@
 		.close-overlay {
 			top:-45px;
 		}
+
+		.overlay-wrap.event, .overlay-wrap.attendee {
+			ul {
+				margin-top:30px;
+			}
+			li > span.details .top {
+				top:6px;
+			}
+		}
 	}
 	&.contact {
 		border-bottom:0;
@@ -213,16 +222,16 @@
 	      input {
 	        @include border-radius(0);
 	        &::-webkit-input-placeholder {
-	           color: rgba(255,255,255,0.5);
+	           color: rgba(255,255,255,0.3);
 	        }
 	        &:-moz-placeholder { /* Firefox 18- */
-	           color: rgba(255,255,255,0.5);
+	           color: rgba(255,255,255,0.3);
 	        }
 	        &::-moz-placeholder {  /* Firefox 19+ */
-	           color: rgba(255,255,255,0.5);
+	           color: rgba(255,255,255,0.3);
 	        }
 	        &:-ms-input-placeholder {
-	           color: rgba(255,255,255,0.5);
+	           color: rgba(255,255,255,0.3);
 	        }
 	      }
 

@@ -59,7 +59,7 @@
         @include transform (translate3d(0, 0, 0) scale(1) !important);
         @for $i from 1 through 16 {
           &:nth-child(#{$i}) {
-            @include transition(transform 0.55s ease-out (0.085s * $i), opacity 1s linear (0.085s * $i));
+            @include transition(transform 0.6s ease-out (0.085s * $i), opacity 1.2s linear (0.085s * $i));
           }
         }
       }
