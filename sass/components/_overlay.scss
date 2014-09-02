@@ -115,25 +115,28 @@
 			@include transform(translateX(-50%));
 		}
 		ul, li {
+			width:100%;
 			max-width:650px;
 			margin:20px auto 0;
 			padding:0;
 			list-style:none;
+			display:table;
 		}
 		li {
-			margin:0 0 2px;
-			padding:5px 12px;
 			background:#545a51;
 			color:#B6D9A0;
 			position:relative;
-			display: table;
+			display: table-row;
 			width:100%;
 			font-size:0;
 			@include box-sizing(border-box);
 
 			> span {
+
+				border-top:2px solid rgba(182, 217, 160, 0.95);
 				font-size:16px;
 				display:table-cell;
+				padding:3px;
 				&.date {
 					width:60px;
 					text-align: center;
@@ -160,8 +163,8 @@
 						font-size:56px;
 					}
 					.month + .day {
-						font-size:40px;
-						padding:15px 0 0;
+						font-size:44px;
+						padding:12px 0 0;
 					}
 				}
 				&.details {

@@ -731,19 +731,19 @@ button {
 }
 /* line 117, ../sass/components/_overlay.scss */
 .overlay.events ul, .overlay.events li {
+  width: 100%;
   max-width: 650px;
   margin: 20px auto 0;
   padding: 0;
   list-style: none;
+  display: table;
 }
-/* line 123, ../sass/components/_overlay.scss */
+/* line 125, ../sass/components/_overlay.scss */
 .overlay.events li {
-  margin: 0 0 2px;
-  padding: 5px 12px;
   background: #545a51;
   color: #B6D9A0;
   position: relative;
-  display: table;
+  display: table-row;
   width: 100%;
   font-size: 0;
   -webkit-box-sizing: border-box;
@@ -752,10 +752,12 @@ button {
 }
 /* line 134, ../sass/components/_overlay.scss */
 .overlay.events li > span {
+  border-top: 2px solid rgba(182, 217, 160, 0.95);
   font-size: 16px;
   display: table-cell;
+  padding: 3px;
 }
-/* line 137, ../sass/components/_overlay.scss */
+/* line 140, ../sass/components/_overlay.scss */
 .overlay.events li > span.date {
   width: 60px;
   text-align: center;
@@ -763,11 +765,11 @@ button {
   font-weight: 300;
   position: relative;
 }
-/* line 143, ../sass/components/_overlay.scss */
+/* line 146, ../sass/components/_overlay.scss */
 .overlay.events li > span.date span {
   display: inline-block;
 }
-/* line 147, ../sass/components/_overlay.scss */
+/* line 150, ../sass/components/_overlay.scss */
 .overlay.events li > span.date .month {
   text-transform: uppercase;
   position: absolute;
@@ -780,31 +782,31 @@ button {
   -o-transform: translateX(-50%);
   transform: translateX(-50%);
 }
-/* line 155, ../sass/components/_overlay.scss */
+/* line 158, ../sass/components/_overlay.scss */
 .overlay.events li > span.date .year {
   top: auto;
   bottom: -3px;
 }
-/* line 159, ../sass/components/_overlay.scss */
+/* line 162, ../sass/components/_overlay.scss */
 .overlay.events li > span.date .day {
   font-size: 56px;
 }
-/* line 162, ../sass/components/_overlay.scss */
+/* line 165, ../sass/components/_overlay.scss */
 .overlay.events li > span.date .month + .day {
-  font-size: 40px;
-  padding: 15px 0 0;
+  font-size: 44px;
+  padding: 12px 0 0;
 }
-/* line 167, ../sass/components/_overlay.scss */
+/* line 170, ../sass/components/_overlay.scss */
 .overlay.events li > span.details {
   padding: 10px;
   position: relative;
   font-size: 14px;
 }
-/* line 171, ../sass/components/_overlay.scss */
+/* line 174, ../sass/components/_overlay.scss */
 .overlay.events li > span.details .title {
   color: #fff;
 }
-/* line 174, ../sass/components/_overlay.scss */
+/* line 177, ../sass/components/_overlay.scss */
 .overlay.events li > span.details .top {
   top: 12px;
   position: absolute;
@@ -813,48 +815,48 @@ button {
   text-overflow: ellipsis;
   width: 100%;
 }
-/* line 181, ../sass/components/_overlay.scss */
+/* line 184, ../sass/components/_overlay.scss */
 .overlay.events li > span.details .top .location:after {
   content: ' | ';
 }
-/* line 188, ../sass/components/_overlay.scss */
+/* line 191, ../sass/components/_overlay.scss */
 .overlay.events .close-overlay {
   top: -45px;
 }
-/* line 193, ../sass/components/_overlay.scss */
+/* line 196, ../sass/components/_overlay.scss */
 .overlay.events .overlay-wrap.event ul, .overlay.events .overlay-wrap.attendee ul {
   margin-top: 30px;
 }
-/* line 196, ../sass/components/_overlay.scss */
+/* line 199, ../sass/components/_overlay.scss */
 .overlay.events .overlay-wrap.event li > span.details .top, .overlay.events .overlay-wrap.attendee li > span.details .top {
   top: 6px;
 }
-/* line 201, ../sass/components/_overlay.scss */
+/* line 204, ../sass/components/_overlay.scss */
 .overlay.contact {
   border-bottom: 0;
   position: absolute;
   background: rgba(54, 130, 185, 0.9);
   color: #363a34;
 }
-/* line 206, ../sass/components/_overlay.scss */
+/* line 209, ../sass/components/_overlay.scss */
 .overlay.contact h1 {
   color: #fff;
   margin-bottom: 35px;
 }
-/* line 209, ../sass/components/_overlay.scss */
+/* line 212, ../sass/components/_overlay.scss */
 .overlay.contact h1:before, .overlay.contact h1:after {
   display: none;
 }
-/* line 214, ../sass/components/_overlay.scss */
+/* line 217, ../sass/components/_overlay.scss */
 .overlay.contact .overlay-wrap {
   max-width: 460px;
   padding: 0 20px;
 }
-/* line 219, ../sass/components/_overlay.scss */
+/* line 222, ../sass/components/_overlay.scss */
 .overlay.contact form {
   text-align: left;
 }
-/* line 222, ../sass/components/_overlay.scss */
+/* line 225, ../sass/components/_overlay.scss */
 .overlay.contact form input {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -862,25 +864,25 @@ button {
   -o-border-radius: 0;
   border-radius: 0;
 }
-/* line 224, ../sass/components/_overlay.scss */
+/* line 227, ../sass/components/_overlay.scss */
 .overlay.contact form input::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.3);
 }
-/* line 227, ../sass/components/_overlay.scss */
+/* line 230, ../sass/components/_overlay.scss */
 .overlay.contact form input:-moz-placeholder {
   /* Firefox 18- */
   color: rgba(255, 255, 255, 0.3);
 }
-/* line 230, ../sass/components/_overlay.scss */
+/* line 233, ../sass/components/_overlay.scss */
 .overlay.contact form input::-moz-placeholder {
   /* Firefox 19+ */
   color: rgba(255, 255, 255, 0.3);
 }
-/* line 233, ../sass/components/_overlay.scss */
+/* line 236, ../sass/components/_overlay.scss */
 .overlay.contact form input:-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.3);
 }
-/* line 238, ../sass/components/_overlay.scss */
+/* line 241, ../sass/components/_overlay.scss */
 .overlay.contact form input[type="text"], .overlay.contact form input[type="email"] {
   position: relative;
   display: inline-block;
@@ -898,17 +900,17 @@ button {
   box-sizing: border-box;
   margin-bottom: 4px;
 }
-/* line 253, ../sass/components/_overlay.scss */
+/* line 256, ../sass/components/_overlay.scss */
 .overlay.contact form input[type="text"]:first-of-type, .overlay.contact form input[type="email"]:first-of-type {
   border-right: 1px solid white;
   padding-left: 0;
   width: 45%;
 }
-/* line 258, ../sass/components/_overlay.scss */
+/* line 261, ../sass/components/_overlay.scss */
 .overlay.contact form input[type="text"]:focus, .overlay.contact form input[type="email"]:focus {
   outline: none;
 }
-/* line 262, ../sass/components/_overlay.scss */
+/* line 265, ../sass/components/_overlay.scss */
 .overlay.contact form label {
   float: left;
   display: inline-block;
@@ -921,26 +923,26 @@ button {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 269, ../sass/components/_overlay.scss */
+/* line 272, ../sass/components/_overlay.scss */
 .overlay.contact form label:first-of-type {
   width: 45%;
   padding-left: 0;
 }
-/* line 276, ../sass/components/_overlay.scss */
+/* line 279, ../sass/components/_overlay.scss */
 .overlay.contact form input[type="email"] {
   width: 100%;
   padding-left: 0;
 }
-/* line 280, ../sass/components/_overlay.scss */
+/* line 283, ../sass/components/_overlay.scss */
 .overlay.contact form label[for="email"], .overlay.contact form label[for="message"] {
   padding-left: 0;
   margin-bottom: 16px;
 }
-/* line 284, ../sass/components/_overlay.scss */
+/* line 287, ../sass/components/_overlay.scss */
 .overlay.contact form label[for="message"] {
   width: 100%;
 }
-/* line 287, ../sass/components/_overlay.scss */
+/* line 290, ../sass/components/_overlay.scss */
 .overlay.contact form textarea {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -962,11 +964,11 @@ button {
   box-sizing: border-box;
   margin-bottom: 5px;
 }
-/* line 302, ../sass/components/_overlay.scss */
+/* line 305, ../sass/components/_overlay.scss */
 .overlay.contact form textarea:focus {
   outline: none;
 }
-/* line 306, ../sass/components/_overlay.scss */
+/* line 309, ../sass/components/_overlay.scss */
 .overlay.contact form button.submit {
   float: right;
   border: 0;
@@ -982,23 +984,23 @@ button {
   border-radius: 4px;
 }
 @media screen and (max-width: 820px) {
-  /* line 319, ../sass/components/_overlay.scss */
+  /* line 322, ../sass/components/_overlay.scss */
   .overlay.contact h1 {
     padding: 0 50px;
   }
 }
 @media screen and (max-width: 820px) and (max-width: 400px) {
-  /* line 324, ../sass/components/_overlay.scss */
+  /* line 327, ../sass/components/_overlay.scss */
   .overlay.contact form input[type="text"], .overlay.contact form input[type="email"] {
     font-size: 24px;
   }
-  /* line 327, ../sass/components/_overlay.scss */
+  /* line 330, ../sass/components/_overlay.scss */
   .overlay.contact form textarea {
     font-size: 18px;
   }
 }
 
-/* line 336, ../sass/components/_overlay.scss */
+/* line 339, ../sass/components/_overlay.scss */
 .overlay-wrap {
   width: 100%;
   max-width: 820px;
@@ -1010,7 +1012,7 @@ button {
   padding: 0 10px;
 }
 
-/* line 345, ../sass/components/_overlay.scss */
+/* line 348, ../sass/components/_overlay.scss */
 .close-overlay {
   height: 28px;
   width: 28px;
@@ -1030,7 +1032,7 @@ button {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
   cursor: pointer;
 }
-/* line 358, ../sass/components/_overlay.scss */
+/* line 361, ../sass/components/_overlay.scss */
 .close-overlay:before, .close-overlay:after {
   content: '';
   position: absolute;
@@ -1046,7 +1048,7 @@ button {
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-/* line 369, ../sass/components/_overlay.scss */
+/* line 372, ../sass/components/_overlay.scss */
 .close-overlay:after {
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
@@ -1813,62 +1815,62 @@ section h1 + p {
 #wrap #downloads .wrapper li, #wrap [data-id="downloads"] .wrapper li {
   display: inline-block;
 }
-/* line 69, ../sass/_downloads.scss */
+/* line 68, ../sass/_downloads.scss */
 #wrap #downloads .wrapper li .logo-bg, #wrap [data-id="downloads"] .wrapper li .logo-bg {
   background: #E1F0F8;
 }
-/* line 72, ../sass/_downloads.scss */
+/* line 71, ../sass/_downloads.scss */
 #wrap #downloads .wrapper li .logo-bg.dark, #wrap [data-id="downloads"] .wrapper li .logo-bg.dark {
   background: #617078;
 }
-/* line 76, ../sass/_downloads.scss */
+/* line 75, ../sass/_downloads.scss */
 #wrap #downloads .wrapper li.col-3, #wrap [data-id="downloads"] .wrapper li.col-3 {
   width: 285px;
   padding-right: 10px;
 }
-/* line 79, ../sass/_downloads.scss */
+/* line 78, ../sass/_downloads.scss */
 #wrap #downloads .wrapper li.col-3:last-of-type, #wrap [data-id="downloads"] .wrapper li.col-3:last-of-type {
   padding-right: 0;
 }
 @media screen and (max-width: 600px) {
-  /* line 76, ../sass/_downloads.scss */
+  /* line 75, ../sass/_downloads.scss */
   #wrap #downloads .wrapper li.col-3, #wrap [data-id="downloads"] .wrapper li.col-3 {
     margin: 0 auto;
     width: 100%;
   }
-  /* line 85, ../sass/_downloads.scss */
+  /* line 84, ../sass/_downloads.scss */
   #wrap #downloads .wrapper li.col-3:last-of-type, #wrap [data-id="downloads"] .wrapper li.col-3:last-of-type {
     padding-right: 20px;
   }
 }
-/* line 90, ../sass/_downloads.scss */
+/* line 89, ../sass/_downloads.scss */
 #wrap #downloads .wrapper li.col-4, #wrap [data-id="downloads"] .wrapper li.col-4 {
   width: 209px;
   padding-right: 14px;
 }
-/* line 93, ../sass/_downloads.scss */
+/* line 92, ../sass/_downloads.scss */
 #wrap #downloads .wrapper li.col-4:last-of-type, #wrap [data-id="downloads"] .wrapper li.col-4:last-of-type {
   padding-right: 0;
 }
 @media screen and (max-width: 600px) {
-  /* line 90, ../sass/_downloads.scss */
+  /* line 89, ../sass/_downloads.scss */
   #wrap #downloads .wrapper li.col-4, #wrap [data-id="downloads"] .wrapper li.col-4 {
     margin: 0 auto;
     width: 100%;
   }
-  /* line 99, ../sass/_downloads.scss */
+  /* line 98, ../sass/_downloads.scss */
   #wrap #downloads .wrapper li.col-4:last-of-type, #wrap [data-id="downloads"] .wrapper li.col-4:last-of-type {
     padding-right: 20px;
   }
 }
-/* line 105, ../sass/_downloads.scss */
+/* line 104, ../sass/_downloads.scss */
 #wrap #downloads .wrapper li .download, #wrap [data-id="downloads"] .wrapper li .download {
   margin-top: 10px;
   color: #4f4f4f;
   font-size: 14px;
   font-weight: 300;
 }
-/* line 111, ../sass/_downloads.scss */
+/* line 110, ../sass/_downloads.scss */
 #wrap #downloads .wrapper li .download a, #wrap [data-id="downloads"] .wrapper li .download a {
   color: #4f4f4f;
   text-decoration: none;
@@ -1876,71 +1878,71 @@ section h1 + p {
   font-size: 13px;
   font-weight: 600;
 }
-/* line 118, ../sass/_downloads.scss */
+/* line 117, ../sass/_downloads.scss */
 #wrap #downloads .wrapper li .download a:first-of-type, #wrap [data-id="downloads"] .wrapper li .download a:first-of-type {
   border-right: 1px solid #414141;
   padding-right: 4px;
   margin-right: 1px;
   margin-left: 2px;
 }
-/* line 128, ../sass/_downloads.scss */
+/* line 127, ../sass/_downloads.scss */
 #wrap #downloads .wrapper #horizontal li, #wrap [data-id="downloads"] .wrapper #horizontal li {
   height: 150px;
 }
-/* line 130, ../sass/_downloads.scss */
+/* line 129, ../sass/_downloads.scss */
 #wrap #downloads .wrapper #horizontal li .logo-bg, #wrap [data-id="downloads"] .wrapper #horizontal li .logo-bg {
   height: 105px;
 }
-/* line 133, ../sass/_downloads.scss */
+/* line 132, ../sass/_downloads.scss */
 #wrap #downloads .wrapper #horizontal li img, #wrap [data-id="downloads"] .wrapper #horizontal li img {
   margin-top: 38px;
   width: 190px;
 }
-/* line 139, ../sass/_downloads.scss */
+/* line 138, ../sass/_downloads.scss */
 #wrap #downloads .wrapper #vertical li, #wrap [data-id="downloads"] .wrapper #vertical li {
   height: 200px;
 }
-/* line 141, ../sass/_downloads.scss */
+/* line 140, ../sass/_downloads.scss */
 #wrap #downloads .wrapper #vertical li .logo-bg, #wrap [data-id="downloads"] .wrapper #vertical li .logo-bg {
   height: 130px;
 }
-/* line 144, ../sass/_downloads.scss */
+/* line 143, ../sass/_downloads.scss */
 #wrap #downloads .wrapper #vertical li img, #wrap [data-id="downloads"] .wrapper #vertical li img {
   margin-top: 33px;
   width: 110px;
 }
-/* line 150, ../sass/_downloads.scss */
+/* line 149, ../sass/_downloads.scss */
 #wrap #downloads .wrapper #badgeA, #wrap [data-id="downloads"] .wrapper #badgeA {
   margin-top: 10px;
   margin-bottom: 75px;
 }
-/* line 153, ../sass/_downloads.scss */
+/* line 152, ../sass/_downloads.scss */
 #wrap #downloads .wrapper #badgeA li, #wrap [data-id="downloads"] .wrapper #badgeA li {
   height: 150px;
 }
-/* line 156, ../sass/_downloads.scss */
+/* line 155, ../sass/_downloads.scss */
 #wrap #downloads .wrapper #badgeA .logo-bg, #wrap [data-id="downloads"] .wrapper #badgeA .logo-bg {
   height: 93px;
 }
-/* line 159, ../sass/_downloads.scss */
+/* line 158, ../sass/_downloads.scss */
 #wrap #downloads .wrapper #badgeA img, #wrap [data-id="downloads"] .wrapper #badgeA img {
   margin-top: 30px;
   width: 120px;
 }
-/* line 165, ../sass/_downloads.scss */
+/* line 164, ../sass/_downloads.scss */
 #wrap #downloads .wrapper #badgeB, #wrap [data-id="downloads"] .wrapper #badgeB {
   margin-top: 10px;
   margin-bottom: 75px;
 }
-/* line 168, ../sass/_downloads.scss */
+/* line 167, ../sass/_downloads.scss */
 #wrap #downloads .wrapper #badgeB li, #wrap [data-id="downloads"] .wrapper #badgeB li {
   height: 260px;
 }
-/* line 171, ../sass/_downloads.scss */
+/* line 170, ../sass/_downloads.scss */
 #wrap #downloads .wrapper #badgeB .logo-bg, #wrap [data-id="downloads"] .wrapper #badgeB .logo-bg {
   height: 195px;
 }
-/* line 174, ../sass/_downloads.scss */
+/* line 173, ../sass/_downloads.scss */
 #wrap #downloads .wrapper #badgeB img, #wrap [data-id="downloads"] .wrapper #badgeB img {
   margin-top: 33px;
   width: 128px;
