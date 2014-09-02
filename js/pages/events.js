@@ -274,7 +274,7 @@
 
       // Draw count
       g.append("text")
-          .attr("y", function(d){ return (d.r * (d.r < 51? d.r/50 * 5 : 4) / 5);})
+          .attr("y", function(d){ return (d.r * (d.r < 45 ? d.r/50 * 5 : 4) / 5);})
           .attr("text-anchor", "middle")
           .attr("fill", "#b6d9a0")
           .attr("font-size", function(d,i){ return (d.r < 51? d.r/50*14 : 16) + 'px' })
@@ -342,7 +342,7 @@
           .attr("transform", function(d,i)
               {return "translate(" + d.x + "," + d.y + ")"});
       g.append("text")
-          .attr("y", function(d){ return (d.r * (d.r < 45 ? d.r/50 * 4.6 : 3.5) / 5);})
+          .attr("y", function(d){ return (d.r * (d.r < 45 ? d.r/50 * 5 : 4) / 5);})
           .attr("text-anchor", "middle")
           .attr("fill", "#b6d9a0")
           .attr("font-size", function(d,i){ return (d.r < 51? d.r/50*14 : 16) + 'px' })
@@ -411,7 +411,7 @@
           .attr("transform", function(d,i)
               {return "translate(" + d.x + "," + d.y + ")"});
       g.append("text")
-          .attr("y", function(d){ return (d.r * (d.r < 51? d.r/50 * 5 : 4) / 5);})
+          .attr("y", function(d){ return (d.r * (d.r < 45 ? d.r/50 * 5 : 4) / 5);})
           .attr("text-anchor", "middle")
           .attr("fill", "#b6d9a0")
           .attr("font-size", function(d,i){ return (d.r < 51? d.r/50*14 : 16) + 'px' })
