@@ -825,7 +825,7 @@ button {
 }
 /* line 196, ../sass/components/_overlay.scss */
 .overlay.events .overlay-wrap.event ul, .overlay.events .overlay-wrap.attendee ul {
-  margin-top: 30px;
+  margin-top: 27px;
 }
 /* line 199, ../sass/components/_overlay.scss */
 .overlay.events .overlay-wrap.event li > span.details .top, .overlay.events .overlay-wrap.attendee li > span.details .top {
