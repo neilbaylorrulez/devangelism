@@ -1735,7 +1735,7 @@ section h1 + p {
 }
 /* line 12, ../sass/_events.scss */
 #wrap #events .content, #wrap [data-id="events"] .content {
-  top: 20px;
+  padding-top: 20px;
   overflow: hidden;
 }
 /* line 1, ../sass/_downloads.scss */

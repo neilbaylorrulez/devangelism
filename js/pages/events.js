@@ -4,7 +4,6 @@
     var $window = $(window),
         $me =  $('[data-id="events"]'),
         $overlay = $('.overlay.events.hide'),
-        winWidth = $window.width(),
         MONTHS = [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
         EVENTS = [{
           title: 'RapidConf',
@@ -62,7 +61,7 @@
           date: new Date('February 12, 2015'),
           location: 'Toronto, ON',
           digitalOcean: {
-            otherAttendees: ['John Edgar']
+            otherAttendees: ['John Edgar', 'Jay Edgar Hoover']
           }
         }, {
           title: 'Blarghy Stuff',
@@ -202,7 +201,7 @@
 
     function render(width) {
       var pack = d3.layout
-            .pack().size([width, width < 1024? width : 800])
+            .pack().size([width, width < 1024 ? width : 800])
             .padding(15)
             .value(function(d) { return d.count }),
           packCalculations1 = pack.nodes(getMonthView()),
@@ -258,8 +257,8 @@
       g.append("text")
           .attr("text-anchor", "middle")
           .attr("fill", "white")
-          .text(function(d){return d.month})
-          .attr("font-size", function(d,i){ return (d.r < 51? d.r/50*15 : 18) + 'px' })
+          .text(function(d, i){return i && d.r < 65 ? (d.month.length > 11 ? d.month.substr(0, 8) + '...' : d.month) : (d.month && d.month.length > 15 ? d.month.substr(0, 12) + '...' : d.month)})
+          .attr("font-size", function(d,i){ return (d.r < 51 ? d.r/50*15 : 18) + 'px' })
           .attr("transform", function(d,i)
                {return "translate(" + d.x + "," + d.y + ")"});
 
@@ -275,7 +274,7 @@
 
       // Draw count
       g.append("text")
-          .attr("y", function(d){ return (d.r * (d.r < 51? d.r/50 * 4 : 3.5) / 5);})
+          .attr("y", function(d){ return (d.r * (d.r < 51? d.r/50 * 5 : 4) / 5);})
           .attr("text-anchor", "middle")
           .attr("fill", "#b6d9a0")
           .attr("font-size", function(d,i){ return (d.r < 51? d.r/50*14 : 16) + 'px' })
@@ -330,7 +329,7 @@
       g.append("text")
           .attr("text-anchor", "middle")
           .attr("fill", "white")
-          .text(function(d){return d.name})
+          .text(function(d,i){return i && d.r < 65 ? (d.name.length > 11 ? d.name.substr(0, 8) + '...' : d.name) : (d.name && d.name.length > 15 ? d.name.substr(0, 12) + '...' : d.name)})
           .attr("font-size", function(d,i){ return (d.r < 51? d.r/50*15 : 18) + 'px' })
           .attr("transform", function(d,i)
               {return "translate(" + d.x + "," + d.y + ")"});
@@ -343,7 +342,7 @@
           .attr("transform", function(d,i)
               {return "translate(" + d.x + "," + d.y + ")"});
       g.append("text")
-          .attr("y", function(d){ return (d.r * (d.r < 51? d.r/50 * 4 : 3.5) / 5);})
+          .attr("y", function(d){ return (d.r * (d.r < 45 ? d.r/50 * 4.6 : 3.5) / 5);})
           .attr("text-anchor", "middle")
           .attr("fill", "#b6d9a0")
           .attr("font-size", function(d,i){ return (d.r < 51? d.r/50*14 : 16) + 'px' })
@@ -399,7 +398,7 @@
       g.append("text")
           .attr("text-anchor", "middle")
           .attr("fill", "white")
-          .text(function(d){return d.name})
+          .text(function(d, i){return i && d.r < 65 ? (d.name.length > 11 ? d.name.substr(0, 8) + '...' : d.name) : (d.name && d.name.length > 15 ? d.name.substr(0, 12) + '...' : d.name)})
           .attr("font-size", function(d,i){ return (d.r < 51? d.r/50*15 : 18) + 'px' })
           .attr("transform", function(d,i)
               {return "translate(" + d.x + "," + d.y + ")"});
@@ -412,7 +411,7 @@
           .attr("transform", function(d,i)
               {return "translate(" + d.x + "," + d.y + ")"});
       g.append("text")
-          .attr("y", function(d){ return (d.r * (d.r < 51? d.r/50 * 4 : 3.5) / 5);})
+          .attr("y", function(d){ return (d.r * (d.r < 51? d.r/50 * 5 : 4) / 5);})
           .attr("text-anchor", "middle")
           .attr("fill", "#b6d9a0")
           .attr("font-size", function(d,i){ return (d.r < 51? d.r/50*14 : 16) + 'px' })
