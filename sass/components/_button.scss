@@ -58,7 +58,7 @@ a.next {
     @include backface-visibility(hidden);
     @include perspective(1000);
     @include transform(translate3d(0,0,0) scale(1) rotate(-45deg));
-    @include transition(transform 0.275s);
+    @include transition(transform 0.3s);
     opacity:0.99;
   }
 
