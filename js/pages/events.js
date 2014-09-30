@@ -1,76 +1,11 @@
-(function events() {
-    'use strict';
-
+;(function events() {
+  getData(function (data) {
     var $window = $(window),
         $me =  $('[data-id="events"]'),
         $overlay = $('.overlay.events.hide'),
-        MONTHS = [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-        EVENTS = [{
-          title: 'RapidConf',
-          date: new Date('September 8, 2014'),
-          location: 'Grand Rapids, MI',
-          digitalOcean: {
-            events: [{
-              date: new Date('September 8, 2014'),
-              title: 'Mikeal Rogers discusses awesome stuff',
-              who: 'Mikeal Rogers'
-            }, {
-              date: new Date('September 9, 2014'),
-              title: 'John Edgar gives out free stuff',
-              who: 'John Edgar'
-            }],
-            otherAttendees: 'Neil Taylor'
-          }
-        }, {
-          title: 'CoolConf',
-          date: new Date('September 14, 2014'),
-          location: 'San Francisco, CA',
-          digitalOcean: {
-            events: [{
-              date: new Date('September 14, 2014'),
-              title: 'Mikeal Rogers discusses awesome stuff',
-              who: 'Mikeal Rogers'
-            }, {
-              date: new Date('September 14, 2014'),
-              title: 'Jay Rodriguez discusses even more awesome stuff and other good things that will be a long day, i hope you like jay, cause he can be a bit verbose - and by a bit, i mean riduiclously',
-              who: 'Jay Rodriguez'
-            }, {
-              date: new Date('September 14, 2014'),
-              title: 'John Edgar gives out free stuff',
-              who: 'John Edgar'
-            }],
-            otherAttendees: ['Neil Taylor', 'Joseph A Bank']
-          }
-        }, {
-          title: 'Best Event',
-          date: new Date('January 9, 2015'),
-          location: 'Toronto, ON',
-          digitalOcean: {
-            events: [{
-              date: new Date('January 9, 2015'),
-              title: 'Mikeal Rogers discusses awesome stuff',
-              who: 'Mikeal Rogers'
-            }, {
-              date: new Date('January 11, 2015'),
-              title: 'John Edgar gives out free stuff',
-              who: 'John Edgar'
-            }]
-          }
-        }, {
-          title: 'Cool Stuff',
-          date: new Date('February 12, 2015'),
-          location: 'Toronto, ON',
-          digitalOcean: {
-            otherAttendees: ['John Edgar', 'Jay Edgar Hoover']
-          }
-        }, {
-          title: 'Blarghy Stuff',
-          date: new Date('February 12, 2014'),
-          location: 'Rochester, NY',
-          digitalOcean: {
-            otherAttendees: ['John Edgar', 'Mikeal Rogers', 'Joseph A Bank']
-          }
-        }];
+        MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+        EVENTS = data
+        ;
 
     function getMonthView() {
       var view = {
@@ -119,14 +54,15 @@
 
       events.forEach(function(e) {
         var events = e.digitalOcean && e.digitalOcean.events ? (Array.isArray(e.digitalOcean.events) ? e.digitalOcean.events : [e.digitalOcean.events]) : [{
-          title: 'Digital Ocean is attending ' + e.title,
+          title: e.description,
           date: e.date,
           location: e.location
         }];
+
         view.children.push({
           'name': e.title,
           'type': MONTHS[e.date.getMonth()].substr(0, 3) + ' ' + e.date.getDate() + ', ' + e.date.getUTCFullYear(),
-          'count': events.length,
+          'count': e.speaking ? e.speaking.length : 0 + e.attending ? e.attending.length : 0,
           'events': events.map(function (ev) {
             ev.location = e.location;
             return ev;
@@ -150,46 +86,18 @@
         people = {};
 
       events.forEach(function(e) {
-        if(e.digitalOcean) {
-          if(e.digitalOcean.otherAttendees) {
-            if(Array.isArray(e.digitalOcean.otherAttendees)) {
-              e.digitalOcean.otherAttendees.forEach(function(a) {
-                if(!people.hasOwnProperty(a)) {
-                  return people[a] = [e];
-                }
-                people[a].push(e);
-              });
-            } else {
-              if(!people.hasOwnProperty(e.digitalOcean.otherAttendees)) {
-                return people[e.digitalOcean.otherAttendees] = [e];
-              }
-              people[e.digitalOcean.otherAttendees].push(e);
-            }
-          }
-          if(e.digitalOcean.events) {
-            if(Array.isArray(e.digitalOcean.events)) {
-              e.digitalOcean.events.forEach(function(a) {
-                if(!people.hasOwnProperty(a.who)) {
-                  return people[a.who] = [e];
-                }
-                people[a.who].push(e);
-              });
-            } else {
-              if(!people.hasOwnProperty(e.digitalOcean.events.who)) {
-                return people[e.digitalOcean.events.who] = [e];
-              }
-              people[e.digitalOcean.events.who].push(e);
-            }
-          }
-         }
+        if (e.speaking || e.attending) {
+          var everyone = (e.speaking || []).concat(e.attending || [])
+          everyone.forEach(function (person) {
+            if (!people[person]) people[person] = []
+            people[person].push(e)
+          })
+        }
       });
       for(key in people) {
         if(people.hasOwnProperty(key)) {
           view.children.push({
             name: key,
-            title:  $('.overlay.who h1').filter(function() {
-              return $(this).text() === key;
-            }).siblings('h3').text() || 'Guest',
             events: people[key],
             count: people[key].length
           });
@@ -257,7 +165,7 @@
       g.append("text")
           .attr("text-anchor", "middle")
           .attr("fill", "white")
-          .text(function(d, i){return i && d.r < 65 ? (d.month.length > 11 ? d.month.substr(0, 8) + '...' : d.month) : (d.month && d.month.length > 15 ? d.month.substr(0, 12) + '...' : d.month)})
+          .text(function(d, i){ return i && d.r < 65 ? (d.month.length > 11 ? d.month.substr(0, 8) + '...' : d.month) : (d.month && d.month.length > 15 ? d.month.substr(0, 12) + '...' : d.month)})
           .attr("font-size", function(d,i){ return (d.r < 51 ? d.r/50*15 : 18) + 'px' })
           .attr("transform", function(d,i)
                {return "translate(" + d.x + "," + d.y + ")"});
@@ -476,7 +384,7 @@
       }).forEach(function(e) {
         if(tab === 'month') {
           eventTitle = e.name || node.name || e.title;
-          thisTitle = 'Digital Ocean is attending ' + eventTitle;
+          thisTitle = e.description
         } else if(tab === 'event') {
           eventTitle = node.name;
           thisTitle = e.title;
@@ -490,5 +398,5 @@
       html += '</ul><span class="close-overlay">Close Overlay</span></div>';
       $overlay.html(html).attr('data-id', overlayId);
     });
-
-}());
+  })
+})();

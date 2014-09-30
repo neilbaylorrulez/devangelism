@@ -134,7 +134,7 @@
         $docEl.css('overflow', '');
         $wrap.css('top', '');
         window.scrollTo(0, scrollTop = overlayScrollTop);
-        window.setTimeout(window.requestAnimationFrame.bind(null, function () {
+        window.setTimeout(window.requestAnimationFrame.bind(null, function () {
             $overlay.addClass('close');
             window.setTimeout(function () {
                 overlayScrollTop = null;

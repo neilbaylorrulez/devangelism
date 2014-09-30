@@ -57,6 +57,109 @@
 		});
 	}
 
+	var alldata
+	  , queue = []
+		;
+	function flush () {
+		while (queue.length) {
+			queue.shift()(alldata)
+		}
+	}
+	function getData (cb) {
+		if (!alldata) queue.push(cb)
+		else cb(alldata)
+	}
+	window.getData = getData
+
+	$.get("/spreadsheet.json", function(data) {
+
+		// {
+		//   title: 'RapidConf',
+		//   date: new Date('September 8, 2014'),
+		//   location: 'Grand Rapids, MI',
+		//   digitalOcean: {
+		//     events: [{
+		//       date: new Date('September 8, 2014'),
+		//       title: 'Mikeal Rogers discusses awesome stuff',
+		//       who: 'Mikeal Rogers'
+		//     }, {
+		//       date: new Date('September 9, 2014'),
+		//       title: 'John Edgar gives out free stuff',
+		//       who: 'John Edgar'
+		//     }],
+		//     otherAttendees: 'Neil Taylor'
+		//   }
+		// }
+
+		alldata = data.map(function (data) {
+			var ret =
+				{ title: data.eventname
+				, date: new Date(data.startdate)
+				, location: data.location
+				}
+			if (data.speaking) {
+				ret.digitalOcean = { events: [] }
+				data.speaking.forEach(function (speaker) {
+					ret.digitalOcean.events.push(
+						{ date: new Date(data.startdate)
+						, title: speaker + ' will be speaking.'
+						, who: speaker
+						}
+					)
+				})
+			}
+			if (data.attending) {
+				ret.otherAttendees = data.attending
+			}
+			ret.attending = data.attending
+			ret.speaking = data.speaking
+
+			function doTitle (e) {
+				var title = ''
+				if (e.speaking) {
+					if (e.speaking.length > 1) title += e.speaking.join(' and ') + ' are speaking.'
+					else title += e.speaking[0] + ' is speaking.'
+				}
+				if (e.attending) {
+					if (title.length) title += ' '
+					if (e.attending.length > 1) title += e.attending.join(' and ') + ' are attending.'
+					else title += e.attending[0] + ' is attending.'
+				}
+				if (!title.length) title = 'Digital Ocean is sponsoring.'
+				e.description = title
+			}
+			doTitle(data)
+			ret.description = data.description
+
+			// lng: -79.3516630,
+			// 	lat: 43.6607310,
+			// 	title: 'Neil\'s House',
+			// 	date: 'July 17 - July 19',
+			// 	desc: 'Awesome stuff that is longer for stuff'
+			if (data.latlon && data.latlon.length) {
+				var location = data.latlon[0]
+				ret.lat = location.latitude
+				ret.lng = location.longitude
+				ret.desc = data.description
+				if (data.startdate) {
+					data.startdate = new Date(data.startdate)
+					data.enddate = new Date(data.enddate)
+					ret.dateString = data.startdate.toDateString().slice(4,10)
+					if (data.enddate.getTime() !== data.startdate.getTime()) ret.dateString += ' - ' + data.enddate.toDateString().slice(4,10)
+				}
+			}
+
+			return ret
+		})
+		.filter(function (d) {return d.date}).filter(upcomingMonth)
+
+		function upcomingMonth (e) {
+			return e.date.getMonth() >= (new Date()).getMonth()
+		}
+
+		flush()
+	})
+
 	function init() {
 		initState();
 		initListeners();

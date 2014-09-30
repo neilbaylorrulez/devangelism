@@ -690,7 +690,7 @@ button {
   max-width: 450px;
 }
 /* line 87, ../sass/components/_overlay.scss */
-.overlay.who a {
+.overlay.who li a {
   display: inline-block;
   color: #fff;
   line-height: 18px;
