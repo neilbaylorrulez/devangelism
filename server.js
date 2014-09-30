@@ -7,7 +7,7 @@ var st = require('st')
 
   , password = process.argv[process.argv.length -2]
   , sid = '1r86pdRjVAoMlJmXM1QRX5NwY2LerCwV7erG9xi4r28U'
-  , port = process.env.PORT || 8000
+  , port = process.env.PORT || 80
   , stOptions =
     { path: process.cwd()
     , index: 'index.html'
