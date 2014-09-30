@@ -7,7 +7,7 @@ var st = require('st')
 
   , password = process.argv[process.argv.length -2]
   , sid = '1r86pdRjVAoMlJmXM1QRX5NwY2LerCwV7erG9xi4r28U'
-  , port = process.env.PORT || 80
+  , port = process.env.PORT || 8000
   , stOptions =
     { path: process.cwd()
     , index: 'index.html'
@@ -40,7 +40,7 @@ http.createServer(function (req, res) {
 
   mount(req, res)
 
-}).listen(8000, function (e) {
+}).listen(port, function (e) {
   request('http://localhost:'+port+'/spreadsheet.json', {json:true}, function (e, resp, data) {
     console.error(e, data)
   })
