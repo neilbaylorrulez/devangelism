@@ -98,7 +98,7 @@ function getDate (month, dayString, year) {
   if (isNaN(parseInt(day))) {
     return null
   } else {
-    return new Date([month, day, year].join(' '))
+    return new Date([month, day, year, 'UTC'].join(' '))
   }
 }
 
