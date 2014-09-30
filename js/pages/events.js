@@ -19,7 +19,7 @@
         key, s, m, y;
 
       events.forEach(function(e) {
-        var key = e.date.getMonth() + ' ' + e.date.getUTCFullYear();
+        var key = e.date.getUTCMonth() + ' ' + e.date.getUTCFullYear();
         if(!months.hasOwnProperty(key)) {
           return months[key] = [e];
         }
@@ -61,7 +61,7 @@
 
         view.children.push({
           'name': e.title,
-          'type': MONTHS[e.date.getMonth()].substr(0, 3) + ' ' + e.date.getDate() + ', ' + e.date.getUTCFullYear(),
+          'type': MONTHS[e.date.getUTCMonth()].substr(0, 3) + ' ' + e.date.getUTCDate() + ', ' + e.date.getUTCFullYear(),
           'count': e.speaking ? e.speaking.length : 0 + e.attending ? e.attending.length : 0,
           'events': events.map(function (ev) {
             ev.location = e.location;
@@ -392,7 +392,7 @@
           eventTitle = e.title;
           thisTitle = node.name + ' is attending ' + eventTitle;
         }
-        html += '<li><span class="date">' + (tab !== 'month' ? '<span class="month">' + MONTHS[e.date.getMonth()].substr(0, 3) + '</span>' : '') + '<span class="day">' + e.date.getDate() + '</span></span>';
+        html += '<li><span class="date">' + (tab !== 'month' ? '<span class="month">' + MONTHS[e.date.getUTCMonth()].substr(0, 3) + '</span>' : '') + '<span class="day">' + e.date.getUTCDate() + '</span></span>';
         html += '<span class="details"><span class="top"><span class="location">'+ e.location + '</span><span class="event">'+ eventTitle + '</span></span><span class="title">'+ thisTitle + '</span></li>'
       })
       html += '</ul><span class="close-overlay">Close Overlay</span></div>';
