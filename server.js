@@ -4,6 +4,7 @@ var st = require('st')
   , nodeGeocoder = require('node-geocoder')
   , response = require('response')
   , request = require('request')
+  , ical = require('ical-generator')
 
   , password = process.argv[process.argv.length -2]
   , sid = '1r86pdRjVAoMlJmXM1QRX5NwY2LerCwV7erG9xi4r28U'
@@ -29,22 +30,51 @@ var st = require('st')
 http.createServer(function (req, res) {
   if (req.url === '/spreadsheet.json') {
     getData(function (err, data) {
+      if (err) return response.error(err)
       response.json(data).pipe(res)
     })
     return
   }
   if (req.url === '/spreadsheet.ical') {
-
+    getCalendar(function (err, cal) {
+      if (err) return response.error(err)
+      cal.serve(res)
+    })
     return
   }
 
   mount(req, res)
 
 }).listen(port, function (e) {
-  request('http://localhost:'+port+'/spreadsheet.json', {json:true}, function (e, resp, data) {
-    console.error(e, data)
+  request('http://localhost:'+port+'/spreadsheet.ical', {json:true}, function (e, resp, data) {
+    console.log(data)
   })
 })
+
+function getCalendar (cb) {
+  getData(function (err, data) {
+    if (err) return cb(err)
+    var cal = ical()
+    cal.setDomain('digitalocean.com').setName('Evangelism Calendar')
+    data.forEach(function (ev) {
+      if (!ev.startdate) return console.log('no startdate for', ev.eventname)
+      var summary = ""
+      if (ev.speaking) summary += 'Speaking: '+ev.speaking.join(', ')
+      if (ev.attending) summary += 'Attending: '+ev.attending.join(', ')
+      if (!summary.length) summary += 'DigitalOcean is sponsoring.'
+      cal.addEvent(
+        { start: ev.startdate
+        , end: ev.enddate
+        , summary: ev.eventname
+        , description: summary
+        , location: ev.location
+        , allDay: true
+        }
+      )
+    })
+    cb(null, cal)
+  })
+}
 
 function getData (cb) {
   if (alldata) {
