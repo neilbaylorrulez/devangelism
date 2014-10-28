@@ -131,11 +131,6 @@
 			doTitle(data)
 			ret.description = data.description
 
-			// lng: -79.3516630,
-			// 	lat: 43.6607310,
-			// 	title: 'Neil\'s House',
-			// 	date: 'July 17 - July 19',
-			// 	desc: 'Awesome stuff that is longer for stuff'
 			if (data.latlon && data.latlon.length) {
 				var location = data.latlon[0]
 				ret.lat = location.latitude
@@ -154,7 +149,9 @@
 		.filter(function (d) {return d.date}).filter(upcomingMonth)
 
 		function upcomingMonth (e) {
-			return e.date.getMonth() >= (new Date()).getMonth()
+			var d = new Date()
+			var thisMonth = new Date(d.toString().slice(4,8) + '01' + d.toString().slice(10,16) + 'UTC')
+			return e.date.getTime() >= thisMonth.getTime()
 		}
 
 		flush()

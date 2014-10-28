@@ -151,13 +151,17 @@ function clean (data) {
   delete data.registeredusers
 
   if (data.days) {
+    var s = data.month.split('\n')
+      , month = s[0].replace(/\ /g, '')
+      , year = s[1].replace(/\ /g, '')
+      ;
     if (data.days.indexOf('-') !== -1) {
       var days = data.days.split('-')
-      data.startdate = getDate(data.month, days[0], 2014)
-      data.enddate = getDate(data.month, days[1], 2014)
+      data.startdate = getDate(month, days[0], year)
+      data.enddate = getDate(month, days[1], year)
     } else {
-      data.startdate = getDate(data.month, data.days, 2014)
-      data.enddate = getDate(data.month, data.days, 2014)
+      data.startdate = getDate(month, data.days, year)
+      data.enddate = getDate(month, data.days, year)
     }
   }
 
@@ -187,28 +191,44 @@ function getSpreadsheet () {
         if (err) return console.error(err)
         sheet.getWorksheets(function(err, worksheets) {
           if (err) return console.error(err)
+          var _rows = []
+            , _gr = 0
+            ;
           // loop over the worksheets and print their titles
           worksheets.forEach(function (worksheet) {
             var title = worksheet.getTitle()
-            if (title === '2014 Conferences') {
-              worksheet.getRows(function (err, rows) {
-                if (err) return console.error(err)
-                var month
-                  , sheetdata = []
-                  ;
-                rows.forEach(function (row) {
-                  var data = row.data
-                  if (!data.month) data.month = month
-                  else month = data.month
 
-                  if (data.days) sheetdata.push(clean(data))
-                })
-
-                series(sheetdata, geocode, function () {
-                  alldata = sheetdata
-                  flush()
-                })
+            function _handleAllRows () {
+              var month
+                , sheetdata = []
+                , rows = _rows
+                ;
+              rows.forEach(function (row) {
+                var data = row.data
+                if (data.days) sheetdata.push(clean(data))
               })
+              series(sheetdata, geocode, function () {
+                alldata = sheetdata
+                flush()
+              })
+            }
+
+            function _getRowsCb (err, rows) {
+              if (err) return console.error(err)
+
+              rows.forEach(function (row) {
+                var data = row.data
+                if (!data.month) data.month = month
+                else month = data.month
+              })
+
+              _rows = _rows.concat(rows.rows)
+              _gr += 1
+              if (_gr === 2) _handleAllRows()
+            }
+
+            if (title === 'Past Events' || title === 'Future Events') {
+              worksheet.getRows(_getRowsCb)
             }
           })
         })
