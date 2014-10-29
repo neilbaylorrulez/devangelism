@@ -118,7 +118,18 @@
           $.each(packCalculations1, function(index, value) {
             if (index > 0) {
               $("#month-table").append('<li><a href="#" data-overlay-id="month-' + value.month + ' ' + value.year + '"><p class="label">'+ value.month + ' ' + value.year +'</p><span class="count">' + value.count + ' Conferences</span></a></li>');
-              // console.log(value.count);
+            }
+          });
+
+          $.each(packCalculations2, function(index, value) {
+            if (index > 0) {
+              $("#event-table").append('<li><a href="#" data-overlay-id="event-' + value.name + '"><p class="label">'+ value.name +'</p><span class="count">' + value.type + '</span></a></li>');
+            }
+          });
+
+          $.each(packCalculations3, function(index, value) {
+            if (index > 0) {
+              $("#attendee-table").append('<li><a href="#" data-overlay-id="attendee-' + value.name + '"><p class="label">'+ value.name +'</p><span class="count">' + value.count + ' Conferences</span></a></li>');
             }
           });
     }
@@ -136,11 +147,6 @@
         return false;
       });
     });
-
-    // $window.on('after-resize', function() {
-    //   $me.find('svg').remove();
-    //   render(window.viewportWidth > 1024 ? 1024 : window.viewportWidth);
-    // });
 
     $window.on('create-event-overlay', function(e, overlayId) {
       var tab = overlayId.split('-')[0],
