@@ -590,15 +590,14 @@ button {
 }
 /* line 94, ../sass/components/_overlay.scss */
 .overlay.events {
-  background: rgba(182, 217, 160, 0.95);
+  background: rgba(54, 130, 185, 0.98);
 }
 /* line 96, ../sass/components/_overlay.scss */
 .overlay.events h1, .overlay.events h3 {
-  font-family: 'Lato', arial, sans-serif;
   font-weight: 300;
-  font-size: 40px;
+  font-size: 32px;
   text-align: center;
-  color: #545a51;
+  color: #fff;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -625,37 +624,44 @@ button {
 .overlay.events ul, .overlay.events li {
   width: 100%;
   max-width: 650px;
-  margin: 20px auto 0;
+  margin: 2px auto 0;
   padding: 0;
   list-style: none;
   display: table;
 }
+
+.overlay.events ul {
+  margin-top: 40px;
+}
 /* line 125, ../sass/components/_overlay.scss */
 .overlay.events li {
-  background: #545a51;
-  color: #B6D9A0;
+  background: #FFF;
+  color: #3185C0;
   position: relative;
-  display: table-row;
+  display: block;
   width: 100%;
+  float: left;
   font-size: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  padding: 15px 0 15px 70px;
 }
 /* line 134, ../sass/components/_overlay.scss */
 .overlay.events li > span {
-  border-top: 2px solid rgba(182, 217, 160, 0.95);
   font-size: 16px;
   display: table-cell;
-  padding: 3px;
+  padding: 9px 20px;
 }
 /* line 140, ../sass/components/_overlay.scss */
 .overlay.events li > span.date {
   width: 60px;
   text-align: center;
-  font-family: 'Lato', arial, sans-serif;
   font-weight: 300;
-  position: relative;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  bottom: 0;
+  height: 100%;
+  margin-top: -30px;
 }
 /* line 146, ../sass/components/_overlay.scss */
 .overlay.events li > span.date span {
@@ -681,7 +687,7 @@ button {
 }
 /* line 162, ../sass/components/_overlay.scss */
 .overlay.events li > span.date .day {
-  font-size: 56px;
+  font-size: 35px;
 }
 /* line 165, ../sass/components/_overlay.scss */
 .overlay.events li > span.date .month + .day {
@@ -690,22 +696,22 @@ button {
 }
 /* line 170, ../sass/components/_overlay.scss */
 .overlay.events li > span.details {
-  padding: 10px;
-  position: relative;
-  font-size: 14px;
+  padding: 0;
+  font-size: 16px;
 }
 /* line 174, ../sass/components/_overlay.scss */
 .overlay.events li > span.details .title {
-  color: #fff;
+  color: #999;
+  float: left;
 }
 /* line 177, ../sass/components/_overlay.scss */
 .overlay.events li > span.details .top {
-  top: 12px;
-  position: absolute;
+  float: left;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   width: 100%;
+  font-weight: 600;
 }
 /* line 184, ../sass/components/_overlay.scss */
 .overlay.events li > span.details .top .location:after {
@@ -714,7 +720,8 @@ button {
 }
 /* line 192, ../sass/components/_overlay.scss */
 .overlay.events .close-overlay {
-  top: -45px;
+  top: 4px;
+  right: 39px;
 }
 /* line 197, ../sass/components/_overlay.scss */
 .overlay.events .overlay-wrap.event ul, .overlay.events .overlay-wrap.attendee ul {
@@ -963,18 +970,19 @@ button {
 
 /* line 11, ../sass/components/_tabs.scss */
 .tab label {
-  font-size: 13px;
+  font-size: 15px;
+  font-weight: 600;
   background: none;
-  padding: 9px 0;
-  border: 1px solid #4a4a4a;
+  padding: 14px 33px;
+  border: 1px solid #EDEDED;
   margin-left: -1px;
   position: absolute;
   top: 0;
   left: 50%;
   margin-left: -65px;
-  width: 130px;
   z-index: 1;
   cursor: pointer;
+  color: #AEAEAE;
 }
 @media screen and (max-width: 420px) {
   /* line 11, ../sass/components/_tabs.scss */
@@ -987,7 +995,6 @@ button {
 .tab:first-child label {
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
-  width: 82px;
   -webkit-transform: translateX(calc(-100% + 1px));
   -moz-transform: translateX(calc(-100% + 1px));
   -ms-transform: translateX(calc(-100% + 1px));
@@ -998,12 +1005,11 @@ button {
 .tab:last-child label {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
-  width: 110px;
-  -webkit-transform: translateX(131px);
-  -moz-transform: translateX(131px);
-  -ms-transform: translateX(131px);
-  -o-transform: translateX(131px);
-  transform: translateX(131px);
+  -webkit-transform: translateX(105px);
+  -moz-transform: translateX(105px);
+  -ms-transform: translateX(105px);
+  -o-transform: translateX(105px);
+  transform: translateX(105px);
 }
 @media screen and (max-width: 420px) {
   /* line 37, ../sass/components/_tabs.scss */
@@ -1039,6 +1045,64 @@ button {
   transition: opacity 0.4s;
 }
 
+
+.conference-table {
+  float: left;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.conference-table li {
+  list-style: none;
+  width: 100%;
+  float: left;
+  border: 1px solid #EDEDED;
+  border-bottom: 0;
+}
+
+.conference-table li a {
+  display: block;
+  float: left;
+  width: 100%;
+  padding: 19px 20px;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.conference-table li a:hover {
+  background-color: #fafafa;
+}
+
+.conference-table li:first-child {
+  border-radius: 4px 4px 0 0;
+}
+
+.conference-table li:last-child {
+  border-radius: 0 0 4px 4px;
+  border-bottom: 1px solid #EDEDED;
+}
+
+.conference-table li p.label {
+  font-size: 18px;
+  float: left;
+  margin: 0;
+  color: #818181;
+  line-height: 34px;
+}
+
+.conference-table li span.count {
+  background-color: #4199E4;
+  padding: 9px 18px;
+  border-radius: 21px;
+  float: right;
+  color: #FFF;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+
 /* line 63, ../sass/components/_tabs.scss */
 #month-tab .content {
   position: static;
@@ -1046,8 +1110,9 @@ button {
 
 /* line 66, ../sass/components/_tabs.scss */
 [type=radio]:checked ~ label {
-  background: #4a4a4a;
+  background: #91cd72;
   color: white;
+  border: 1px solid #91CD72;
 }
 
 /* line 70, ../sass/components/_tabs.scss */
@@ -1439,6 +1504,9 @@ a.next {
   -ms-perspective: 1000;
   -o-perspective: 1000;
   perspective: 1000;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.08);
 }
 
 #wrap #locations .location-dialog:before, #wrap [data-id="locations"] .location-dialog:before {
@@ -1500,7 +1568,8 @@ a.next {
 
 /* line 1, ../sass/_events.scss */
 #wrap #events, #wrap [data-id="events"] {
-  background: #B6D9A0;
+  border-top: 1px solid #EFEFEF;
+  padding-bottom: 150px;
 }
 /* line 4, ../sass/_events.scss */
 #wrap #events h1:before, #wrap #events h1:after, #wrap [data-id="events"] h1:before, #wrap [data-id="events"] h1:after {
@@ -1512,7 +1581,7 @@ a.next {
 }
 /* line 12, ../sass/_events.scss */
 #wrap #events .content, #wrap [data-id="events"] .content {
-  padding-top: 20px;
+  padding-top: 65px;
   overflow: hidden;
 }
 /* line 1, ../sass/_downloads.scss */
