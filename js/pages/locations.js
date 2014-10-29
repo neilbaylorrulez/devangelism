@@ -132,8 +132,8 @@
 			$mapWrap.append($infoWindow = $('<div class="location-dialog" data-id="' +
 				id +'"><h2>' +
 				location.title + '</h2>' +
-				'<p>' + location.location + '</p>' +
-				'<p>' + location.dateString + '</p><p>' + location.desc +
+				'<p class="location">' + location.location + '</p>' +
+				'<p class="bot">' + location.dateString + '</p><p class="bot">' + location.desc +
 				'</p></div>'))
 			$infoWindow.location = location;
 			updateInfoWindowPosition(true);
