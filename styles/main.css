@@ -1100,7 +1100,63 @@ button {
   font-size: 14px;
 }
 
+.conference-table li .deck {
+  clear: both;
+  float: left;
+  padding: 0;
+  border-top: 1px solid #EDEDED;
+  width: 100%;
+  max-height: 0;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+  top: 1px;
+  position: relative;
+  overflow: hidden;
+  background-color: #FCFCFC;
+}
 
+.conference-table li .deck.open {
+  max-height: 400px;
+  padding: 20px;
+  top: 0;
+}
+
+.conference-table li .deck h3 {
+  color: #4199E4;
+  font-weight: 400;
+  font-size: 31px;
+  margin: 0;
+  text-align: left;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: none;
+  float: left;
+}
+
+.conference-table li .deck span.date {
+  margin: 2px 0 0 0;
+  text-align: left;
+  clear: left;
+  float: left;
+  color: #CBCBCB;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.conference-table li .deck h4 {
+  float: right;
+  clear: right;
+  margin: 0;
+}
+
+.conference-table li .deck h5 {
+  clear: right;
+  float: right;
+  margin: 0;
+}
 /* line 63, ../sass/components/_tabs.scss */
 #month-tab .content {
   position: static;

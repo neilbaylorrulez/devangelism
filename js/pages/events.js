@@ -112,7 +112,8 @@
 
         var packCalculations1 = pack.nodes(getMonthView()),
           packCalculations2 = pack.nodes(getEventView()),
-          packCalculations3 = pack.nodes(getAttendeeView());
+          packCalculations3 = pack.nodes(getAttendeeView()),
+          name, type, title, location;
           
 
           $.each(packCalculations1, function(index, value) {
@@ -123,7 +124,18 @@
 
           $.each(packCalculations2, function(index, value) {
             if (index > 0) {
-              $("#event-table").append('<li><a href="#" data-overlay-id="event-' + value.name + '"><p class="label">'+ value.name +'</p><span class="count">' + value.type + '</span></a></li>');
+              
+
+              $.each(value.events, function(index, eventValue) {
+                  name = value.name,
+                  type = value.type,
+                  title = eventValue.title,
+                  location = eventValue.location;
+              });
+
+              //console.log(value);
+
+              $("#event-table").append('<li><a href="#" data-overlay-id="event-' + name + '"><p class="label">'+ name +'</p><span class="count">' + type + '</span></a><div class="deck"><h3>' + name + '</h3><span class="date">' + type + '</span><h4>' + title + '</h4><h5>' + location + '</h5></div></li>');
             }
           });
 
@@ -139,10 +151,20 @@
       render(window.viewportWidth > 1024 ? 1024 : window.viewportWidth);
       
       $me.on('click', 'a[data-overlay-id]', function (e) {
-        var overlay = e.currentTarget.getAttribute('data-overlay-id');
-        if(overlay) {
-          window.clickedOverlayTriggeredPage = true;
-          window.location.hash = '#events/' + overlay;
+        var thisId = $(this).closest('ul').attr("id");
+
+        //if this has an id of event table, dont do the rest
+        if(thisId != 'event-table'){
+
+          var overlay = e.currentTarget.getAttribute('data-overlay-id');
+          if(overlay) {
+            window.clickedOverlayTriggeredPage = true;
+            window.location.hash = '#events/' + overlay;
+          } 
+
+        } else {
+          var deck = $(this).next('.deck');
+          deck.toggleClass('open');
         }
         return false;
       });
