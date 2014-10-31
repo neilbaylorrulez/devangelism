@@ -984,7 +984,7 @@ button {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 0 10px;
+  padding: 0 40px;
 }
 
 /* line 349, ../sass/components/_overlay.scss */
@@ -1580,7 +1580,7 @@ section h1 + p {
   position: absolute;
   top: 50%;
   left: 0;
-  white-space: nowrap;
+  padding: 0 40px;
   overflow: hidden;
   text-align: center;
 }
@@ -2209,6 +2209,19 @@ a.next {
   #wrap footer .left {
     padding-right: 43px;   
   }
+
+  #wrap #home h3 br, #wrap [data-id="home"] h3 br, #wrap #home p br, #wrap [data-id="home"] p br {
+    display: none;
+  }
+
+  #wrap #home h3, #wrap [data-id="home"] h3 {
+    font-size: 54px;
+    margin: -39px 0 0 0;
+  }
+
+  #wrap #home p, #wrap [data-id="home"] p {
+    font-size: 21px;
+  }
 }
 
 @media screen and (max-width: 460px) {
@@ -2219,4 +2232,10 @@ a.next {
   #wrap footer ul{
     display: none;
   }
+
+  section, .overlay-wrap, #wrap #home h3, #wrap [data-id="home"] h3, #wrap #home p, #wrap [data-id="home"] p{
+    padding: 0 25px;
+  }
+
+
 }
