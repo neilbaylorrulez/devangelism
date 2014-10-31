@@ -84,6 +84,7 @@
 		}
 
 		function onWinResize() {
+			$('img.marker').remove()
 			var loc,
 				height = $map.height(),
 				width = $map.width(),
