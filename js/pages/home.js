@@ -15,10 +15,12 @@ $(document).ready(function() {
       if (scroll >= homeHeight) {
         if (isSet == false) {
           $("#nav").addClass('below');
+          $("#mobile-header").addClass('below');
           isSet = true;
         }
       } else {
           $("#nav").removeClass('below');
+          $("#mobile-header").removeClass('below');
           isSet = false;
       }
   });

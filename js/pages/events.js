@@ -135,7 +135,7 @@
 
               //console.log(value);
 
-              $("#event-table").append('<li><a href="#" data-overlay-id="event-' + name + '"><p class="label">'+ name +'</p><span class="count">' + type + '</span></a><div class="deck"><h3>' + name + '</h3><span class="date">' + type + '</span><h4>' + title + '</h4><h5>' + location + '</h5></div></li>');
+              $("#event-table").append('<li><a href="#" data-overlay-id="event-' + name + '"><p class="label">'+ name +'</p><span class="count">' + type + '</span></a><div class="deck"><h3>' + name + '</h3><span class="date">' + type + ' - ' + location + '</span><h4>' + title + '</h4></div></li>');
             }
           });
 
