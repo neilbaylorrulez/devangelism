@@ -20,7 +20,7 @@
   "dependencies": {
     "geocoder": "^0.2.0",
     "google-sheets": "0.0.4",
-    "ical-generator": "^0.1.8",
+    "ical-generator": "^0.1.9",
     "moment": "^2.8.3",
     "node-geocoder": "^2.9.0",
     "request": "^2.44.0",
