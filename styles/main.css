@@ -2242,4 +2242,12 @@ a.next {
     padding: 0 25px 0 25px;
   }
 
+  section {
+    padding-top: 40px;
+  }
+
+  #wrap #home, #wrap [data-id="home"] {
+    padding-top: 0;
+  }
+
 }
