@@ -2233,9 +2233,13 @@ a.next {
     display: none;
   }
 
-  section, .overlay-wrap, #wrap #home h3, #wrap [data-id="home"] h3, #wrap #home p, #wrap [data-id="home"] p{
-    padding: 0 25px;
+  #wrap #home h3, #wrap [data-id="home"] h3 {
+    margin: -39px 0 0 0;
+    padding: 0;
   }
 
+  section, .overlay-wrap, #wrap #home h3, #wrap [data-id="home"] h3, #wrap #home p, #wrap [data-id="home"] p {
+    padding: 0 25px 0 25px;
+  }
 
 }
