@@ -1745,6 +1745,8 @@ a.next {
   border-radius: 5px;
   width: 250px;
   top: -35px;
+  /*max-height: 185px;
+  overflow: scroll;*/
   left: 0;
   opacity: 0.01;
   -webkit-transition: -webkit-transform 0.225s ease, opacity 0.225s linear;
@@ -1802,6 +1804,12 @@ a.next {
   color: #3586BE;
   padding: 0 20px;
 }
+
+#wrap #locations .location-dialog h2.multi, #wrap [data-id="locations"] .location-dialog h2.multi {
+  margin: -5px 0 13px 0;
+  border-bottom: 1px solid #3586BE;
+  padding-bottom: 7px;
+}
 /* line 76, ../sass/_locations.scss */
 
 #wrap #locations .location-dialog p, #wrap [data-id="locations"] .location-dialog p {
@@ -1816,10 +1824,39 @@ a.next {
    padding-bottom: 15px;
 }
 
+#wrap #locations .location-dialog p.multi-title, #wrap [data-id="locations"] .location-dialog p.multi-title {
+   margin: 0 0 10px 0;
+   font-size: 13px;
+   font-size: 16px;
+   padding-bottom: 10px;
+   border-bottom: 1px solid #f1f1f1;
+}
+
+#wrap #locations .location-dialog p.multi-title:last-child, #wrap [data-id="locations"] .location-dialog p.multi-title:last-child {
+  margin-bottom: 0;
+  border: 0;
+  padding-bottom: 0;
+}
+
+
 #wrap #locations .location-dialog p.bot, #wrap [data-id="locations"] .location-dialog p.bot {
   font-size: 15px;
   color: #B8B8B8;
   margin: 0;
+  line-height: 1.4;
+}
+
+#wrap #locations .location-dialog span.multi-location, #wrap [data-id="locations"] .location-dialog span.multi-location {
+  font-size: 15px;
+  color: #B8B8B8;
+  margin: 0 0 0 0;
+  line-height: 1.4;
+}
+
+#wrap #locations .location-dialog span.multi-date, #wrap [data-id="locations"] .location-dialog span.multi-date {
+  font-size: 15px;
+  color: #B8B8B8;
+  margin: 0 0 0 0;
   line-height: 1.4;
 }
 

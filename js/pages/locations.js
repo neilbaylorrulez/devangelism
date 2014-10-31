@@ -8,38 +8,6 @@
 			Y_FACTOR_OFFSET = 1.2, //magic number!
 			LOCATIONS = data.filter(function (d) {return d.lng})
 
-			// [{
-			// 	lng: -79.3516630,
-			// 	lat: 43.6607310,
-			// 	title: 'Neil\'s House',
-			// 	date: 'July 17 - July 19',
-			// 	desc: 'Awesome stuff that is longer for stuff'
-			// }, {
-			// 	lng: -122.4194160,
-			// 	lat: 37.7749290,
-			// 	title: 'SF Fest',
-			// 	date: 'July 17',
-			// 	desc: 'Awesome stuff'
-			// }, {
-			// 	lng: 151.209900,
-			// 	lat: -33.865143,
-			// 	title: 'Sydney Australia test',
-			// 	date: 'July 17',
-			// 	desc: 'Awesome'
-			// }, {
-			// 	lng: 0,
-			// 	lat: 51.48,
-			// 	title: 'Greenwich England',
-			// 	date: 'July 17',
-			// 	desc: 'Cool'
-			// }, {
-			// 	lng: 47,
-			// 	lat: -20,
-			// 	title: 'Madagascar',
-			// 	date: 'July 17',
-			// 	desc: 'Awesome'
-			// }];
-
 		function convertLatLngToPixel(lat, lng, mapHeight, mapWidth){
 			return {
 				y: Math.round(((-1 * lat) + 90) * ((mapHeight * Y_FACTOR_OFFSET) / 180)),
@@ -94,7 +62,7 @@
 			while(len--) {
 				loc = LOCATIONS[len];
 				loc.id = '' + len;
-				console.log(height, width)
+				// console.log(height, width)
 				loc.coords = convertLatLngToPixel(loc.lat, loc.lng, height, width);
 				// addMarker(loc);
 			}
@@ -112,6 +80,7 @@
 
 			updateInfoWindowPosition();
 		}
+
 
 		function removeInfoWindow($win) {
 			if($win) {
@@ -140,7 +109,7 @@
 
 			id = $clicked.attr('data-id');
 			_locations = LOCATIONS_GROUPED[id];
-			console.error(_locations, id)
+			//console.error(_locations, id)
 			if(!_locations || $mapWrap.find('.location-dialog[data-id="' + id + '"]').length) {
 				return;
 			}
@@ -148,21 +117,46 @@
 			$oldInfoWindow = $infoWindow;
 
 			var elem = '<div class="location-dialog" data-id="' + id +'">'
-			console.log(_locations)
-			_locations.forEach(function (location) {
-				elem += '<h2>'
-				elem += location.title
-				elem += '</h2>'
-				elem += '<p class="location">'
-				elem += location.location
-				elem += '</p>'
-				elem += '<p class="bot">'
-				elem += location.dateString
-				elem += '</p>'
-				elem += '<p class="bot">'
-				elem += location.desc
-				elem += '</p>'
-			})
+
+
+			//need to write logic that if there are more than 1 i, then to do a different loop
+			var locationLength = _locations.length;
+			
+			if(locationLength > 1) {
+
+					elem += '<h2 class="multi">There are ' + locationLength + ' Events</h2>'
+
+				_locations.forEach(function (location, i) {
+					
+					elem += '<p class="multi-title">'
+					elem += location.title
+					elem += ' - <span class="multi-location">'
+					elem += location.location
+					elem += '</span> - '
+					elem += '<span class="multi-date">'
+					elem += location.dateString
+					elem += '</span></p>'
+				})
+
+			} else {
+
+				_locations.forEach(function (location, i) {
+					elem += '<h2>'
+					elem += location.title
+					elem += '</h2>'
+					elem += '<p class="location">'
+					elem += location.location
+					elem += '</p>'
+					elem += '<p class="bot">'
+					elem += location.dateString
+					elem += '</p>'
+					elem += '<p class="bot">'
+					elem += location.desc
+					elem += '</p>'
+				})
+			}
+
+			
 			elem += '</div>'
 
 			$mapWrap.append($infoWindow = $(elem))
