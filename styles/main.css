@@ -1542,12 +1542,50 @@ section h1 + p {
   min-height: 100%;
   background: #3682B9;
   position: static;
-  text-align: left;
+  text-align: center;
   background-image: url("../img/map-small.svg");
   background-position: center center;
   background-size: 55%;
   background-repeat: no-repeat;
 }
+
+/*#wrap #home:before, #wrap [data-id="home"]:before {
+  content: '';
+  display: inline-block;
+  height: 100%; 
+  vertical-align: middle;
+}*/
+.block {
+  text-align: center;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+}
+ 
+.block:before {
+  content: '';
+  display: inline-block;
+  height: 100%; 
+  vertical-align: middle;
+ }
+ 
+.centered {
+  display: inline-block;
+  vertical-align: middle;
+ }
+
+
+.child {
+  width: 100%;
+  padding: 0 40px;
+  margin: -90px 0 0 0;
+  position: absolute;
+  left: 0;
+}
+
 /* line 7, ../sass/_home.scss */
 #wrap #home h1, #wrap [data-id="home"] h1 {
   display: inline-block;
@@ -1577,11 +1615,6 @@ section h1 + p {
 }
 /* line 31, ../sass/_home.scss */
 #wrap #home h3, #wrap [data-id="home"] h3, #wrap #home p, #wrap [data-id="home"] p{
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  padding: 0 40px;
   overflow: hidden;
   text-align: center;
 }
@@ -1590,16 +1623,17 @@ section h1 + p {
 #wrap #home h3, #wrap [data-id="home"] h3 {
   font-weight: 300;
   font-size: 75px;
-  margin: -75px 0 0 0;
   color: #FFF;
   letter-spacing: -1px;
+  margin: 0;
 }
 
 #wrap #home p, #wrap [data-id="home"] p {
   color: #fff;
   font-size: 23px;
   line-height: 1.4;
-  margin-top: 40px;
+  margin-top: 4px;
+  margin-bottom: 38px;
   text-align: center;
 }
 
@@ -1618,14 +1652,48 @@ a.next {
   clear: left;
   text-align: center;
   width: 140px;
-  margin: 150px 0 0 -70px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  margin: 0 auto;
+  display: block;
   border-radius: 4px;
 }
 
 
+@media screen and (max-width: 820px) {
+  #wrap #home h3, #wrap [data-id="home"] h3 {
+    font-size: 60px;
+  }
+
+  #wrap #home p, #wrap [data-id="home"] p {
+    font-size: 20px;
+  }
+
+  #wrap #home p br, #wrap [data-id="home"] p br {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  #wrap #home h3, #wrap [data-id="home"] h3 {
+    font-size: 45px;
+    line-height: 1.1;
+  }
+
+  #wrap #home p, #wrap [data-id="home"] p {
+    font-size: 20px;
+    margin-top: 9px;
+    margin-bottom: 25px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #wrap #home h3, #wrap [data-id="home"] h3 {
+    font-size: 40px;
+  }
+
+  #wrap #home p, #wrap [data-id="home"] p {
+    font-size: 19px;
+  }
+}
 
 /* line 1, ../sass/_who.scss */
 #wrap #who, #wrap [data-id="who"] {
@@ -2248,17 +2316,8 @@ a.next {
     padding-right: 43px;   
   }
 
-  #wrap #home h3 br, #wrap [data-id="home"] h3 br, #wrap #home p br, #wrap [data-id="home"] p br {
-    display: none;
-  }
-
-  #wrap #home h3, #wrap [data-id="home"] h3 {
-    font-size: 54px;
-    margin: -39px 0 0 0;
-  }
-
-  #wrap #home p, #wrap [data-id="home"] p {
-    font-size: 21px;
+  .child {
+    padding: 0 25px;
   }
 }
 
@@ -2269,15 +2328,6 @@ a.next {
 
   #wrap footer ul{
     display: none;
-  }
-
-  #wrap #home h3, #wrap [data-id="home"] h3 {
-    margin: -39px 0 0 0;
-    padding: 0;
-  }
-
-  section, .overlay-wrap, #wrap #home h3, #wrap [data-id="home"] h3, #wrap #home p, #wrap [data-id="home"] p {
-    padding: 0 25px 0 25px;
   }
 
   section {
