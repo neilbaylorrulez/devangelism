@@ -204,7 +204,7 @@
          subTitle = node.title;
       }
 
-      html = '<div class="overlay-wrap ' + tab + '"><h1>' + child + '</h1><h3>' + subTitle + '</h3><ul>';
+      html = '<div class="overlay-wrap ' + tab + '"><h1>' + child + '</h1><ul>';
       node.events.sort(function (a,b) {
         return a.date - b.date;
       }).forEach(function(e) {
@@ -218,7 +218,7 @@
           eventTitle = e.title;
           thisTitle = node.name + ' is attending ' + eventTitle;
         }
-        html += '<li><span class="date">' + (tab !== 'month' ? '<span class="month">' + MONTHS[e.date.getUTCMonth()].substr(0, 3) + '</span>' : '') + '<span class="day">' + e.date.getUTCDate() + '</span></span>';
+        html += '<li><span class="date">' + '<span class="month">' + MONTHS[e.date.getUTCMonth()].substr(0, 3) + '</span>' + '<span class="day">' + e.date.getUTCDate() + '</span></span>';
         html += '<span class="details"><span class="top"><span class="location">'+ e.location + '</span><span class="event">'+ eventTitle + '</span></span><span class="title">'+ thisTitle + '</span></li>'
       })
       html += '</ul><span class="close-overlay">Close Overlay</span></div>';

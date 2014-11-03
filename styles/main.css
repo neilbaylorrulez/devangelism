@@ -717,13 +717,14 @@ button {
   width: 100%;
   float: left;
   font-size: 0;
-  padding: 15px 0 15px 70px;
+  padding: 15px 15px 15px 70px;
 }
 /* line 134, ../sass/components/_overlay.scss */
 .overlay.events li > span {
   font-size: 16px;
   display: table-cell;
-  padding: 9px 20px;
+  padding: 0;
+  margin-left: 5px;
 }
 /* line 140, ../sass/components/_overlay.scss */
 .overlay.events li > span.date {
@@ -736,7 +737,7 @@ button {
   top: 50%;
   bottom: 0;
   height: 100%;
-  margin-top: -30px;
+  margin-top: -25px;
 }
 /* line 146, ../sass/components/_overlay.scss */
 .overlay.events li > span.date span {
@@ -745,15 +746,12 @@ button {
 /* line 150, ../sass/components/_overlay.scss */
 .overlay.events li > span.date .month {
   text-transform: uppercase;
-  position: absolute;
-  top: 6px;
-  left: 50%;
+  position: relative;
+  font-weight: 600;
+  left: 0;
   font-size: 12px;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
 }
 /* line 158, ../sass/components/_overlay.scss */
 .overlay.events li > span.date .year {
@@ -766,8 +764,13 @@ button {
 }
 /* line 165, ../sass/components/_overlay.scss */
 .overlay.events li > span.date .month + .day {
-  font-size: 44px;
-  padding: 12px 0 0;
+  font-size: 31px;
+  padding: 0;
+  position: relative;
+  left: 0;
+  top: -5px;
+  width: 100%;
+  text-align: center;
 }
 /* line 170, ../sass/components/_overlay.scss */
 .overlay.events li > span.details {
@@ -782,8 +785,6 @@ button {
 /* line 177, ../sass/components/_overlay.scss */
 .overlay.events li > span.details .top {
   float: left;
-  white-space: nowrap;
-  overflow: hidden;
   text-overflow: ellipsis;
   width: 100%;
   font-weight: 600;
@@ -1544,7 +1545,7 @@ section h1 + p {
   text-align: left;
   background-image: url("../img/map-small.svg");
   background-position: center center;
-  background-size: 75%;
+  background-size: 55%;
   background-repeat: no-repeat;
 }
 /* line 7, ../sass/_home.scss */
