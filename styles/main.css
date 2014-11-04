@@ -1557,8 +1557,8 @@ section h1 + p {
 }
 
 .pin {
-  width: 53px;
-  height: 53px;
+  width: 52px;
+  height: 52px;
   -webkit-border-radius: 50% 50% 50% 0;
   border-radius: 50% 50% 50% 0;
   background: #fff;
@@ -1592,7 +1592,7 @@ section h1 + p {
   content: '';
   width: 12px;
   height: 12px;
-  margin: 20px 0 0 -7px;
+  margin: 20px 0 0 -6px;
   background: #3682B9;
   position: absolute;
   -webkit-border-radius: 50%;
