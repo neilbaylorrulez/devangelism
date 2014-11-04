@@ -189,6 +189,7 @@
   -ms-backface-visibility: hidden;
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
+  background: #3682b9;
 }
 
 #nav.below {
