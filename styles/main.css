@@ -34,7 +34,7 @@
   }
 }
 
-@-webkit-keyframes bounce {
+@-webkit-keyframes bouncy {
   /* line 15, ../sass/components/_animations.scss */
   0% {
     opacity: 0.1;
@@ -78,7 +78,7 @@
   }
 }
 
-@-moz-keyframes bounce {
+@-moz-keyframes bouncy {
   /* line 24, ../sass/components/_animations.scss */
   0% {
     opacity: 0.1;
@@ -122,7 +122,7 @@
   }
 }
 
-@keyframes bounce {
+@keyframes bouncy {
   /* line 33, ../sass/components/_animations.scss */
   0% {
     opacity: 0.1;
@@ -550,9 +550,9 @@ button {
 .overlay.show {
   display: block;
   opacity: 0.99;
-  -webkit-animation: bounce 0.75s;
-  -moz-animation: bounce 0.75s;
-  animation: bounce 0.75s;
+  -webkit-animation: bouncy 0.75s;
+  -moz-animation: bouncy 0.75s;
+  animation: bouncy 0.75s;
 }
 /* line 24, ../sass/components/_overlay.scss */
 .overlay.close {
