@@ -1551,13 +1551,13 @@ section h1 + p {
 
 #marker {
   position: relative;
-  top: -130px;
+  top: -104px;
   left: -5px;
 }
 
 .pin {
-  width: 60px;
-  height: 60px;
+  width: 53px;
+  height: 53px;
   -webkit-border-radius: 50% 50% 50% 0;
   border-radius: 50% 50% 50% 0;
   background: #fff;
@@ -1589,9 +1589,9 @@ section h1 + p {
 }
 .pin:after {
   content: '';
-  width: 27px;
-  height: 27px;
-  margin: 17px 0 0 -15px;
+  width: 12px;
+  height: 12px;
+  margin: 20px 0 0 -7px;
   background: #3682B9;
   position: absolute;
   -webkit-border-radius: 50%;
@@ -1601,12 +1601,12 @@ section h1 + p {
   background: rgba(0,0,0,0.15);
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  height: 28px;
-  width: 28px;
+  height: 24px;
+  width: 24px;
   position: absolute;
   left: 50%;
   top: 50%;
-  margin: 60px 0px 0px -4px;
+  margin: 54px 0px 0px -5px;
   -webkit-transform: rotateX(55deg);
   -moz-transform: rotateX(55deg);
   -o-transform: rotateX(55deg);
@@ -1618,10 +1618,10 @@ section h1 + p {
   content: "";
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  height: 80px;
-  width: 80px;
+  height: 60px;
+  width: 60px;
   position: absolute;
-  margin: -23px 0 0 -39px;
+  margin: -17px 0 0 -29px;
   -webkit-animation: pulsate 1.6s ease-out;
   -moz-animation: pulsate 1.6s ease-out;
   -o-animation: pulsate 1.6s ease-out;
