@@ -1,19 +1,27 @@
-(function home () {
-	'use strict';
+$(document).ready(function() {
 
-	var $weLoveDevs = $('[data-id="home"] h2');
+  // this adds a class to the header to add a background color when below the first slide
+  var homeHeight = $("#wrap [data-id='home']").height(),
+      isSet = false;
 
-	function animate() {
-		$weLoveDevs.html($weLoveDevs.text().replace(/([^\x00-\x80]|\w)/g, "<span>$&</span>")).css('display', 'block').find('span').css('transform', 'translate3d(' + window.viewportWidth + 'px,0,0) scale(1)');
-		window.setTimeout(window.requestAnimationFrame.bind(null, function () {
-			$weLoveDevs.addClass('animate');
-			window.setTimeout(function () {
-				$weLoveDevs.removeClass('animate').find('span').contents().unwrap();
-			}, 3000);
-		}), 0);
-	}
+  $(window).on('resize', function(){
+    homeHeight = $("#wrap [data-id='home']").height(),
+    isSet = false;
+  });
 
-	//$(animate);
-	//we'll probably need to wait for web fonts
-	$(window).on('load', animate);
-}());
+  $(window).scroll(function() {    
+      var scroll = $(window).scrollTop();
+
+      if (scroll >= homeHeight) {
+        if (isSet == false) {
+          $("#nav").addClass('below');
+          $("#mobile-header").addClass('below');
+          isSet = true;
+        }
+      } else {
+          $("#nav").removeClass('below');
+          $("#mobile-header").removeClass('below');
+          isSet = false;
+      }
+  });
+});

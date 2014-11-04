@@ -1,143 +1,175 @@
 (function locations() {
-	'use strict';
+	getData(function (data) {
+		var $mapWrap = $('.location-wrapper'),
+			$map = $mapWrap.find('.map'),
+			$oldInfoWindow,
+			$infoWindow,
+			X_FACTOR_OFFSET = 0.015, //magic number!
+			Y_FACTOR_OFFSET = 1.2, //magic number!
+			LOCATIONS = data.filter(function (d) {return d.lng})
 
-	var $mapWrap = $('.location-wrapper'),
-		$map = $mapWrap.find('.map'),
-		$oldInfoWindow,
-		$infoWindow,
-		X_FACTOR_OFFSET = 0.015, //magic number!
-		Y_FACTOR_OFFSET = 1.2, //magic number!
-		LOCATIONS = [{
-			lng: -79.3516630,
-			lat: 43.6607310,
-			title: 'Neil\'s House',
-			date: 'July 17 - July 19',
-			desc: 'Awesome stuff that is longer for stuff'
-		}, {
-			lng: -122.4194160,
-			lat: 37.7749290,
-			title: 'SF Fest',
-			date: 'July 17',
-			desc: 'Awesome stuff'
-		}, {
-			lng: 151.209900,
-			lat: -33.865143,
-			title: 'Sydney Australia test',
-			date: 'July 17',
-			desc: 'Awesome'
-		}, {
-			lng: 0,
-			lat: 51.48,
-			title: 'Greenwich England',
-			date: 'July 17',
-			desc: 'Cool'
-		}, {
-			lng: 47,
-			lat: -20,
-			title: 'Madagascar',
-			date: 'July 17',
-			desc: 'Awesome'
-		}];
-
-	function convertLatLngToPixel(lat, lng, mapHeight, mapWidth){
-		return {
-			y: Math.round(((-1 * lat) + 90) * ((mapHeight * Y_FACTOR_OFFSET) / 180)),
-			x: Math.round((lng + 180) * ((mapWidth * (1 + X_FACTOR_OFFSET)) / 360) - (mapWidth * X_FACTOR_OFFSET))
-		};
-	}
-
-	function addMarker(location) {
-		var $marker = $mapWrap.find('.marker[data-id="' + location.id + '"]');
-		if(!$marker.length) {
-			$mapWrap.append($marker = $('<img data-id="' + location.id + '" class="marker" src="img/marker.svg" alt="">'));
+		function convertLatLngToPixel(lat, lng, mapHeight, mapWidth){
+			return {
+				y: Math.round(((-1 * lat) + 90) * ((mapHeight * Y_FACTOR_OFFSET) / 180)),
+				x: Math.round((lng + 180) * ((mapWidth * (1 + X_FACTOR_OFFSET)) / 360) - (mapWidth * X_FACTOR_OFFSET))
+			};
 		}
-		$marker.css({
-			transform: 'translate(' + location.coords.x + 'px, ' + location.coords.y + 'px)'
-		});
-	}
 
-	function updateInfoWindowPosition(addingNew) {
-		if($infoWindow && $infoWindow.parent().length) {
-			$infoWindow.css({
-				transform: 'translate3d(' + $infoWindow.location.coords.x + 'px, ' + $infoWindow.location.coords.y + 'px, 0) translateX(-50%) translateY(calc(-100% - ' + (addingNew ? -40 : 9) + 'px)) ' + 'scale(' + (addingNew ? 0.01 : 1) +')',
-				opacity: addingNew ? 0.15 : 0.99,
-				transition: addingNew ? 'none' : ''
+		function addMarker(locations, id) {
+			var location = locations[0]
+			var $marker = $mapWrap.find('.marker[data-id="' + id + '"]');
+			if(!$marker.length) {
+				$mapWrap.append($marker = $('<img data-id="' + id + '" class="marker" src="img/marker.svg" alt="">'));
+			}
+			$marker.css({
+				transform: 'translate(' + location.coords.x + 'px, ' + location.coords.y + 'px)'
 			});
+		}
 
-			if($infoWindow.location.coords.x < 110) {
-				$mapWrap.css('transform', 'translate3d(' + (110 - $infoWindow.location.coords.x) + 'px, 0, 0)');
-			} else if(window.viewportWidth - $infoWindow.location.coords.x < 110) {
-				$mapWrap.css('transform', 'translate3d(' + (-110 + (window.viewportWidth - $infoWindow.location.coords.x)) + 'px, 0, 0)');
-			} else {
-				$mapWrap.css('transform', '');
+		function updateInfoWindowPosition(addingNew) {
+			if($infoWindow && $infoWindow.parent().length) {
+				$infoWindow.css({
+					transform: 'translate3d(' + $infoWindow.coords.x + 'px, ' + $infoWindow.coords.y + 'px, 0) translateX(-50%) translateY(calc(-100% - ' + (addingNew ? -40 : 9) + 'px)) ' + 'scale(' + (addingNew ? 0.01 : 1) +')',
+					opacity: addingNew ? 0.15 : 0.99,
+					transition: addingNew ? 'none' : ''
+				});
+
+				if($infoWindow.coords.x < 110) {
+					$mapWrap.css('transform', 'translate3d(' + (110 - $infoWindow.coords.x) + 'px, 0, 0)');
+				} else if(window.viewportWidth - $infoWindow.coords.x < 110) {
+					$mapWrap.css('transform', 'translate3d(' + (-110 + (window.viewportWidth - $infoWindow.coords.x)) + 'px, 0, 0)');
+				} else {
+					$mapWrap.css('transform', '');
+				}
+
+				if(addingNew) {
+					window.setTimeout(window.requestAnimationFrame.bind(null, function () {
+						removeInfoWindow($oldInfoWindow);
+						updateInfoWindowPosition();
+					}), 0);
+				}
+			}
+		}
+
+		function onWinResize() {
+			$('img.marker').remove()
+			var loc,
+				height = $map.height(),
+				width = $map.width(),
+				len = LOCATIONS.length,
+				locations = {};
+
+			while(len--) {
+				loc = LOCATIONS[len];
+				loc.id = '' + len;
+				// console.log(height, width)
+				loc.coords = convertLatLngToPixel(loc.lat, loc.lng, height, width);
+				// addMarker(loc);
 			}
 
-			if(addingNew) {
-				window.setTimeout(window.requestAnimationFrame.bind(null, function () {
-					removeInfoWindow($oldInfoWindow);
-					updateInfoWindowPosition();
+			var locations = {}
+			LOCATIONS.forEach(function (loc) {
+				var key = loc.coords.x + '-' + loc.coords.y
+				if (!locations[key]) locations[key] = []
+				locations[key].push(loc)
+			})
+			for (var x in locations) {
+				addMarker(locations[x], x)
+			}
+			LOCATIONS_GROUPED = locations
+
+			updateInfoWindowPosition();
+		}
+
+
+		function removeInfoWindow($win) {
+			if($win) {
+				$win.css({
+					transform: 'translate3d(' + $win.coords.x + 'px, ' + $win.coords.y + 'px, 0) translateX(-50%) translateY(calc(-100% + 28px)) scale(0.01)',
+					opacity: 0.15
+				});
+				window.setTimeout(function () {
+					$win.remove();
+					$win = null;
+				}, 350);
+			}
+		}
+
+		function mapClick(e) {
+			var $clicked = $(e.target),
+				id,
+				location;
+			//remove old marker
+			if(!$clicked.hasClass('marker')) {
+				return window.setTimeout(window.requestAnimationFrame.bind(null, function () {
+					$mapWrap.css('transform', '');
+					removeInfoWindow($infoWindow);
 				}), 0);
 			}
+
+			id = $clicked.attr('data-id');
+			_locations = LOCATIONS_GROUPED[id];
+			//console.error(_locations, id)
+			if(!_locations || $mapWrap.find('.location-dialog[data-id="' + id + '"]').length) {
+				return;
+			}
+
+			$oldInfoWindow = $infoWindow;
+
+			var elem = '<div class="location-dialog" data-id="' + id +'">'
+
+
+			//need to write logic that if there are more than 1 i, then to do a different loop
+			var locationLength = _locations.length;
+			
+			if(locationLength > 1) {
+
+					elem += '<h2 class="multi">There are ' + locationLength + ' Events</h2>'
+
+				_locations.forEach(function (location, i) {
+					
+					elem += '<p class="multi-title">'
+					elem += location.title
+					elem += ' - <span class="multi-location">'
+					elem += location.location
+					elem += '</span> - '
+					elem += '<span class="multi-date">'
+					elem += location.dateString
+					elem += '</span></p>'
+				})
+
+			} else {
+
+				_locations.forEach(function (location, i) {
+					elem += '<h2>'
+					elem += location.title
+					elem += '</h2>'
+					elem += '<p class="location">'
+					elem += location.location
+					elem += '</p>'
+					elem += '<p class="bot">'
+					elem += location.dateString
+					elem += '</p>'
+					elem += '<p class="bot">'
+					elem += location.desc
+					elem += '</p>'
+				})
+			}
+
+			
+			elem += '</div>'
+
+			$mapWrap.append($infoWindow = $(elem))
+			$infoWindow.coords = _locations[0].coords;
+			updateInfoWindowPosition(true);
 		}
-	}
 
-	function onWinResize() {
-		var loc,
-			height = $map.height(),
-			width = $map.width(),
-			len = LOCATIONS.length;
-
-		while(len--) {
-			loc = LOCATIONS[len];
-			loc.id = '' + len;
-			loc.coords = convertLatLngToPixel(loc.lat, loc.lng, height, width);
-			addMarker(loc);
-		}
-		updateInfoWindowPosition();
-	}
-
-	function removeInfoWindow($win) {
-		if($win) {
-			$win.css({
-				transform: 'translate3d(' + $win.location.coords.x + 'px, ' + $win.location.coords.y + 'px, 0) translateX(-50%) translateY(calc(-100% + 28px)) scale(0.01)',
-				opacity: 0.15
-			});
-			window.setTimeout(function () {
-				$win.remove();
-				$win = null;
-			}, 350);
-		}
-	}
-
-	function mapClick(e) {
-		var $clicked = $(e.target),
-			id,
-			location;
-		//remove old marker
-		if(!$clicked.hasClass('marker')) {
-			return window.setTimeout(window.requestAnimationFrame.bind(null, function () {
-				$mapWrap.css('transform', '');
-				removeInfoWindow($infoWindow);
-			}), 0);
+		function init() {
+			setTimeout(onWinResize, 100)
+			$(window).on('after-resize', onWinResize);
+			$mapWrap.closest('section').on('click', mapClick);
 		}
 
-		id = parseInt($clicked.attr('data-id'), 10);
-		location = LOCATIONS[id];
-		if(!location || $mapWrap.find('.location-dialog[data-id="' + id + '"]').length) {
-			return;
-		}
-
-		$oldInfoWindow = $infoWindow;
-		$mapWrap.append($infoWindow = $('<div class="location-dialog" data-id="' + id +'"><h2>' + location.title + '</h2><p>' + location.date + '</p><p>' + location.desc + '</p></div>'))
-		$infoWindow.location = location;
-		updateInfoWindowPosition(true);
-	}
-
-	function init() {
-		onWinResize();
-		$(window).on('after-resize', onWinResize);
-		$mapWrap.closest('section').on('click', mapClick);
-	}
-
-	window.imagesLoaded($mapWrap, init);
+		window.imagesLoaded($mapWrap, init);
+	})
 }());

@@ -1,70 +1,97 @@
 <!DOCTYPE html>
+<meta charset="UTF-8">
 <html>
   <head>
-    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400|Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="styles/main.css">
     <title>Digital Ocean Evangelism</title>
     <link rel="shortcut icon" href="https://www.digitalocean.com/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <script src="//use.typekit.net/njm7orv.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+
   </head>
   <body>
 
     <div id="wrap">
-
       <section id="home">
-        <h2>We Love Developers</h2>
-        <h3>Evangelism</h3>
-        <a href="#who" class="next">Who is Digital Ocean Devangelism</a>
-      </section>
-
-      <section id="who">
-        <h1>Not Just Another Cloud Company</h1>
-        <p>DigitalOcean is more than hosting, it's an advocate for excellence. Something more inspirational can be said here. Let's be inspirational full of inspiration</p>
-        <div class="photo-grid">
-          <div class="row">
-            <div data-overlay-id="mikeal" class="tile x-large left">
-              <div class="name bottom">
-                Mikeal Rogers
+        <div class="block">
+          <div class="centered">
+            <div class="child">
+              <div id="marker">
+                <div class="pin"></div>
+                <div class="pulse"></div>
               </div>
-              <img src="img/fpo.jpg" alt="">
-            </div>
-            <div data-overlay-id="john" class="tile small">
-              <div class="name right">
-                John Edgar
-              </div>
-              <img src="img/fpo.jpg" alt="">
-            </div>
-            <div class="tile small">
-              <div class="name right bottom">
-                Mikeal Rogers
-              </div>
-              <img src="img/fpo.jpg" alt="">
-            </div>
-          </div>
-          <div class="row">
-            <div class="tile medium left">
-              <div class="name bottom">
-                Mikeal Rogers
-              </div>
-              <img src="img/fpo.jpg" alt="">
-            </div>
-            <div class="tile large right">
-              <div class="name right">
-                Mikeal Rogers
-              </div>
-              <img src="img/fpo.jpg" alt="">
+              <h3>Developer Evangelism</h3>
+              <p>DigitalOcean Evangelism lives in the developer community <br>giving back what we can when we can all over the world.</p>
+              <a class="vert-center next" href="#who">Learn More</a>
             </div>
           </div>
         </div>
-        <a href="#locations" class="next">Where is DigitalOcean Devangelism?</a>
+      </section>
+
+      <section id="who">
+        <h1 class="section-head">Meet the Evangelists</h1>
+        <p class="sub-head">DigitalOcean is more than hosting, it's an advocate for excellence.</p>
+
+        <ul id="photo-grid">
+          <li class="john">
+            <a href="#" data-overlay-id="john">
+              <span></span>
+              <h3>John Edgar</h3>
+              <p>Chief Technology Evangelist</p>
+            </a>
+          </li>
+          <li class="mikeal">
+            <a href="#" data-overlay-id="mikeal">
+              <span></span>
+              <h3>Mikeal Rogers</h3>
+              <p>Director of Evangelism</p>
+            </a>
+          </li>
+          <li class="erika">
+            <a href="#" data-overlay-id="erika">
+              <span></span>
+              <h3>Erika Heidi</h3>
+              <p>PHP Evangelist</p>
+            </a>
+          </li>
+          <li class="annie">
+            <a href="#" data-overlay-id="annie">
+              <span></span>
+              <h3>Annie Dane</h3>
+              <p>Director of Production</p>
+            </a>
+          </li>
+          <li class="juliann">
+            <a href="#" data-overlay-id="juliann">
+              <span></span>
+              <h3>Juliann Lajeskie</h3>
+              <p>Production Assistant</p>
+            </a>
+          </li>
+          <li class="kaushal">
+            <a href="#" data-overlay-id="kaushal">
+              <span></span>
+              <h3>Kaushal Parikh</h3>
+              <p>Hackathon Master</p>
+            </a>
+          </li>
+          <!-- <li class="apply">
+            <a class="apply-link" href="https://careers.digitalocean.com/" target="_blank">
+              <span></span>
+              <h3>Apply Now</h3>
+              <p>Developer Evagelist</p>
+            </a>
+          </li> -->
       </section>
 
       <section id="locations">
-        <h1>DigitalOcean, Across the Ocean</h1>
-        <p>DigitalOcean is a global company, doing global stuff with globes and global globes</p>
-        <a href="#events" class="next dark">Which events will Digital Ocean Devangelism be at?</a>
+        <h1 class="section-head">DigitalOcean, Across the Ocean</h1>
+        <p class="sub-head">DigitalOcean is a global company, doing global stuff with globes and global globes</p>
+        <!-- <a href="#events" class="next dark">Which events will Digital Ocean Devangelism be at?</a> -->
         <div class="location-wrapper-outer">
           <div class="location-wrapper">
             <img class="map" src="img/worldmap.svg" alt="World Map">
@@ -73,37 +100,50 @@
       </section>
 
       <section id="events">
-        <h1>Our Best-Laid Plans</h1>
-        <p>Where we'll be, what we'll be wearing, and who we'll be with</p>
+        <h1 class="section-head">Our Best-Laid Plans</h1>
+        <p class="sub-head">Where we'll be, what we'll be wearing, and who we'll be with</p>
         <div class="tabs">
            <div id="month-tab" class="tab">
                <input type="radio" id="tab-1" name="tab-group" checked>
-               <label for="tab-1">By Month</label>
+               <label for="tab-1">Month</label>
 
-               <div class="content"></div>
+               <div class="content">
+                <ul class="conference-table" id="month-table">
+
+                </ul>
+               </div>
            </div>
            <div id="event-tab" class="tab">
                <input type="radio" id="tab-2" name="tab-group">
-               <label for="tab-2">By Event Name</label>
+               <label for="tab-2">Event</label>
 
-               <div class="content"></div>
+               <div class="content">
+                <ul class="conference-table" id="event-table">
+
+                </ul>
+               </div>
            </div>
             <div id="attendee-tab" class="tab">
                <input type="radio" id="tab-3" name="tab-group">
-               <label for="tab-3">By Attendee</label>
+               <label for="tab-3">Attendee</label>
 
-               <div class="content"></div>
+               <div class="content">
+                <ul class="conference-table" id="attendee-table">
+
+                </ul>
+               </div>
            </div>
         </div>
-        <a href="#downloads" class="next dark">Download Digital Ocean Devangelism assets</a>
+        <!-- <a href="#downloads" class="next dark">Download Digital Ocean Devangelism assets</a> -->
       </section>
 
       <section id="downloads">
-        <h1>Downloads</h1>
-        <p>Download any of these Digital Ocean badges or logos to display on your own websites</p>
-        <a class="download-btn" href="https://www.digitalocean.com/assets/images/logos-badges/DigitalOcean-Logos-and-Badges.zip">Download the Entire Logo Pack</a>
+        <h1 class="section-head">Logos & Badges</h1>
+        <p class="sub-head">Download any of these Digital Ocean badges <br>or logos to display on your own websites</p>
+        <a class="download-btn" href="https://www.digitalocean.com/assets/images/logos-badges/DigitalOcean-Logos-and-Badges.zip">Download Logo Pack</a>
+        <a class="download-link" href="https://www.digitalocean.com/company/logos-and-badges/" target="_blank">View More</a>
+
         <div class="wrapper">
-            <h2>Horizontal Logo</h2>
 
             <ul id="horizontal">
               <li class="col-3">
@@ -141,7 +181,6 @@
             </ul>
           </div>
           <div class="wrapper">
-            <h2>Vertical Logo</h2>
             <ul id="vertical">
               <li class="col-3">
                 <div class="logo-bg">
@@ -177,117 +216,39 @@
               </li>
             </ul>
           </div>
-          <div class="wrapper">
-            <h2>Proudly Hosted Badge</h2>
-            <ul id="badgeA">
-              <li class="col-4">
-                <div class="logo-bg">
-                  <img src="img/logos-badges/badge-a-color-b22ef34f.png">
-                </div>
-                <div class="download">
-                  Download
-                  <a href="http://www.digitalocean.com/assets/images/logos-badges/eps/DO_Proudly_Hosted_Badge_Blue.eps">EPS</a>
-                  <a href="http://www.digitalocean.com/assets/images/logos-badges/png/DO_Proudly_Hosted_Badge_Blue-735d53ec.png">PNG</a>
-                </div>
-              </li>
-
-              <li class="col-4">
-                <div class="logo-bg">
-                  <img src="img/logos-badges/badge-a-grey-6b8987da.png">
-                </div>
-                <div class="download">
-                  Download
-                  <a href="http://www.digitalocean.com/assets/images/logos-badges/eps/DO_Proudly_Hosted_Badge_Grey.eps">EPS</a>
-                  <a href="http://www.digitalocean.com/assets/images/logos-badges/png/DO_Proudly_Hosted_Badge_Grey-1652c782.png">PNG</a>
-                </div>
-              </li>
-
-              <li class="col-4">
-                <div class="logo-bg">
-                  <img src="img/logos-badges/badge-a-black-62a277e8.png">
-                </div>
-                <div class="download">
-                  Download
-                  <a href="http://www.digitalocean.com/assets/images/logos-badges/eps/DO_Proudly_Hosted_Badge_Black.eps">EPS</a>
-                  <a href="http://www.digitalocean.com/assets/images/logos-badges/png/DO_Proudly_Hosted_Badge_Black-8a1eb844.png">PNG</a>
-                </div>
-              </li>
-
-              <li class="col-4">
-                <div class="logo-bg dark">
-                  <img src="img/logos-badges/badge-a-white-70e6c5b4.png">
-                </div>
-                <div class="download">
-                  Download
-                  <a href="http://www.digitalocean.com/assets/images/logos-badges/eps/DO_Proudly_Hosted_Badge_White.eps">EPS</a>
-                  <a href="http://www.digitalocean.com/assets/images/logos-badges/png/DO_Proudly_Hosted_Badge_White-0f0151a4.png">PNG</a>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="wrapper">
-            <h2>SSD Power Badge</h2>
-            <ul id="badgeB">
-              <li class="col-4">
-                <div class="logo-bg">
-                  <img src="img/logos-badges/badge-b-gold-dad45ccd.png">
-                </div>
-                <div class="download">
-                  Download
-                  <a href="http://www.digitalocean.com/assets/images/logos-badges/eps/DO_SSD_Power_Badge_Gold.eps">EPS</a>
-                  <a href="http://www.digitalocean.com/assets/images/logos-badges/png/DO_SSD_Power_Badge_Gold-28365069.png">PNG</a>
-                </div>
-              </li>
-
-              <li class="col-4">
-                <div class="logo-bg">
-                  <img src="img/logos-badges/badge-b-color-06d96d79.png">
-                </div>
-                <div class="download">
-                  Download
-                  <a href="http://www.digitalocean.com/assets/images/logos-badges/eps/DO_SSD_Power_Badge_Blue.eps">EPS</a>
-                  <a href="http://www.digitalocean.com/assets/images/logos-badges/png/DO_SSD_Power_Badge_Blue-077bf22e.png">PNG</a>
-                </div>
-              </li>
-
-              <li class="col-4">
-                <div class="logo-bg">
-                  <img src="img/logos-badges/badge-b-black-ec3ca75a.png">
-                </div>
-                <div class="download">
-                  Download
-                  <a href="http://www.digitalocean.com/assets/images/logos-badges/eps/DO_SSD_Power_Badge_Black.eps">EPS</a>
-                  <a href="http://www.digitalocean.com/assets/images/logos-badges/png/DO_SSD_Power_Badge_Black-77ca64d3.png">PNG</a>
-                </div>
-              </li>
-
-              <li class="col-4">
-                <div class="logo-bg dark">
-                  <img src="img/logos-badges/badge-b-white-23a08392.png">
-                </div>
-                <div class="download">
-                  Download
-                  <a href="http://www.digitalocean.com/assets/images/logos-badges/eps/DO_SSD_Power_Badge_White.eps">EPS</a>
-                  <a href="http://www.digitalocean.com/assets/images/logos-badges/png/DO_SSD_Power_Badge_White-b120bc38.png">PNG</a>
-                </div>
-              </li>
-            </ul>
-          </div>
       </section>
 
-      <footer></footer>
+      <footer id="footer">
+        <div class="wrap">
+          <ul class="left">
+            <li><a href="#">Public Site</a></li>
+            <li><a href="#">Community</a></li>
+          </ul>
+
+          <ul class="right">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul> 
+        </div>
+      </footer>
 
     </div>
 
     <!-- site nav -->
     <nav id="nav">
-      <a href="#home" class="home selected">Home</a>
-      <a href="#who">Who we are</a>
-      <a href="#locations">Locations</a>
-      <a href="#events">Events</a>
-      <a href="#downloads">Downloads</a>
-      <a href="#contact">Contact Us</a>
-      <h1><a href="#home">Digital Ocean Evangelism</a></h1>
+      <div class="wrap">
+        <h1>
+          <a href="#home"></a>
+        </h1>
+        <ul>
+          <li class="home"><a href="#home" class="home selected">Home</a></li>
+          <li><a href="#who">About</a></li>
+          <li><a href="#locations">Locations</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#downloads">Downloads</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
     </nav>
 
     <!-- contact overlay -->
@@ -316,11 +277,49 @@
     <aside data-id="mikeal" class="overlay who hide">
       <div class="overlay-wrap">
         <h1>Mikeal Rogers</h1>
-        <h3>Chief Officer</h3>
-        <img src="img/mikeal-head.jpg" alt="Mikeal Rogers">
+        <h3>Director of Evangelism</h3>
+        <img src="img/mikeal.jpg" alt="Mikeal Rogers">
+        <p>Mikeal has been active in open source for more than ten years and has held prior roles at Mozilla and the Open Source Applications Foundation. An early arrival in the Node community he wrote the popular library <a href="https://github.com/mikeal/request">request</a> and created he first community driven Node conference, <a href="http://nodeconf.com">NodeConf</a>. In recent years he's been a frequent conference speaker and organizer having also started <a href="http://jsfest.com">JSFest</a>, a week long JavaScript festival using entire cities as venues.</p>
+
+        <h4>Talks</h4>
+        <ul class="recent-talks">
+          <li><a href="https://www.youtube.com/watch?v=2RXprpqRsfc">Essential Patterns in Node, NodeDublin 2012</a></li>
+          <li><a href="http://vimeo.com/52639930">Alchemy or Amateurization, RealtimeConf 2012</a></li>
+          <li><a href="http://vimeo.com/77289035">Performant Mobile Applications, RealtimeConf 2013</a></li>
+          <li><a href="https://www.youtube.com/watch?v=Yb6MQ14vGIk">The Rise of Front End Tooling, Front End Ops Conf, 2014</a></li>
+          <li><a href="http://scotlandjs.com/speakers/mikeal/">The Future of Node Patterns, ScotlandJS 2014</a></li>
+        </ul>
+        <span class="close-overlay">Close Overlay</span>
+      </div>
+    </aside>
+
+    <aside data-id="erika" class="overlay who hide">
+      <div class="overlay-wrap">
+        <h1>Erika Heidi</h1>
+        <h3>PHP Evangelist</h3>
+        <img src="img/erika.jpg" alt="Erika Heidi">
+        <p>Erika Heidi is a web developer / devOp working with PHP and Linux for over a decade. Author of the Vagrant Cookbook and open source projects like <a href="http://phansible.com/">phansible.com</a> and <a href="http://dev-human.org/">dev-human.org</a>, she worked many years as an independent developer, experimenting with a large diversity of projects and tools. Erika is an active open source contributor, speaker and writer.</p>
+
+        <h4>Talks</h4>
+        <ul class="recent-talks">
+          <li><a href="https://speakerdeck.com/erikaheidi/portable-environments-with-vagrant">Portable Environments with Vagrant, Laracon EU 2014</a></li>
+          <li><a href="https://speakerdeck.com/erikaheidi/vagrant-provisioners-in-a-nutshell-1">Vagrant Provisioners in a Nutshell, PhpDay Italy 2014</a></li>
+        </ul>
+        <span class="close-overlay">Close Overlay</span>
+      </div>
+    </aside>
+
+    <aside data-id="john" class="overlay who hide">
+      <div class="overlay-wrap">
+        <h1>John Edgar</h1>
+        <h3>Between Titles ATM</h3>
+        <img src="img/john.jpg" alt="Mikeal Rogers">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis ut orci et dapibus. Vestibulum non elit eget odio rhoncus bibendum ac at massa. Cras ultrices sodales ipsum ut vehicula. Cras ac risus nisl. Cras sit amet felis vulputate, sagittis turpis id, viverra risus. Cras nec volutpat felis. Integer ut tincidunt lectus. Vivamus placerat convallis sapien id aliquet. Quisque ut tincidunt sem. Fusce dolor massa, convallis sed sapien sit amet, dapibus facilisis magna.</p>
 
-        <h4>Recent Talks by Mikeal Rogers:</h4>
+        <p>
+        Cras accumsan odio nec turpis sagittis, non vestibulum tortor semper. Aliquam sit amet consequat erat. Mauris ultrices mi eget scelerisque volutpat. Vivamus malesuada quis erat in bibendum. Sed vestibulum urna dui, a hendrerit metus iaculis et. Donec id eros nec quam pellentesque suscipit quis in odio. In odio dui, condimentum vitae posuere a, dignissim viverra tortor. Nulla mollis interdum velit. Fusce rhoncus luctus quam, quis suscipit mauris semper et.</p>
+
+        <h4>Talks</h4>
         <ul>
           <li><a href="http://www.yahoo.com">Why the wind howls, Coolconf, August 2014</a></li>
           <li><a href="http://www.yahoo.com">Don't step on the snake, RadicalFest, May 2014</a></li>
@@ -330,23 +329,47 @@
       </div>
     </aside>
 
-    <aside data-id="john" class="overlay who hide">
+    <aside data-id="annie" class="overlay who hide">
       <div class="overlay-wrap">
-        <h1>John Edgar</h1>
-        <h3>Cool Guy</h3>
-        <img src="img/mikeal-head.jpg" alt="Mikeal Rogers">
+        <h1>Annie Dane</h1>
+        <h3>Director of Production</h3>
+        <img src="img/annie.png" alt="Annie Dane">
+        <p>Erika Heidi is a web developer / devOp working with PHP and Linux for over a decade. Author of the Vagrant Cookbook and open source projects like <a href="http://phansible.com/">phansible.com</a> and <a href="http://dev-human.org/">dev-human.org</a>, she worked many years as an independent developer, experimenting with a large diversity of projects and tools. Erika is an active open source contributor, speaker and writer.</p>
+
+        <h4>Talks</h4>
+        <ul class="recent-talks">
+          <li><a href="https://speakerdeck.com/erikaheidi/portable-environments-with-vagrant">Portable Environments with Vagrant, Laracon EU 2014</a></li>
+          <li><a href="https://speakerdeck.com/erikaheidi/vagrant-provisioners-in-a-nutshell-1">Vagrant Provisioners in a Nutshell, PhpDay Italy 2014</a></li>
+        </ul>
+        <span class="close-overlay">Close Overlay</span>
+      </div>
+    </aside>
+
+
+    <aside data-id="juliann" class="overlay who hide">
+      <div class="overlay-wrap">
+        <h1>Juliann Lajeskie</h1>
+        <h3>Evangelism Logistics</h3>
+        <img src="img/juliann.jpg" alt="Juliann Lajeskie">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis ut orci et dapibus. Vestibulum non elit eget odio rhoncus bibendum ac at massa. Cras ultrices sodales ipsum ut vehicula. Cras ac risus nisl. Cras sit amet felis vulputate, sagittis turpis id, viverra risus. Cras nec volutpat felis. Integer ut tincidunt lectus. Vivamus placerat convallis sapien id aliquet. Quisque ut tincidunt sem. Fusce dolor massa, convallis sed sapien sit amet, dapibus facilisis magna.</p>
 
         <p>
         Cras accumsan odio nec turpis sagittis, non vestibulum tortor semper. Aliquam sit amet consequat erat. Mauris ultrices mi eget scelerisque volutpat. Vivamus malesuada quis erat in bibendum. Sed vestibulum urna dui, a hendrerit metus iaculis et. Donec id eros nec quam pellentesque suscipit quis in odio. In odio dui, condimentum vitae posuere a, dignissim viverra tortor. Nulla mollis interdum velit. Fusce rhoncus luctus quam, quis suscipit mauris semper et.</p>
 
+        <span class="close-overlay">Close Overlay</span>
+      </div>
+    </aside>
 
-        <h4>Recent Talks by John Edgar:</h4>
-        <ul>
-          <li><a href="http://www.yahoo.com">Why the wind howls, Coolconf, August 2014</a></li>
-          <li><a href="http://www.yahoo.com">Don't step on the snake, RadicalFest, May 2014</a></li>
-          <li><a href="http://www.yahoo.com">Don't suck, SuckingConf, Feb 2014</a></li>
-        </ul>
+    <aside data-id="kaushal" class="overlay who hide">
+      <div class="overlay-wrap">
+        <h1>Kaushal Parikh</h1>
+        <h3>Hackathon Master</h3>
+        <img src="img/kaushal.jpg" alt="Kaushal Parikh">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis ut orci et dapibus. Vestibulum non elit eget odio rhoncus bibendum ac at massa. Cras ultrices sodales ipsum ut vehicula. Cras ac risus nisl. Cras sit amet felis vulputate, sagittis turpis id, viverra risus. Cras nec volutpat felis. Integer ut tincidunt lectus. Vivamus placerat convallis sapien id aliquet. Quisque ut tincidunt sem. Fusce dolor massa, convallis sed sapien sit amet, dapibus facilisis magna.</p>
+
+        <p>
+        Cras accumsan odio nec turpis sagittis, non vestibulum tortor semper. Aliquam sit amet consequat erat. Mauris ultrices mi eget scelerisque volutpat. Vivamus malesuada quis erat in bibendum. Sed vestibulum urna dui, a hendrerit metus iaculis et. Donec id eros nec quam pellentesque suscipit quis in odio. In odio dui, condimentum vitae posuere a, dignissim viverra tortor. Nulla mollis interdum velit. Fusce rhoncus luctus quam, quis suscipit mauris semper et.</p>
+
         <span class="close-overlay">Close Overlay</span>
       </div>
     </aside>
@@ -359,11 +382,9 @@
     <script src="js/vendor/d3.min.js"></script>
     <script src="js/vendor/fastclick-min.js"></script>
     <script src="js/vendor/images-loaded.min.js"></script>
-
     <script src="js/pollyfill.js"></script>
     <script src="js/scrolling.js"></script>
     <script src="js/main.js"></script>
-
     <script src="js/pages/home.js"></script>
     <script src="js/pages/who.js"></script>
     <script src="js/pages/locations.js"></script>
